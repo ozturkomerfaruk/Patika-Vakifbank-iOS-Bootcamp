@@ -1,4 +1,10 @@
-# Swift Design Guidelines
+Burada Swift API Design Guidelines açıklamaya çalıştım. Ancak bunun gibi çok büyük şirketlerin kendi rehberleri bulunmaktadır. Burada yazılanlara tamamen ek olarak çıkarılan, yani buradaki ususlara ek olarak yazılan rehberler düşünün ve bunları yapanlar Google, LinkedIn ve Airbnb gibi şirketler. Bunları ayrıca incelemenizi isterim. Kendi yazım stilinizi oluşturmak çok önemli bir husustur.
+
+* Linkedin için [tıklayınız.](https://github.com/linkedin/swift-style-guide)
+* Airbnb için [tıklayınız.](https://github.com/airbnb/swift)
+* Google için [tıklayınız.](https://google.github.io/swift/)
+
+# Swift API Design Guidelines
 
 Referans linki için [tıklayabilirsiniz.](https://www.swift.org/documentation/api-design-guidelines/#parameter-names)
 
@@ -145,6 +151,135 @@ let oneLine = t.strippingNewlines()
 
 
 ## Parameters
+1. Doğru bir şekilde yorum satırları bu şekilde olmalıdır ve parametre bu şekilde ifade edilmeli. Kısa ve öz olmalı.
 
+```
+/// Return an `Array` containing the elements of `self`
+/// that satisfy `predicate`.
+func filter(_ predicate: (Element) -> Bool) -> [Generator.Element]
 
+/// Replace the given `subRange` of elements with `newElements`.
+mutating func replaceRange(_ subRange: Range, with newElements: [E])
+```
+2. Mesela bir fonksiyon içerisinde boş array yazmaya gerek yok yada optional olabilir bir şekilde nil yazmaya gerek yok zaten default da öyleler.
 
+Olmaması gereken:
+
+```
+let order = lastName.compare(
+  royalFamilyName, options: [], range: nil, locale: nil)
+```
+
+Olması gereken:
+```
+let order = lastName.compare(royalFamilyName)
+```
+
+3. Not türünde: Varsayılan argümanlar genellikle yöntem ailelerinin kullanımına tercih edilir, çünkü API'yi anlamaya çalışan herkese daha az bilişsel yük getirirler.
+
+```
+extension String {
+  /// ...description...
+  public func compare(
+     _ other: String, options: CompareOptions = [],
+     range: Range? = nil, locale: Locale? = nil
+  ) -> Ordering
+}
+```
+
+Bir method ailesinin her bir üyesinin ayrı ayrı belgelenmesi ve kullanıcılar tarafından anlaşılması gerekir. Aralarında karar vermek için kullanıcının hepsini ve zaman zaman şaşırtıcı ilişkileri anlaması gerekir.
+
+## Argument Labels
+
+1. Argümanlar kullanışlı bir şekilde ayırt edilemediğinde tüm etiketleri atlayın
+2. Değer koruma türü dönüştürmeleri gerçekleştiren başlatıcılarda, ilk bağımsız değişken etiketini atlayın
+
+* İlk argüman her zaman source of the conversion olmalıdır.
+```
+extension String {
+  // Convert `x` into its textual representation in the given radix
+  init(_ x: BigInt, radix: Int = 10)   ← Note the initial underscore
+}
+
+text = "The value is: "
+text += String(veryLargeNumber)
+text += " and in hexadecimal, it's"
+text += String(veryLargeNumber, radix: 16)
+```
+
+```
+extension UInt32 {
+  /// Creates an instance having the specified `value`.
+  init(_ value: Int16)            ← Widening, so no label
+  /// Creates an instance having the lowest 32 bits of `source`.
+  init(truncating source: UInt64)
+  /// Creates an instance having the nearest representable
+  /// approximation of `valueToApproximate`.
+  init(saturating valueToApproximate: UInt64)
+}
+```
+Bu gibi durumlarda, soyutlamayı açık tutmak için argüman etiketine preposition'dan sonra başlayın.
+```
+a.moveTo(x: b, y: c)
+a.fadeFrom(red: b, green: c, blue: d)
+```
+
+## Special Instructions
+
+Closure parametreleri için kullanılan adlar, üst düzey işlevler için parametre adları gibi seçilmelidir. Çağrı sitesinde görünen closure argümanları için etiketler desteklenmez.
+
+Bu isimlerin açıklama gücü vardır, dokümantasyon yorumlarından referans alınabilir ve grup üyelerine anlamlı erişim sağlar.
+
+```
+/// Ensure that we hold uniquely-referenced storage for at least
+/// `requestedCapacity` elements.
+///
+/// If more storage is needed, `allocate` is called with
+/// `byteCount` equal to the number of maximally-aligned
+/// bytes to allocate.
+///
+/// - Returns:
+///   - reallocated: `true` if a new block of memory
+///     was allocated; otherwise, `false`.
+///   - capacityChanged: `true` if `capacity` was updated;
+///     otherwise, `false`.
+mutating func ensureUniqueStorage(
+  minimumCapacity requestedCapacity: Int, 
+  allocate: (_ byteCount: Int) -> UnsafePointer<Void>
+) -> (reallocated: Bool, capacityChanged: Bool)
+```
+
+Aşırı yükleme kümelerinde belirsizlikleri önlemek için sınırlandırılmamış polimorfizm (örneğin Any, AnyObject ve sınırlandırılmamış genel parametreler) konusunda ekstra özen gösterin.
+
+```
+struct Array {
+  /// Inserts `newElement` at `self.endIndex`.
+  public mutating func append(_ newElement: Element)
+
+  /// Inserts the contents of `newElements`, in order, at
+  /// `self.endIndex`.
+  public mutating func append(_ newElements: S)
+    where S.Generator.Element == Element
+}
+```
+
+Bu yöntemler semantik bir aile oluşturur ve argüman türleri ilk başta keskin bir şekilde farklı görünür. Ancak, Öğe herhangi biri olduğunda, tek bir öğe, bir öğe dizisiyle aynı türe sahip olabilir.
+
+```
+var values: [Any] = [1, "a"]
+values.append([2, 3, 4]) // [1, "a", [2, 3, 4]] or [1, "a", 2, 3, 4]?
+```
+Belirsizliği ortadan kaldırmak için ikinci aşırı yüklemeyi daha açık bir şekilde adlandırın.
+```
+struct Array {
+  /// Inserts `newElement` at `self.endIndex`.
+  public mutating func append(_ newElement: Element)
+
+  /// Inserts the contents of `newElements`, in order, at
+  /// `self.endIndex`.
+  public mutating func append(contentsOf newElements: S)
+    where S.Generator.Element == Element
+}
+```
+
+Yeni adın belge yorumuyla nasıl daha iyi eşleştiğine dikkat edin. Bu durumda, belge yorumu yazma eylemi aslında sorunu API yazarının dikkatine getirdi.
