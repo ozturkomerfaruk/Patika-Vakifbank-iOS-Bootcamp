@@ -1,6 +1,6 @@
 # Temel Kodlar
 
-## Emojilerle tanımlama yapmak mümkünmüş :))
+## Emojilerle tanımlama yapmak mümkünmüş :))
 
 ```
 let 😛 = "ahaha"
