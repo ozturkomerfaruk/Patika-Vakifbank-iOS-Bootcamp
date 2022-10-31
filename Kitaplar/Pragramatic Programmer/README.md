@@ -70,3 +70,65 @@ Eğer hiçbir şey olmamış gibi devam ederseniz yavaş yavaş sistemin bir kö
 ### Topic 5 - Good-Enough Software
 
 Sayfa 50
+
+Shakespeare - ***Striving to better, oft we mar what’s well.*** Daha iyisini çabalarken çoğu zaman iyi olanı bozarız.
+
+Bir müşteri var ve bir ürün talep ediyor. Şu tarihe kadar yetişmesi lazım diyor. Siz eğer şu şu şu özelliklerde olsun derseniz belki ya süreyi yetiştiremeyeceksiniz ya da temel mühendislik kurallarından çıkacak ve yarım bir proje vereceksiniz. Bu hiç profosyonelce bir davranış değil.
+
+Projeyi bir pragrametic programmer olarak yönetmeli ve erken denemesi için bir şeyler sunabilirseniz, bu size geri dönüt noktasında güzel bildirimler sağlayacaktır.
+
+Projelerimizde mimari yapılar uygulamak güzel bir şeydir ancak her projede olmasına gerek yok. Küçük bir projede uygulanması, projeyi gereksiz kafa karışıklığna sebebiyet verecek, proje büyük bir projeyse uygulayın. Gereksiz çok süslemelere hiç gerek yok.
+
+**Challenges**
+
+Yazılım dillerinde, editorlerde, hatta işletim sistemlerinde tüm hataların giderilmiş olmasını beklemeyi mi, karmaşık yazılımların olduğunu ve bazı hataların çözümü yok denilerek kabul edilmesini mi yoksa daha az kusurlu daha basit yazılımları mı tercih edersiniz diye bir soru sorulmuş. Bu soruyu okuduğum zamanlarda ise (31 Ekim 2022) MacOS Ventura işletim sistemi yeni yayınlanmıştı. Bir kaç gün oldu daha. Bazen bilgisayarda sorunlar çıkabiliyor, donma kasma yapabiliyor. Peki bu bir sorun mu, bence hayır. Çünkü kelimenin tek anlamıyla mükemmeli beklemek çok yanlış onun yerine basit hatalar olsa da zamanla çözülebiliyor olması bence yeterli benim için. Yeni güncellemelerle bu sorunlarda gidecek. Ancak hiçbir zaman kusursuz olmayacak.
+
+
+Diğer bir soru modüleştirme üzerine bir soru soru. Bir projede modüleştirmenin önemli olup olmadığını soruyor. Tabiki de modüleştirme son derece önemli. Bir sayfada 3000 satır kod olması neye yarar, neye çözüm getirebilir? Onun yerine parça parça olsa, yazılan kodları tekrar tekrar tekrar yazmasa projeyi yönetmek çok daha kolay olacak.
+
+Son soruda, 'feature bloat' denilen özellik şişkinliğine hiç rastladın mı tarzında bir soru. Ne demek bu? Mesela bir uygulamada binlerce özellik var ve sen sadece 10-15 tane özellik kullanıyorsun. Diğer her bir özelliğin getirdiği bir ram tüketme, bug oluşturma gibi sorunlar oluştururken sen hiç böyle bir duruma rastladın mı diye bir soru soruluyor. Bu sorunun cevabı elbetteki, evet! Bir telefonda binlerce özellik var ben sadece arama yapıyorum diyelim. Onun yerine 3310 alıp şarjımın 1 ay dayanması daha mantıklı sanki 🥹
+
+### Topic 6 - Your Knowledge Portfolio
+
+Benjamin Franklin - ***An investment in knowledge always pays the best interest*** En iyi faiz, bilgi birikimine yapılan yatırımdır.
+
+Bilginiz sizin portfolyönüzdür. LinkedIn profiliniz, Github profiliniz hiç önemli değil bu sektörde. Şirketler sizin bilginize bakarak işe alır.
+
+* Ciddi yatırımcılar düzenli yatırım yapar. -> alışkanlıklar olarak
+* Çeşitlilik anahtar kelimedir. -> uzun dönem başarının
+* Akıllı yatırımcılar, riskli ile yüksek kazançlı yatırımlar arasında dengelidir.
+* Yatırımcılar düşük gelirli bir şeyden yüksek gelir elde etmeye çalışırlar.
+* Portfolyöler düzenli olarak gözden geçirilir ve yeniden şekillenir.
+
+Aslında bu cümleler her şeyi açıklamak için yeterli. Yatırım kendinizsiniz ve kendinize olan yatırımı iyi düşünün. Yatırım sadece dövize ya da hisse senetlerine yapılmaz. (Lafın gelişi diyorum 🤓 bende biliyorum Türkiye'de ev, araba almak çok karlı) En büyük yatırım kendinizsiniz ve mutluluğunuz, hayat kaliteniz buna bağlı.
+
+**Hedefler**
+
+1. Mesela her sene yeni bir dil öğrenin
+2. Her ay düzenli teknik kitap okuyun
+3. Siz normal kitap da okuyun
+4. Ortamlara katılın (Konferans, seminer, bootcamp, sınıflar vs.)
+5. Topluluklara katılın (Network ağı dediğimiz olay)
+6. Farklı etkinliklere de katıl (iOS Developer'san Android etkinliklerine de katıl)
+7. Güncelliğinizi koruyun (Düzenli olarak alanınızda çıkan haberleri, yenilikleri takip edin)
+
+Önünüze fırsatlar çıkacak ancak o fırsatların değerlendirmek için kritik düşünmemiz gerekiyor. Peki Nasıl?
+
+1. 5 neden sor. 5 açıdan neden cevabını değerlendir kendi içinde
+2. Kim için yararlı?
+3. İçeriği ne?
+4. Ne zaman ve Nerede işe yarayacak?
+5. Neden böyle bir problem var?
+
+**Challenges**
+
+Yeni bir dil öğrenmeye başla diyor bu hafta. Ancak ben de aşağı yukarı 2 aydır yeni bir dil öğrenmeye başladığım için direk geçiyorum 😉 (Dil tabiki Swift)
+
+Yeni bir kitap okumaya başla ama önce bu kitabı bitir diyor. Elbette ki, zaten şuan bulunduğum [Vakıfbank iOS Bootcamp](
+Patika-Vakifbank-iOS-Bootcamp) sürecinde bir de Clean Code kitabını okuyacağım için kabul ediyorum bunu da.
+
+Bir kafede, bir toplulukta bir etkinliğe katıl diyor. Şuan yine bir bootcamp sürecinde olduğum için otomatik yine bu challenge'ı kabul ediyorum.
+
+### Topic 7 - Communicate!
+
+Mae West - ***I believe that it is better to be looked over than it is to be overlooked*** Göz ardı edilmektense, görmezden gelmenin daha iyi olduğuna inanıyorum.
