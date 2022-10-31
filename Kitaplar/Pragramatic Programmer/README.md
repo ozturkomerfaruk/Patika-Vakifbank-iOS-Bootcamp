@@ -124,7 +124,7 @@ Aslında bu cümleler her şeyi açıklamak için yeterli. Yatırım kendinizsin
 
 Yeni bir dil öğrenmeye başla diyor bu hafta. Ancak ben de aşağı yukarı 2 aydır yeni bir dil öğrenmeye başladığım için direk geçiyorum 😉 (Dil tabiki Swift)
 
-Yeni bir kitap okumaya başla ama önce bu kitabı bitir diyor. Elbette ki, zaten şuan bulunduğum [Vakıfbank iOS Bootcamp](Kitaplar) sürecinde bir de Clean Code kitabını okuyacağım için kabul ediyorum bunu da.
+Yeni bir kitap okumaya başla ama önce bu kitabı bitir diyor. Elbette ki, zaten şuan bulunduğum [Vakıfbank iOS Bootcamp](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/Kitaplar) sürecinde bir de Clean Code kitabını okuyacağım için kabul ediyorum bunu da.
 
 Bir kafede, bir toplulukta bir etkinliğe katıl diyor. Şuan yine bir bootcamp sürecinde olduğum için otomatik yine bu challenge'ı kabul ediyorum.
 
