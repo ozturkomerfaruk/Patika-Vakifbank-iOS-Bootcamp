@@ -142,5 +142,54 @@ Bir şirkette en önemli 7 unsur vardır. Bunlar:
 6. İletişim
 7. İletişim
 
-Bilmem anlatabildim mi? Gerçekten espiri niteliğinde bunları yazmıyorum. Bir projeye başlayacaksınız sıfırdan ve bunu büyük bir ekip içerisinde yapıyorsunuz diyelim. Ya mesela yeni Witcher oyununu siz yapacaksınız. Devasa bir oyundan bahsediyoruz. Burada sürekli ekip içerisi toplantılar düzenlenmeli, ses ekibi ayrı, UI Design ekibi ayrı (ve kendi içinde ayrı) Backend ekibi ayrı, frontend ekibi ayrı, satış ekibi ayrı, yönetme ekibi ayrı. Yani biraz düşünürseniz onlarca farklı alan ve her alanda kendi içerisinde ayrılmalardan bahsediyoruz. Bunlar kendi içerisinde iyi bir dinleyici, iyi bir konuşmacı (derdini anlatma konusunda) olmazlarsa bu oyun çıkabilir mi piyasaya? Ayrıca düşünün bunların hepsi tek bir oyun üzerinde çalışıyor. Ancak ses ekibi yazılım ekibiyle beraber uyumlu olmasa ses ekibi yanlış ses design belki yapabilir değil mi? İşte bu sebeple düşünmelisiniz ki, ortada büyük bir dökümantasyon lazım.
+Bilmem anlatabildim mi? Gerçekten espiri niteliğinde bunları yazmıyorum. Bir projeye başlayacaksınız sıfırdan ve bunu büyük bir ekip içerisinde yapıyorsunuz diyelim. Ya mesela yeni Witcher oyununu siz yapacaksınız. Devasa bir oyundan bahsediyoruz. Burada sürekli ekip içerisi toplantılar düzenlenmeli, ses ekibi ayrı, UI Design ekibi ayrı (ve kendi içinde ayrı) Backend ekibi ayrı, frontend ekibi ayrı, satış ekibi ayrı, yönetme ekibi ayrı. Yani biraz düşünürseniz onlarca farklı alan ve her alanda kendi içerisinde ayrılmalardan bahsediyoruz. Bunlar kendi içerisinde iyi bir dinleyici, iyi bir konuşmacı (derdini anlatma konusunda) olmazlarsa bu oyun çıkabilir mi piyasaya? Ayrıca düşünün bunların hepsi tek bir oyun üzerinde çalışıyor. Ancak ses ekibi yazılım ekibiyle beraber uyumlu olmasa ses ekibi yanlış ses design belki yapabilir değil mi? İşte bu sebeple düşünmelisiniz ki, ortada büyük bir dökümantasyon lazım. Dökümantasyon olmadan OLMAAAZ!!!
 
+Dökümantasyon öyle önemli bir şeydir ki, bu projede çalışan yüzlerce insan yarın işten ayrılsa, yeni gelecek yeni yüzlerce insan projeye kaldığı yerden direk başlayabilmesi lazım demektir. Dökümantasyonun olmadığı yerlerde ne oluyor biliyor musunuz? Bunu gözlerimle şahit oldum bir şirkette. İki yazılımcı aynı sayfa tasarımını birbirinden habersiz yapıyor niye dökümantasyon yok ki :) Dökümantasyon hazırlamıyorlar ki :) Farklı zaman dilimlerinde yapmışlar. Boşa vakit kaybı, boşa emek israfı.
+
+**Challenges**
+
+Kitap tavsiyeleri var:
+
+[The Mythical ManMonth: Essays on Software Engineering](https://books.google.com.tr/books?id=Yq35BY5Fk3gC&printsec=frontcover&dq=The+Mythical+Man+Month:+Essays+on+Software+Engineering&hl=en&sa=X&redir_esc=y#v=onepage&q=The%20Mythical%20Man%20Month%3A%20Essays%20on%20Software%20Engineering&f=false)
+
+[Peopleware: Productive Projects and Teams](https://books.google.com.tr/books?id=TVQUAAAAQBAJ&printsec=frontcover&dq=Peopleware:+Productive+Projects+and+Teams&hl=en&sa=X&redir_esc=y#v=onepage&q=Peopleware%3A%20Productive%20Projects%20and%20Teams&f=false)
+
+[Dinosaur Brains: Dealing with All Those Impossible People at Work](https://books.google.com.tr/books?id=_hcJUGQNQi8C&q=Dinosaur+Brains:+Dealing+with+All+Those+Impossible+People+at+Work&dq=Dinosaur+Brains:+Dealing+with+All+Those+Impossible+People+at+Work&hl=en&sa=X&redir_esc=y)
+
+## Chapter 2 - A Pragmatic Approach
+
+İşte başlıyoruz en güzel kısımlara. Bu zamana kadar olan yerler herkesin zaten bildiği (ama bazı şirketlerin ısrarla yapmadığı şeylerdi) şimdi iyi bir yazılımcı olmaya çalışacağız.
+
+### Topic 8 - The Essence of Good Design
+
+Bir uygulama piyasaya çıktıysa ve kullanıcı sayısı fazlaysa, kodları iyi yazılmış demektir. Bu kadar basit mi? Elbette ki, önemli olan son kullanıcıya ulaşması değil mi 🤓 Ancak bir uygulama düşünün ve çok yavaş açılıyor insanlar bundan şikayetçi, burada sorun sizce internette midir yavaş olsun. Hayır uygulama kötü yazılmış demektir.
+
+İyi bir kod yazdığınızın en önemli kanıtları;
+
+* Okunması kolaydır
+* Her kod parçacığı değiştirilebilirdir
+
+Bazen her kod parçacığının değiştirilebilir olarak kurmak çok zahmetli olabiliyor ancak hiç önemli değil. Proje büyüdükçe bir şeylerin değiştirilmesi gerektiğini görünce çok kolay yapabiliyor olduğunu farkedeceksin. Ayrıca Unit Test yazmak da çok kolay oluyor.
+
+**Challenges**
+
+Ne düşünüyorsunuz tarzında bir soru var. Ben yaklaşık 1.5 sene Flutter ile uğraştım. Flutter belki de bu kısım için en zirve nokta bile olabilir. Her bir nesne bir Widget denilen yapıdan oluşuyor. Eğer bir kez tekrara düşmek isterseniz projenin belki 1000 farklı yerinde uzun uzadıya kod yazarsınız. Bu yüzden belki de parçalamak Flutter için çok önemli bir şeydir. Bu da benim her dilde alışkanlık haline getirdi. Fonksiyonel ve Nesne Tabana yönelik kod yazmak hayatın en önemli gerçekleridir benim için.
+
+## Topic 9 - DRY - The Evils Of Duplication
+
+Yazılımda baş ucu kelimeniz DRY - ***Don't Repeat Yourself*** olmalıdır. Bol bol fonksiyonerliğinizi artırın. Her şeyi demiyorum ama parçalanabilen her bir kod parçacığını fonksiyonerleştirin.
+
+
+Ne demektir bu? Her bir yazılan ifade kesin, belirgin olmalı. Tekrara sebebiyet vermemeli. Farklı açılardan irdelenip, tekrarı sağlatmamalı. Test edilirken daha sonra sıkıntısız olmalı. 
+
+***Mesele hatırlamak değil, ne zaman unutacağınız*** Sonra yaparız dediğiniz her şey, sonra yapılmaz!
+
+Bu yözden dolayı DRY - Kod yazmaktan çok daha önemli. Ne kadar iyi yazılımcı olursanız olun, ne kadar aslan, kaplan olursanız olun bir kez DRY'a düşerseniz orada boğulursunuz.
+
+Bu konuyla ilgili bir tane kitap tavsiye ediyor yazar. Nesne taban olarak kodu parçalamak ne demek, fonksiyonerlik olarak parçalamak ne demek detaylı olarak oraya referans ediyor. 
+
+[Object-Oriented Software Construction.](https://books.google.com.tr/books?id=xls_AQAAIAAJ&q=Object-Oriented+Software+Construction.&dq=Object-Oriented+Software+Construction.&hl=en&sa=X&redir_esc=y)
+
+### Topic 10 - Orthogonality
+
+Sayfa 92'deyim
