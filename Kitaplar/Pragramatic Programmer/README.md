@@ -131,3 +131,16 @@ Bir kafede, bir toplulukta bir etkinliğe katıl diyor. Şuan yine bir bootcamp 
 ### Topic 7 - Communicate!
 
 Mae West - ***I believe that it is better to be looked over than it is to be overlooked*** Göz ardı edilmektense, görmezden gelmenin daha iyi olduğuna inanıyorum.
+
+Bir şirkette en önemli 7 unsur vardır. Bunlar:
+
+1. İletişim
+2. İletişim
+3. İletişim
+4. İletişim
+5. İletişim
+6. İletişim
+7. İletişim
+
+Bilmem anlatabildim mi? Gerçekten espiri niteliğinde bunları yazmıyorum. Bir projeye başlayacaksınız sıfırdan ve bunu büyük bir ekip içerisinde yapıyorsunuz diyelim. Ya mesela yeni Witcher oyununu siz yapacaksınız. Devasa bir oyundan bahsediyoruz. Burada sürekli ekip içerisi toplantılar düzenlenmeli, ses ekibi ayrı, UI Design ekibi ayrı (ve kendi içinde ayrı) Backend ekibi ayrı, frontend ekibi ayrı, satış ekibi ayrı, yönetme ekibi ayrı. Yani biraz düşünürseniz onlarca farklı alan ve her alanda kendi içerisinde ayrılmalardan bahsediyoruz. Bunlar kendi içerisinde iyi bir dinleyici, iyi bir konuşmacı (derdini anlatma konusunda) olmazlarsa bu oyun çıkabilir mi piyasaya? Ayrıca düşünün bunların hepsi tek bir oyun üzerinde çalışıyor. Ancak ses ekibi yazılım ekibiyle beraber uyumlu olmasa ses ekibi yanlış ses design belki yapabilir değil mi? İşte bu sebeple düşünmelisiniz ki, ortada büyük bir dökümantasyon lazım.
+
