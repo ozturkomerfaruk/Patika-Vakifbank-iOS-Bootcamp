@@ -1,5 +1,10 @@
 # Temel Kodlar
 
+* Detaylı substring kullanımı
+* Unary Minus Operator
+* Optional
+* Tuple
+
 ## Emojilerle tanımlama yapmak mümkünmüş :))
 
 ```
