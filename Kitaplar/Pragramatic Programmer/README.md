@@ -192,4 +192,24 @@ Bu konuyla ilgili bir tane kitap tavsiye ediyor yazar. Nesne taban olarak kodu p
 
 ### Topic 10 - Orthogonality
 
-Sayfa 92'deyim
+Yazarın kitap tavsiyesi var. [Structured Design: Fundamentals of a Discipline of Computer Program and Systems Design](https://www.amazon.com/Structured-Design-Fundamentals-Discipline-Computer/dp/0138544719)
+
+Ortogonal sistem aslında MVVM, MVC, VIPER gibi design patternlerin önemini anlatıyor. Herbir tarafı blok blok yazmanın önemini anlatıyor. Bunun üç açıdan önemi var.
+
+1. Üretkenliği artırmak
+
+Test yazması daha kolay, tekrar kodlanması, tasarım yapılması vs. daha kolay oluyor. Ayrıca eğer kod yazılırken ortogonal şekilde yazılırsa, iki parça ayrı ayrı olduğunda, farklı yerlere vs. kullanmakta daha kolay uyum sağlatır. Öbür türlü bir sayfada 3 bin satır koda doğru merhabaaa!
+
+2. Riski azaltır
+
+Test edilmesi daha kolay cümlesini biraz açacak olursak. Bir kere bir projede test yazmanın önemi çok fazla olduğunu vurgulamıştık. Peki test yazarken nasıl yazacağız? İşte ortogonal bir sistemde test yazacağız. Test yazmanın önemi en çok bu noktada anlaşılıyor. Eğer blok blok her bir kod parçacığı ayrılarak ilerleniyorsa test hem daha kısa sürede yazılır hemde daha başarılı sonuçlar elde ederiz. Öbür türlü durum çok daha karmaşık, çok daha kötü yere gidiyor.
+
+3. Dökümantasyon hazırlanması
+
+İki kardeşin yaşadığı bir ev düşünün. Birinci kardeş, çok düzenli birisi olsun diğeri dağınık. Dağınık olan oda da her şey her yerde iken düzenli odada çamaşırlar dolapta, kitaplar kitaplıkta vs. olsun. Sizin göreviniz iki odaya girip küçük bir kalem pil almak olacak. Hangisinden daha kolay alabilirsiniz sizce?
+
+İşte dökümantasyonun önemi de aynen bu şekilde. Eğer siz 3 bin satırın olduğu onlarca sayfaya girip tek bir sınıftan türeyen nesneye ulaşmaya çalışıyorsanız vay halinize! Ama bütün kodlar blok blok ayrılsa, isterse bin tane sayfa olsa. Ama ayrı ayrı sayfaları dökümantasyon oluşturmak daha kolay. Çok daha hızlı bulursunuz. Zaten 3 bin satırlı onlarca sayfaları kimse dökümantasyon oluşturmaya çalışmıyor. Nasıl edebilirsin ki zaten? Kodlar hep **DRY** prensiplerinden uzak, hiçbir mimari, design pattern yok her şey karmakarışık bide oturup döküman mı hazırlayacan! mehhh! 
+
+## Reversibility
+
+sayfa 104
