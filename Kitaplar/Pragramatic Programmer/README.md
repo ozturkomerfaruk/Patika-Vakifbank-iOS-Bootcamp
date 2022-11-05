@@ -210,6 +210,16 @@ Test edilmesi daha kolay cümlesini biraz açacak olursak. Bir kere bir projede 
 
 İşte dökümantasyonun önemi de aynen bu şekilde. Eğer siz 3 bin satırın olduğu onlarca sayfaya girip tek bir sınıftan türeyen nesneye ulaşmaya çalışıyorsanız vay halinize! Ama bütün kodlar blok blok ayrılsa, isterse bin tane sayfa olsa. Ama ayrı ayrı sayfaları dökümantasyon oluşturmak daha kolay. Çok daha hızlı bulursunuz. Zaten 3 bin satırlı onlarca sayfaları kimse dökümantasyon oluşturmaya çalışmıyor. Nasıl edebilirsin ki zaten? Kodlar hep **DRY** prensiplerinden uzak, hiçbir mimari, design pattern yok her şey karmakarışık bide oturup döküman mı hazırlayacan! mehhh! 
 
-## Reversibility
+### Topic 11 - Reversibility
 
-sayfa 104
+Emil - Auguste Chartier **Nothing is more dangerous than an idea if it’s the only one you have.** Sahip olduğunuz tek fikir buysa, hiçbir şey bir fikirden daha tehlikeli değildir.
+
+Geleceği tahmin etmek imkansızdır ancak gelecek kaçınılmazdır. Bazı şeyler, bak geliyorum der gibi gelirken bazen de bir anda gelir ve ne olduğunu anlayamayız. Bu yüzden elimizden geldiğince, aslında tedbir alarak yaşamalıyız hayatı, değil mi? Aslında bu davranış, bizim mesleğimiz de kod hayatımızda da geçerli bir durum.
+
+Bir proje düşünün ve bu proje X veri tabanı ile çalışma sergileniyor olsun. Başka bir yerde Y veri tabanı ile aşağı yukarı aynı veri kadar ile farklı bir projede gerçekleşiyor olsun. Y veri tabanı daha hızlı sergileniyor olsun. Bu durumda sistemi değiştirmen ve hızlı adapte olabilen bir sistem kurman gerekiyor. İşte bu durumda 10. Konu ile özdeşleşen bir konunun içerisindeyiz.
+
+Kod yapısı bloklar halinde olmalı ve esnek bir yapıya sahip olmalıdır. Esnek yapıdan kasıt hızlı değiştirilebilir, tersine işlenebilir gibi unsurlardır.
+
+### Topic 12 - Tracer Bullets
+
+Sayfa 109
