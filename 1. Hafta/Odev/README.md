@@ -1,309 +1,185 @@
-# Temel Kodlar
+# HW 1 - Notlar
 
-* Detaylı substring kullanımı
-* Unary Minus Operator
-* Optional
-* Tuple
+Ödevlere başlamadan önce, her bir test case durumunu düşünmek zorundayız. Elimden geldiğince düşünmeye çalıştım.
 
-## Emojilerle tanımlama yapmak mümkünmüş :))
+## 1. Soru
 
-```
-let 😛 = "ahaha"
-print(😛)
-```
-
-## Kısaca Tuple örneği
+### Palindrome. Verilen Stringin palindrome olup olmadığını kontrol eden bir fonksiyon yazınız.
 
 ```
-let http404Error = (404, "Not Found")
-let (statusCode, statusMessage) = http404Error
-```
-
-## Optional kullanımı
-
-```
-let possibleNumber = "123"
-let convertedNumber = Int(possibleNumber)
-
-if convertedNumber != nil {
-    print("integer value success")
+func Question1 (_ str: inout String) -> Bool {
+    
+    var interpunctionMarks = [".", "?", "!", ",", ":", ";", "-", "[", "]", "(", ")", "{", "}","\'", "\"", "...", "/", "\\"]
+    
+    // Eğer bir sayı girilecek bu değer - ile başlayacak olursa
+    if str.first == "-" {
+        str.removeFirst()
+    }
+    
+    // Eğer boş bir şey verilecek olursa
+    if str == "" || str == " " {
+        return false
+    }
+    
+    //boşluk ve cümle arasına gelen noktalama işaretlerini kaldırma
+    //let removeSpaces = str.replacingOccurrences(of: " ", with: "")
+    var removeStr = ""
+    removeStr = str.replacingOccurrences(of: " ", with: "")
+    
+    for i in interpunctionMarks {
+        removeStr = removeStr.replacingOccurrences(of: i, with: "")
+    }
+    var lowerCase = removeStr.lowercased()
+    return lowerCase == String(lowerCase.reversed())
 }
 
-if let letNumber = Int(possibleNumber) {
-    //letNumber = 100
-    print("Actual number is \(letNumber)")
+// Sayı da girilebilir
+// removeFirst() fonksiyonunu kullanmak istediğim için inout kullanmam gerekti. Mutate'den dolayı. Bu sebeple & - Ampersand kullanıyorum.
+var Question1Input = "Mer,k?ez: E;m.el'e geleme/z Ekre\\M"
+Question1(&Question1Input) ? print("Palindrom") : print("Palindrom değil")
+```
+
+## 2. Soru
+
+### Verilen bir array içerisindeki her bir elemanın sayısını veren bir fonksiyon yazınız.
+
+```
+// T tipinde Int, Double, String değerler alabilir.
+func Question2<T>(_ arr: inout [T]) -> Dictionary<String, Int> {
+    // key, value Dictionary oluşumu.
+    var dict: [String:Int] = [String:Int]()
+    // Gelen değerleri String'e dönüştürme
+    var strArr = arr.map {
+        String(describing: $0)
+    }
+    
+    // Her bir element tekrar ediliyorsa value'yi 1 artırma yoksa 0 koyma
+    for e in strArr {
+        print(e)
+        dict[e] = (dict[e] ?? 0) + 1
+    }
+    return dict
 }
 
-if var varNumber = Int(possibleNumber) {
-    varNumber = 100
-    print(varNumber)
-}
+var question2v1 = [1,2,2,3,4,5,1,1,2,3,1]
+var question2v2 = ["a", "b", "f", "a", "b", "a"]
+var question2v3 = [1.1, 2.3, 1.1231, 1.1231, 1.1, 1.1, 4.6, 7.8788]
+var deneme = ["a", "b", "a", true, true, "c", 1,2,2,2,2, 3.14] as [Any]
+// inout kullanımı ile yine & konuluyor
+print(Question2(&deneme))
 ```
-Sadece if let diye kafaya kodlamamak lazım if let olduğu zaman değişken değiştirilmiyor. if var kullanımı da var.
+
+## 3. Soru
+
+### "*" Karakterinden piramit oluşturan fonksiyonu yazınız. Parametre olarak kaç katlı olacağı alınsın.
 
 ```
-if let convertedNumber {
-    print("Yeni gelen XCode özelliği ile")
-}
+print("Number of Rows: 5")
 
-guard let guardNumber = Int(possibleNumber) else {
-    throw NSError()
-}
-```
-playgrounda bir fonksiyon olmadığı için throw bekliyor. Normalde düz return bile olur.
-```
-func foo() {
-    guard let number = Int(possibleNumber) else { return }
-}
-```
-guard let bir fonksiyonun içerisinde yazıldığı zaman return ile geçilebiliyor.
-
-## if let ile if guard arasındaki fark
-
-guard let biraz daha ön kesici gibi. initial tarafta engellemek için kullanılıyor. Ancak orta bir yerlerde mesela methodtan çıkılmak istenmiyorsa yani elinde şu varsa bunu yap yoksa bunu yap diyebiliyorsak if let kullanıyoruz.
-
-## Unary Minus Operator
-
-```
-let three = 3
-let minusThree = -three
-let plusThree = -minusThree
-```
- 
-## Range belirleme
-
-```
-let names = ["Anna", "Alex", "Brian", "Jack"]
-
-for name in names[2...] {
-    print(name)
+func Question3(numberOfRows: Int) {
+    if numberOfRows < 0 {
+        print("It cannot be less than 0!")
+    } else {
+        /*for i in 0..<numberOfRows {
+         for _ in 0...i {
+         print("*", terminator: "")
+         }
+         print("\n")
+         }*/
+        
+        for i in 0...numberOfRows {
+            print(String.init(repeating: "*", count: i))
+        }
+    }
 }
 
-for name in names[...2] {
-    print(name)
-}
+Question3(numberOfRows: 5)
 ```
 
-## Insert & Remove
+## Soru 4 
+
+### Yazdığınız piramit fonksiyonun çıktısını ortalı olacak şekilde yazınız.
 
 ```
-var greetingString = "Guten Tag!"                           //"Guten Tag!"
-greetingString[greetingString.startIndex]                   //"G"
-greetingString.insert("0", at: greetingString.endIndex)     //"Guten Tag!0"
-```
-
-# Önemli
-
-## Substring
-
-```
-let greetingTwo = "Hello, World!"                                           //"Hello, World!"
-let index = greetingTwo.firstIndex(of: ",") ?? greetingTwo.endIndex            
-let beginning = greetingTwo[..<index]                                       //"Hello"
-let nextPart = greetingTwo[index...]                                        //", World!"
-let newString = String(beginning)                                           //"Hello"
-```
-
-```
-let range = greetingTwo.startIndex..<greetingTwo.endIndex
-greetingTwo[range]                                                          //"Hello, World!"
-```
-
-```
-let afterIndex = greetingTwo.index(after: greetingTwo.startIndex)                              
-greetingTwo[afterIndex]                                                                            //"e"
-let afterIndexAll = greetingTwo.index(after: greetingTwo.startIndex)..<greetingTwo.endIndex
-greetingTwo[afterIndexAll]                                                                         //"ello, World!"
-```
-
-```
-let beforeIndex = greetingTwo.index(before: greetingTwo.endIndex)   
-greetingTwo[beforeIndex]                                                                            //"!"
-let beforeIndexAll = greetingTwo.startIndex..<greetingTwo.index(before: greetingTwo.endIndex)
-greetingTwo[beforeIndexAll]                                                                         //"Hello, World"
-```
-
-```
-let offsetByIndex = greetingTwo.index(greetingTwo.startIndex, offsetBy: 7)
-greetingTwo[offsetByIndex]                                                                  //"W"
-let startIndex = greetingTwo.index(greetingTwo.startIndex, offsetBy: 4)
-let endIndex = greetingTwo.index(greetingTwo.endIndex, offsetBy: -4)
-let rangeStartAndEnd = startIndex ..< endIndex
-greetingTwo[rangeStartAndEnd]                                                               //"o, Wo"
-```
-
-The limitedBy is useful for making sure that the offset does not cause the index to go out of bounds. It is a bounding index. Since it is possible for the offset to exceed the limit, this method returns an Optional. It returns nil if the index is out of bounds.
-
-```
-if let indexLimited = greetingTwo.index(greetingTwo.startIndex,
-                                 offsetBy: 7,
-                                 limitedBy: greetingTwo.endIndex) {
-    greetingTwo[indexLimited]                                                               //"W"
-}
-```
-
-```
-let beforeOffsetBy = greetingTwo.index(greetingTwo.startIndex, offsetBy: 8)
-greetingTwo[..<beforeOffsetBy]                                                          //", World!"
-//or
-let beforeORindex = greetingTwo.index(greetingTwo.startIndex, offsetBy: 5)
-let myPrefixIndex = greetingTwo.prefix(upTo: beforeORindex)                             //", World!"
-//or
-let prefixAfter = greetingTwo.prefix(5)                                                 //", World!"
-```
-
-# SomeIssues
-
-* nestedArray
-* Set
-* Dict
-* Value Binding
-* Enum
-
-## Nested Array
-
-```
-let nestedArray: [[Int]] = [[1], [2], [3, 8, 6]]
-nestedArray[2][1]
-```
-
-## Set
-
-```
-//Performing Set Operations
-let oddDigits: Set = [1, 3, 5, 7, 9]
-let evenDigits: Set = [0, 2, 4, 6, 8]
-let singleDigitPrimeNumbers: Set = [2, 3, 5, 7]
-
-oddDigits.union(evenDigits).sorted()
-oddDigits.intersection(evenDigits)
-oddDigits.subtracting(singleDigitPrimeNumbers).sorted()
-oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted()
-```
-
-```
-//Membership
-let houseAnimals: Set = ["dog", "cat"]
-let farmAnimals: Set = ["cow", "chicken", "sheep", "dog", "cat"]
-houseAnimals.isSubset(of: farmAnimals)
-farmAnimals.isSuperset(of: houseAnimals)
-```
-
-## DICT
-
-```
-//DICT
-var airports: [String:String] = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
-airports["LHR"] = "London"
-airports["LHR"] = "London Heathrow"
-
-if let airportName = airports["DUB"] {
-    print("The name of the airport is \(airportName)")
-} else {
-    print("That airport isn't in the airport dictionary")
-}
-```
-
-## Value Binding
-
-```
-//Value Binding
-let point = (2, 0)
-switch point {
-case (let x, 0):
-    print("on the x-axis with an x value of \(x)")
-    fallthrough
-default:
-    print("in the coordinate system")
+func Question4(numberOfRows: Int) {
+    if numberOfRows < 0 {
+        print("It cannot be less than 0!")
+        
+    } else {
+        for i in 0...numberOfRows {
+            print(String.init(repeating: " ", count: numberOfRows-i) +
+                  String.init(repeating: "*", count: 2*i+1))
+        }
+    }
 }
 
-//fallthrough, switch-case ile birlikte kullanılır. Bu terim ile, bu case çalışacak ama çalışmamış gibi sen devam et diyoruz.
+Question4(numberOfRows: 5)
 ```
 
-# Önemli
+## Soru 5 - 1 
 
-## Enum
+### If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
 
 ```
-//ENUM
-enum CompassPoint {
-    case north
-    case south
-    case east
-    case west
+func Question5A(num: Int) -> String {
+    var sum = 0
+    for i in 1..<num {
+        if i % 3 == 0 || i % 5 == 0 {
+            sum += i
+        }
+    }
+    
+    return String(describing: sum)
+}
+print("Soru 5 - Project Euler 1 => \(String(Question5A(num: 1000)))")
+```
+
+## Soru 5 - 2
+
+###  Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with 1 and 2, the first 10 terms will be: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ... By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
+
+```
+func Question5B() -> Int {
+    var first = 0
+    var second = 1
+    var fibo = Int()
+    var sum = 0
+    
+    while second < 4_000_000 {
+        fibo = first + second
+        first = second
+        second = fibo
+        
+        if second % 2 == 0 {
+            sum += second
+        }
+    }
+    
+    return sum
+}
+print("Soru 5 - Project Euler 2 => \(String(Question5B()))")
+```
+
+## Soru 5 - 3
+
+### The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143 ?
+
+```
+func Question5C(_ num: Int) -> [Int] {
+    if num <= 3 {
+        return [num]
+    }
+    
+    var range = Int(sqrt(Double(num)))
+    for i in 2...range {
+        if num % i == 0 {
+            var res = [i]
+            res.append(contentsOf: Question5C(num / i))
+            return res
+        }
+    }
+    return [num]
 }
 
-var directionToHead: CompassPoint = .west
-print(directionToHead)
-directionToHead = .south
-switch directionToHead {
-case .north:
-    print("North")
-case .south:
-    print("south")
-case .east:
-    print("east")
-case .west:
-    print("west")
-}
-```
-
-```
-enum Planet {
-    case mercury, venus, earth, mars, jupiter, saturn, uranus, neptune
-}
-
-let somePlanet = Planet.earth
-switch somePlanet {
-case .earth:
-    print("Earth")
-default:
-    print("Different")
-}
-```
-
-```
-//Iterating
-enum Beverage: CaseIterable {
-    case coffee, tea, juice
-}
-
-let numberOfChoices = Beverage.allCases.count
-
-//Associated Values
-enum Barcode {
-    case upc(Int, Int, Int, Int)
-    case qr(String)
-}
-```
-
-```
-var productBarcode = Barcode.upc(8, 85909, 51225, 3)
-productBarcode = .qr("ABCDVffhkshdkh")
-
-switch productBarcode {
-case .upc(let numberSystem, let manufacturer, let product, let check):
-    print("\(numberSystem)")
-case .qr(let productCode):
-    print("\(productCode)")
-}
-```
-
-```
-//Raw Values
-enum MilkywayPlanet: Int {
-    case mercury = 1
-    case venus
-    case mars
-}
-
-enum Compass: String {
-    case north, south
-}
-
-let raw = MilkywayPlanet.venus.rawValue
-let rawForCompass = Compass.north.rawValue
-
-let rawValue = 1
-let mercury = MilkywayPlanet(rawValue: rawValue)
+print("Soru 5 - Project Euler 3 => \(Question5C(600_851_475_143).last!)")
 ```
