@@ -2,7 +2,7 @@
 
 Ödevlere başlamadan önce, her bir test case durumunu düşünmek zorundayız. Elimden geldiğince düşünmeye çalıştım.
 
-## 1. Soru
+## 1. Soru
 
 ### Palindrome. Verilen Stringin palindrome olup olmadığını kontrol eden bir fonksiyon yazınız.
 
