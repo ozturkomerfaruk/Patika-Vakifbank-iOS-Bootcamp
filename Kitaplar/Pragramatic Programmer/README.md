@@ -222,4 +222,45 @@ Kod yapısı bloklar halinde olmalı ve esnek bir yapıya sahip olmalıdır. Esn
 
 ### Topic 12 - Tracer Bullets
 
-Sayfa 109
+Pragmatik programmer olma yolculuğunda bir başka önemli başlık, kodların gözden geçirilme kısmıdır ve kodları yeniden kullanabilir yapmak üzerinedir. Buna kitapta tracer code diyor yazar. Yani iz bırakan kod anlamında. Peki tam manasıyla ne demek bu iz bırakan kod?
+
+Yazılan kod tek kullanımlık değil, tekrar tekrar kullanılabilirdir. Aslında bu konuya Flutter'dan örnek vermek yerinde olacaktır. Flutter'da her şey Widget'lardan oluşuyor doğru. Ancak özelleştirilmiş bir Widget kullanacaksak bunu ayrı bir yerde yazar ve tutardık. Ne zaman kullanmamız gerekiyorsa ona işlevsellik kazandırır ve biryerde hızlıca çağırabilirdik. Özelleştirilmiş Widget'ı tekrar tekrar yazmak yerine hem kodları parçalamaya hem de okunabilirliği artırmaya yönelik bir anlam kazandırmaya çalışırdık. İşte bu işleme bir iz bırakma olayı diyoruz ve gerçekten yerinde bir konu.
+
+Tabi bu sadece basit bir buton örneği diyebiliriz. Tracer kodu daha geniş manada düşünebiliriz. Mesela bir onboarding sayfası diyelim. Onboard sayfası her proje için farklıdır ama özelleştirilebilir tasarlanırsa ve bir kenera konulursa ne zaman istenilip çıkarılmak isteniyorsa çıkarılıp konulabilir.
+
+Bunun çok fazla avantajı var
+
+* Kullanıcı daha performanslı görür projeyi
+* Geliştiriciler daha fazla katkıda bulunmaya çalışır.
+* Test edilen kod sayısı azalmış olur
+* Tracer kod ile, gösterilecek her zaman bir şeyin olur
+* Geliştirmek için daha iyi hissedersin kendini
+
+Birde bu kavramı prototiple karıştırmamak lazım. Prototip adı üstünde prototip 🙂 tek kullanımlık kod demek. Proje çıkmadan denemek demek. Tracer code, pasif durumda kod denilebilir. Yeri geldiğinde en sağlam yerinden aktif edilecek kod demek. Zayıf ama zamanı geldiğinde aslan, kaplan olan kod demek.
+
+### Topic 13 - Prototypes and Post-it Notes
+
+Prototip, her üretici firma için olmazsa olmaz kavramıdır. Prototip sayesinde testler yapılır, sonuçlar değerlendirilir, durumlar karşılaştırılır. Peki yazılımda prototip ne anlamlar kazandırır?
+
+* Mimari yapı
+* Mevcut sistemde yeni işlevsellikler
+* Harici verilerin yapısı ve işlevselliği
+* 3. partiler
+* performanssal sorunlar
+* kullanıcı arayüzü tasarımı
+
+Prototipte peki neleri görmezden gelmeliyiz?
+
+* Dummmy veriler kullanılabilir. Real veri tabanına gerek yok.
+* Bütün işlevselliklere gerek yok. Bir parça olsa kafi
+* Burada amaç hata bulmak. Kusursuz olmaya gerek yok
+* Prototipte amaç testtir. Yorum ve dökman oluştyrmaya çok fazla gerek yok. Ama prototip sonucunda tonlarca belge üretebilirsiniz.
+
+12. konunun sonunda tracer kod ile karşılaştırmıştım. Prototip kodun kullanılma amacı, amacından sapmadan kullanılmalıdır. Prototip kod tek seferlik kullanılan bir koddur. Projede tekrar kullanılma durumu olmamalıdır. Hatalara sebebiyet verebilir, açıklıklara sebebiyet verebilir.
+
+### Topic 14 - Domain Languages
+
+Ludwig Wittgenstein - ***The limits of language are the limits of one’s world.*** Dilin sınırları kişinin dünyasından sınırlıdır.
+
+
+
