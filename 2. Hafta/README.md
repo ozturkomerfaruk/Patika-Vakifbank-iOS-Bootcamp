@@ -229,3 +229,53 @@ print("Name: \(myFood2.name) & Count: \(myFood2.count)")
 let myFood3 = Food(name: "Su", count: "12")
 print("Name: \(myFood3.name) & Count: \(myFood3.count)")
 ```
+
+# Error Handling
+
+enum ile case'leri represent etmek lazım.
+
+```
+enum RocketError: Error {
+    case insufficientFuel
+    case insufficientAstronauts(needed: Int)
+    case unknownError
+}
+```
+
+Errorları handling etme
+
+```
+func igniteRockets(fuel:Int, astronauts: Int) throws {
+    if fuel < 1000 {
+        throw RocketError.insufficientFuel
+    }
+    else if astronauts < 3 {
+        throw RocketError.insufficientAstronauts(needed : 3)
+    }
+   print("3....2...1...Ignition !!!LIFTOFF!!!!")
+}
+
+func rocketErrorFunc(fuel:Int, astronauts: Int) throws {
+    guard fuel > 1000 else {
+        throw RocketError.insufficientFuel
+    }
+    
+    guard astronauts > 3 else {
+        throw RocketError.insufficientAstronauts(needed : 3)
+    }
+    
+    print("3....2...1...Ignition !!!LIFTOFF!!!!")
+}
+```
+
+Errorları çağırma durumu
+
+```
+do {
+    try rocketErrorFunc(fuel: 5000, astronauts: 4)
+} catch RocketError.insufficientFuel {
+    print("The rocket needs more fuel to take of !")
+} catch RocketError.insufficientAstronauts(let needed){
+    print("You need at least \(needed) astronauts ...")
+}
+```
