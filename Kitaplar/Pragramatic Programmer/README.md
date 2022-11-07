@@ -262,5 +262,50 @@ Prototipte peki neleri görmezden gelmeliyiz?
 
 Ludwig Wittgenstein - ***The limits of language are the limits of one’s world.*** Dilin sınırları kişinin dünyasından sınırlıdır.
 
+Müşteriye bir hizmet sunarken bunun açıklamalarını olabildiğince yapmak gerekir.
 
+Rota işlemleri varsa, bunlar detaylı olarak belirtilmeli
+
+yaml dosyasında kullanılan dosyalar belirtilmeli.
+
+Dilin içerisinde eğer yoksa JSON, YAML, CSV gibi dosyalar harici olarak ekleyin ve orada projenizi niteleyin. Orayı bir kimlik olarak düşünün. Zamanınızı çalsa da bu size ileri zamanlarda büyük kolaylık sağlayacak. Bu dosyalara Flutter'dan aşina olmak güzel bir şey benim için. Orada bu dosyalar dilin kendisinde var zaten.
+
+### Topic 15 - Estimating
+
+Pragmatik programmer bir projeye başlamadan önce ekibiyle birlikte projenin tahmin edilebilir türlerini hesaplayarak projeye başlaması gerekmektedir. Bu proje kapsamında projenin ne zaman biteceğini öngörmeli ve ona göre hazırlıklar yapmalıdır.
+
+Projeyi yürütürken bir model oluştur ve o model üzerinden planlar yaparak tahminler yürütmek daha mantıklıdır. 
+
+Burada parametreleri doğru vermek tanımlamada önemlidir. Bu adımda tahmin yeteneğini artırmak mümkünleşiyor.
+
+Tahminleri kaydetmek ve notlar almak, bundan sonraki tahminler için önemli bir kaynak olmaktadır.
+
+Bir ekip içerisinde çalışırken, hangi ekip üyesinin neler yaşadığını normal günlük hayatta bilmeyiz. Hangi ekip üyesinin hangi işi daha hızlı ve daha efektif yapacağını kestirmek gerekmektedir.
+
+Bu konu gerçekten hafife alınacak bir konu değildir. Burada görev veren kişinin biraz oturup, bir kahve yudumlayarak dikkatli bir şekilde düşünmelidir. Bu durumu en iyi gözlemlediğim ortam, daha önce çalıştığım bir şirkette yaşadığım bir polemikti. Bir görev verilmişti ve ben orada daha önce hiçbir işlem yapmamıştım. O teknolojide bir kod bile yazmamıştım. Talep geldi, acil yapman lazım denildi ve hiçbir şey yapamamıştım. Tüm gün bilgisayar ekranına baka kalmıştım. Onun yerine benim görevimi bir başkasına vermek en mantıklı hamle olacaktı ama görevi veren kişi bunu anlamıyordu ve sonuç olarak bir günüm çöp olmuştu.
+
+
+## Chapter 3
+
+Her çalışan bazı alet edavatlarla çalışır. Bu onların gereksinimleridir. Onlar olmadan o işi yapamazlar. Mesela bir cerrahı düşünecek olursak, onun kullandığı tıbbi dikiş malzemeleri, tıbbi teknolojik aletler; onlar için bilimum önemli aletlerdir.
+
+Bir programcı içinde bu tür gereksinimler söz konusudur. Kullandığımız bir bilgisayardan, kod yazdığım editöre (IDE)'ye kadar her şey bizim göz önümüzdedir ve bizi işimizi yaparken sonuna kadar etkileyen faktörleri içerisinde barındırmaktadır. Şimdi konu konu bunları işlemeye başlayalım.
+
+### Topic 16 - The Power of Plain Text
+
+Bir programcının gücü, dizaynda, gününsonunda ortaya çıkan uygulamada, testlerde ve döküman sayfalarında gizlidir.
+
+Yazılan metnin gücü nedir diye sorulduğunda çıkan 3 madde cevap bulunmaktadır. Bunlar:
+
+* Eskimeye karşı sigorta
+* mevcut araçları kullanmaya yönelik
+* kolay test edilebilirlik
+
+Burada mesela dışarıdan birisi projeye dahil olduğunda, o proje kapsamında, projeye çok daha hızlı adapte olunabilirlğini göstermektedir.
+
+Mesela bir algoritma yazacaksınız ve bu algoritma Palindrom kelimeleri, cümleleri vs. test edebiliyor olsun. Bu durumda, eğer mevcut bir algoritma varsa o algoritmayı kullanmak en mantıklısıdır. Tekrar tekrar bir şeyi kullanmak yanlıştır. İşte burada bu metinlerin gücünü göstermektedir. Bu geliştiriciye daha fazla imkan tanımaktadır. Düşünmesi gerektiği yerler farklı pencerelerdir. Daha fazla yaratıcılıkla uğraşabilir, burada vaktini sömüren, ırgat mantığı yoktur.
+
+Bu tarz metinlerin en büyük gücü ise, programcılar arasında ortak bir dilin kullanılıyor olmasıdır.
+
+### Topic 17 - Shell Games
 
