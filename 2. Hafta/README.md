@@ -1,9 +1,5 @@
 # 2. Hafta
 
-```
-
-```
-
 ## Class & Struct & Enum
 
 Class, reference type olarak geçer. Yani aynı sınıftan türeyen iki obje eşitlendiğinde, 2 objenin de değeri birebir aynı olur.
