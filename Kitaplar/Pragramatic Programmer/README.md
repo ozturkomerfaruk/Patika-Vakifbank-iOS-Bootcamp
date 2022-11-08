@@ -309,3 +309,56 @@ Bu tarz metinlerin en büyük gücü ise, programcılar arasında ortak bir dili
 
 ### Topic 17 - Shell Games
 
+Bir futbolcu, sahaya çıkarken sahada performanslı bir oyun sergilemedir. Bu doğru ancak sahaya çıkarken kendini mutlu eden bir hal ile çıkarsa bunu daha iyi yapabilir. Çok uzaklarda aramaya gerek yok, mutluluğu 🤓 Mesela giydiği kramponun rengi, deseni onu iyi hissettirmesine neden olabilir.
+
+Hatta CSGO da iyi bir maç oynamak için, güzel bir bıçak olsa elimizde mesela Butterfly gibi (şimdi fiyatlar uçtu gitti ama olsun örnek bu) oynarken daha bir şevkle oynatıyor insanı. Oysaki bu bıçağın hiçbir etkisi yok oyun oynamada.
+
+İşte programcılar için bu durum söz konusu. Burada kitabın bahsettiği asıl nokta şu: GUI bir kullanıcı için çok faydalı bir şey. Ancak bir geliştirici için insanı körelten bir şey. Biraz elimizi kirletmeli ve kodlarla yönetim yapmalıyız, diyor.
+
+Terminal ekranı da pek sıkıcı be! İşte onu biraz güzelleştirelim diyor.
+
+* Renk temaları ile, keyfine göre ayarlamalar yapabilirsin.
+* Prompt ekranında, yani o kod yazılan siyah ekran var ya, özelleştirmeler yapmak, gereksiz şeyleri açmadan kod yazabilmek
+* Kodların kısaltmalarını oluşturmak. Basit tags. Örneğin:
+
+``` alias apt-up='sudo apt-get update && sudo apt-get upgrade'```
+
+### Topic 18 - Power Editing
+
+Bir şeyi sürekli tekrarlayıp tecrübe kazanan bir insan, o şeyi çok kısa sürede bitirebilir. Bizim de pragmatic programmer olma amaçlarımızdan birisi, bu akıcılığı kazandırıp bazı şeyleri tekrarlayarak rahata ermemiz. Bunun için birden fazla editor kullanmamız da ya da kullanmamamızda bir sıkıntı yok sadece neyin nasıl olduğunu bilelim yeter.
+
+Mesela örnek verelim. XCode da option tuşuna basarak imleci birden fazla noktada çalıştırabilirsiniz. Bunun inanılmaz büyük bir artısı vardır. Ya da yine XCode da control ve I tuşuna basarsanız Code Formatting yapar. Bunun da etkisi inanılmazdır. Bu tip kolaylıkları keşfederek daha hızlı kod yazabilirsiniz.
+
+### Topic 19 - Version Control
+
+George Santayana - ***Progress, far from consisting in change, depends on retentiveness. Those who cannot remember the past are condemned to repeat it.*** İlerleme, değişimden çok uzak, kalıcılığa bağlıdır. Geçmişi hatırlayamayanlar onu tekrarlamaya mahkumdur.
+
+VCS yani **Version Control System** bir yazılımcı için en önemli araçlardan biridir. Olmazsa olmazımızdır. Hangi yazalım alanı olursa olsun kullanması gereken bir araçtır. Bir zorunluluktur. Kullanılmama gibi ihtimali bile yoktur. Bu kadar önemli bir şey tam olarak nedir? Mesela Git kavramı. Git kavramını herkes duymuştur. İşte Versiyon kontrol sistemimiz mesela budur. Bunun gibi CVS, SVN gibi onlarca var. Ancak en meşhur olan kavram Git dir.
+
+Git üzerinden gidersek eğer, giti yönetebileceğiniz siteler bulunmaktadır. Github, Bitbucket, Gitlab gibi.
+
+Peki ne işe yarar bu? En büyük avantajı yazdığınız kodlar bir yerde saklanmaktadır. Mesela bir projeye geliştirmeye başladınız. Projenizi sürekli pcde tutmanıza gerek yok at Git'e at orda dursun. Arkadaşlarınızla beraber proje mi geliştiriyorsunuz? Github kullanmak **ZORUNLU** Yoksa ne yapacaksınız? Whatsapp da birbirinize tek tek zip halinde projeyi mi atacaksınız? onun yerine 2 satır kodla Git'e atıp çekmek dururken. Hatta Git tool'ları sayesinde 1 tuşla her şeyi yapabiliyorsunuz. Mesela Sourcetree gibi ya da Github kendi tool'u bulunmakta, o da güzel.
+
+Bu konuyu uzun uzadıya yazmak mümkün ancak ben blog sayfamda bahsetmiştim. Onun linki için [tıklayınız.] (https://ozturkomerfaruk.com/git-komutlari-ve-kullanimi-her-sey/)
+
+### Topic 20 - Debugging
+
+Debug etmek deyimi, gerçekten yazılımcıların günlük hayatta kullandığı belki en sık deyimdir. Sürekli çıkan hataları çözme konusunda belki de en gerçekçi yöntemdir. Ayrıca benim için IDE'yi IDE yapan Debug ederken verilen ayrıntıların güzelliğidir. Her IDE maalesef aynı şekilde sonuçları vermiyor.
+
+Şimdi adım adım Debug etmek nasıl yapılıyor, bir örnek üzerinden gideceğiz.
+
+1. Android Stuido üzerinde Flutter'da bir proje geliştiriyoruz. API'dan veri çekeceğiz ve ekrana bastıracağız. Ancak veriler gelmiyor, sorun ne olabilir diyoruz?
+2. Ekrana bastırdığımız UI tool'una debug point'i koyuyoruz. O tool'a ulaşan controller'a koyuyoruz. Controller'a giden API fetch ettiğimiz url'ye koyuyoruz.
+3. Sırayla Debugları çalıştıracağız. İlk başta UIButton'un çalıştığını görüyoruz ancak veri gelmiyor. Controller'a da veri gelmiyor. Öyleyse API'da ya bir sıkıntı var ya da verileri doğru çekemiyoruz diyoruz.
+4. API da gelen url'yi kontrol ederken bakıyoruz. Status 200 mü dönmüş. Hayırsa sorun ya url yi yanlış yazdık ya o tarafta bir sıkıntı var. Bu 200 vs. nedir diye soracak olursanız. [Şuraya](https://ozturkomerfaruk.com/http-durum-kodlari-nelerdir/) tıklayabilirsiniz.
+5. Sonra adım adım çözüm yapmaya başlıyoruz.
+
+Ayrıca API'da gelen statuyu kontrol ederken gelen verinin neler getirdiğini de detaylıca görebilirsiniz. Çok büyük bir projede çalışıyorsanız, gelen verinin illa bir yerlere bastırarak görmek zorunda değilsiniz. Mesela Debug ettiniz ve kocaman bir JSON dosyası çıktı. Bunun modelini oluşturacaksınız. Tek tek oluşturmaya ne gerek var. Debug da JSON dosyasını kopyala, al örneğin JSON to Dart yaz internete. İnternette çıkan Model oluşturma sitelerinden birini gir dönüştür kopyala projeye yapıştır düzenlemelerini yap.
+
+Debug da her detayı aslında görmek mümkün. Tabi dilden dile, framework'ten framework'e, editörden editöre çok şey değişse de Debug etmek her alan için söz konusu. Bu alanda yazılan yazılar, çıkan notlar vs. hep söz olup uçup gidiyor. Çalıştığınız editörün ve dilin tüm Debug özelliklerini keşfedin
+
+### Topic 21 - Text Manipulation
+
+
+
+
