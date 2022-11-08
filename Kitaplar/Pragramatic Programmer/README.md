@@ -381,6 +381,6 @@ Ancak bunları yazarak yapın. Not defterleriniz oluşsunuz. Yılların günlük
 
 Valla en çok kendimde gördüğüm kısım sanırsam burası. Kendimi sürekli ben iyi bir yazılımcı değilim diye söyleyip duruyorum. Çalışıyorum ama çalışmak yetmiyor. İnsanlar bana nazaran çok iyi algoritmalar yazıyor. İnsanlar çok hızlı ve bu bende biraz yok. Bakalım bu kitap bu kısmı nasıl avantaja dönüştüreceğimi anlatıyor. Heyecanla, büyük bir ilgiyle okumaya başlıyorum.
 
-### Topic 23 - Design by Contract
+### Topic 23 - Design by Contract
 
 Ralph Waldo Emerson - ***Nothing astonishes men so much as common sense and plain dealing.*** Hiçbir şey erkekleri sağduyu ve sade davranış kadar şaşırtamaz.
