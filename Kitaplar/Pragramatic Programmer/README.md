@@ -175,7 +175,7 @@ Bazen her kod parçacığının değiştirilebilir olarak kurmak çok zahmetli o
 
 Ne düşünüyorsunuz tarzında bir soru var. Ben yaklaşık 1.5 sene Flutter ile uğraştım. Flutter belki de bu kısım için en zirve nokta bile olabilir. Her bir nesne bir Widget denilen yapıdan oluşuyor. Eğer bir kez tekrara düşmek isterseniz projenin belki 1000 farklı yerinde uzun uzadıya kod yazarsınız. Bu yüzden belki de parçalamak Flutter için çok önemli bir şeydir. Bu da benim her dilde alışkanlık haline getirdi. Fonksiyonel ve Nesne Tabana yönelik kod yazmak hayatın en önemli gerçekleridir benim için.
 
-## Topic 9 - DRY - The Evils Of Duplication
+## Topic 9 - DRY - The Evils Of Duplication
 
 Yazılımda baş ucu kelimeniz DRY - ***Don't Repeat Yourself*** olmalıdır. Bol bol fonksiyonerliğinizi artırın. Her şeyi demiyorum ama parçalanabilen her bir kod parçacığını fonksiyonerleştirin.
 
