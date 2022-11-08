@@ -2,7 +2,6 @@
 
 Syntax
 
-Normal 
 <img width="586" alt="image" src="https://user-images.githubusercontent.com/56068905/200521153-b36f0d5f-eacc-413e-ab47-76e0edec61e2.png">
 
 <img width="438" alt="image" src="https://user-images.githubusercontent.com/56068905/200521812-97773a76-2a16-4fb0-9ad7-7d54153115bc.png">
