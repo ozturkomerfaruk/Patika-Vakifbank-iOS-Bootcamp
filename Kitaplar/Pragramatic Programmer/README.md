@@ -359,6 +359,28 @@ Debug da her detayı aslında görmek mümkün. Tabi dilden dile, framework'ten 
 
 ### Topic 21 - Text Manipulation
 
+[The Practice of Programming](https://www.amazon.com/Practice-Programming-Addison-Wesley-Professional-Computing/dp/020161586X) adlı kitapta yazar bir projeyi 5 farklı dilde yazmış. Perl ile metinleri değiştirebilir, programlarla etkileşime girebilir, ağlar üzerinden konuşabilir, web sayfalarını yönetebilir, keyfi hassas aritmetik yapabilir ve Snoopy küfürüne benzeyen programlar yazabilirsiniz.
 
+GNU/Linux üzerinde (Buraya macOS kullanıcıları da dahildir) awk & sed terimleri bulunmaktadır. Bunlar Text yönetiminde önemli kriterlerdir. Göz gezdirmenizi tavsiye ederim.
 
+İlgili makaleye gitmek için [tıklayın.](https://linux-yonetimi.veriteknik.net.tr/gelismis-terminal-komutlari/awk-ve-sed)
 
+### Topic 22 - Engineering Daybooks
+
+Günlük not almak, konuşurken insnaların ağzından notlar çıkarmak, onları bir ders niteliği gibi dinlemek, toplantılarda söylenenleri unutmamak için not almak bize şu avantajları sağlar:
+
+* Bellekten daha güvenilirdir. İnsanlar “Geçen hafta güç kaynağı sorunu için aradığınız şirketin adı neydi?” Diye sorabilir. ve bir sayfa geri çevirebilir ve onlara isim ve numara verebilirsiniz.
+* Eldeki görevle hemen alakalı olmayan fikirleri depolamak için bir yer sağlar. Bu şekilde, harika fikrin unutulmayacağını bilerek, yaptığınız şeye konsantre olmaya devam edebilirsiniz.
+* Bir tür lastik ördek görevi görür (burada açıklanmıştır). Bir şey yazmak için durduğunuzda, beyniniz neredeyse sanki sanki vites değiştirebilir.
+biriyle konuşmak—düşünmek için harika bir fırsat. Bir not almaya başlayabilir ve sonra aniden yaptığınız şeyin, notun konusunun tamamen yanlış olduğunu fark edebilirsiniz.
+* Ek bir faydası da var. Arada bir, yıllar önce ne yaptığınıza bakabilirsiniz ve insanları, projeleri, korkunç kıyafetleri ve saç stillerini düşünebilirsiniz.
+
+Ancak bunları yazarak yapın. Not defterleriniz oluşsunuz. Yılların günlükleri olsun.
+
+## Chapter 4 - Pragmatic Paranoia
+
+Valla en çok kendimde gördüğüm kısım sanırsam burası. Kendimi sürekli ben iyi bir yazılımcı değilim diye söyleyip duruyorum. Çalışıyorum ama çalışmak yetmiyor. İnsanlar bana nazaran çok iyi algoritmalar yazıyor. İnsanlar çok hızlı ve bu bende biraz yok. Bakalım bu kitap bu kısmı nasıl avantaja dönüştüreceğimi anlatıyor. Heyecanla, büyük bir ilgiyle okumaya başlıyorum.
+
+### Topic 23 - Design by Contract
+
+Ralph Waldo Emerson - ***Nothing astonishes men so much as common sense and plain dealing.*** Hiçbir şey erkekleri sağduyu ve sade davranış kadar şaşırtamaz.
