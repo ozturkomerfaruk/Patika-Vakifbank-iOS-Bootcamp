@@ -383,4 +383,97 @@ Valla en çok kendimde gördüğüm kısım sanırsam burası. Kendimi sürekli 
 
 ### Topic 23 - Design by Contract
 
-Ralph Waldo Emerson - ***Nothing astonishes men so much as common sense and plain dealing.*** Hiçbir şey erkekleri sağduyu ve sade davranış kadar şaşırtamaz.
+Ralph Waldo Emerson - ***Nothing astonishes men so much as common sense and plain dealing.*** Hiçbir şey insanları sağduyu ve sade davranış kadar şaşırtamaz.
+
+Bir işe başlamadan önce bir sözleşme imzalarız. Bu sözleşme kapsamında ne iş yapacağımız, karşılığında ne alacağımız ya da ek ikramiye, avantaj vs. ne varsa her şey bu sözleşme kapsamında bize belirtilir ve biz onlara tabi olarak yaşamaya başlarız. Aslında bu durum yazılım için de söz konusu. Kod yazmaya başlamadan önce neyin ne olduğunu bilmemiz gerekir. Bunu şu maddelerle açıklamak mümkün:
+
+* Ön koşullar. Yani bir yazılımda koda başlamadan ön koşulları kestirmek ve örneği front ende backend den veriyi doğru bir şekilde getirmek yazılımcının görevidir.
+* Son koşullar. Yine aynı örnekte, yazılımcı veriyi getirirken sonsuz bir döngüye girmesini izin vermez.
+* değişmezler. (invariants)
+
+Arayan tarafından rutinin tüm ön koşulları karşılanırsa, rutin tamamlandığında tüm son koşulların ve değişmezlerin doğru olacağını garanti eder. Taraflardan herhangi biri sözleşmenin şartlarına uymazsa, (daha önce üzerinde anlaşmaya varılmış olan) bir çözüme başvurulur - belki bir istisna ortaya çıkar veya program sonlandırılır. Bu duruma da DBC denilmektedir.
+
+DBC sizi düşünmeye zorlar. Size şu avantajları sağlar:
+
+* DBC herhangi bir kurulum veya ek olay gerektirmez
+* DBC, her durumda başarısızlığın başarısı için parametreleri tanımlar, oysa test bir seferde yalnızca belirli bir durumu hedefleyebilir
+* TDD ve diğer testler, yalnızca derleme döngüsü içinde "test zamanında" gerçekleşir. Ancak DBC ve iddialar sonsuza kadar sürer: tasarım, geliştirme, dağıtım ve bakım sırasında
+* TDD, genel arayüzü kontrol etmek için daha fazla kara kutu stilini test eden kod içindeki dahili değişmezleri kontrol etmeye odaklanmaz
+* DBC, kimsenin onaylamaması durumunda herkesin doğrulaması gereken savunmacı programlamadan daha verimlidir (ve DRY-er).
+
+Kodu yazmadan önce, giriş etki alanı aralığının ne olduğunu, sınır koşullarının neler olduğunu ve rutinin ne vaat ettiğini veya daha da önemlisi neyi sağlamayı vaat etmediğini basitçe sıralamak, daha iyi yazmada büyük bir adımdır.
+
+### Topic 24 - Dead Programs Tell No Lies
+
+Error bir yazılımcının olmazsa olmazıdır. Errorsuz kod yazmak imkansızın imkansızıdır. Her han her şey olabilir. Program patlayabilir neden patladığını anlamazsın ya syntax hatası vardır ya mantıksal bir hatadır ama hatadır sonuçta o. İşte bu konu başlığında biraz daha bu alana değinilecektir
+
+Mesela bazı yazılımcılar try catch içerisinde herbir hatayı önceden kestirip throw ederek hatayı bastırmayı tercih ediyor. Güzel bir örnektir aslında bu çünkü herbir kod un olası hatalarını kestirip eğer hata çıkarsa bastırıp göstermek güzel bir kolaylıktır.
+
+Hatalar çok garip bir dünya ve insana çok şey öğretir. Mesela bu Vakıfbank iOS bootcampin ilk ödevi basit bir palindrom sorusuydu ancak bu soruda ben hep kelimeler çalışıyor mu çalışmıyor mu diye bakıyordum meğersem cümleler de oluyormuş. Buda yetmiyormuş gibi arada geçen virgül, nokta, ünlem gibi noktalama işareletinin de göz ardı edilmesi gerekiyormuş. Okunuşları baştan sona, sondan başa aynı olsa yetiyormuş. Ben bilmiyordum mesela. Palindrom da crash etti ilk başta ama düzenleyince çok mutlu oldum gibi.
+
+### Topic 25 - Assertive Programming 
+
+Oscar Wilde - ***There is a luxury in self-reproach. When we blame ourselves we feel no one else has a right to blame us.*** Kendini suçlamada bir lüks vardır. Kendimizi suçladığımızda, kimsenin bizi suçlamaya hakkı olmadığını hissederiz.
+
+Evet, iddalı olmayacaksın 🥹 Zaten iddalı olacak bir konu da yok sadece konrol etmeyi bilmelisin. Mesela API dan veri çekiyorsun ve oluşturduğun modele atacaksın diyelim. Yani gerek yok o modelindekileri Option bir şekilde kur ve if let, guard let ya da try catch ile sarmala. Belki null gelir belki gelir bilemezsin. Veri tabanına nasıl tutulduğunu bilemezsin. Garantici olmakta fayda var.
+
+Hem Ramiz Karaeski ne demişti: ***Bilemem kardeşş. Portakalı soymadan içinde ne var bilemem.*** 
+
+### Topic 26 - How to Balance Resources
+
+Ursula K.Le Guin - ***To light a candle is to cast a shadow...*** Mum yakmak, gölge düşürmektir...
+
+Kod yazarken, uygulama çıkarırken göz ardı edilen bazı noktalar bulunmaktadır. Memory yönetimi, transactions, threads, network bağlantıları, dosyalar, zamanlamalar gibi. Bunlar pek dikkat edilmez ve sonra uygulama 10 saat sonra açılıyor. Büyük şirketler bunlara öylesine dikkat eder ki, yazılımcıların belki de tek işi budur. Facebook, Youtube gibi devasa şirketlerin çok hızlı bir şekilde açılması başka nasıl mümkün olabilir ki? Youtube hala bana inanılmaz geliyor. Her video 4K belki ama site bir anda açılıyor bir anda video açıp izleyebiliyorum.
+
+Nest Allocations
+
+1. Kaynakları, tahsis ettiğiniz sıranın tersi sırayla tahsis edin. Bu şekilde, bir kaynak diğerine referanslar içeriyorsa kaynakları öksüz bırakmazsınız.
+2. Aynı kaynak grubunu kodunuzda farklı yerlere tahsis ederken, onları her zaman aynı sırayla tahsis edin. Bu, kilitlenme olasılığını azaltacaktır. (Eğer süreç A kaynak1 talep ediyorsa ve kaynak2 talep etmek üzereyse, süreç B kaynak2'yi talep etmiş ve kaynak1'i almaya çalışırken, iki süreç sonsuza kadar bekleyecektir.)
+
+Kitapta bu konu aslında baya detaylı değinilmiş ancak ben Swift için yorumlamak istiyorum. Swift dilinin bazı kolaylıkları var. Kitap da mesela Ruby, C gibi dillerden örnekler veriyor ama günlük hayatta o dillerin pek önemi kalmadığı için (benim için hiç yok) Bellek yönetimi konusunda Swiftin kolaylıklarından bahsetmek daha güzel. Nesne tabanın getirdiği bir kolaylık vardır sınıflar oluşturulurken ve sınıfın işi biterken bazı metotlar çalışır. Bunları deinit gibi. Bunlar son derece önemlidir. Kodlar yazılırken veri yapıları ve algoritmalardan yararlanmak gerekir. BigO için önemli etkenlerdir ve çok ciddi yararlar sağlamaktadır. Aynı zamanda uygulama içerisinde sayfaları yönetirken o sayfaların içeriğinde weak, strong gibi kavramlar vardır. Bu kavramlarda weak mesela ihtiyaç duyulduğunda çağrılabilir der. Ya da nesne tabanın getirdiği lazy anahtar kavramı gibi. Aslında bu başlıkları internetten aratmak ve Swift de bellek yönetimi nasıl olmalıdır diye araştırmak en azından bu konu başlığı için daha iyi olduğunu düşünüyorum. Temel noktaları kitap değinmiş ama örnekler pek iç acıcı gelmedi bana.
+
+### Topic 27 - Don't Outrun your Headlights
+
+Lawrence - ***It’s tough to make predictions, especially about the future.*** - Özellikle gelecekle ilgili tahminlerde bulunmak zor.
+
+Gece, zifiri karanlıkta araba sürüyorsunuz ve farlarınızın gördüğü yer kadar araba sürebiliyorsunuz. Ya farlarınızı kapatırsanız ne olur? Gece 120 km/h hızda giderken farlarınızın olmadığını düşünün...
+
+İşte yazılımda da mesele aynı. Görev alırken, bir sorumluluk alırken, bir işe kalkışırken farların gördüğünden ileride olmak anlamsızdır, yorucudur, bıkkınlık vericidir. Pragmatik programcının tek kuralı vardır. Oda küçük adımlar atmak ancak daima atmak. Aşağıdaki maddeler, pragmatik programcının adım adım ilerleme aşamalarıdır.
+
+* Tahmini tamamlanma tarihi
+* Gelecekteki bakım veya genişletilebilirlik için bir tasarım planlama
+* Kullanıcının gelecekteki ihtiyaçlarını tahmin etme
+* Gelecekteki teknoloji kullanılabilirliğini tahmin etme
+
+## Chapter 5 - Bend, or Break
+
+Hayat değişiyor, yazılım dünyası da değişiyor. Kodlar da değişiyor. Adapte olmak ve sürekli güncel durmak şart
+
+### Topic 28 - Decoupling
+
+John Muir - ***When we try to pick out anything by itself, we find it hitched to everything else in the Universe.*** Herhangi bir şeyi kendi başına seçmeye çalıştığımızda, onun evrendeki diğer her şeye bağlı olduğunu görürüz.
+
+Devasa bir projede çalışıyorsunuz diyelim. Projede bazı adımları değiştirmeniz gerekiyor. Burada 4 durumda değişiklik olabilir.
+
+* İlişkisiz modüller veya kütüphaneler arasındaki tuhaf bağımlılıklar.
+* Sistemdeki ilgisiz modüller arasında yayılan veya sistemin başka bir yerindeki öğeleri kıran bir modülde "basit" değişiklikler.
+* Neyin etkilenebileceğinden emin olmadıkları için kodu değiştirmekten korkan geliştiriciler.
+* Kimsenin bir değişiklikten kimin etkileneceğinden emin olmadığı için herkesin katılması gereken toplantılar.
+
+Mesela satış yapan birisine bir hizmet satacaksınız ve satış yapanın dedikleri her şeyi uygulamaya yansıtıyorsunuz diyelim. Ancak alan kişi dedi ki, ben en fazla yüzde 40 indirim uygularım bir ürüne. Haydaaa! Bunu nereye koyayacağız peki bu bilgiyi, bu bilgi çok esnek bir kavram. İndirim oladabilir, olmayada bilir belki 2 sene sonra yuzde 40 dan fazla indirim uygulayacak bilemezsin. Bu sebeple, notlar alınarak, ve geliştiriciler arasında ortak fikir birlikleri ile haraket edilerek gidilmelidir.
+
+**Demeter yasası**
+
+İnsanlar genellikle eşleşmeyle ilgili olarak Demeter Yasası veya LoD denen bir şeyden bahseder. LoD, 80'lerin sonlarında Ian Holland tarafından yazılmış bir dizi yönergedir
+
+
+Global veriler yazmak unit testleri yazmayı ya güçsüzleştirir ya da etkisiz hale getirir. Ne kadar global veriden uzak tutup, ayrıştırılabilir ve yeniden kod yazmaya müsait kodlar yazarsanız o kadar doğru bir ilkede olmuş olursunuz.
+
+Küresel Veriler Dış Kaynakları İçerir
+Herhangi bir değiştirilebilir harici kaynak, global veridir. Uygulamanız bir veritabanı, veri deposu, dosya sistemi, hizmet API'si vb. kullanıyorsa, küreselleşme tuzağına düşme riski vardır. Yine çözüm, bu kaynakları her zaman kontrol ettiğiniz kodun arkasına sardığınızdan emin olmaktır.
+
+Inherit ederken yani miras alırken, bunu kötü kullanmak o kadar kötü sonuçlara sebebiyet verebiliyor ki, buna bilhassa dikkat edilmesi gerekmektedir. Ayrıca değişen bir kodu tekrar değiştirmeye çalışmak hatalara sebebiyet verebilir. O yüzden iyi kurgulanmalıdır.
+
+### Topic 29 - Juggling the Real World
+
+John F. ***Things don't just happen; they are made to happen.*** Olaylar öylece olmaz; onlar gerçekleşmesi için yapılmıştır.
