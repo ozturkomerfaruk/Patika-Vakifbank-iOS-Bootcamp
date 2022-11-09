@@ -178,8 +178,7 @@ Bunlarında bir espirisi yok. Delegate yapısı bu kadar. Gayet anlaşılır ben
 
 Burada önemli olan bir nokta var. Protocolden bir değişken oluşturuluyor ve bunu Struct'tan türeyen bir nesneden atama yaptırılıyor. Ben gerçekten bu cümleyi ilk başta anlamamıştım. Çok garibime gidiyor hala ama düşününce de çok mantıklı. Protocol ve Struct içerisinde bir tane String bulunuyor ve atama yaptırılabilmesi çok mantıklı.
 
-
-## Collection olarak protocol
+## Collection olarak protocol
 
 <img width="634" alt="image" src="https://user-images.githubusercontent.com/56068905/200868989-cd8312fa-c9c2-440f-8d48-21b5e106f93d.png">
 
