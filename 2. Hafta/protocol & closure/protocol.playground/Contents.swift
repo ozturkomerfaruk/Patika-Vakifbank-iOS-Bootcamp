@@ -344,9 +344,6 @@ let secondGame = MyDiceGame()
 secondGame.delegate = dbWriter
 secondGame.play()
 
-
-
-
 //Adding Protocol Conformance with an Extension
 protocol TextRepresentable {
     var textualDescription: String { get }
@@ -388,7 +385,7 @@ struct Hamster {
 extension Hamster: TextRepresentable {}
 
 let simonTheHamster = Hamster(name: "Simon")
-let somethingTextRepresentable: TextRepresentable = simonTheHamster
+let somethingTextRepresentable: TextRepresentable = simonTheHamster //!!!
 print(somethingTextRepresentable.textualDescription)
 
 
@@ -439,7 +436,7 @@ var birthdayPerson = PersonSimple(name: "Malcolm", age: 22)
 wishHappyBirthday(to: birthdayPerson)
 
 
-
+    
 //------------
 
 //Checking for Protocol Conformance
