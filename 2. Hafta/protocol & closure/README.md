@@ -113,3 +113,148 @@ extension Container {
 }
 ```
 
+
+# Delegate Pattern
+
+Bir view controllerdan diğerine geçerken veri aktarmanın farklı yöntemleri vardır ve rahatlıkla yapılabilir. Ancak geçtiğimiz view controllerdan geri dönerken veri aktarmak istediğimizde veya bir metodu tetiklemek istediğimizde ilk duruma göre biraz daha karışık bir yapı ile uğraşmamız gerekir. Bu yapılardan bir tanesi delegate yapısıdır. Bir senaryo belirleyim:
+
+İki adet View Controller var. Bunlar MainViewController ve CustomPopUViewController
+
+CustomPopUpView, MainView üzerine bir pop up present açıyor ve pop up içindeki butona bastığında pop up dismiss ediliyor. MainView içindeki bir metodu da tetiklemek istiyorum bir yandan.
+
+Ne oldu PopUp bir görünüm açtı dismiss edildi daha sonra. Dismiss edildikten sonra ben Maine ulaşacağım ama nasıl?
+
+## Ek Olarak
+
+Bir objeyi başka bir objeye işi yaptırmasıdır esasında. Bir class da 4 iş yapmaktansa 4 farklı class da ayrı ayrı 4 iş yaptırmak daha mantıklıdır.
+
+Delegation protocol ile başlar
+Ne oldu PopUp bir görünüm açtı dismiss edildi daha sonra. Dismiss edildikten sonra ben Maine ulaşacağım ama nasıl?
+
+<img width="632" alt="image" src="https://user-images.githubusercontent.com/56068905/200863623-c5e35eed-bf0d-4361-a506-66f795b2669a.png">
+
+AnyObject ile sadece classlar bağlansın. Aynı zamanda weak kullanımı için gerekli olmaktadır. Delegate ler hep weak olarak eklendiği için AnyObject lazım oluyor.
+
+<img width="639" alt="image" src="https://user-images.githubusercontent.com/56068905/200863701-a2f56282-f761-4e26-b111-89deda4cd66f.png">
+
+<img width="642" alt="image" src="https://user-images.githubusercontent.com/56068905/200863763-41fa9b19-6ab2-4eee-aa54-e337afbc7779.png">
+
+<img width="639" alt="image" src="https://user-images.githubusercontent.com/56068905/200863806-3580564e-90e5-489b-abc4-5d89ccc395d0.png">
+
+<img width="290" alt="image" src="https://user-images.githubusercontent.com/56068905/200863960-a4e4f397-abc2-4954-806e-04b632ff57e0.png">
+
+1. Evet şimdi olan şey şu. Br tane ptorocol var elimde. En temel olan. Orada en temel şey var. Ne var? Zar var ve oynatma işlemi var. Bu kadar.
+2. İkinci bir protocol daha var. Oyunu başlatma, oyunu sonlandırma ve oyun kısmı var. Neden anyObject ve neden ptorocol bu? Çünkü farklı classların da bu protocole bağlanması için. Aynı zamanda weak olarak delegatelerin çağrıldığı için eklenmesi gerekiyor. Devamında daha iyi anlaşılacak.
+3. İlk protocolden türeyen bir class bu. İlk başta obje olarak bir tane Zar üretildi ve zar değeride. delegate diye weak olarak bir değişken tanımlanıyor. Daha sonra bu delageti protocol olarak atayacağız.
+    Daha sonra oynatma fonksiyonu, protocolden gelen, tanımlanıyor. Burada önemli olan, delegate yapısının kullanım şekli.
+4. Daha sonra bi logger tanımlanıyor. Delegate kısmında olan yerleri ayrı bir şekilde kullanabilmek için. Yani ilk başta dediğimiz olaya geliyor bu durumda. Benim yapmam gereken işleri, bir başkasına yaptırmak gibi düşünebilirsiniz. 
+5. logger ve game classları üretiliyor. logger delegate olarak atanıyor ve oyun başlatılıyor. İşlem başarılı 👍
+6. deneme olarak başka bir delegate için class türetelim ve onu atayalım.
+
+<img width="642" alt="image" src="https://user-images.githubusercontent.com/56068905/200866226-4fdc779f-bb5b-4f2c-a3dc-c4141f059b74.png">
+
+Bahsi geçen Dice Classı
+
+<img width="612" alt="image" src="https://user-images.githubusercontent.com/56068905/200864930-376e86ef-e7cf-4eff-8b98-8073c0a87350.png">
+
+Random Classı ve RandoProtocolü
+
+<img width="464" alt="image" src="https://user-images.githubusercontent.com/56068905/200865056-ecdba7cf-73be-4537-ba0c-b4d027005539.png">
+
+Bunlarında bir espirisi yok. Delegate yapısı bu kadar. Gayet anlaşılır bence.
+
+
+## Protocol'e extension
+
+<img width="635" alt="image" src="https://user-images.githubusercontent.com/56068905/200866544-83075915-95f1-42f6-b16c-17a7f5131018.png">
+
+## Protocolden türeyen objeler için Array extension
+
+<img width="643" alt="image" src="https://user-images.githubusercontent.com/56068905/200866731-767dd22b-1f90-4bc4-87c6-77024a29c817.png">
+
+## Declaring Protocol Adoption with Extension
+
+<img width="629" alt="image" src="https://user-images.githubusercontent.com/56068905/200868350-257aa8a5-6f93-490e-897e-22d62e479342.png">
+
+Burada önemli olan bir nokta var. Protocolden bir değişken oluşturuluyor ve bunu Struct'tan türeyen bir nesneden atama yaptırılıyor. Ben gerçekten bu cümleyi ilk başta anlamamıştım. Çok garibime gidiyor hala ama düşününce de çok mantıklı. Protocol ve Struct içerisinde bir tane String bulunuyor ve atama yaptırılabilmesi çok mantıklı.
+
+
+## Collection olarak protocol
+
+<img width="634" alt="image" src="https://user-images.githubusercontent.com/56068905/200868989-cd8312fa-c9c2-440f-8d48-21b5e106f93d.png">
+
+## Inheritence
+
+<img width="637" alt="image" src="https://user-images.githubusercontent.com/56068905/200869069-6493cf9e-5067-47d8-8e16-518013ffa8fc.png">
+
+## Composition
+
+<img width="643" alt="image" src="https://user-images.githubusercontent.com/56068905/200869174-8742dc9b-2927-425b-81a9-16ca4ba107cc.png">
+
+Burada Struct da iki tane protocol tanımlanmaktadır. Bunun değişkeni de bu şekilde composition yapılmaktadır
+
+Bundan sonrasını direk kod olarak atıyorum.
+
+```
+//------------
+
+//Checking for Protocol Conformance
+protocol HasArea {
+    var area: Double { get }
+}
+
+class Circle: HasArea {
+    let pi = 3.14
+    var radius: Double
+    var area: Double {
+        return pi * radius * radius
+        
+    }
+    init(radius: Double) {
+        self.radius = radius
+    }
+}
+
+class Country: HasArea {
+    var area: Double
+    init(area: Double) {
+        self.area = area
+    }
+}
+
+class Animal {
+    var legs: Int
+    init(legs: Int) {
+        self.legs = legs
+    }
+}
+
+let objects: [AnyObject] = [Circle(radius: 2.0), Country(area: 243000), Animal(legs: 4)]
+
+for object in objects {
+    if let objectWithArea = object as? HasArea {
+        print("Area is \(objectWithArea.area)")
+    } else {
+        print("Something that doesn't have an area")
+    }
+}
+
+//Protocol Extensions
+extension RandomGeneratorProtocol {
+    func randomBool() -> Bool {
+        return randomGenerator() > 0.5
+    }
+}
+
+let generator = Random(first: 0.1, second: 0.8)
+print("Here's a random number: \(generator.randomGenerator())")
+print("And here's a random Boolean: \(generator.randomBool())")
+
+
+//Providing Default Implementations
+extension PrettyTextRepresentable {
+    var prettyTextualDescription: String {
+        return textualDescription
+    }
+}
+```
