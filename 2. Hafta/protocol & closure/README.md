@@ -257,3 +257,184 @@ extension PrettyTextRepresentable {
     }
 }
 ```
+
+# Closure Yapısı
+
+Klasik closure
+
+```
+//The sorted method
+let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+
+func backward(_ s1: String, _ s2: String) -> Bool {
+    return s1 > s2
+}
+
+backward(names[0], names[1])
+
+var reversedNames = names.sorted(by: backward)
+reversedNames = names.sorted(by: {
+    (s1: String, s2: String) -> Bool in
+    return s1 > s2
+})
+
+reversedNames = names.sorted(by: { s1, s2 in
+    return s1 > s2
+})
+
+reversedNames = names.sorted(by: { s1, s2 in s1 > s2 })
+
+reversedNames = names.sorted(by: { $0 > $1 })
+
+reversedNames = names.sorted(by: >)
+```
+Trailing olarak Closure
+```
+//Trailing Closures
+func functionClosure(closure: () -> Void) {
+    print("I'm in function")
+    closure()
+}
+
+functionClosure(closure: {
+    print("I'm in closure")
+})
+
+functionClosure() {
+    print("I'm in trailing closure")
+}
+
+functionClosure {
+    print("I'm in trailing closure")
+}
+
+reversedNames = names.sorted {
+    $0 > $1
+}
+```
+
+Güzel bir MAP örneği
+
+```
+//MARK: MAP
+let digitNames = [
+    0: "Zero",
+    1: "One",
+    2: "Two",
+    3: "Three",
+    4: "Four",
+    5: "Five",
+    6: "Six",
+    7: "Seven",
+    8: "Eight",
+    9: "Nine"
+]
+
+let numbers = [16, 58, 510]
+
+let stringMAP = numbers.map {
+    (num) -> String in
+    var number = num
+    var output = ""
+    repeat {
+        output = digitNames[number % 10]! + output
+        number /= 10
+    } while number > 0
+    return output
+}
+
+print(stringMAP)
+```
+
+Birden fazla closure yapısı örneğini ele alalım detaylı bir şekilde
+
+<img width="280" alt="image" src="https://user-images.githubusercontent.com/56068905/200949101-1f898d28-bf7f-4f57-9b98-d34db4a7b658.png">
+
+Elimde iki tane obje üretebileceğim struct yapısı var.
+
+<img width="630" alt="image" src="https://user-images.githubusercontent.com/56068905/200949169-c4d8b892-b63c-4937-b2ec-bbc01435e14c.png">
+
+Farklı bir dosyada picture indiriyorum. 
+
+<img width="633" alt="image" src="https://user-images.githubusercontent.com/56068905/200949247-cf0b617a-0e0d-4f6a-b2a0-24fa0cc485fd.png">
+
+Server tipinde olan Struct yapısından ve tamamlandıktan sonra picture dosyasına ulaşabileceğim bir fonksiyon var diyelim. Bu void tipinde ancak başarısız olma durumunda bir dönüş tipi daha var. oda void tipinde ama onFailure'a girerse yapılabilecek bazı işlemler olaiblir.
+
+if let ile basit bir şekilde null kontrolü yapıyorum. Null'sa onFailure değilse picture'ı gösterecek örneğin.
+
+<img width="632" alt="image" src="https://user-images.githubusercontent.com/56068905/200949677-cc2de128-2836-4b54-b834-5b84c3bb2f9e.png">
+
+Bu da tam olarak kastedilen, vurucu nokta. Alert ekranları yansıtıldı.
+
+
+## Garip Bir Yapı
+
+Gerçekten garibime gitti. Yazılımda her geçen gün bir şeyleri öğrenmek inanılmaz bir şey. Dönüp dönüp bakıp rehberliğini hissedeceğim kodlar bunlar.
+
+<img width="630" alt="image" src="https://user-images.githubusercontent.com/56068905/200949893-092dac3b-421d-4e07-ba6d-c0e639b9c136.png">
+
+bir fonksiyon tanımladım. Bu bir parametre alıyor. Ancak devamında ise bu fonksiyon çağrıldığında bir variable'e atanıp kullanılması gerekmekte. Bir kere atandıktan sonra o atanan parametre almıyor. ve o Int tipinde döndürüyor. Daha sonra da örneğin 10 - 10 artış yapıyor normal. Ancak böyle bir kullanım şekli muazzam gerçekten. 
+
+Ayrıca **NOT**
+
+<img width="639" alt="image" src="https://user-images.githubusercontent.com/56068905/200950392-9065d87e-6f38-487a-b685-5639698795f2.png">
+
+Closure - Referans tipindedir.
+
+
+
+
+
+
+
+
+# Protocol Not
+
+```
+struct ColorVarient {
+    var id: Int?
+    var value: String?
+}
+
+struct StorageVarient {
+    var id: Int?
+    var value: String?
+}
+
+protocol VarientProtocol {
+    var id: Int { get set }
+    var value: String { get set}
+}
+
+class VarientViewModel: VarientProtocol {
+    var id: Int
+    var value: String
+    
+    init(id: Int, value: String) {
+        self.id = id
+        self.value = value
+    }
+}
+```
+
+```
+var selectedColorVarient: ColorVarient = ColorVarient(id: 1, value: "Kırmızı")
+var selectedStorageVarient: StorageVarient = StorageVarient(id: 1, value: "120GB")
+
+var colorVarient = VarientViewModel(id: selectedColorVarient.id ?? 0, value: selectedColorVarient.value ?? "")
+var storogeVarient = VarientViewModel(id: selectedStorageVarient.id ?? 0, value: selectedStorageVarient.value ?? "")
+
+func prepareCell(with model: VarientProtocol) {
+    print("id: \(model.id)")
+    print("id: \(model.value)")
+}
+
+prepareCell(with: colorVarient)
+prepareCell(with: storogeVarient)
+```
+
+* prepareCEll VarientPrrotocol'ü impelement eden her clas'ı kabul edebilir.
+* burada bağımlılıktan kurtulmuş olduk
+* Backend'den gelen varient'ları VarientViewModel içinde toplayabildim
+* toplandığım variantları prepare Cell içerisinde rahatlıklıkla kullanabildim
+* Eğer protocol yazmasaydım her bir class için prepareCell fonksiyonu yazacaktım
