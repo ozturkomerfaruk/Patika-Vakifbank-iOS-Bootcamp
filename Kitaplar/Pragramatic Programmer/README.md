@@ -477,3 +477,55 @@ Inherit ederken yani miras alırken, bunu kötü kullanmak o kadar kötü sonuç
 ### Topic 29 - Juggling the Real World
 
 John F. ***Things don't just happen; they are made to happen.*** Olaylar öylece olmaz; onlar gerçekleşmesi için yapılmıştır.
+
+Yazılan uygulamaların dinamik olması, insanlarla etkileşimin olması, dünyaya açılmada daha etkin rolde olacaktır. Peki ama nasıl? Uygulamada göz önünde bulunması gereken maddeler
+
+1. Finite State Machines
+2. The Observer Pattern
+3. Publish / Subscribe
+4. Reactive Programming and Streams
+
+**Finite State Machines**
+
+Durum makinesi, temel olarak olayların nasıl ele alınacağının bir özelliğidir. Biri mevcut durum olan bir dizi durumdan oluşur. Her eyalet için, o eyalet için önemli olan olayları listeleriz. Bu olayların her biri için sistemin yeni mevcut durumunu tanımlarız.
+
+**The Observer Pattern**
+
+Mobil teknolojilerde sık sık kullanılan bir patterndir. Bir gözlemci, tipik olarak çağrılacak bir fonksiyona bir referans ileterek, ilgisini gözlemlenebilir olana kaydeder. Daha sonra, olay meydana geldiğinde, gözlemlenebilir, kendi gözlemci listesini yineler ve her birinin kendisinden geçen işlevi çağırır. Olay, o çağrıya parametre olarak verilir.
+
+**Publish / Subscribe**
+
+Bunlar kanallar aracılığıyla birbirine bağlanır. Kanallar ayrı bir kod gövdesinde uygulanır: bazen bir kütüphane, bazen bir süreç ve bazen de dağıtılmış bir altyapı. Tüm bu uygulama ayrıntıları kodunuzdan gizlenmiştir.
+Her kanalın bir adı vardır. Aboneler, bu adlandırılmış kanallardan bir veya daha fazlasına ilgi gösterir ve yayıncılar bunlara etkinlik yazar. Gözlemci modelinden farklı olarak, yayıncı ve abone arasındaki iletişim kodunuzun dışında gerçekleştirilir ve potansiyel olarak eşzamansızdır.
+
+Ancak her güzel şey uygulanmaz. Eğer çok fazla pub/sub varsa bir projede onda kontrol etmek zorlaşır neyin ne olduğunu bilmek güçleşir.
+
+**Reactive Programming and Streams**
+
+çok iyi bildiğimiz diğer tüm veri-ish şeyleri manipüle edebilir, birleştirebilir, filtreleyebilir ve yapabiliriz. Hatta etkinlik akışlarını ve düzenli koleksiyonları birleştirebiliriz. Akışlar eşzamansız olabilir; bu, kodunuz, olaylara geldiklerinde yanıt verme fırsatına sahip olur.
+
+### Topic 30 - Transforming Programming
+
+W. Edwards Deming - ***If you can't describe what you are doing as a process, you don't know what you're doing.*** Ne yaptığınızı bir süreç olarak tanımlayamıyorsanız, ne yaptığınızı bilmiyorsunuz demektir.
+
+Bir programı ilk başta, programın genel olarak işlevleri belirlenmelidir. Daha sonra, programın girdileri, çıktıları belirlenmelidir. Daha sonra belli başlı işlemlerden geçtikten sonra:
+
+bir kod → veri → kod → veri dizisidir.... Veriler, bir sınıf tanımında olduğu gibi artık belirli bir işlev grubuna bağlı olmuyor. Bunun yerine, girdilerini çıktılarına dönüştürürken uygulamamızın gelişen ilerlemesini temsil etmekte özgürdür. Bu, eşleşmeyi büyük ölçüde azaltabileceğimiz anlamına gelir: bir işlev, parametrelerinin başka bir işlevin çıktısıyla eşleştiği her yerde kullanılabilir (ve yeniden kullanılabilir).
+
+Evet, hala bir dereceye kadar bağlantı var, ancak deneyimlerimize göre OO tarzı komuta ve kontrolden daha yönetilebilir. Ayrıca, tür denetimi olan bir dil kullanıyorsanız, uyumsuz iki şeyi bağlamaya çalıştığınızda derleme zamanı uyarıları alırsınız.
+
+Ancak bu durumda Error'lar çıkması muhtemel olduğu için Error handling de yapmak gerekiyor.
+
+Bu konu eğer detaylı bir şekilde incelenip, uygulanmaya başlarsa kod çok daha temiz, çok daha anlaşılı olacaktır.
+
+### Topic 31 - Inheriance Tax
+
+Joe Armstrong - ***You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.*** Muz istedin ama elinde muzu ve tüm ormanı tutan bir goril vardı.
+
+Adından da anlaşılacağı üzere kalıtım, atadan oğula bırakılandır. Nesneye yönelik programlamada ifade edersek: kalıtım, bir sınıftan(üst sınıf/super class) başka bir sınıfa miras bırakılandır. Java programlamada ise bir oğulun yalnızca bir ata sınıfı olabilir.
+
+Aynı şekilde inheritance gibi Delegation da bulunmaktadır. Bir sınıfın yapması gereken bir işi başka bir sınıfa devretmesi gibi. Delegation Pattern denilmektedir hatta. Daha sonrasında Mixins, Traits, Categories ve Protocol Extensions gibi kavramlarda bulunmaktadır. Bunların da bazıları Swift dilinde kullanılmaktadır.
+
+### Topic 32 - Configuration
+
+Benjamin Franklin - ***Let all your things have their places; let each part of your business have its time.*** Her şeyin yerini alsın; işinizin her bir parçasının kendi zamanı olmasına izin verin.
