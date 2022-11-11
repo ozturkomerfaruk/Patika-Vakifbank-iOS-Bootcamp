@@ -78,7 +78,6 @@ let stringMAP = numbers.map {
 }
 
 print(stringMAP)
-16 % 10
 
 //MARK: Multi Closure
 struct Picture {}
@@ -118,6 +117,7 @@ func makeIncrementer(forIncrement amount: Int) -> () -> Int {
     return incrementer
 }
 //İlginç :D
+
 let incrementByTen = makeIncrementer(forIncrement: 10)
 incrementByTen()
 incrementByTen()
