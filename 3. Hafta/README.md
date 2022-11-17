@@ -14,7 +14,7 @@
 
 ## Nav Controller - Segue
 
-## User Default
+## User Default - Keychain
 
 **AppDelegate** dosyasında third party bir kütüphane ekleneceği zaman buraya eklenmektedir. didFinishLauncingWithOptions metounda ekleniliyor.
 
@@ -232,6 +232,8 @@ Tabi bunların storyboard ID'leri vermeyi unutma
 
 # User Default
 
+<img width="176" alt="image" src="https://user-images.githubusercontent.com/56068905/202485555-44267ce2-180b-4b4e-a0c9-9d59e9bb4907.png">
+
 Okurken
 
 ```
@@ -265,3 +267,22 @@ paketi yükledikten sonra
 
 Daha kolay, daha güvenilir 😊🥸
 
+# API
+
+[WizardWorldAPI'da Spells Get metodunu kullanacağım](https://wizard-world-api.herokuapp.com/swagger/index.html)
+
+## Client Class
+
+<img width="568" alt="image" src="https://user-images.githubusercontent.com/56068905/202536248-ecbc0822-bd75-4ad8-bd42-a441c42d4194.png">
+
+<img width="810" alt="image" src="https://user-images.githubusercontent.com/56068905/202536567-a9f24253-e85a-4b55-931c-33902183e4ac.png">
+
+<img width="778" alt="image" src="https://user-images.githubusercontent.com/56068905/202536908-127c8c3c-0567-4e5c-b0cb-79bbb5f2d505.png">
+
+## Base Reponse
+
+<img width="403" alt="image" src="https://user-images.githubusercontent.com/56068905/202536973-2184056e-632b-493d-9fce-c71373def7aa.png">
+
+## Spell Model
+
+<img width="325" alt="image" src="https://user-images.githubusercontent.com/56068905/202537165-46d91bd9-fd04-45b2-9766-09910270e422.png">
