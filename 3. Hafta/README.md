@@ -33,6 +33,12 @@ myView.addGestureRecognizer(gesture)
 
 Birden fazla buton olduğu zaman tag ile haberleşme sağlanabilir
 
+# StackView
+
+Çok sık kullanılan yapılardan biridir. Form ekranları için birebir.
+
+
+
 ```
 @IBAction func myButton(_ sender: UIButton) {
     if sender.tag == 1 {
@@ -187,5 +193,9 @@ extension BasicTableViewController: UISearchResultsUpdating {
 }
 ```
 Tabi bunları yazmadan önce, TableView'da kullanılan bir dizimiz var. Daha sonra bir tane de boş oluşturup, boş diziye bunu atadıktan sonra, yukarıda ki fonksiyonda kullanıyoruz.
+
+<img width="300" src="https://user-images.githubusercontent.com/56068905/202452900-f66d6ea4-302d-4974-8e7d-cc59f76924a4.png">
+
+Ayrı kod olarak sunulacak bir detay yok burada. Burada dizilenler bir Stack içerisinde bulunuyorlar. Biri isHidden olursa yerin başkası geçiyor. Tipik login / signup sayfaları için birebir gibi duruyor.
 
 
