@@ -10,9 +10,9 @@
 
 ## Nav Controller - Search Bar
 
+## Stack View
 
-
-
+## Nav Controller - Segue
 
 **AppDelegate** dosyasında third party bir kütüphane ekleneceği zaman buraya eklenmektedir. didFinishLauncingWithOptions metounda ekleniliyor.
 
@@ -192,10 +192,39 @@ extension BasicTableViewController: UISearchResultsUpdating {
     }
 }
 ```
+# Stack View
+
 Tabi bunları yazmadan önce, TableView'da kullanılan bir dizimiz var. Daha sonra bir tane de boş oluşturup, boş diziye bunu atadıktan sonra, yukarıda ki fonksiyonda kullanıyoruz.
 
 <img width="300" src="https://user-images.githubusercontent.com/56068905/202452900-f66d6ea4-302d-4974-8e7d-cc59f76924a4.png">
 
 Ayrı kod olarak sunulacak bir detay yok burada. Burada dizilenler bir Stack içerisinde bulunuyorlar. Biri isHidden olursa yerin başkası geçiyor. Tipik login / signup sayfaları için birebir gibi duruyor.
+
+# Nav Controller - Segue
+
+<img width="588" alt="image" src="https://user-images.githubusercontent.com/56068905/202471186-6ac306a4-d2d7-4239-923c-7e7471bb9434.png">
+
+Böyle bir bağlılık var. eğer ID ile geçiş yapacaksak:
+
+```
+@IBAction func pushPressed(_ sender: Any) {
+    guard let pushWithIdVC = storyboard?.instantiateViewController(withIdentifier: "NextScreenVC") as? NextScreenViewController else { return }
+    pushWithIdVC.pushedData = "Ömer"
+    self.navigationController?.pushViewController(pushWithIdVC, animated: true)
+}
+```
+
+Segue ile geçiş yaparken
+
+```
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "segueVC" {
+        guard let vc = segue.destination as? SegueViewController else { return }
+        vc.segueStr = "Ömer Faruk"
+    }
+}
+```
+
+Tabi bunların storyboard ID'leri vermeyi unutma
 
 
