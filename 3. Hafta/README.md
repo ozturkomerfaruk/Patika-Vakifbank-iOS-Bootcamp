@@ -1,5 +1,19 @@
 # 3. Hafta
 
+## Basic Components
+
+## Table
+
+## Custom Cell Table
+
+## Collection View
+
+## Nav Controller - Search Bar
+
+
+
+
+
 **AppDelegate** dosyasında third party bir kütüphane ekleneceği zaman buraya eklenmektedir. didFinishLauncingWithOptions metounda ekleniliyor.
 
 **SceneDelegate** Appdelegate gibi çalışıyor. Ancak mesela tablette aynı uygulama iki kez açılıyor aynı anda. Sağda ya da solda ne gözükmesi lazım sorusunun cevabı burada gideriliyor.
@@ -58,7 +72,7 @@ Ancak bazen mülakatlarda, bir ViewController açılırken ilk nereler çalış�
 LoadView aslında şu demektir: Eğer view’ı storyboard kullanarak oluşturduysanız bu metodu kullanmanıza gerek yok. Ancak view’ı kod yazarak oluşturduysanız viewDidLoad() yerine bu metodu kullanabilirsiniz.
 
 
-## Table
+# Table
 
 <img width="300" src="https://user-images.githubusercontent.com/56068905/202368910-2210b0c5-ec5d-4f3e-87ba-1bd02cddcbcf.png">
 
@@ -93,7 +107,7 @@ extension BasicTableViewController: UITableViewDataSource {
 
 Not: Sadece table olan sayfalarda TableViewController kullanmak yanlış oluyor. Bazı kısıtlamalar var bundan dolayı kabul etmiyor. CustomCell mesela yapamıyorsun, gibi.
 
-## CustomCell oluşturalım
+<h1 id="CustomCell">CustomCell oluşturalım</h1>
 
 <img width="300" src="https://user-images.githubusercontent.com/56068905/202373614-5dd6a0c0-2b85-4de3-ba45-d40b950ed405.png">
 
@@ -117,4 +131,61 @@ cell.nameLabel.text = items[indexPath.row].name
 cell.countLabel.text = String(items[indexPath.row].count)
 return cell
 ```
+
+# Collection View
+
+<img width="300" src="https://user-images.githubusercontent.com/56068905/202381134-af574475-5321-40e3-b3db-ccd69739fcae.png">
+
+Tableview ile bire bir mantığı var. Hiçbir fark yok, custom cell oluşturmadan:
+
+yine delegate, datasource 
+
+```
+func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    items.count
+}
+
+func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as! CollectionViewCell
+    cell.configure(model: items[indexPath.row])
+    return cell
+}
+```
+
+Sadece önemli not: Cell'i Xib ile açmasanda cell'e erişirken private weak olarak oluştur. Table'da deneme içindi
+
+```
+@IBOutlet private weak var name: UILabel!
+@IBOutlet private weak var count: UILabel!
+
+func configure(model: ItemModel) {
+    name.text = model.name
+    count.text = String(model.count)
+}
+```
+
+# Nav Controller ile Search Bar
+
+```
+let search = UISearchController(searchResultsController: nil)
+search.searchResultsUpdater = self
+search.searchBar.placeholder = "Type something"
+navigationItem.searchController = search
+```
+
+```
+extension BasicTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+        print(text)
+        items = itemToShow.filter({ $0.name.lowercased() == text.lowercased() })
+        if text == "" {
+            items = itemToShow
+        }
+        basicTable.reloadData()
+    }
+}
+```
+Tabi bunları yazmadan önce, TableView'da kullanılan bir dizimiz var. Daha sonra bir tane de boş oluşturup, boş diziye bunu atadıktan sonra, yukarıda ki fonksiyonda kullanıyoruz.
+
 
