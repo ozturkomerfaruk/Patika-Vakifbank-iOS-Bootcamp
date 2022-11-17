@@ -14,6 +14,8 @@
 
 ## Nav Controller - Segue
 
+## User Default
+
 **AppDelegate** dosyasında third party bir kütüphane ekleneceği zaman buraya eklenmektedir. didFinishLauncingWithOptions metounda ekleniliyor.
 
 **SceneDelegate** Appdelegate gibi çalışıyor. Ancak mesela tablette aynı uygulama iki kez açılıyor aynı anda. Sağda ya da solda ne gözükmesi lazım sorusunun cevabı burada gideriliyor.
@@ -227,4 +229,39 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
 Tabi bunların storyboard ID'leri vermeyi unutma
 
+
+# User Default
+
+Okurken
+
+```
+let userDefaultString = UserDefaults.standard.value(forKey: "UserDefaultValue")
+        
+userDefaultValue.text = userDefaultString as? String
+```
+
+Yazarken
+
+```
+@IBAction func SaveUserDefault(_ sender: Any) {
+    UserDefaults.resetStandardUserDefaults()
+    UserDefaults.standard.set(textField.text!, forKey: "UserDefaultValue")
+    print(textField.text!)
+}
+```
+
+
+# Keychain
+
+[installain için](https://github.com/kishikawakatsumi/KeychainAccess#installation)
+
+paketi yükledikten sonra
+
+```let keychain = Keychain(service: "com.ozturkomerfaruk.thirdWeek")```
+
+```keychainAccessValue.text  = keychain["keychainDeneme"]```
+
+```keychain["keychainDeneme"] = textFieldKeyChain.text```
+
+Daha kolay, daha güvenilir 😊🥸
 
