@@ -39,8 +39,6 @@ myView.addGestureRecognizer(gesture)
 
 Birden fazla buton olduğu zaman tag ile haberleşme sağlanabilir
 
-# StackView
-
 Çok sık kullanılan yapılardan biridir. Form ekranları için birebir.
 
 
