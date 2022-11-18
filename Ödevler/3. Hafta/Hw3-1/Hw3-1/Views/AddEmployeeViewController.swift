@@ -93,22 +93,22 @@ class AddEmployeeViewController: UIViewController {
     @IBAction func SaveEmployee(_ sender: Any) {
         
         if tFieldName.text!.isEmpty || tFieldName.text!.isNumber {
-            alertWarning(title: "Warning", message: "NAMEE")
+            alertWarning(title: "Warning", message: "Name is Missing.")
         }
         
         if tFieldAge.text!.isEmpty || !tFieldAge.text!.isNumber {
-            alertWarning(title: "Warning", message: "AGEE")
+            alertWarning(title: "Warning", message: "Age is Missing.")
         }
         
         if tFieldHomeCity.text!.isEmpty || tFieldHomeCity.text!.isNumber {
-            alertWarning(title: "Warning", message: "HomeCity")
+            alertWarning(title: "Warning", message: "HomeCity is Missing.")
         }
         
         if tFieldHometown.text!.isEmpty || tFieldHometown.text!.isNumber {
-            alertWarning(title: "Warning", message: "Hometown")
+            alertWarning(title: "Warning", message: "Hometown is Missing.")
         }
         if  selectTypeOutlet.titleLabel!.text! == "Select Type" {
-            alertWarning(title: "Warning", message: "Typee")
+            alertWarning(title: "Warning", message: "Type is Missing.")
         }
         
         let str = """

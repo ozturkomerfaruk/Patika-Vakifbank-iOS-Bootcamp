@@ -68,7 +68,7 @@ class AboutCompanyViewController: UIViewController {
         }
         
         var budget = Double(budgetLabel.text!)!
-        var allSalary = Double(allEmployeeSalary.text!)!
+        let allSalary = Double(allEmployeeSalary.text!)!
         budget -= allSalary
         
         if budget < 0 {
@@ -83,6 +83,7 @@ class AboutCompanyViewController: UIViewController {
         if let temp = Double(incomeInfoTextField.text!) {
             appleCompany.addIncomeExtra(add: temp)
             budgetLabel.text = String(describing: appleCompany.currentBudget)
+            incomeInfoTextField.text = ""
         } else {
             alert(title: "You must enter a number", message: "Not a valid number: \(incomeInfoTextField.text!)")
         }
@@ -95,6 +96,7 @@ class AboutCompanyViewController: UIViewController {
             if appleCompany.budget ?? 0.0 < 0 {
                 alert(title: "WARNING!!!", message: "The company is in debt")
             }
+            expenseInfoTextField.text = ""
         } else {
             alert(title: "You must enter a number", message: "Not a valid number: \(expenseInfoTextField.text!)")
         }
