@@ -1,6 +1,6 @@
 # 3. Hafta
 
-## Basic Components
+## [Basic Components](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#basic-components-1)
 
 ## [Table](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#table-1)
 
