@@ -294,3 +294,4 @@ Daha kolay, daha güvenilir 😊🥸
 ## Spell Model
 
 <img width="325" alt="image" src="https://user-images.githubusercontent.com/56068905/202537165-46d91bd9-fd04-45b2-9766-09910270e422.png">
+ 
