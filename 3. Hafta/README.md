@@ -181,6 +181,8 @@ func configure(model: ItemModel) {
 # Nav Controller ile Search Bar
 
 ```
+itemToShow = items
+
 let search = UISearchController(searchResultsController: nil)
 search.searchResultsUpdater = self
 search.searchBar.placeholder = "Type something"
