@@ -2,24 +2,24 @@
 
 ## Basic Components
 
-## Table
+## [Table](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#table-1)
 
-## Custom Cell Table
+## [Custom Cell Table](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#customcell-olu%C5%9Ftural%C4%B1m)
 
-## Collection View
+## [Collection View](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#collection-view-1)
 
-## Nav Controller - Search Bar
+## [Nav Controller - Search Bar](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#nav-controller-ile-search-bar)
 
-## [Stack View](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/3.%20Hafta#stackview)
+## [Stack View](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#stack-view-1)
 
-## Nav Controller - Segue
+## [Nav Controller - Segue](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#nav-controller---segue-1)
 
-## User Default - Keychain
+## [User Default - Keychain](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#user-default)
 
-## API
+## [API](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#api-1)
 
 ----------------------------------------------------------------
-
+ 
 **AppDelegate** dosyasında third party bir kütüphane ekleneceği zaman buraya eklenmektedir. didFinishLauncingWithOptions metounda ekleniliyor.
 
 **SceneDelegate** Appdelegate gibi çalışıyor. Ancak mesela tablette aynı uygulama iki kez açılıyor aynı anda. Sağda ya da solda ne gözükmesi lazım sorusunun cevabı burada gideriliyor.
@@ -38,6 +38,8 @@ myView.addGestureRecognizer(gesture)
 ```
 
 Birden fazla buton olduğu zaman tag ile haberleşme sağlanabilir
+
+# StackView
 
 Çok sık kullanılan yapılardan biridir. Form ekranları için birebir.
 
