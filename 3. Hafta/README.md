@@ -10,7 +10,7 @@
 
 ## Nav Controller - Search Bar
 
-## Stack View
+## [Stack View](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/3.%20Hafta#stackview)
 
 ## Nav Controller - Segue
 
