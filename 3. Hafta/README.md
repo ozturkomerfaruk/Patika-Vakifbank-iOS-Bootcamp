@@ -19,6 +19,8 @@
 ## [API](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#api-1)
 
 ----------------------------------------------------------------
+
+# Basic Components
  
 **AppDelegate** dosyasında third party bir kütüphane ekleneceği zaman buraya eklenmektedir. didFinishLauncingWithOptions metounda ekleniliyor.
 
