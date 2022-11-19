@@ -8,7 +8,7 @@
 
 ## [Collection View](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#collection-view-1)
 
-## [Nav Controller - Search Bar](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#nav-controller-ile-search-bar)
+## [Nav Controller - Search Bar](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#nav-controller-ile-search-bar) 
 
 ## [Stack View](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/3.%20Hafta/README.md#stack-view-1)
 
