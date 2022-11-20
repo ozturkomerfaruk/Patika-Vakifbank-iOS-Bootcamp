@@ -295,3 +295,6 @@ Daha kolay, daha güvenilir 😊🥸
 
 <img width="325" alt="image" src="https://user-images.githubusercontent.com/56068905/202537165-46d91bd9-fd04-45b2-9766-09910270e422.png">
  
+## VC de kullanımı
+
+<img width="419" alt="image" src="https://user-images.githubusercontent.com/56068905/202901315-96442652-2c39-4c25-93a4-b6a6614f756e.png">
