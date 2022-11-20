@@ -13,6 +13,4 @@ protocol CompanyProtocol {
     var budget: Double? { get set }
     var incomeInfo: Double? { get set }
     var expenseInfo: Double? { get set }
-    
-    func balanceOfIncomeAndExpense() -> Double
 }

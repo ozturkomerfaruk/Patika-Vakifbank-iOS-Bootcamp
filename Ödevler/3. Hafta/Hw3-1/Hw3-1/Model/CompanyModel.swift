@@ -35,17 +35,6 @@ class Company: CompanyProtocol {
         Company.employeeList.insert(employee, at: 0)
     }
     
-    //If you want to see what the balance between income and expense is
-    func balanceOfIncomeAndExpense() -> Double {
-        var totalSalary = 0.0
-        for i in Company.employeeList {
-            totalSalary += (i.salary ?? 0)
-        }
-        self.expenseInfo! += totalSalary
-        let balance = self.incomeInfo! - self.expenseInfo!
-        return balance
-    }
-    
     //Even if the budget is a negative value, the employee must be given his due. This is the work of the employee. Therefore, if the budget is negative, I did not want to make a mistake directly. If the business owner wants to control their budget and there is a negative value in the budget, I just wanted to suppress it.
     var currentBudget: Double {
         self.budget! += self.incomeInfo!
@@ -62,17 +51,5 @@ class Company: CompanyProtocol {
     //If you want to add an expense externally
     func addExpenseExtra(add: Double) {
         self.budget! -= add
-    }
-    
-    //Location of Error
-    func companyErrorFunc(budget: Double, incomeInfo: Double, expenseInfo: Double) throws {
-//        if budget + incomeInfo < budget - expenseInfo {
-//            throw CompanyBudgetError.debtSituation
-//        }
-        
-        //1 error handling situation came to my mind.
-        guard budget >= 0 else {
-            throw CompanyBudgetError.debtSituation
-        }
     }
 }
