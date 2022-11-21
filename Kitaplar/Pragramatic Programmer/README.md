@@ -1,5 +1,19 @@
 Bu kitapta ki konu başlıklarını özetler nitelikte, kendimden cümlelerle yazmaya çalıştım. Kitabı okumanızı muhakkak tavsiye ediyorum.
 
+# İçindekiler 
+
+* [Pragmatic Programmer](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/Kitaplar/Pragramatic%20Programmer#pragmatic-programmer)
+* [Chapter 1 - A Pragmatic Philosophy](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/Kitaplar/Pragramatic%20Programmer#chapter-1---a-pragmatic-philosophy)
+* [Chapter 2 - A Pragmatic Approach](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/Kitaplar/Pragramatic%20Programmer#chapter-2---a-pragmatic-approach)
+* [Chapter 3 - The Basic Tools](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/Kitaplar/Pragramatic%20Programmer#chapter-3)
+* [Chapter 4 - Pragmatic Paranoia](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/Kitaplar/Pragramatic%20Programmer#chapter-4---pragmatic-paranoia)
+* [Chapter 5 - Bend, or Break](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Pragramatic%20Programmer/README.md#chapter-5---bend-or-break)
+* [Chapter 6 - Concurrency](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Pragramatic%20Programmer/README.md#chapter-5---bend-or-break)
+* [Chapter 7 - While You Are Coding](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Pragramatic%20Programmer/README.md#chapter-7---while-you-are-coding)
+* [Chapter 8 - Before the Project](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Pragramatic%20Programmer/README.md#chapter-8---before-the-project)
+* [Chapter 9 - Pragmatic Projects](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Pragramatic%20Programmer/README.md#chapter-9---pragmatic-projects)
+* [Son Söz](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Pragramatic%20Programmer/README.md#son-söz)
+
 # Pragmatic Programmer
 
 Pragmatik Bir Programcı Ne Yapar?
@@ -285,7 +299,7 @@ Bir ekip içerisinde çalışırken, hangi ekip üyesinin neler yaşadığını 
 Bu konu gerçekten hafife alınacak bir konu değildir. Burada görev veren kişinin biraz oturup, bir kahve yudumlayarak dikkatli bir şekilde düşünmelidir. Bu durumu en iyi gözlemlediğim ortam, daha önce çalıştığım bir şirkette yaşadığım bir polemikti. Bir görev verilmişti ve ben orada daha önce hiçbir işlem yapmamıştım. O teknolojide bir kod bile yazmamıştım. Talep geldi, acil yapman lazım denildi ve hiçbir şey yapamamıştım. Tüm gün bilgisayar ekranına baka kalmıştım. Onun yerine benim görevimi bir başkasına vermek en mantıklı hamle olacaktı ama görevi veren kişi bunu anlamıyordu ve sonuç olarak bir günüm çöp olmuştu.
 
 
-## Chapter 3
+## Chapter 3 - The Basic Tools
 
 Her çalışan bazı alet edavatlarla çalışır. Bu onların gereksinimleridir. Onlar olmadan o işi yapamazlar. Mesela bir cerrahı düşünecek olursak, onun kullandığı tıbbi dikiş malzemeleri, tıbbi teknolojik aletler; onlar için bilimum önemli aletlerdir.
 
@@ -445,7 +459,7 @@ Gece, zifiri karanlıkta araba sürüyorsunuz ve farlarınızın gördüğü yer
 * Kullanıcının gelecekteki ihtiyaçlarını tahmin etme
 * Gelecekteki teknoloji kullanılabilirliğini tahmin etme
 
-## Chapter 5 - Bend, or Break
+## Chapter 5 - Bend, or Break
 
 Hayat değişiyor, yazılım dünyası da değişiyor. Kodlar da değişiyor. Adapte olmak ve sürekli güncel durmak şart
 
@@ -811,5 +825,3 @@ Ayrıca bir de yaptığınız şeyin arkasında olmak da güzel bir şeydir. Bun
 # Son Söz
 
 Eveeet kitap bitti. Bunun için Bootcamp eğitimine çok şey borçluyum. Güzel bir kitap oldu benim için altın değerinde bir kitap oldu. Yazarak belki çok şey kazanmış oldum. Ben herkesin kendisi okuyum, herkesin kendi özet çıkarmasını çok isterim çünkü herkes yorumlarken kendi pencerelerinden bakarak yorumlarlar. Ancak bence bu kitap ilk iş deneyiminden hemen sonra okunması gereken kitap olabilir üniversite öğrencileri için çünkü okul ile iş hayatı çok farklı kavramlar. Okulda hiçbir zaman büyük bir projede çalışmıyoruz hatta bu sebeple mezun insanların Git kullanımı bilmediği ortada staj bile yapmamış insanın Git bilmemesi çok üzücü bir şey doğrusu. Ancak bu kitap işte o eskikliği ilk yaşayan bir insanın, hele bu insan kendini geliştirmeye karar verdikten sonra, neler yapması gerektiğini çok güzel anlatıyor. Bu açıdan başucu kitaplardan birisi oldu benim için. Teşekkürler Patika, Teşekkürler Vakıfbank ve teşekkürler Kaan Hocam.
- 
- 
