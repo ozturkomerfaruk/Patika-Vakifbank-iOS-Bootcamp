@@ -446,7 +446,7 @@ Nest Allocations
 
 Kitapta bu konu aslında baya detaylı değinilmiş ancak ben Swift için yorumlamak istiyorum. Swift dilinin bazı kolaylıkları var. Kitap da mesela Ruby, C gibi dillerden örnekler veriyor ama günlük hayatta o dillerin pek önemi kalmadığı için (benim için hiç yok) Bellek yönetimi konusunda Swiftin kolaylıklarından bahsetmek daha güzel. Nesne tabanın getirdiği bir kolaylık vardır sınıflar oluşturulurken ve sınıfın işi biterken bazı metotlar çalışır. Bunları deinit gibi. Bunlar son derece önemlidir. Kodlar yazılırken veri yapıları ve algoritmalardan yararlanmak gerekir. BigO için önemli etkenlerdir ve çok ciddi yararlar sağlamaktadır. Aynı zamanda uygulama içerisinde sayfaları yönetirken o sayfaların içeriğinde weak, strong gibi kavramlar vardır. Bu kavramlarda weak mesela ihtiyaç duyulduğunda çağrılabilir der. Ya da nesne tabanın getirdiği lazy anahtar kavramı gibi. Aslında bu başlıkları internetten aratmak ve Swift de bellek yönetimi nasıl olmalıdır diye araştırmak en azından bu konu başlığı için daha iyi olduğunu düşünüyorum. Temel noktaları kitap değinmiş ama örnekler pek iç acıcı gelmedi bana.
 
-### Topic 27 - Don't Outrun your Headlights
+### Topic 27 - Don't Outrun your Headlights
 
 Lawrence - ***It’s tough to make predictions, especially about the future.*** - Özellikle gelecekle ilgili tahminlerde bulunmak zor.
 
@@ -825,3 +825,4 @@ Ayrıca bir de yaptığınız şeyin arkasında olmak da güzel bir şeydir. Bun
 # Son Söz
 
 Eveeet kitap bitti. Bunun için Bootcamp eğitimine çok şey borçluyum. Güzel bir kitap oldu benim için altın değerinde bir kitap oldu. Yazarak belki çok şey kazanmış oldum. Ben herkesin kendisi okuyum, herkesin kendi özet çıkarmasını çok isterim çünkü herkes yorumlarken kendi pencerelerinden bakarak yorumlarlar. Ancak bence bu kitap ilk iş deneyiminden hemen sonra okunması gereken kitap olabilir üniversite öğrencileri için çünkü okul ile iş hayatı çok farklı kavramlar. Okulda hiçbir zaman büyük bir projede çalışmıyoruz hatta bu sebeple mezun insanların Git kullanımı bilmediği ortada staj bile yapmamış insanın Git bilmemesi çok üzücü bir şey doğrusu. Ancak bu kitap işte o eskikliği ilk yaşayan bir insanın, hele bu insan kendini geliştirmeye karar verdikten sonra, neler yapması gerektiğini çok güzel anlatıyor. Bu açıdan başucu kitaplardan birisi oldu benim için. Teşekkürler Patika, Teşekkürler Vakıfbank ve teşekkürler Kaan Hocam.
+ 
