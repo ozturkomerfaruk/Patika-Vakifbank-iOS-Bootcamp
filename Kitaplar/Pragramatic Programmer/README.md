@@ -459,7 +459,8 @@ Gece, zifiri karanlıkta araba sürüyorsunuz ve farlarınızın gördüğü yer
 * Kullanıcının gelecekteki ihtiyaçlarını tahmin etme
 * Gelecekteki teknoloji kullanılabilirliğini tahmin etme
 
-## Chapter 5 - Bend, or Break
+
+## Chapter 5 - Bend, or Break
 
 Hayat değişiyor, yazılım dünyası da değişiyor. Kodlar da değişiyor. Adapte olmak ve sürekli güncel durmak şart
 
@@ -624,7 +625,7 @@ Bunu hissedebilirsiniz ya, bazen aklınıza bir fikir gelir. Bu fikir tuvalette 
 
 Aklınıza hiçbir şey gelmiyor mu, içgüdüsel düşüncede mi gelmiyor. Ne yapacağınızı bilmiyor musunuz, olsun abi. Araştırmaya devam o zaman. Ne kadar tecrübe o kadar köfte.
 
-### Topic 38 - Programming by Coincidence
+### Topic 38 - Programming by Coincidence
 
 Hani bir Meme var. Diyor orda: Bu kod çalışmıyor, neden? Bu kod çalışıyor, neden? Tam olarak bunu anlatan bir başlık. Gerçekten hayatta ne olursanız olun yazılan kodun nasıl çalıştığını anlayın eğer anlamazsanız mimari açıdan patlamalar olabilir ve zamanla o proje çıkılmaz bir hale gelir. Siz siz olun yapmayın bea.
 
@@ -814,7 +815,8 @@ Projeyi proje yapan, projeyi kullanan insanlardır. Evet mimari yapı kullanmak 
 
 Projeler, yazılımlar bakın sadece bir araçtır. İnsanlar ile olan etkileşim birinci esastır.
 
-### Topic 53- Pride and Prejudice
+
+### Topic 53- Pride and Prejudice
 
 Jane Austen - ***You have delighted us long enough.*** Bizi yeterince memnun ettiniz.
 
