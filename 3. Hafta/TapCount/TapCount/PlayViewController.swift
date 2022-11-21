@@ -32,8 +32,13 @@ class PlayViewController: UIViewController {
         
         dict[usernameTextField.text!] = 0
         
-        //MARK: Dict
-        PlayViewController.keychain["keychain"] = dict.first?.key
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = .prettyPrinted
+        let data = try! encoder.encode(dict)
+        let jsonString = String(data: data, encoding: .utf8)!
+        print(jsonString)
+        
+        PlayViewController.keychain["keychain"] = jsonString
         
         alert(title: "Warning", message: "The game will start suddenly", action: { param in
             if param.title! != "CANCEL" {

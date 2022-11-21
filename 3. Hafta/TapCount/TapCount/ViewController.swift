@@ -21,10 +21,16 @@ class ViewController: UIViewController {
     private var score = 0
     private var highScore = 0
     
+    private var keychainDict = PlayViewController.keychain["keychain"]!.data(using: .utf8)!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = PlayViewController.keychain["keychain"]
+        
+        let _title = try? JSONDecoder().decode([String: Int]?.self, from: self.keychainDict)!
+        
+        print(_title?.first!.key ?? "")
+        
         
         myView.isUserInteractionEnabled = true
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(handleTap))
