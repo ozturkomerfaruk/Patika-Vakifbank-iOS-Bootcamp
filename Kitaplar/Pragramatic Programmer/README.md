@@ -597,3 +597,76 @@ Bir proje var aklınızda ve mobil uygulama çıkartacaksınız diyelim. İntern
 ### Topic 37 -  Listen to Your Lizard Brain
 
 Gavin de Becker - ***Only human beings can look directly at something, have all the information they need to make an accurate prediction, perhaps even momentarily make the accurate prediction, and then say that it isn’t so.*** Sadece insan bir şeye doğrudan bakabilir, doğru bir tahminde bulunmak için ihtiyaç duyduğu tüm bilgilere sahip olabilir, hatta belki bir an için doğru tahminde bulunabilir ve sonra öyle olmadığını söyleyebilir.
+
+Yazarın tavsiye ettiği bir kitap daha [The Gift of Fear: And Other Survival Signals That Protect Us from Violence](https://www.amazon.com/Gift-Fear-Survival-Signals-Violence/dp/0440226198)
+
+İnsanlar içgüdüsel olarak bir şeylere tepki verirler. Bazen o tepkilerin anlamsız olduğunu görürler zamanla ama bazen de o tepkiler bir ömür etkisini bırakır. Bu içgüsüdel tepkiler belki ömür boyu insan üzerinde var olacak ama bu işte uzmanlaşmanın yolu daha fazla tecrübe kazanmaktan geçmektedir. Ne kadar çok tecrübe o kadar çok mantıklı içgüdüsel tecrübeler yaşamaya sizi teşvik eder. 
+
+Mesela ben kendimden bahsedecek olursam, benim en büyük hayat deneyimim 2022 yılının Kasım ayı ile şunu söylemek olabilir: Eylül ayında ben ilk defa Macbook bilgisayar satın aldım. Evet, bu durum benim için harika bir karar oldu çünkü ben ilk mobil yazılım deneyimim Flutter idi. Flutter harika bir dil ama maalesef iş sahası çok az kalıyor. Bu durum da yapılabilecek en önemli karar bir native diline girmekti. Bende kararımı Android den ziyade iOS a verdim çünkü gördüm ki, şirketler iOS konusunda yazılıcımlarına çok destek oluyor. Android'e göre çok fazla para veriyor vs. O zaman burada daha mezun olmadan iOS seçmem mantıklı oluyor. Bu başlık aslında bunun gibi düşünülebilir.
+
+Ama aslında bu başlığın en çok anlatmak istediği şey, tecrübeler ile gelebilecek kararlarda yazılım geliştirmenin zamanla daha profosyonelliğe gitmesidir. Bizlerin daha da pragmatic programmer olma yolunda ilerlemesidir. Bu kitap bize rehber ama en önemli rehber tecrübedir. Bu tecrübe kazanılırken tabi her şey bir rehber eşliğinde bize sunulmuyor. Biraz içgüdüsel harek etmek gerekiyor. Burada da aslında en güzel şey, bizim içgüdümüze güvenmek oluyor.
+
+Bunu hissedebilirsiniz ya, bazen aklınıza bir fikir gelir. Bu fikir tuvalette bile olabiliyor. Hemen bilgisayar karşısına geçip algoritma yazmak istiyorsunuz diyelim. Burada işte kendinize güven vardır, içgüdünüze güven vardır, iç sesinize olan teslimiyet vardır. Yanlış mı oldu, tecrübedir o. Hata mı oldu, tecrübedir o. Takmayın kafanıza, rahat olun, relaaaxx. 
+
+Aklınıza hiçbir şey gelmiyor mu, içgüdüsel düşüncede mi gelmiyor. Ne yapacağınızı bilmiyor musunuz, olsun abi. Araştırmaya devam o zaman. Ne kadar tecrübe o kadar köfte.
+
+### Topic 38 - Programming by Coincidence
+
+Hani bir Meme var. Diyor orda: Bu kod çalışmıyor, neden? Bu kod çalışıyor, neden? Tam olarak bunu anlatan bir başlık. Gerçekten hayatta ne olursanız olun yazılan kodun nasıl çalıştığını anlayın eğer anlamazsanız mimari açıdan patlamalar olabilir ve zamanla o proje çıkılmaz bir hale gelir. Siz siz olun yapmayın bea.
+
+* Her zaman adım adım takip edin. Hatta yorum satırı yazın diyoruz ya. Bak bu çok güzel bir şey. Belki projeye sonradan birisi katılır o da bakar bakmaz direk anlar
+* Hani bir söz var ya. Bir çocuğa anlatabilir gibi biliyorsanız bir konuyu, o konuyu öğrenmişsiniz demektir diye.
+* Bir plan oluşturun. Plan çerçevesinde ilerleyin.
+* Varsayımlara bağlı kalmayın. Güvenilir şeylere güvenin.
+* Çabanızı esirgemeyin.
+* Test yapın. Varsayımlarınızı da test edin. Her olasılığı düşünmeye çalışın. Mesela ben Vakıfbank iOS bootcampine katıldım ve ilk haftanın ödevinde palindrom sorusu yapın vardı. Abi alt tarafı palindrom dedim ama bi baktım ki, palindrom baştan ve sondan okunuşları aynı olan demekmiş. Yani bu sadece kelime ya da sayı değil. Bakın cümle de olabilir, boşluklar trim edilmeli. Noktalama işareleteri trim edilmeli. Ben böyle olduğunu bilmiyordum. ada mı, he de geç. ama Ada? da oluyor gibi.
+* Son olarak, kodunuz da ısrarcı olmayın. Sizin kırmızı çizginiz olmasın. Gerek yok! Kodlar değişebilir hocam. Kalıcı kod diye bir şey yok. Windows XP vardı bi aralar. XP bir devrim gibi bir şeydi şimdi ismini bilen yoktur eminim.
+
+### Topic 39 - Algorithm Speed
+
+Bana göre bir mühendislik öğrencisi ile alaylı bir yazılımcı arasında ki en büyük fark bu başlıktır. Veri yapıları dediğimiz bir kavramdır. Bana göre mühendisliğin en temel dersidir. Kavramları hayati değerdir. Bunlar Big-O notasyonlarıdır. Big-O notasyonu nedir? Matematiksel olarak bir algoritmanın çalışma ve zamansal açıdan ifadesel karşılığıdır. Big-O değer ne kadar iyiyse o kadar algoritma hızlı çalışır. Kitap sözel olarak bir şeyler anlatmış bunları tekrar tekrar yazmaya gerek yok özet kısmında. Ancak şunu söyleyebilirim gerçekten, tüm kalbimle. Bir yazılımcıyı yazılımcı yapan husustur. Eğer alaylı bir yazılımcıysanız yani bu işin okulunu okumuyor ama yapmak istiyorsanız bu işi. Alanınızla ilgili videolar izleyin kabul yani Swift dili ile ilgili videolar izleyin ama Data Structure ile ilgili videolar da izleyin. Koda bakış açınız değişecektir eminim. String ve Array kullanımı gözünüzde ayrı bir seviyeye yükselecek. Tree kavramları işin içine girdiğinde çok keyif alacaksınız. Off! Valla yazarken gaza geldim haa 😂 Leetcode soruları çözmeye gidiyorum ben. Ama bu konuya özel oluşturduğum bir git reposu var. Leetcode sorularını çözdüğüm ona bakabilirsiniz.
+
+### Topic 40 - Refactoring
+
+H. F. Lyte - ***Change and decay in all around I see...*** Gördüğüm her yerde değişim ve çürüme...
+
+Yukarı da bir şey ifade etmiştim. Kod dinamiktir ve sürekli değişmesi gerekmektedir diye. Bu normaldir ve kızmaca, darılmaca, gücenmece yok. Eğer aşağıda ki maddeler varsa dikkat edeceksiniz, nokta!!
+
+* Duplication: DRY ilkesinin ihlal edildiğini keşfettiniz.
+* Ortogonal olmayan tasarım: 10. konuda bahsettiğim olay. Dizayn pattern kavramı felan.
+* Modası geçmiş olmak: Mesela Objective C'den Swift'e geçildi. Şimdi de UIKit den SwiftUI'a geçiliyor gibi.
+* Kullanım: İnsan tecrübesi ile değişebilecek kavramlar
+* Verim: Performansı artırmak. Mesela hocamız bir şey söyledi ben çok şaşırdım. If else 3 şey için ideal daha fazlası için switch case daha idealmiş. Apple mühendisleri açıklamış. Öhh!!! demiştim.
+
+Ne kadar sık düzenleme o kadar köftee. Bu doğru bir yaklaşım eğer sık yapmazsanız gün gelir tüm projeyi değiştirirsiniz :)))))
+
+Bir kitap var yazarın tavsiye ettiği [Refactoring: Improving the Design of Existing Code](https://www.amazon.com/Refactoring-Improving-Design-Existing-Code/dp/0201485672) İyi güzel değiştirelim kodu da nasıl hocam??
+
+1. Düzenlemek için sadece düzenleme yapın. Aynı anda işlevsellik yapmayın.
+2. İyi testler yapmadan düzenleme yapmayın. 
+3. Küçük adımlar atın büyük yapmayın.
+
+### Topic 41 - Test to Code
+
+Test etmeyi düşünmek, kodumuzdaki bağlılığı azaltmamızı ve esnekliği artırmamızı sağlar. Kodun yazarı olarak değil, müşterisiymişiz gibi ona objektif olarak bakabiliriz. 
+
+<pre> Bir test, kodunuzun ilk kullanıcısıdır </pre>
+
+Bir doktor düşünün hastanın hastalığını anlamak için ona sorular sorar, onu dinler, onun hastalığını tespit etmeye çalışır. Bizde ilk önce test ederken hastalığı tespit etmeliyiz. Kodu anlamalıyız. Buna **TDD** diyorlar. TDD nin açılımı ***Test Driven Development***. Öyleyse nedir bu TDD
+
+* Eklemek istediğiniz küçük bir işlevsellik parçasına karar verin.
+* İşlevsellik uygulandığında bunun geçebileceği bir test yazın.
+* Tüm testleri çalıştırın. Yalnızca geçmeyenin az önce yazdığınız test olduğunu doğrulayın.
+* Testi geçmek için gereken en küçük kod miktarını yazın ve testlerin artık temiz çalıştığını doğrulayın.
+* Kodunuzu yeniden düzenleyin. Daha iyi yapabileceğiniz noktalar varsa değiştirmekten çekinmeyin.
+
+En güzel kavram **Unit Test** bu ismi her zaman zikredeceksiniz.
+
+Yazılım birim testi, bir modülü çalıştıran koddur. Tipik olarak birim testi bir tür yapay ortam oluşturacak ve ardından test edilen modüldeki rutinleri başlatacaktır. Daha sonra döndürülen sonuçları, ya bilinen değerlerle ya da aynı testin önceki çalışmalarından elde edilen sonuçlarla (regresyon testi) karşılaştırarak kontrol edecektir.
+Birim testini sözleşmeye karşı test olarak düşünebiliriz. Belirli bir birimin sözleşmesini yerine getirmesini sağlayan test senaryoları yazmak isteriz. Bu bize iki şey söyler: Kodun sözleşmeye uyup uymadığı ve sözleşmenin düşündüğümüz şeyi ifade edip etmediği. Modülün vaat ettiği işlevselliği çok çeşitli test durumları ve sınır koşulları üzerinden sağladığını test etmek asıl amacımızdır.
+
+Yazdığınız tüm kodlar -siz ve ekibiniz tarafından değilse bile daha sonra nihai kullanıcılar tarafından- test edilecektir. Bu nedenle ürününüzü kapsamlı bir şekilde test etmek önemli bir noktadır. Bu konuda sadece üç seçeneğiniz vardır: En başta test etmek, yolda test etmek veya hiç test etmemek.
+
+En büyük hata, test sonucu değildir. En büyük hata test yapmamaktır. Üniversite sınavına hazırlanan bir genç sadece konu anlatım videoları izleyerek dereceye girmesi çok güçtür. Evet kazanabilir ama bunun sayısı nedir? 😂 10 milyon insan da bir mi ? Öyleyse 10 milyon projeden sadece 1 tanesi test yazılmadan müşterinin karşısına geçsin. **Sonra Test Et, gerçekte Asla Test Etme, anlamına gelir.**
+
+
