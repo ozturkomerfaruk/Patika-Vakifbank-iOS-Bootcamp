@@ -445,7 +445,7 @@ Gece, zifiri karanlıkta araba sürüyorsunuz ve farlarınızın gördüğü yer
 * Kullanıcının gelecekteki ihtiyaçlarını tahmin etme
 * Gelecekteki teknoloji kullanılabilirliğini tahmin etme
 
-## Chapter 5 - Bend, or Break
+## Chapter 5 - Bend, or Break
 
 Hayat değişiyor, yazılım dünyası da değişiyor. Kodlar da değişiyor. Adapte olmak ve sürekli güncel durmak şart
 
@@ -811,4 +811,5 @@ Ayrıca bir de yaptığınız şeyin arkasında olmak da güzel bir şeydir. Bun
 # Son Söz
 
 Eveeet kitap bitti. Bunun için Bootcamp eğitimine çok şey borçluyum. Güzel bir kitap oldu benim için altın değerinde bir kitap oldu. Yazarak belki çok şey kazanmış oldum. Ben herkesin kendisi okuyum, herkesin kendi özet çıkarmasını çok isterim çünkü herkes yorumlarken kendi pencerelerinden bakarak yorumlarlar. Ancak bence bu kitap ilk iş deneyiminden hemen sonra okunması gereken kitap olabilir üniversite öğrencileri için çünkü okul ile iş hayatı çok farklı kavramlar. Okulda hiçbir zaman büyük bir projede çalışmıyoruz hatta bu sebeple mezun insanların Git kullanımı bilmediği ortada staj bile yapmamış insanın Git bilmemesi çok üzücü bir şey doğrusu. Ancak bu kitap işte o eskikliği ilk yaşayan bir insanın, hele bu insan kendini geliştirmeye karar verdikten sonra, neler yapması gerektiğini çok güzel anlatıyor. Bu açıdan başucu kitaplardan birisi oldu benim için. Teşekkürler Patika, Teşekkürler Vakıfbank ve teşekkürler Kaan Hocam.
+ 
  
