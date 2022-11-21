@@ -669,4 +669,82 @@ Yazdığınız tüm kodlar -siz ve ekibiniz tarafından değilse bile daha sonra
 
 En büyük hata, test sonucu değildir. En büyük hata test yapmamaktır. Üniversite sınavına hazırlanan bir genç sadece konu anlatım videoları izleyerek dereceye girmesi çok güçtür. Evet kazanabilir ama bunun sayısı nedir? 😂 10 milyon insan da bir mi ? Öyleyse 10 milyon projeden sadece 1 tanesi test yazılmadan müşterinin karşısına geçsin. **Sonra Test Et, gerçekte Asla Test Etme, anlamına gelir.**
 
+Yazılım testleri, bir devre kartındaki gibi testler değildir. Işık yanıyor mu yanmıyor mu demek değildir. Bu yüzden bazı işlemler sanıldığı kadar kolay olmayabilir. Ancak zorluk, işte insanın kodları biriktirmesinden kaynaklanabilir. Yap abi test yapa yapa git. Önceki yazılımcıya suç atıp durma.
 
+### Topic 42 - Property-Based Testing
+
+Rus atasözü ***Доверяй, но проверяй*** (Tabi rusça okuyamadığımız için. Hemen İngilizcesini yazıyorum.) ***Trust, but verify*** Güven ama doğrula.
+
+Unit testlerden sonra bir de değişken tabanlı test etmek mantıklı bir harekettir. Bu parametre olarak girilen değişkenleri test etmeye yarar. Çok basit olarak bir örnek verim. Bazı dillerde float ve double farklı kavramlardır ve double biraz daha büyük işlemler için kullanılır. Mesela burada bu testi yapmak çok mantıklı bir harekettir çünkü olası her hatayı geleceğe yönelik engelleyebilir.
+
+Ayrıca bu değişken testi API hazırlamada da çok yardımcı olmaktadır. Eğer daha önce API hazırladıysanız ya da veri tabanı oluşturduysanız farketmişsinizdir ki, onlarca kullanılan değişken var. Performans açısından herbirinin önemi var. Hangi değişkenin ne amaçla kullanılacağı inanılmaz büyük önem arz etmektedir. Mesela siz sadece 11 haneli TC tutmak için Int veri tipini tutarsanız (-2.147.483.648 - 2.147.483.647) aralığında işlem yapabilecek bir hane tutarsınız. Farzedelim ki, TC vatandaşlarını tamamını kapsayacak e-devlet projesinde bu görev size verildi. Sizin bu hareketiniz projeyi öyle bir yavaşlatır ki, 80 milyon insandan fazla insan söz konusu bu. 
+
+### Topic 43 - Stay Safe Out There
+
+Robert Frost - ***Good fences make good neighbors.*** İyi çitler iyi komşular sağlar.
+
+Güvenli liman neresidir?
+
+1. Saldırı gelebilecek alanı küçültmek
+2. En az ayrıcalık ilkesi (Minimum miktarda iş yapmak)
+3. Güvenli varsayılanlar. (Mesela şifreyi kaydettirmek için kullanıcıya parolanın küçük büyük olmasını zorunlu tutmak gibi)
+4. Hassas verileri şifrelemek (Günümüzün çağı kripto dünyası aslında. İlk aklıma gelen bu oldu)
+5. Güvenlik güncellemelerini sürdürmek (Güncelleme bilgisayarı yavaşlatmaz, güvenlik açıklarını kapatır hocam)
+
+### Topic 44 - Naming Things
+
+Confucius ***The beginning of wisdom is to call things by their proper name.*** Bilgeliğin başlangıcı, bir şeyleri uygun adlarıyla adlandırmaktır.
+
+Bir proje düşünün, bir mobil uygulama. Uygulamaya içinde onlarca farklı insan tipi olsun. Mesela bir sinema salonu uygulamasında; müşteri, temizlik personeli, sinema görevlisi, yetkili kişi gibi onlarca kişi olsun. Sen bunları User diye tanımlat. Olacak şey mi :) Kim bu user. Ya da String tipinde üç değişken tanımlayacaksın. str1, str2, str3 :)) Ne bu str ler. Bakın bu gülünecek bir şey olabilir şuan ama büyük bir projede çalıştığınızda göreceksiniz ki, önceki yazılımcı bundan yüzlerce yapmış ve işten ayrılmış. Kendisini rahmetle anmaktan başka ne yapılabilir ki :D
+
+## Chapter 8 - Before the Project
+
+Projeden önce yapılması gerekenleri maddeleyeceğiz. Kemerleri hazırlayın ^^
+
+### Topic 45 - The Requirements Pit
+
+Antoine de St. Exupery - ***Perfection is achieved, not when there is nothing left to add
+but when there is nothing left to take away...***Mükemmellik eklenecek bir şey kalmadığında değil, çıkarılacak bir şey kalmadığında elde edilir...
+
+Ne kadar doğru bir alıntı değil mi? Burada mesela bir örnekten gidelim. Bir kitap dağıtıcısı dedi ki 50 TL ve üzerine kargo bedava denildi. Peki buna vergiler dahil mi, kargo ücretleri dahil mi, sipariş sadece baskı kitaplar için mi geçerli yoksa e-kitaplar içinde geçerli mi, ne tür bir nakliye söz konusu ya uluslararası sipariş olduysa, 50 TL limit gelecekte ne sıklıkla değişecek.
+
+Bakın soruların güzelliğine bakın 😂 ne kadar can alıcı. İşte pragmatic programmer projeye başlamadan önce düşünür, sorgular ve hayata geçirir. Bazen müşteriler bu tarz düşüncelere dalmazlar onlara dışarıdan insanlar demiştir ki, bak filenca dev şirketler böyle yapıyor bizde yapalım. Yapalım ki, ismimiz rekabet etsin ama be amcacım bak her siparişte zarar etme ihtimalin var. İşte bu davranış, bu sorgulama düşüncesi aslında projeden de önce etik bir harekettir.
+
+### Topic 46 - Solving Impossible Puzzles
+
+***Gordius, the King of Phrygia, once tied a knot that no one could untie. It was said that whoever solved the riddle of the Gordian Knot would rule all of Asia. So along comes Alexander the Great, who chops the knot to bits with his sword. Just a little different interpretation of the requirements, that’s all.... And he did end up ruling most of Asia*** Frigya Kralı Gordius, bir zamanlar kimsenin çözemeyeceği bir düğüm kurmuştur. Gordian Düğümü bilmecesini çözen kişinin tüm Asya'ya hükmedeceği söylendi. Böylece, kılıcıyla düğümü paramparça eden Büyük İskender gelir. Gereksinimlerin biraz farklı yorumlanması, hepsi bu... Ve sonunda Asya'nın çoğuna hükmetti.
+
+Valla ben burayı okurken, aklıma ilk gelen şey LeetCode'un önemi oldu. Leetcode soruları biraz Puzzle çözmek gibidir. Biraz alışınca aslında orası zevk de vermeye başlar. Algoritma yazmak aslında çok farklı sonuçları da çıkarabileceği için, çözdükten sonra başkalarının problemini incelemek o kadar faydalı oluyor ki, binary türünde implement etmelere kadar gidiyor konu. Garip gurup algoritma mantıkları öğreniyorsunuz. Bu durum neye sonuç çıkartıyor biliyor musunuz? Siz iOS da Swift ile kod yazarken bir gün bir problemle karşılaşıyorsunuz ve diyorsunuz ki, (🤬) ben bunu çözdüm abi. Nasıldı, nasıldı. aha böyleydi, harbi böyleydi. Hobbaaa bu iş bu kadar!!!! Bakın samimiyetle diyorum tepki böyle oluyor. O emojinin anlamını da biliyorsunuz :))
+
+Bu size kutunun dışından çözüm yolları bulmayı gösterir. Tabi siz sadece LeetCode olarak bakmayın baya baya normal Puzzle çözmek insan beynini çok geliştirir. Siz beyninizi geliştirmeye çalışın. Siz düşünmeye çalışın. Düşünce gücü önemlidir şu hayatta. Bir hobi ile bile uğraşmak buna katkı sağlar. Bir müzik notasında ki bir keşif, sizin farkında olmadan algoritma geliştirme hızınızı artırır.
+
+### Topic 47 - Working Together
+
+
+Joseph Costello ***I’ve never met a human being who would want to read 17,000 pages of documentation, and if there was, I’d kill him to get him out of the gene pool.*** “17.000 sayfalık belgeyi okumak isteyecek bir insanla hiç tanışmadım ve olsaydı, onu gen havuzundan çıkarmak için öldürürdüm.”
+
+Ben bilgisayar mühendisliğine adım attığım zaman 1. sınıfta Korona başladı ve yazılım bilgim online zamanda pek gelişmedi. Kendi kendime gelişemedim. Bazı insanlar vardı tek başlarına dünyaları (tabiri caizse) yaratır ama ben tek başıma CSGO dan öte gidemiyordum. Bakın oyun oynadığım için çalışamıyorum değil. Okul da C++ eğitimi var ve ben daha 1. sınıf programlamaya girişi öğrenemeden OOP ve Data Structure eğitimine başlamışım. Benden ne yapmam beklenebilir ki, burada bazı okuldan arkadaşlarım eğer yardım etmeseydi ben bugün burada olamazdım. Hakkı ödenmez bu insanların. Biz ne yaptık?
+
+1. Pair Programming (İki kişinin mesela biri kod yazarken diğeri onu izlemektedir ve olan biteni öğrenmeye çalışır.)
+
+2. Mob Programming (Görev dağılımı ile proje geliştirmek.)
+
+Bu şekilde her anlamda insan gelişiyor. Eğer yapamıyorsan, arkadaşına yazacan abi ben yapamıyorum bana anlat diyecen. Baktın olmuyor, OLACAK ABİ. Salmak yok!!
+
+Burada:
+
+* Ego değil, kod konuşur. Bilginin de zekatı vardır.
+* Çözüm odaklı iseniz, küçük ekiplerle başlamak daha mantıklı tabi.
+* Bak arkadşın kötü kod yazmış olabilir. Arkadaşını eleştirme, kodu eleştir. Çünkü o senin bilgi birikimine sahip değil.
+* Farklı bakış açılarını deneyin. Adam kötü kod yazmış olabilir belki ama bakış açısı çok iyidir belki.
+
+### Topic 48 - The Essence of Agility
+
+Inigo Montoya - ***You keep using that word, I do not think it means what you think it means.*** O cümleyi kullanmaya devam ediyorsun: Senin düşündüğün anlama geldiğini sanmıyorum.
+
+Artık şirketlerin yazılım ilanlarına başvuran yazılımcılarında görmek istediği bir kavramdır. Bu bir çalışma metodudur. Esasları şunlardır:
+
+* Süreçler ve araçlardan ziyade bireyler ve aralarındaki etkileşimlere.
+* Kapsamlı dökümantasyondan ziyade çalışan yazılıma.
+* Sözleşme pazarlıklarından ziyade müşteri ile işbirliğine.
+* Bir plana bağlı kalmaktan ziyade değişime karşılık vermeye.
