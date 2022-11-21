@@ -573,7 +573,7 @@ Aktör: Kendi yerel durumuna sahip bağımsız bir sanal işlemcidir. Aktörler 
 
 Bu bileşen seti, tek bir işlemcide, birden çok çekirdekte veya birden çok ağ bağlantılı makinede eşit derecede iyi çalışabilir.
 
-### Topic 36 - Blackboards
+### Topic 36 - Blackboards
 
 Daniel - ***The writing is on the wall...*** Yazı duvarın üzerinde...
 
