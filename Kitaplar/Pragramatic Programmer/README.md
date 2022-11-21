@@ -18,7 +18,7 @@ Bu kitapta ki konu başlıklarını özetler nitelikte, kendimden cümlelerle ya
 
 Pragmatik Bir Programcı Ne Yapar?
 
-Her yazılımcı kendi stilini bir gün bulacak ve bunlar; hobiler, kıyaflet kadar keskin olacak. Ancak, pragmatik bir programcıysanız şu özelliklere sahip olmalısınız:
+Her yazılımcı kendi stilini bir gün bulacak ve bunlar; hobiler, kıyaflet kadar keskin olacak. Ancak, pragmatik bir programcıysanız şu özelliklere sahip olmalısınız: 
 
 1. Hızlı adapte olabilme
 2. Meraklı
