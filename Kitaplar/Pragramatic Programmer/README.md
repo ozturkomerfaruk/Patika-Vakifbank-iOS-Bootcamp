@@ -748,3 +748,66 @@ Artık şirketlerin yazılım ilanlarına başvuran yazılımcılarında görmek
 * Kapsamlı dökümantasyondan ziyade çalışan yazılıma.
 * Sözleşme pazarlıklarından ziyade müşteri ile işbirliğine.
 * Bir plana bağlı kalmaktan ziyade değişime karşılık vermeye.
+
+Agile, bir ekip organizasyoudur. Türkçe karşılığı çevik demektir ve ekip halinde çevik gibi olmak gerektirir. Ekip içerisinde ki uyumdur. Mesela birilerinin hatasını düzeltmede çevik gibi olmaktır. 
+
+## Chapter 9 - Pragmatic Projects
+
+Projeniz başlarken, bireysel felsefe ve kodlama sorunlarından uzaklaşarak daha büyük, proje boyutlu sorunlar hakkındadır.
+
+### Topic 49 - Pragmatic Teams
+
+
+The Washington Post Magazine - ***At Group L, Stoffel oversees six first-rate programmers, a managerial challenge roughly comparable to herding cats.*** 
+
+3. Konuda kırık pencerelerden bahsetmiştik. Kırık pencerelere ekip içerisinde hiçbir kimsede olmaması gerekmektedir.
+
+Bir ekip içerisinde bir dğeişiklik yapıldıysa bunu tüm ekibin haberdar olmasını sağlayın. Ekip içerisinde iletişim kurmaktan çekinmeyin.
+
+Kendinizi tekrar etmeyin. İletişimde tekrardan kaçının. İletişimde bir sorun üzerine ekiple konuşmak mı istiyorsunuz. Sorunuzu sormak veya durumunuzu paylaşmak için bir ekip toplantısı beklemeniz gerekiyorsa ve bu toplantıya daha birkaç gün varsa, bulunduğunuz yeri sorgulayın. Sorularınızı, ilerlemenizi, sorunlarınızı, öğrendiklerinizi paylaşmanın ve takım arkadaşlarınızın ne yaptığından haberdar olmanın kolay olmadığı anlamına gelir. Buradan çabucak kaçın.
+
+Takımların bireylerden oluştuğunu unutmayın. Her üyeye kendi yolunda parlama yeteneği verin. Onları desteklemek ve projeye değer katmasını sağlamak için onlara yeterli yapıyı verin. Ardından, beşinci konumuz Yeterince İyi Yazılım’daki ressam gibi: Daha fazla boya eklemenin cazibesine karşı koyun.
+
+### Topic 50 - Coconuts Don’t Cut It
+
+Bizim yıllarımız yok bizim şuan projeyi yürütürken ekip içerisinde uyuma ihtiyacımız var. Yıllar içerisinde gelişecek bir süreci bekleyecek zamanımız yok. Vakit dar ve canlıya çıkması gereken bir proje var. Ne yapmamız lazım, ne etmemiz lazım, nasıl yol izlememiz lazım? Öyleyse ekip içerisinde Agile-Scrum metodolojilerine bakmamız gerekiyor. Nedir bunlar?
+
+- Bireyler ve etkileşimi, süreç ve araca tercih etmek. 
+- Çalışan bir yazılımı, detaylı belgelendirmeye tercih etmek.
+- Müşteri ile işbirliğini, sözleşmedeki kesin kurallara tercih etmek. 
+- Değişikliklere uyum sağlayabilmeyi, belirli bir plana tercih etmek. 
+
+### Topic 51 - Pragmatic Starter Kit
+
+Alfred North Whitehead - ***Civilization advances by extending the number of important operations we can perform without thinking.*** Medeniyet, düşünmeden gerçekleştirebileceğimiz önemli operasyonların sayısını artırarak ilerler.
+
+Ayrıca ekip içerisinde Git gibi versiyon kontrol kullanmak ve Test üzerine fikir birliğine varıp testler gerçekleştirmek gerçek manada ekip içerisinde uyumu ve projenin kalitesini ortaya koymaktadır.
+
+Bir proje içerisinde test, versiyon kontrol sistemi ve otomasyon varsa o proje adamdır. Canlıya hazır demektir.
+
+### Topic 52 - Delight Your Users
+
+Guy Kawasaki - ***When you enchant people, your goal is not to make money
+from them or to get them to do what you want, but
+to fill them with great delight.*** İnsanları büyülediğinizde amacınız onlardan para kazanmak ya da istediğinizi yaptırmak değil, onları büyük bir zevkle doldurmaktır.
+
+Projeyi proje yapan, projeyi kullanan insanlardır. Evet mimari yapı kullanmak güzel. Evet Data Structure güzel bir şey. Evet algoritma hızlarını tespit etmek önemli bir şeydir. Ancak gelgelelim kimse kullanmıyorsa bu projeyi ne kadar güzel kod yazıldığının ne önemi var. Önemli olan taraf, aylar yıllar sonra o proje hala insanlarla etkileşim halindeyse proje olmuş abi yaa demektir.
+
+1. Ekipteki herkesin bu beklentiler konusunda tamamen net olduğundan emin olun.
+2. Karar verirken, hangi yolun bu beklentilere daha yakın olduğunu düşünün.
+3. Beklentiler ışığında kullanıcı gereksinimlerini eleştirel olarak analiz edin.
+4.Proje boyunca ilerlerken bu beklentileri düşünmeye devam edin.
+
+Projeler, yazılımlar bakın sadece bir araçtır. İnsanlar ile olan etkileşim birinci esastır.
+
+### Topic 53- Pride and Prejudice
+
+Jane Austen - ***You have delighted us long enough.*** Bizi yeterince memnun ettiniz.
+
+Eğer bir kod yazdıysanız ve bununla gurur duyuyorsanız bırakın bunun reklamıı yapın. Evet biz meslek itibariyle bireysel bir iş yapmıyoruz ve her zaman grup çalışması yapmamız gerekiyor. Bu çok doğru ancak o grup çalışmasında birisi işini yapmıyorsa ve sizin yaptığınız yerleri kendi yapmış gibi oluyorsa bakın bunda bir sıkıntı var demektir. Burada geri atmak yok. Yaptığınız işin arkasında olmayı bilecek kadar gururlu olmak gerekir.
+
+Ayrıca bir de yaptığınız şeyin arkasında olmak da güzel bir şeydir. Bunu ben yaptım bu kod benim imzamı taşıyor demek ayrı bir güzel şeydir. Ne demek istiyorum. Kod hatalarla mı dolu olsun abi ders çıkartırız. Kod güzel mi oldu güzel abi böyle yazmaya devam demek hem sizin şirket içerisinde ki kalitenizi artırır hem de kendinize olan öz güveniniz artar.
+
+# Son Söz
+
+Eveeet kitap bitti. Bunun için Bootcamp eğitimine çok şey borçluyum. Güzel bir kitap oldu benim için altın değerinde bir kitap oldu. Yazarak belki çok şey kazanmış oldum. Ben herkesin kendisi okuyum, herkesin kendi özet çıkarmasını çok isterim çünkü herkes yorumlarken kendi pencerelerinden bakarak yorumlarlar. Ancak bence bu kitap ilk iş deneyiminden hemen sonra okunması gereken kitap olabilir üniversite öğrencileri için çünkü okul ile iş hayatı çok farklı kavramlar. Okulda hiçbir zaman büyük bir projede çalışmıyoruz hatta bu sebeple mezun insanların Git kullanımı bilmediği ortada staj bile yapmamış insanın Git bilmemesi çok üzücü bir şey doğrusu. Ancak bu kitap işte o eskikliği ilk yaşayan bir insanın, hele bu insan kendini geliştirmeye karar verdikten sonra, neler yapması gerektiğini çok güzel anlatıyor. Bu açıdan başucu kitaplardan birisi oldu benim için. Teşekkürler Patika, Teşekkürler Vakıfbank ve teşekkürler Kaan Hocam.
