@@ -529,3 +529,71 @@ Aynı şekilde inheritance gibi Delegation da bulunmaktadır. Bir sınıfın yap
 ### Topic 32 - Configuration
 
 Benjamin Franklin - ***Let all your things have their places; let each part of your business have its time.*** Her şeyin yerini alsın; işinizin her bir parçasının kendi zamanı olmasına izin verin.
+
+Kodlar değiştirilmek zorunda kalabilir bunun için parametrize etmek her şeyi çok önemlidir. Kitapta daha çok bunu yapmak için verileri JSON formatında tutmayı vs. diyor ancak günümüzde zaten mobil uygulama geliştirmede API verileri yüzde 99.99 JSON formatında yazıldığı için, bizim zorunlu alışkanlığımız oluyor. O yüzden sıkıntı yok, devam.
+
+## Chapter 6 - Concurrency
+
+Thread kavramına giriyoruz. Haydi Bismillah
+
+### Topic 33 - Breaking Temporal Coupling
+
+Göz ardı edilmemesi gereken bir olaydır. Projenin geçici harcadığı zamanlar tespit edilmelidir.
+
+En güzel yollardan biri aktivite diagramı oluşturmaktır. Nedir bu diagram? Bir projenin akış şemasıdır. Hangi sayfadan hangi sayfaya gittiğini gösteren, işlevlerini gösteren geniş çaplı bir şeydir.
+
+Bir veritabanını sorgulamak, harici bir hizmete erişmek, kullanıcı girdisini beklemek: tüm bunlar normalde programımızı tamamlanana kadar oyalar. Bu aktivite diagramları sayesinde nerede ne var sorularının cevapları ile CPU'yu yormayı en aza indirgeme hedeflenmektedir.
+
+Peki bunu hızlı ve güvenilir nasıl yapacapız?
+
+### Topic 34 - Shared State Is Incorrect State
+
+En sevdiğiniz lokantada olduğunuzu düşünün. Ana yemeğinizi bitirdiniz ve garsona elmalı turta kaldı mı diye sordunuz. Garson arka tarafa baktı, vitrinde bir parça gördü ve size evet dedi. Siparişinizi verdiniz ve lezzetli turtanızın servis edilmesi için sabırsızlanıyorsunuz.
+
+Bu arada, restoranın diğer tarafında başka bir müşteri, garsona aynı soruyu sordu. O garson da vitrine baktı ve bir parça elmalı turta olduğunu gördü. Müşteri siparişini verdi ve servisini beklemeye başladı. Bu durumda günün sonunda maalesef müşterilerden biri hayal kırıklığına uğrayacaktır.
+
+İlk garson, mevcut pasta sayısını alır ve bunun bir olduğunu görür. Pastayı müşteriye getireceğini söyler. Ama bu noktada ikinci garson başka bir masada ayrıca pasta sayısının bir olduğunu görür ve müşterisine aynı sözü verir. İkisinden biri daha sonra pastanın son parçasını alır ve diğer garson bir tür hata durumuna girer.
+
+Buradaki sorun, iki işlemcinin aynı belleğe yazabilmesi değildir. Sorun şu ki, hiçbir işlemci o belleğe bakışının tutarlı olduğunu garanti edemez. Bir garson display_case.pie_count()’u çalıştırdığında, vitrindeki değeri kendi hafızalarına kopyalar. Vitrindeki değer değişirse, hafızada tuttuğu değerin artık doğruyu göstermediği anlaşılır.
+
+Bunun nedeni, pasta sayısının getirilmesi ve ardından güncellenmesinin atomik bir işlem olmamasıdır: değer ortada değişebilir. Peki bunu nasıl atomikleştiririz?
+Bir semafor, aynı anda yalnızca bir kişinin sahip olabileceği bir şeydir. Bir semafor oluşturabilir ve ardından başka bir kaynağa erişimi kontrol etmek için kullanabilirsiniz. Örneğimizde, pasta durumuna erişimi kontrol etmek için bir semafor oluşturabilir ve pasta durumu içeriğini güncellemek isteyen herkesin bunu ancak o semaforu elinde tutuyorsa yapabileceği kuralını benimseriz.
+
+Lokantanın pasta sorununu fiziksel bir semaforla çözmeye karar verdiğini varsayalım. Pasta kutusuna plastik bir Leprikon yerleştirirler. Herhangi bir garson bir turta satmadan önce, Leprikon’u ellerinde tutuyor olmalıdır. Siparişleri tamamlandıktan sonra bir sonraki siparişe aracılık etmeye hazır olan Leprikon’u turtaların hazinesini koruyan yerine iade edebilirler.
+
+Her iki garsonun da aynı anda kodu çalıştırdığını varsayalım. İkisi de semaforu kilitlemeye çalışır, ancak yalnızca biri başarılı olur. Semaforu alan normal olarak çalışmaya devam eder. Semaforu almayan, semafor hazır olana kadar askıya alınır (garson bekler…). İlk garson siparişi tamamladığında semaforu açar ve ikinci garson çalışmaya devam eder. Artık vitrinde pasta olmadığını görür ve müşteriden özür diler.
+
+Angie - ***Without writers, stories would not be written, Without actors, stories could not be brought to life.*** Yazarlar olmadan hikayeler yazılmaz, Oyuncular olmadan hikayeler hayata geçirilemezdi.
+
+Aktörler ve süreçler, paylaşılan belleğe erişimi senkronize etme yükü olmadan eşzamanlılığı uygulamanın ilginç yollarını sunar. Ancak aktör ne süreç ne?
+
+Bir süreç, genellikle eşzamanlılığı kolaylaştırmak için işletim sistemi tarafından uygulanan daha genel amaçlı bir sanal işlemcidir.
+
+Aktör: Kendi yerel durumuna sahip bağımsız bir sanal işlemcidir. Aktörler eşzamanlı eşzamansız olarak çalışır hiçbir şey paylaşmazlar.
+
+Bu bileşen seti, tek bir işlemcide, birden çok çekirdekte veya birden çok ağ bağlantılı makinede eşit derecede iyi çalışabilir.
+
+### Topic 36 - Blackboards
+
+Daniel - ***The writing is on the wall...*** Yazı duvarın üzerinde...
+
+Dedektifleri düşünün bir odada tartışıyorlar. Bir tane kara tahta var ve başlığı kaza ya da cinayet yazıyor. Dedektifleri kara tahtada şu ifadeleri yazmışlar
+
+- Dedektifler, diğer dedektiflerin bunu sorgulayıp sorgulamadığını önemsemeden sadece tahtayı okuyorlar.
+- Aynı projede çalışan dedektiflerin hepsi aynı alanda uzman olmak zorunda değiller.
+- Dedektiflerin hepsi aynı saatlerde çalışmak zorunda değil.
+- Tahtada her bir halt olabilir. Kısıtlama yok. Ne kadar delil o kadar köfte.
+
+İşte bu durum dedektifleri aktör yapmaktadır. Birbirinden bağımsızlar.
+
+Mimariye aktör ve/veya karatahta ve/veya mikro hizmet yaklaşımı, uygulamalarınızdaki tüm potansiyel eşzamanlılık sorunlarını ortadan kaldırır. Ancak bu faydanın bir bedeli vardır. Eylemlerin çoğu dolaylı olduğu için bu yaklaşımlar hakkında akıl yürütmek daha zordur. Özellikle havuz sizin için kodu ve belgeleri oluşturabiliyorsa, mesaj biçimleri ve/veya API'ler için merkezi bir havuz tutmanın yardımcı olduğunu göreceksiniz. Sistemde ilerledikçe mesajları ve gerçekleri takip edebilmek için iyi araçlara da ihtiyacınız olacak. (Yararlı bir teknik, belirli bir iş işlevi başlatıldığında benzersiz bir izleme kimliği eklemek ve ardından bunu ilgili tüm aktörlere yaymaktır. Daha sonra, günlük dosyalarından ne olduğunu yeniden oluşturabileceksiniz.)
+
+Daha fazla hareketli parça olduğundan, bu tür sistemlerin konuşlandırılması ve yönetilmesi daha zahmetli olabilir. Bir dereceye kadar bu, sistemin daha ayrıntılı olması ve tüm sistem yerine tek tek aktörlerin değiştirilmesiyle güncellenebilmesi gerçeğiyle dengelenir.
+
+## Chapter 7 - While You Are Coding
+
+Bir proje var aklınızda ve mobil uygulama çıkartacaksınız diyelim. İnternette araştırma yapıyorsunuz ve görüyorsunuz ki, kod yazmak gerekiyor. Swift, Kotlin, Flutter, React Native vs. öğrenmek zorundasınız. Ama sonra birde görüyorsunuz ki, ee abi sıfır kod yazarak, sürükle bırak yaparak da uygulama çıkartılabiliyormuş. Bu mobil yazılımcılar salak mı, niye bunla uğraşmıyorlar da vakitlerini mal gibi harcıyorlar diyorsunuz diyelim. Demezsiniz de, diyorsunuz diyelim. İşte bu bölüm bunun cevabını size anlatıyor çünkü sevgili arkadaş bu soruyu sorup işin işine girdiğinde görecek ki, o kadar kolay olmuyormuş bu işler. Kodlar static değerler değilmiş her an değişebilecek dinamik değerlermiş. Kodlar düzenli yazılması gereken şeylermiş. Başıboş yazılmaması gereken şeylermiş. O sıfır kod dediği yerde, bütün kodlar hazır olarak tutulup veriliyor. Üzerinde oynama etme yapılmıyor hiç. Olmaz öyle 🥸
+
+### Topic 37 -  Listen to Your Lizard Brain
+
+Gavin de Becker - ***Only human beings can look directly at something, have all the information they need to make an accurate prediction, perhaps even momentarily make the accurate prediction, and then say that it isn’t so.*** Sadece insan bir şeye doğrudan bakabilir, doğru bir tahminde bulunmak için ihtiyaç duyduğu tüm bilgilere sahip olabilir, hatta belki bir an için doğru tahminde bulunabilir ve sonra öyle olmadığını söyleyebilir.
