@@ -24,7 +24,7 @@ class AddEmployeeViewController: UIViewController {
     @IBOutlet var pressedCollection: [UIButton]!
     
     @IBOutlet weak var segmentControl: UISegmentedControl!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,11 +49,13 @@ class AddEmployeeViewController: UIViewController {
                 btn.isHidden = !btn.isHidden
                 btn.alpha = btn.alpha == 0 ? 1 : 0
                 btn.layoutIfNeeded()
+                self.currentSalaryLabel.text! = "0"
             }
         }
     }
     
     @IBAction func pressedType(_ sender: UIButton) {
+        
         if let btn = sender.titleLabel?.text {
             selectTypeOutlet.setTitle(btn, for: .normal)
             pressedCollection.forEach {
@@ -65,7 +67,7 @@ class AddEmployeeViewController: UIViewController {
             }
             switch btn {
             case "Junior":
-                currentSalaryLabel.text! = String(Double(currentSalaryLabel.text!)! + 5000)
+                currentSalaryLabel.text! = String( Double(currentSalaryLabel.text!)! + 5000)
             case "Mid-Level":
                 currentSalaryLabel.text! = String(Double(currentSalaryLabel.text!)! + 10000)
             case "Senior":
