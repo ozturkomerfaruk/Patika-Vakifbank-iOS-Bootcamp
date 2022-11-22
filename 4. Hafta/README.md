@@ -145,3 +145,79 @@ extension ViewController: textToFirstVCProtocol {
     }
 }
 ```
+
+## WebView Kullanımı
+
+Tekrar tekrar ezber kodların üstünde durmaya gerek yok. [Zamanında 100DaysOfSwift de bakmıştım.](https://github.com/ozturkomerfaruk/100DaysOfSwift/blob/master/26.Day/project4/ViewController.swift)
+
+## TabBar Controller
+
+<img width="434" alt="image" src="https://user-images.githubusercontent.com/56068905/203410155-78a982c5-8539-4709-b8e0-ade0bb062699.png">
+
+Bu şekilde bir ekran tasarımı var. Renkli olan kısımlar PageView, onu tabbarda secondPage tarafına bağladım. PageView'dan sonra NavigationController eklemeyi denedim. Bunların sırasının bi önemi yok. 
+
+## Page View
+
+SecondView'e bağlamıştım. Extension ile yazılan yer, sanırsam her proje için yazılabilen ortak bir ifade. Onunda bi espirisi yok. Before - After olayları. Sayfaların çağrımı da identifier üzerinden yapılıyor. Kolaylık olması için sadece arrayden geliyor.
+
+<pre>
+class SecondViewController: UIPageViewController {
+    
+    private lazy var orderedViewController: [UIViewController] = {
+        [ self.pageViewController(page: "PageOne"),
+          self.pageViewController(page: "PageTwo"),
+          self.pageViewController(page: "PageThree") ]
+    }()
+
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dataSource = self
+        
+        if let vc = orderedViewController.first {
+            setViewControllers([vc], direction: .forward, animated: true)
+        }
+    }
+    
+    private func pageViewController(page: String) -> UIViewController {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(page)ViewController")
+    }
+}
+</pre>
+
+<pre>
+extension SecondViewController: UIPageViewControllerDataSource {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let vcIndex = orderedViewController.firstIndex(of: viewController) else { return nil }
+        
+        let previousIndex = vcIndex - 1
+        
+        guard previousIndex >= 0 else {
+            return nil
+        }
+        
+        guard orderedViewController.count > previousIndex else {
+            return nil
+        }
+        
+        return orderedViewController[previousIndex]
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let vcIndex = orderedViewController.firstIndex(of: viewController) else { return nil }
+        
+        let afterIndex = vcIndex + 1
+        
+        guard afterIndex != orderedViewController.count else {
+            return nil
+        }
+        
+        guard orderedViewController.count > afterIndex else {
+            return nil
+        }
+        
+        return orderedViewController[afterIndex]
+    }
+}
+
+</pre>
