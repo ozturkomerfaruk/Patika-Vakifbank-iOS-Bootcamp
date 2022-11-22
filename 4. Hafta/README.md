@@ -15,9 +15,9 @@
 
 # Playground
 
-[Generic Where]()
-[HighOrder Functions]()
-[ARC]()
+[Generic Where](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/4.%20Hafta/GenericWhere.playground/Contents.swift)
+[HighOrder Functions](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/4.%20Hafta/highOrderFunctions.playground/Contents.swift)
+[ARC](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/4.%20Hafta/MemoryARC.playground/Contents.swift)
 
 
 # XibFile
