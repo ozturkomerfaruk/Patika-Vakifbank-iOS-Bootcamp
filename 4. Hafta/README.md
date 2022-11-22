@@ -6,6 +6,12 @@
 
 ## XibFile oluşturma
 
+## Notification Center vs Delegate Pattern
+
+## WebView Kullanımı
+
+## TabBar & PageView
+
 Öncelikle XibFile oluştururken, File's Owner'a dikkat et. Daha sonra şu şekilde yazılabilir kodları:
 
 ```
@@ -160,7 +166,7 @@ Bu şekilde bir ekran tasarımı var. Renkli olan kısımlar PageView, onu tabba
 
 SecondView'e bağlamıştım. Extension ile yazılan yer, sanırsam her proje için yazılabilen ortak bir ifade. Onunda bi espirisi yok. Before - After olayları. Sayfaların çağrımı da identifier üzerinden yapılıyor. Kolaylık olması için sadece arrayden geliyor.
 
-<pre>
+```
 class SecondViewController: UIPageViewController {
     
     private lazy var orderedViewController: [UIViewController] = {
@@ -183,9 +189,9 @@ class SecondViewController: UIPageViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(page)ViewController")
     }
 }
-</pre>
+```
 
-<pre>
+```
 extension SecondViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let vcIndex = orderedViewController.firstIndex(of: viewController) else { return nil }
@@ -219,5 +225,4 @@ extension SecondViewController: UIPageViewControllerDataSource {
         return orderedViewController[afterIndex]
     }
 }
-
-</pre>
+```
