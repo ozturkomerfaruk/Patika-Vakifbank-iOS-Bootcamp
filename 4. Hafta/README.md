@@ -2,7 +2,7 @@
 
 # İçindekiler
 
-## HighOrder Functions
+## Generic Where & HighOrder Functions & ARC
 
 ## XibFile oluşturma
 
@@ -11,6 +11,16 @@
 ## WebView Kullanımı
 
 ## TabBar & PageView
+
+
+# Playground
+
+[Generic Where]()
+[HighOrder Functions]()
+[ARC]()
+
+
+# XibFile
 
 Öncelikle XibFile oluştururken, File's Owner'a dikkat et. Daha sonra şu şekilde yazılabilir kodları:
 
@@ -56,7 +66,7 @@ extension UIView {
 }
 ```
 
-## Notification Center vs Delegate Pattern
+# Notification Center vs Delegate Pattern
 
 Delegate Pattern birebir ilişki olacağı zamanlarda kullanılması gereken bir yapıdır. Büyük projelerde her yerde notification Center kullanmak pek mantıklı bir hareket değildir.
 
@@ -64,7 +74,7 @@ Delegate Pattern birebir ilişki olacağı zamanlarda kullanılması gereken bir
 
 FirstVC ile yazılan yeri, Notification ile çekeceğim SecondVC'den ve delegate yazan yeri de Delegate Pattern ile yapacağım. Bunları ikinci ekranda notify butonu ile etkinleştireceğim.
 
-### SecondVC
+## SecondVC
 
 **Delegate**
 
@@ -152,17 +162,17 @@ extension ViewController: textToFirstVCProtocol {
 }
 ```
 
-## WebView Kullanımı
+# WebView Kullanımı
 
 Tekrar tekrar ezber kodların üstünde durmaya gerek yok. [Zamanında 100DaysOfSwift de bakmıştım.](https://github.com/ozturkomerfaruk/100DaysOfSwift/blob/master/26.Day/project4/ViewController.swift)
 
-## TabBar Controller
+# TabBar Controller
 
 <img width="434" alt="image" src="https://user-images.githubusercontent.com/56068905/203410155-78a982c5-8539-4709-b8e0-ade0bb062699.png">
 
 Bu şekilde bir ekran tasarımı var. Renkli olan kısımlar PageView, onu tabbarda secondPage tarafına bağladım. PageView'dan sonra NavigationController eklemeyi denedim. Bunların sırasının bi önemi yok. 
 
-## Page View
+# Page View
 
 SecondView'e bağlamıştım. Extension ile yazılan yer, sanırsam her proje için yazılabilen ortak bir ifade. Onunda bi espirisi yok. Before - After olayları. Sayfaların çağrımı da identifier üzerinden yapılıyor. Kolaylık olması için sadece arrayden geliyor.
 
