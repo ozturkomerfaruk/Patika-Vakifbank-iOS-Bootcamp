@@ -2,9 +2,9 @@
 
 # İçindekiler
 
-# HighOrder Functions
+## HighOrder Functions
 
-# XibFile oluşturma
+## XibFile oluşturma
 
 Öncelikle XibFile oluştururken, File's Owner'a dikkat et. Daha sonra şu şekilde yazılabilir kodları:
 
@@ -50,3 +50,98 @@ extension UIView {
 }
 ```
 
+## Notification Center vs Delegate Pattern
+
+Delegate Pattern birebir ilişki olacağı zamanlarda kullanılması gereken bir yapıdır. Büyük projelerde her yerde notification Center kullanmak pek mantıklı bir hareket değildir.
+
+<img width="584" alt="image" src="https://user-images.githubusercontent.com/56068905/203269206-ac91059d-8df4-4d65-bc4c-354b6e7ff876.png">
+
+FirstVC ile yazılan yeri, Notification ile çekeceğim SecondVC'den ve delegate yazan yeri de Delegate Pattern ile yapacağım. Bunları ikinci ekranda notify butonu ile etkinleştireceğim.
+
+### SecondVC
+
+**Delegate**
+
+protocol ile delegate yapısını hazırlıyorum. Ardından butona basıldığında parametre olarak ne vereceğimi belirliyorum.
+
+**Notification**
+
+Key ile post işlemi yapıyorum. object'de ne döndüreceğim belli.
+
+```
+import UIKit
+
+protocol textToFirstVCProtocol {
+    func didTapped(name: String)
+}
+
+class SecondViewController: UIViewController {
+    
+    var delegate: textToFirstVCProtocol?
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+
+    @IBAction func notifyAction(_ sender: Any) {
+        
+        delegate?.didTapped(name: "Omer Delegate")
+        
+        let text = "Omer Faruk"
+        NotificationCenter.default.post(name: NSNotification.Name("buttonPressedNotification"), object: text)
+    }
+    
+}
+```
+## FirstVC
+
+**delegate**
+
+extension da, delegate edilen şey çağrılıyor. prepare de segue kullanımı var.
+
+**notification**
+
+Observer çağırıyorum ve o observer pattern ile bulmaktadır. Flutter'da ki state management mantığına benzer. 
+
+```
+class ViewController: UIViewController {
+    
+    @IBOutlet weak var label: UILabel!
+
+    @IBOutlet weak var delegateLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleButtonPressed), name: NSNotification.Name("buttonPressedNotification"), object: nil)
+    }
+
+    @objc func handleButtonPressed(_ notification: Notification) {
+        if let text = notification.object as? String {
+            label.text = text
+        }
+    }
+    
+    
+    @IBAction func secondVC(_ sender: Any) {
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "secondVC" {
+            guard let vc = segue.destination as? SecondViewController else { return }
+            vc.delegate = self
+        }
+    }
+}
+
+extension ViewController: textToFirstVCProtocol {
+    func didTapped(name: String) {
+        delegateLabel.text = name
+    }
+}
+```
