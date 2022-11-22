@@ -15,11 +15,22 @@ class PlayViewController: UIViewController {
     private var dict: [String : Int] = [:]
     
     static let keychain = Keychain(service: "com.ozturkomerfaruk.TapCount")
+    static let readKeychain = PlayViewController.keychain["keychain"]!.data(using: .utf8)!
+    static var keychainDecode = try? JSONDecoder().decode([String: Int]?.self, from: PlayViewController.readKeychain)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //***********************************************************************************************
+        //************************************DELETE KEYCHAIN ACSESS*************************************
+        //***********************************************************************************************
+        /*
+        for itemClass in PlayViewController.readKeychain {
+            let spec: NSDictionary = [kSecClass: itemClass]
+            SecItemDelete(spec)
+        }
+         */
     }
     
     @IBAction func playButton(_ sender: Any) {
@@ -30,15 +41,16 @@ class PlayViewController: UIViewController {
             })
         }
         
-        dict[usernameTextField.text!] = 0
-        
-        let encoder = JSONEncoder()
-        encoder.outputFormatting = .prettyPrinted
-        let data = try! encoder.encode(dict)
-        let jsonString = String(data: data, encoding: .utf8)!
-        print(jsonString)
-        
-        PlayViewController.keychain["keychain"] = jsonString
+        if usernameTextField.text! != "" {
+            dict[usernameTextField.text!] = 0
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            let data = try! encoder.encode(dict)
+            let jsonString = String(data: data, encoding: .utf8)!
+            print(jsonString)
+            
+            PlayViewController.keychain["keychain"] = jsonString
+        }
         
         alert(title: "Warning", message: "The game will start suddenly", action: { param in
             if param.title! != "CANCEL" {

@@ -8,15 +8,20 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-        
+    
     @IBOutlet weak var highScoreLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        highScoreLabel.text =  String(describing: PlayViewController.keychainDecode?.first!.value)
     }
     
-
-   
+    
+    @IBAction func listeleAction(_ sender: Any) {
+        guard let pushWithIdVC = self.storyboard?.instantiateViewController(withIdentifier: "tableVC") as? TableViewController
+        else { return }
+        self.navigationController?.pushViewController(pushWithIdVC, animated: true)
+    }
+    
 }

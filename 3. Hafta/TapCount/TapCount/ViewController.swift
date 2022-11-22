@@ -21,15 +21,11 @@ class ViewController: UIViewController {
     private var score = 0
     private var highScore = 0
     
-    private var keychainDict = PlayViewController.keychain["keychain"]!.data(using: .utf8)!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        let _title = try? JSONDecoder().decode([String: Int]?.self, from: self.keychainDict)!
-        
-        print(_title?.first!.key ?? "")
+        title = PlayViewController.keychainDecode?.first?.key
         
         
         myView.isUserInteractionEnabled = true
@@ -70,18 +66,33 @@ class ViewController: UIViewController {
             }
             
             
+            PlayViewController.keychainDecode?.first?.value = Int(highScoreLabel.text)
+            
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            let data = try! encoder.encode(dict)
+            let jsonString = String(data: data, encoding: .utf8)!
+            print(jsonString)
+            
+            PlayViewController.keychain["keychain"] = jsonString
+            
+            guard let pushWithIdVC = self.storyboard?.instantiateViewController(withIdentifier: "resultVC") as? ResultViewController
+            else { return }
+            self.navigationController?.pushViewController(pushWithIdVC, animated: true)
+            
         }
     }
     
-    func alert(title: String, message: String) {
+    func alert(title: String, message: String, action: @escaping (_ param: UIAlertAction) -> Void) {
         // Create new Alert
         let dialogMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         // Create OK button with action handler
-        let ok = UIAlertAction(title: "OK", style: .default)
+        let ok = UIAlertAction(title: "OK", style: .default, handler: action)
         
         //Add OK button to a dialog message
         dialogMessage.addAction(ok)
+        
         // Present Alert to
         self.present(dialogMessage, animated: true)
     }

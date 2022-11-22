@@ -147,15 +147,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xID-q7-aUq">
+                                <rect key="frame" x="54" y="487" width="286" height="121"/>
+                                <fontDescription key="fontDescription" name=".SFNS-Regular" family=".AppleSystemUIFont" pointSize="96"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Listele"/>
+                                <connections>
+                                    <action selector="listeleAction:" destination="sCu-36-ToX" eventType="touchUpInside" id="Z7u-um-NBi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nw5-Jb-bi4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="xID-q7-aUq" firstAttribute="leading" secondItem="nw5-Jb-bi4" secondAttribute="leading" constant="54" id="4xq-FH-u0b"/>
+                            <constraint firstItem="nw5-Jb-bi4" firstAttribute="trailing" secondItem="xID-q7-aUq" secondAttribute="trailing" constant="53" id="78k-7R-zWW"/>
                             <constraint firstItem="9aI-sa-cbR" firstAttribute="top" secondItem="viB-bM-v76" secondAttribute="bottom" constant="63" id="G1Q-W7-lB2"/>
                             <constraint firstItem="9aI-sa-cbR" firstAttribute="trailing" secondItem="nw5-Jb-bi4" secondAttribute="trailing" id="K44-4w-EOp"/>
+                            <constraint firstItem="xID-q7-aUq" firstAttribute="top" secondItem="9aI-sa-cbR" secondAttribute="bottom" constant="111.33" id="OWn-AK-73h"/>
                             <constraint firstItem="viB-bM-v76" firstAttribute="trailing" secondItem="nw5-Jb-bi4" secondAttribute="trailing" id="fW0-Cc-EDi"/>
                             <constraint firstItem="viB-bM-v76" firstAttribute="top" secondItem="nw5-Jb-bi4" secondAttribute="top" constant="110" id="n7Y-9m-3zx"/>
                             <constraint firstItem="viB-bM-v76" firstAttribute="leading" secondItem="nw5-Jb-bi4" secondAttribute="leading" id="nFo-QN-752"/>
+                            <constraint firstItem="nw5-Jb-bi4" firstAttribute="bottom" secondItem="xID-q7-aUq" secondAttribute="bottom" constant="210" id="nOT-DD-CJU"/>
                             <constraint firstItem="9aI-sa-cbR" firstAttribute="leading" secondItem="nw5-Jb-bi4" secondAttribute="leading" id="vYV-WK-KCe"/>
                         </constraints>
                     </view>
@@ -199,6 +212,9 @@
                             <constraint firstItem="tG0-Sm-BTG" firstAttribute="leading" secondItem="tKY-2n-1db" secondAttribute="leading" id="Xu9-1o-dns"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="tG0-Sm-BTG" id="sFz-EE-1wc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zK8-cV-kgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
