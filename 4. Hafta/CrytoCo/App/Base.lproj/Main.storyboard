@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bdI-kt-PuJ">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Market-->
+        <scene sceneID="DOM-Sa-LVK">
+            <objects>
+                <viewController id="iTq-3Z-GO7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sef-bD-hBH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0aS-PU-cyN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Market" image="house" catalog="system" id="Ufc-jX-pHK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LXO-xp-QIZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="175"/>
+        </scene>
+        <!--Currency-->
+        <scene sceneID="reV-CZ-qA9">
+            <objects>
+                <viewController id="de9-wd-T1v" customClass="CurrencyListViewController" customModule="CrytoCo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5mU-Ah-4gW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ji2-Wh-Jr0">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hg8-jl-lAQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ji2-Wh-Jr0" firstAttribute="top" secondItem="Hg8-jl-lAQ" secondAttribute="top" id="2FH-KE-KKc"/>
+                            <constraint firstItem="Ji2-Wh-Jr0" firstAttribute="leading" secondItem="Hg8-jl-lAQ" secondAttribute="leading" id="2ZK-Q7-1Tk"/>
+                            <constraint firstItem="Hg8-jl-lAQ" firstAttribute="trailing" secondItem="Ji2-Wh-Jr0" secondAttribute="trailing" id="RzG-hk-4hK"/>
+                            <constraint firstItem="Hg8-jl-lAQ" firstAttribute="bottom" secondItem="Ji2-Wh-Jr0" secondAttribute="bottom" id="cY5-Jl-HjC"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Currency" image="coloncurrencysign" catalog="system" id="rL4-AV-0de"/>
+                    <connections>
+                        <outlet property="tableView" destination="Ji2-Wh-Jr0" id="IZT-5A-O7L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HQL-QA-XX4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="-431"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="zRh-eT-Mod">
+            <objects>
+                <tabBarController id="bdI-kt-PuJ" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rv0-DC-FX1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="de9-wd-T1v" kind="relationship" relationship="viewControllers" id="UuX-lE-eKA"/>
+                        <segue destination="iTq-3Z-GO7" kind="relationship" relationship="viewControllers" id="m2R-mL-9yw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qOf-Gb-NIG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-437" y="-127"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="coloncurrencysign" catalog="system" width="94" height="128"/>
+        <image name="house" catalog="system" width="128" height="104"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

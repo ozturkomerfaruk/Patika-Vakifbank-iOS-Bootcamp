@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "materialactivityindicator",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nspavlo/MaterialActivityIndicator",
+      "state" : {
+        "revision" : "9ed85a25d1870c57f3c3934425ebcdc5aea68736",
+        "version" : "0.0.7"
+      }
+    }
+  ],
+  "version" : 2
+}
