@@ -12,7 +12,7 @@
 
 ### [TabBar & PageView](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/4.%20Hafta#tabbar-controller)
 
-### [CrytoCo Uygulaması (https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/4.%20Hafta#crytoco-uygulamas%C4%B1-en-%C3%B6memlisi)
+### [CrytoCo Uygulaması (En Önemlisi)](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/4.%20Hafta#crytoco-uygulamas%C4%B1-en-%C3%B6memlisi)
 
 
 # Playground
