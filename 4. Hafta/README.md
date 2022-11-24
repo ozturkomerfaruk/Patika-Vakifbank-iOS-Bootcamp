@@ -2,17 +2,17 @@
 
 # İçindekiler
 
-### [Generic Where & HighOrder Functions & ARC](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/edit/master/4.%20Hafta/README.md#playground)
+### [Generic Where & HighOrder Functions & ARC](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/4.%20Hafta#playground)
 
 ### [XibFile oluşturma](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/edit/master/4.%20Hafta/README.md#xibfile)
 
-### [Notification Center vs Delegate Pattern](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/edit/master/4.%20Hafta/README.md#notification-center-vs-delegate-pattern-1)
+### [Notification Center vs Delegate Pattern](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/4.%20Hafta#notification-center-vs-delegate-pattern-1)
 
-### [WebView Kullanımı](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/edit/master/4.%20Hafta/README.md#webview-kullan%C4%B1m%C4%B1-1)
+### [WebView Kullanımı](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/4.%20Hafta#webview-kullan%C4%B1m%C4%B1-1)
 
-### [TabBar & PageView](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/edit/master/4.%20Hafta/README.md#tabbar-controller)
+### [TabBar & PageView](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/4.%20Hafta#tabbar-controller)
 
-### [CrytoCo Uygulaması (En Önemlisi)](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/edit/master/4.%20Hafta/README.md#crytoco-uygulamas%C4%B1-en-%C3%B6memlisi)
+### [CrytoCo Uygulaması (https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/4.%20Hafta#crytoco-uygulamas%C4%B1-en-%C3%B6memlisi)
 
 
 # Playground
