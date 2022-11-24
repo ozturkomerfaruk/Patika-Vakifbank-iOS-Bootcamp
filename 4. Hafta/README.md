@@ -2,15 +2,17 @@
 
 # İçindekiler
 
-## Generic Where & HighOrder Functions & ARC
+### [Generic Where & HighOrder Functions & ARC](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/edit/master/4.%20Hafta/README.md#playground)
 
-## XibFile oluşturma
+### [XibFile oluşturma](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/edit/master/4.%20Hafta/README.md#xibfile)
 
-## Notification Center vs Delegate Pattern
+### [Notification Center vs Delegate Pattern](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/edit/master/4.%20Hafta/README.md#notification-center-vs-delegate-pattern-1)
 
-## WebView Kullanımı
+### [WebView Kullanımı](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/edit/master/4.%20Hafta/README.md#webview-kullan%C4%B1m%C4%B1-1)
 
-## TabBar & PageView
+### [TabBar & PageView](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/edit/master/4.%20Hafta/README.md#tabbar-controller)
+
+### [CrytoCo Uygulaması (En Önemlisi)](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/edit/master/4.%20Hafta/README.md#crytoco-uygulamas%C4%B1-en-%C3%B6memlisi)
 
 
 # Playground
@@ -236,3 +238,20 @@ extension SecondViewController: UIPageViewControllerDataSource {
     }
 }
 ```
+
+# CrytoCo Uygulaması (En Ömemlisi)
+
+<img width="272" alt="Screenshot 2022-11-24 at 10 11 16" src="https://user-images.githubusercontent.com/56068905/203717237-7af1be38-bdb2-4f8b-8f99-816b1224f853.png">
+
+MVC mimarisi uygulanmıştır. Ayrıca SPM ile 2 adet paket kullanılmıştır.
+
+<img width="844" alt="image" src="https://user-images.githubusercontent.com/56068905/203717424-e4a23192-18b2-4ea1-a162-5b82cbdaa69f.png">
+
+Tab Bar Controller kullanılmıştır. Ayrıca 2. taba özel. Nav Controller. Bir de Detail için ayrı bir sayfa kullanılmıştır. Her sayfada Table View kullanılmıştır. Her sayfa için ayrı CustomCell oluşturuldu. Her sayfa için servisten veriler çekildi.
+
+Detail sayfası için Get metodu kullanılırken parametre istenilere kullanıldı. 
+
+2 paket için BaseViewController oluşturuldu.
+
+Detaylar için kod ekranına gitmek için [tıklayınız](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/4.%20Hafta/CrytoCo).
+
