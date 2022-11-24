@@ -10,6 +10,18 @@
 		04294321292DF8D200897119 /* AssetCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429431F292DF8D200897119 /* AssetCustomCell.swift */; };
 		04294322292DF8D200897119 /* AssetCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04294320292DF8D200897119 /* AssetCustomCell.xib */; };
 		04294325292E008D00897119 /* MaterialActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 04294324292E008D00897119 /* MaterialActivityIndicator */; };
+		04327795292F251700E70219 /* GetMarketsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04327794292F251700E70219 /* GetMarketsModel.swift */; };
+		04327797292F255F00E70219 /* ResultMarketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04327796292F255F00E70219 /* ResultMarketModel.swift */; };
+		04327799292F25B600E70219 /* MarketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04327798292F25B600E70219 /* MarketListViewController.swift */; };
+		0432779C292F2A3200E70219 /* MarketCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432779A292F2A3200E70219 /* MarketCustomCell.swift */; };
+		0432779D292F2A3200E70219 /* MarketCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0432779B292F2A3200E70219 /* MarketCustomCell.xib */; };
+		0432779F292F2C4000E70219 /* BaseViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0432779E292F2C4000E70219 /* BaseViewViewController.swift */; };
+		043277A1292F2D8500E70219 /* MarketDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043277A0292F2D8500E70219 /* MarketDetailViewController.swift */; };
+		043277A3292F302D00E70219 /* GetHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043277A2292F302D00E70219 /* GetHistoryModel.swift */; };
+		043277A5292F304800E70219 /* ResultHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043277A4292F304800E70219 /* ResultHistoryModel.swift */; };
+		043277A8292F36EF00E70219 /* CustomDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043277A6292F36EF00E70219 /* CustomDetailCell.swift */; };
+		043277A9292F36EF00E70219 /* CustomDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 043277A7292F36EF00E70219 /* CustomDetailCell.xib */; };
+		043277AC292F3CA200E70219 /* SwiftAlertView in Frameworks */ = {isa = PBXBuildFile; productRef = 043277AB292F3CA200E70219 /* SwiftAlertView */; };
 		044D63C9292DF53F00ED3210 /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D63C8292DF53F00ED3210 /* ResultModel.swift */; };
 		049BD10B292D7E41009F174F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049BD10A292D7E41009F174F /* AppDelegate.swift */; };
 		049BD10D292D7E41009F174F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049BD10C292D7E41009F174F /* SceneDelegate.swift */; };
@@ -25,6 +37,17 @@
 /* Begin PBXFileReference section */
 		0429431F292DF8D200897119 /* AssetCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetCustomCell.swift; sourceTree = "<group>"; };
 		04294320292DF8D200897119 /* AssetCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssetCustomCell.xib; sourceTree = "<group>"; };
+		04327794292F251700E70219 /* GetMarketsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMarketsModel.swift; sourceTree = "<group>"; };
+		04327796292F255F00E70219 /* ResultMarketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultMarketModel.swift; sourceTree = "<group>"; };
+		04327798292F25B600E70219 /* MarketListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketListViewController.swift; sourceTree = "<group>"; };
+		0432779A292F2A3200E70219 /* MarketCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketCustomCell.swift; sourceTree = "<group>"; };
+		0432779B292F2A3200E70219 /* MarketCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketCustomCell.xib; sourceTree = "<group>"; };
+		0432779E292F2C4000E70219 /* BaseViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewViewController.swift; sourceTree = "<group>"; };
+		043277A0292F2D8500E70219 /* MarketDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDetailViewController.swift; sourceTree = "<group>"; };
+		043277A2292F302D00E70219 /* GetHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHistoryModel.swift; sourceTree = "<group>"; };
+		043277A4292F304800E70219 /* ResultHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHistoryModel.swift; sourceTree = "<group>"; };
+		043277A6292F36EF00E70219 /* CustomDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDetailCell.swift; sourceTree = "<group>"; };
+		043277A7292F36EF00E70219 /* CustomDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomDetailCell.xib; sourceTree = "<group>"; };
 		044D63C8292DF53F00ED3210 /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		049BD107292D7E41009F174F /* CrytoCo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CrytoCo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049BD10A292D7E41009F174F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				043277AC292F3CA200E70219 /* SwiftAlertView in Frameworks */,
 				04294325292E008D00897119 /* MaterialActivityIndicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +121,10 @@
 			children = (
 				0429431F292DF8D200897119 /* AssetCustomCell.swift */,
 				04294320292DF8D200897119 /* AssetCustomCell.xib */,
+				0432779A292F2A3200E70219 /* MarketCustomCell.swift */,
+				0432779B292F2A3200E70219 /* MarketCustomCell.xib */,
+				043277A6292F36EF00E70219 /* CustomDetailCell.swift */,
+				043277A7292F36EF00E70219 /* CustomDetailCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -105,6 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				049BD122292D8334009F174F /* CurrencyListViewController.swift */,
+				04327798292F25B600E70219 /* MarketListViewController.swift */,
+				0432779E292F2C4000E70219 /* BaseViewViewController.swift */,
+				043277A0292F2D8500E70219 /* MarketDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -114,6 +145,10 @@
 			children = (
 				049BD129292D8508009F174F /* GetAssetsModel.swift */,
 				044D63C8292DF53F00ED3210 /* ResultModel.swift */,
+				04327794292F251700E70219 /* GetMarketsModel.swift */,
+				04327796292F255F00E70219 /* ResultMarketModel.swift */,
+				043277A2292F302D00E70219 /* GetHistoryModel.swift */,
+				043277A4292F304800E70219 /* ResultHistoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -145,6 +180,7 @@
 			name = CrytoCo;
 			packageProductDependencies = (
 				04294324292E008D00897119 /* MaterialActivityIndicator */,
+				043277AB292F3CA200E70219 /* SwiftAlertView */,
 			);
 			productName = CrytoCo;
 			productReference = 049BD107292D7E41009F174F /* CrytoCo.app */;
@@ -176,6 +212,7 @@
 			mainGroup = 049BD0FE292D7E41009F174F;
 			packageReferences = (
 				04294323292E008D00897119 /* XCRemoteSwiftPackageReference "MaterialActivityIndicator" */,
+				043277AA292F3CA200E70219 /* XCRemoteSwiftPackageReference "SwiftAlertView" */,
 			);
 			productRefGroup = 049BD108292D7E41009F174F /* Products */;
 			projectDirPath = "";
@@ -191,10 +228,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0432779D292F2A3200E70219 /* MarketCustomCell.xib in Resources */,
 				049BD117292D7E42009F174F /* LaunchScreen.storyboard in Resources */,
 				049BD114292D7E42009F174F /* Assets.xcassets in Resources */,
 				049BD112292D7E41009F174F /* Main.storyboard in Resources */,
 				04294322292DF8D200897119 /* AssetCustomCell.xib in Resources */,
+				043277A9292F36EF00E70219 /* CustomDetailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,11 +246,20 @@
 			files = (
 				049BD128292D8444009F174F /* BaseResponse.swift in Sources */,
 				049BD12A292D8508009F174F /* GetAssetsModel.swift in Sources */,
+				04327797292F255F00E70219 /* ResultMarketModel.swift in Sources */,
 				049BD10B292D7E41009F174F /* AppDelegate.swift in Sources */,
+				0432779C292F2A3200E70219 /* MarketCustomCell.swift in Sources */,
+				043277A5292F304800E70219 /* ResultHistoryModel.swift in Sources */,
+				04327795292F251700E70219 /* GetMarketsModel.swift in Sources */,
 				04294321292DF8D200897119 /* AssetCustomCell.swift in Sources */,
+				0432779F292F2C4000E70219 /* BaseViewViewController.swift in Sources */,
 				049BD123292D8334009F174F /* CurrencyListViewController.swift in Sources */,
 				049BD126292D83F9009F174F /* Client.swift in Sources */,
+				043277A1292F2D8500E70219 /* MarketDetailViewController.swift in Sources */,
 				044D63C9292DF53F00ED3210 /* ResultModel.swift in Sources */,
+				043277A8292F36EF00E70219 /* CustomDetailCell.swift in Sources */,
+				04327799292F25B600E70219 /* MarketListViewController.swift in Sources */,
+				043277A3292F302D00E70219 /* GetHistoryModel.swift in Sources */,
 				049BD10D292D7E41009F174F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +494,14 @@
 				minimumVersion = 0.0.7;
 			};
 		};
+		043277AA292F3CA200E70219 /* XCRemoteSwiftPackageReference "SwiftAlertView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dinhquan/SwiftAlertView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -453,6 +509,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04294323292E008D00897119 /* XCRemoteSwiftPackageReference "MaterialActivityIndicator" */;
 			productName = MaterialActivityIndicator;
+		};
+		043277AB292F3CA200E70219 /* SwiftAlertView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 043277AA292F3CA200E70219 /* XCRemoteSwiftPackageReference "SwiftAlertView" */;
+			productName = SwiftAlertView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

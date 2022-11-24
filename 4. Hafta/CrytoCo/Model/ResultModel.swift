@@ -8,6 +8,7 @@
 import Foundation
 
 // MARK: - Result
+// Aslında AssetModel
 struct ResultModel: Codable {
     let asset: String
     let assetLong: String

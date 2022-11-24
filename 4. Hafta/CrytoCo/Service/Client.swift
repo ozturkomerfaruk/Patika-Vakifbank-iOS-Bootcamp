@@ -10,14 +10,24 @@ import Foundation
 class Client {
     enum EndPoints {
         static let base = "https://nova.bitcambio.com.br/api/v3/public"
+        
         case getassets
+        case getmarkets
+        case getmarkethistory(String)
+        
         var stringValue: String {
             switch self {
             case .getassets:
                 return EndPoints.base + "/getassets"
+                
+            case .getmarkets:
+                return EndPoints.base + "/getmarkets"
+                
+            case .getmarkethistory(let marketID):
+                return EndPoints.base + "/getmarkethistory?market=\(marketID)"
             }
         }
-        
+          
         var url: URL {
             return URL(string: stringValue)!
         }
@@ -61,6 +71,26 @@ class Client {
     
     class func getGetassets(completion: @escaping([ResultModel]?, Error?) -> Void) {
         tasksForGETRequest(url: EndPoints.getassets.url, responseType: GetAssetsModel.self) { response, error in
+            if let response = response {
+                completion(response.result, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+    
+    class func getGetMarkets(completion: @escaping([ResultMarketModel]?, Error?) -> Void) {
+        tasksForGETRequest(url: EndPoints.getmarkets.url, responseType: GetMarketsModel.self) { response, error in
+            if let response = response {
+                completion(response.result, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+    
+    class func getGetmarkethistory(market: String, completion: @escaping([ResultHistoryModel]?, Error?) -> Void) {
+        tasksForGETRequest(url: EndPoints.getmarkethistory(market).url, responseType: GetHistoryModel.self) { response, error in
             if let response = response {
                 completion(response.result, nil)
             } else {

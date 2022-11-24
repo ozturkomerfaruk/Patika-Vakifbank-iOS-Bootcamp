@@ -6,12 +6,8 @@
 //
 
 import UIKit
-import MaterialActivityIndicator
 
-final class CurrencyListViewController: UIViewController {
-    
-    let indicator = MaterialActivityIndicatorView()
-    
+final class CurrencyListViewController: BaseViewViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
@@ -24,9 +20,11 @@ final class CurrencyListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        indicator.startAnimating()
         Client.getGetassets { [weak self] assets, error in
             guard let self = self else { return }
             self.results = assets
+            self.indicator.stopAnimating()
         }
         
     }
@@ -35,11 +33,6 @@ final class CurrencyListViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "AssetCustomCell", bundle: nil), forCellReuseIdentifier: "currencyCell")
     }
-    
-    private func setuoActivityIndicatorView() {
-        view.addSubview(indicator)
-    }
-    
 }
 
 extension CurrencyListViewController: UITableViewDataSource {

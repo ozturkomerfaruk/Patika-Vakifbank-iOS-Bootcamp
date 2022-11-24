@@ -8,26 +8,82 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Market-->
+        <!--Market List View Controller-->
         <scene sceneID="DOM-Sa-LVK">
             <objects>
-                <viewController id="iTq-3Z-GO7" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="marketVC" id="iTq-3Z-GO7" customClass="MarketListViewController" customModule="CrytoCo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sef-bD-hBH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fRV-21-LRl">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="0aS-PU-cyN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fRV-21-LRl" firstAttribute="top" secondItem="0aS-PU-cyN" secondAttribute="top" id="Nfy-ud-Z0c"/>
+                            <constraint firstItem="0aS-PU-cyN" firstAttribute="bottom" secondItem="fRV-21-LRl" secondAttribute="bottom" id="PjK-Sg-Xf6"/>
+                            <constraint firstItem="fRV-21-LRl" firstAttribute="leading" secondItem="0aS-PU-cyN" secondAttribute="leading" id="bnc-m3-O9v"/>
+                            <constraint firstItem="0aS-PU-cyN" firstAttribute="trailing" secondItem="fRV-21-LRl" secondAttribute="trailing" id="suM-GX-8ah"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Market" image="house" catalog="system" id="Ufc-jX-pHK"/>
+                    <navigationItem key="navigationItem" id="8Df-ag-L1I"/>
+                    <connections>
+                        <outlet property="marketTableView" destination="fRV-21-LRl" id="COz-Z9-C0i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXO-xp-QIZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="175"/>
+            <point key="canvasLocation" x="1393.1297709923663" y="174.64788732394368"/>
+        </scene>
+        <!--Market Detail View Controller-->
+        <scene sceneID="qw7-gE-JXr">
+            <objects>
+                <viewController storyboardIdentifier="marketDetailVC" id="F3X-DV-fdS" customClass="MarketDetailViewController" customModule="CrytoCo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pvI-VQ-KC5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJV-3s-o6R">
+                                <rect key="frame" x="0.0" y="79" width="393" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Bmk-EX-BEA">
+                                <rect key="frame" x="0.0" y="133" width="393" height="685"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fgl-AW-o8R"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bmk-EX-BEA" firstAttribute="leading" secondItem="fgl-AW-o8R" secondAttribute="leading" id="0Ju-5E-iTv"/>
+                            <constraint firstItem="RJV-3s-o6R" firstAttribute="leading" secondItem="fgl-AW-o8R" secondAttribute="leading" id="1uw-4O-MZa"/>
+                            <constraint firstItem="fgl-AW-o8R" firstAttribute="trailing" secondItem="RJV-3s-o6R" secondAttribute="trailing" id="3fT-w1-axT"/>
+                            <constraint firstItem="RJV-3s-o6R" firstAttribute="centerX" secondItem="pvI-VQ-KC5" secondAttribute="centerX" id="C5S-hB-jbb"/>
+                            <constraint firstItem="fgl-AW-o8R" firstAttribute="trailing" secondItem="Bmk-EX-BEA" secondAttribute="trailing" id="CcL-l4-8rg"/>
+                            <constraint firstItem="RJV-3s-o6R" firstAttribute="top" secondItem="fgl-AW-o8R" secondAttribute="top" constant="20" id="Uku-HY-HFO"/>
+                            <constraint firstItem="fgl-AW-o8R" firstAttribute="bottom" secondItem="Bmk-EX-BEA" secondAttribute="bottom" id="iAy-g4-XCn"/>
+                            <constraint firstItem="Bmk-EX-BEA" firstAttribute="top" secondItem="RJV-3s-o6R" secondAttribute="bottom" constant="20" id="vST-9L-ljr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailTableView" destination="Bmk-EX-BEA" id="hiA-Vx-rkB"/>
+                        <outlet property="titleLabel" destination="RJV-3s-o6R" id="x5a-p2-4G5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VhQ-w9-LEc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2294" y="175"/>
         </scene>
         <!--Currency-->
         <scene sceneID="reV-CZ-qA9">
             <objects>
-                <viewController id="de9-wd-T1v" customClass="CurrencyListViewController" customModule="CrytoCo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="currencyVC" id="de9-wd-T1v" customClass="CurrencyListViewController" customModule="CrytoCo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5mU-Ah-4gW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQL-QA-XX4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="-431"/>
+            <point key="canvasLocation" x="466" y="-495"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zRh-eT-Mod">
@@ -66,12 +122,31 @@
                     </tabBar>
                     <connections>
                         <segue destination="de9-wd-T1v" kind="relationship" relationship="viewControllers" id="UuX-lE-eKA"/>
-                        <segue destination="iTq-3Z-GO7" kind="relationship" relationship="viewControllers" id="m2R-mL-9yw"/>
+                        <segue destination="ivf-ze-hLJ" kind="relationship" relationship="viewControllers" id="m2R-mL-9yw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOf-Gb-NIG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-437" y="-127"/>
+        </scene>
+        <!--Market-->
+        <scene sceneID="48Z-fU-NIi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ivf-ze-hLJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Market" image="house" catalog="system" id="Ufc-jX-pHK"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dmC-ng-KdV">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iTq-3Z-GO7" kind="relationship" relationship="rootViewController" id="yGB-pZ-Neq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tug-cB-wFV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="466.41221374045801" y="174.64788732394368"/>
         </scene>
     </scenes>
     <resources>
