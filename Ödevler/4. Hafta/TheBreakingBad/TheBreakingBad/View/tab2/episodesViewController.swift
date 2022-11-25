@@ -18,6 +18,8 @@ final class EpisodesViewController: BaseViewController {
             episodesTableView.reloadData()
         }
     }
+    
+    var seasonArr: [[String: EpisodeModel]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +32,18 @@ final class EpisodesViewController: BaseViewController {
         }
         
         configureTableView()
+        deneme()
     }
     
     private func configureTableView() {
         episodesTableView.delegate = self
         episodesTableView.dataSource = self
         episodesTableView.register(UINib.init(nibName: "EpisodesTableViewCell", bundle: nil), forCellReuseIdentifier: "episodesCustomCell")
+    }
+    
+    private func deneme() {
+        
+        
     }
 
 }

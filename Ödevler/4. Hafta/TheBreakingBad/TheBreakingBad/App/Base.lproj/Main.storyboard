@@ -260,35 +260,33 @@
                     <connections>
                         <segue destination="ne7-iV-AgJ" kind="relationship" relationship="viewControllers" id="qey-Yf-Ggr"/>
                         <segue destination="VYK-vM-Agy" kind="relationship" relationship="viewControllers" id="Vnr-Tn-XyA"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ePN-Iv-SPW"/>
+                        <segue destination="Nwu-X7-Ib3" kind="relationship" relationship="viewControllers" id="ePN-Iv-SPW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UWS-HZ-au1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-793" y="-985"/>
         </scene>
-        <!--IMDB Page-->
+        <!--Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TheBreakingBad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="imdbPageVC" id="BYZ-38-t0r" customClass="IMDBPageViewController" customModule="TheBreakingBad" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="IMDB Page" id="l8H-bH-rhY">
-                        <imageReference key="image" image="app" catalog="system" symbolScale="medium"/>
-                        <imageReference key="selectedImage" image="app.fill" catalog="system" symbolScale="large"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="3z9-pM-Hst"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-793" y="-256"/>
+            <point key="canvasLocation" x="-793" y="467"/>
         </scene>
         <!--Character-->
         <scene sceneID="Bdi-ST-FFg">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSc-V6-dgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ne7-iV-AgJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Character" id="Aof-PX-dLp">
                         <imageReference key="image" image="person" catalog="system" symbolScale="medium"/>
@@ -304,13 +302,13 @@
                         <segue destination="etH-Z4-JeA" kind="relationship" relationship="rootViewController" id="Wos-K2-FZJ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eSc-V6-dgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="110.68702290076335" y="-1288.0281690140846"/>
         </scene>
         <!--Episodes-->
         <scene sceneID="Lda-Et-sy2">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wJg-0s-oXi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VYK-vM-Agy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Episodes" id="vIU-0L-bFa">
                         <imageReference key="image" image="tv" catalog="system" symbolScale="medium"/>
@@ -326,9 +324,30 @@
                         <segue destination="D02-0G-PXg" kind="relationship" relationship="rootViewController" id="1tL-qf-DQG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wJg-0s-oXi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="111" y="-589"/>
+        </scene>
+        <!--IMDB Page-->
+        <scene sceneID="PL9-Q0-ROD">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zmd-ot-DZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nwu-X7-Ib3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="IMDB Page" id="l8H-bH-rhY">
+                        <imageReference key="image" image="app" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="app.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3W9-rT-mFd">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0dv-nE-maQ"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-793.12977099236639" y="-256.33802816901408"/>
         </scene>
     </scenes>
     <resources>
