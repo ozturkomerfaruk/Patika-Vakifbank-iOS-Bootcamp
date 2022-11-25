@@ -26,7 +26,6 @@ final class CharacterTabViewController: BaseViewController {
             guard let self = self else { return }
             self.indicator.stopAnimating()
             self.characters = characters
-            self.indicator.stopAnimating()
         }
     }
     

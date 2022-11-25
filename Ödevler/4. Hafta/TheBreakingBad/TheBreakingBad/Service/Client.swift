@@ -13,6 +13,7 @@ class Client {
         
         case characters
         case getQuoteByAuthor(String)
+        case episodes
         
         var stringValue: String {
             switch self {
@@ -20,6 +21,8 @@ class Client {
                 return EndPoints.base + "/characters"
             case .getQuoteByAuthor(let author):
                 return EndPoints.base + "/quote?author=\(author)"
+            case .episodes:
+                return EndPoints.base + "/episodes"
             }
         }
           
@@ -76,6 +79,16 @@ class Client {
     
     class func getQuoteByAuthor(author: String, completion: @escaping([QuoteByAuthorModel]?, Error?) -> Void) {
         tasksForGETRequest(url: EndPoints.getQuoteByAuthor(author).url,  responseType: [QuoteByAuthorModel].self) { response, error in
+            if let response = response {
+                completion(response, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+    
+    class func getEpisodes(completion: @escaping([EpisodeModel]?, Error?) -> Void) {
+        tasksForGETRequest(url: EndPoints.episodes.url, responseType: [EpisodeModel].self) { response, error in
             if let response = response {
                 completion(response, nil)
             } else {

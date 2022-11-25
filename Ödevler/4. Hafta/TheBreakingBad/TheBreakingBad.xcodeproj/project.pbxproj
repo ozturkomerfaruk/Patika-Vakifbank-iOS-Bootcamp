@@ -24,6 +24,12 @@
 		04E6361F292FD9700086DAFD /* DetailCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6361E292FD9700086DAFD /* DetailCharacterViewController.swift */; };
 		04E63621292FF20D0086DAFD /* QuoteByAuthorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E63620292FF20D0086DAFD /* QuoteByAuthorModel.swift */; };
 		04E63623292FF49B0086DAFD /* QuoteByAuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E63622292FF49B0086DAFD /* QuoteByAuthorViewController.swift */; };
+		04F8709C2930832B00318A4F /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8709B2930832B00318A4F /* EpisodesViewController.swift */; };
+		04F8709F2930853B00318A4F /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8709E2930853B00318A4F /* EpisodeModel.swift */; };
+		04F870A22930886F00318A4F /* EpisodesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F870A02930886F00318A4F /* EpisodesTableViewCell.swift */; };
+		04F870A32930886F00318A4F /* EpisodesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F870A12930886F00318A4F /* EpisodesTableViewCell.xib */; };
+		04F870A529309B5A00318A4F /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F870A429309B5A00318A4F /* PopUp.swift */; };
+		04F870A92930A3CF00318A4F /* PopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F870A82930A3CF00318A4F /* PopUp.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +50,12 @@
 		04E6361E292FD9700086DAFD /* DetailCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterViewController.swift; sourceTree = "<group>"; };
 		04E63620292FF20D0086DAFD /* QuoteByAuthorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteByAuthorModel.swift; sourceTree = "<group>"; };
 		04E63622292FF49B0086DAFD /* QuoteByAuthorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteByAuthorViewController.swift; sourceTree = "<group>"; };
+		04F8709B2930832B00318A4F /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
+		04F8709E2930853B00318A4F /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
+		04F870A02930886F00318A4F /* EpisodesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesTableViewCell.swift; sourceTree = "<group>"; };
+		04F870A12930886F00318A4F /* EpisodesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodesTableViewCell.xib; sourceTree = "<group>"; };
+		04F870A429309B5A00318A4F /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
+		04F870A82930A3CF00318A4F /* PopUp.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUp.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +117,7 @@
 			children = (
 				0428DD1F292F747000E96EFD /* CharacterModel.swift */,
 				04E63620292FF20D0086DAFD /* QuoteByAuthorModel.swift */,
+				04F8709E2930853B00318A4F /* EpisodeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -114,6 +127,10 @@
 			children = (
 				0428DD25292F760D00E96EFD /* CharacterCustomCollectionCell.swift */,
 				0428DD26292F760D00E96EFD /* CharacterCustomCollectionCell.xib */,
+				04F870A02930886F00318A4F /* EpisodesTableViewCell.swift */,
+				04F870A12930886F00318A4F /* EpisodesTableViewCell.xib */,
+				04F870A429309B5A00318A4F /* PopUp.swift */,
+				04F870A82930A3CF00318A4F /* PopUp.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -121,6 +138,7 @@
 		0428DD11292F72A700E96EFD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04F8709A2930830800318A4F /* tab2 */,
 				04E6361D292FD9330086DAFD /* tab1 */,
 				04E6361B292FC4210086DAFD /* BaseViewController.swift */,
 			);
@@ -144,6 +162,14 @@
 				04E63622292FF49B0086DAFD /* QuoteByAuthorViewController.swift */,
 			);
 			path = tab1;
+			sourceTree = "<group>";
+		};
+		04F8709A2930830800318A4F /* tab2 */ = {
+			isa = PBXGroup;
+			children = (
+				04F8709B2930832B00318A4F /* EpisodesViewController.swift */,
+			);
+			path = tab2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,9 +238,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F870A92930A3CF00318A4F /* PopUp.xib in Resources */,
 				0428DD06292F725B00E96EFD /* LaunchScreen.storyboard in Resources */,
 				0428DD03292F725B00E96EFD /* Assets.xcassets in Resources */,
 				0428DD28292F760D00E96EFD /* CharacterCustomCollectionCell.xib in Resources */,
+				04F870A32930886F00318A4F /* EpisodesTableViewCell.xib in Resources */,
 				0428DD01292F725A00E96EFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,15 +255,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0428DD1A292F734600E96EFD /* BaseResponse.swift in Sources */,
+				04F870A529309B5A00318A4F /* PopUp.swift in Sources */,
 				0428DD20292F747000E96EFD /* CharacterModel.swift in Sources */,
 				0428DD22292F75DA00E96EFD /* CharacterTabViewController.swift in Sources */,
 				0428DCFA292F725A00E96EFD /* AppDelegate.swift in Sources */,
 				0428DD1D292F736800E96EFD /* Client.swift in Sources */,
+				04F8709F2930853B00318A4F /* EpisodeModel.swift in Sources */,
 				04E6361F292FD9700086DAFD /* DetailCharacterViewController.swift in Sources */,
+				04F870A22930886F00318A4F /* EpisodesTableViewCell.swift in Sources */,
 				04E63623292FF49B0086DAFD /* QuoteByAuthorViewController.swift in Sources */,
 				04E63621292FF20D0086DAFD /* QuoteByAuthorModel.swift in Sources */,
 				04E6361C292FC4210086DAFD /* BaseViewController.swift in Sources */,
 				0428DD27292F760D00E96EFD /* CharacterCustomCollectionCell.swift in Sources */,
+				04F8709C2930832B00318A4F /* EpisodesViewController.swift in Sources */,
 				0428DCFC292F725A00E96EFD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

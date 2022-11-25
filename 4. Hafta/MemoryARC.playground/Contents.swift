@@ -243,3 +243,27 @@ var paragraph: HTMLElementResolved? = HTMLElementResolved(name: "p", text: "Hell
 print(paragraph!.asHTML())
 print(paragraph!.asHTMLWeak())
 paragraph = nil
+
+var date = "06-05-2017"
+
+func formattedDateFromString(dateString: String, withFormat format: String) -> String? {
+
+    let inputFormatter = DateFormatter()
+    inputFormatter.dateFormat = "dd/MM/yyyy"
+
+    if let date = inputFormatter.date(from: dateString) {
+
+        let outputFormatter = DateFormatter()
+      outputFormatter.dateFormat = format
+
+        return outputFormatter.string(from: date)
+    }
+
+    return nil
+}
+
+let stringA = formattedDateFromString(dateString: "21/07/2016", withFormat: "yyyy-MM-dd")
+let stringB = formattedDateFromString(dateString: "21/07/2016", withFormat: "MMM dd, yyyy")
+
+print("stringA: \(String(describing: stringA))") // 2016-07-21
+print("stringB: \(String(describing: stringB))") // Jul 21, 2016
