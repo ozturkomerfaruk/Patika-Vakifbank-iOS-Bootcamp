@@ -29,10 +29,12 @@ final class EpisodesViewController: BaseViewController {
             guard let self = self else { return }
             self.indicator.stopAnimating()
             self.episodes = episodes
+            for model in episodes! {
+                self.seasonArr.append([model.season : model])
+            }
         }
-        
+        print(seasonArr)
         configureTableView()
-        deneme()
     }
     
     private func configureTableView() {
@@ -40,18 +42,17 @@ final class EpisodesViewController: BaseViewController {
         episodesTableView.dataSource = self
         episodesTableView.register(UINib.init(nibName: "EpisodesTableViewCell", bundle: nil), forCellReuseIdentifier: "episodesCustomCell")
     }
-    
-    private func deneme() {
-        
-        
-    }
 
 }
 
 extension EpisodesViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return episodes?.count ?? 0
+        return seasonArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
