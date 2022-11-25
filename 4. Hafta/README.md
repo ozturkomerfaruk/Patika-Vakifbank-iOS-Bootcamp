@@ -4,7 +4,7 @@
 
 ### [Generic Where & HighOrder Functions & ARC](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/4.%20Hafta#playground)
 
-### [XibFile oluşturma](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/edit/master/4.%20Hafta/README.md#xibfile)
+### [XibFile oluşturma](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/4.%20Hafta#xibfile)
 
 ### [Notification Center vs Delegate Pattern](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/4.%20Hafta#notification-center-vs-delegate-pattern-1)
 
