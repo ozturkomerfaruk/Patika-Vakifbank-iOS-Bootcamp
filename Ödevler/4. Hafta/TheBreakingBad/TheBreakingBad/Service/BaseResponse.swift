@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: Base Response Model
 struct BaseResponse: Codable {
     let status: Int
     let error: String

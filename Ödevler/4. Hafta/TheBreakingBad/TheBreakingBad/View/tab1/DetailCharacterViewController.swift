@@ -17,7 +17,6 @@ final class DetailCharacterViewController: BaseViewController {
     @IBOutlet private weak var occupationTableView: UITableView!
     @IBOutlet private weak var quoteOutlet: UIButton!
     @IBOutlet private weak var seasonLabel: UILabel!
-    
     private var occupation: [String]? {
         didSet {
             occupationTableView.reloadData()
@@ -34,6 +33,7 @@ final class DetailCharacterViewController: BaseViewController {
         quoteOutlet.setTitle("\(selectedModel?.name ?? "Author")'s Quotes", for: .normal)
     }
     
+    //MARK: Detail Info Part
     private func configureDetail() {
         imageView.loadFrom(URLAddress: selectedModel?.img ?? "")
         indicator.stopAnimating()
@@ -53,8 +53,8 @@ final class DetailCharacterViewController: BaseViewController {
         
     }
     
-    
-    @IBAction func QuoteAction(_ sender: Any) {
+    //Quote Page Action
+    @IBAction private func QuoteAction(_ sender: Any) {
         guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "quoteByAuthorVC") as? QuoteByAuthorViewController,
         let name = selectedModel?.name else { return }
         detailVC.authorName = name
@@ -63,8 +63,9 @@ final class DetailCharacterViewController: BaseViewController {
     }
 }
 
+//MARK: Image From URL
 extension UIImageView {
-    func loadFrom(URLAddress: String) {
+    fileprivate func loadFrom(URLAddress: String) {
         guard let url = URL(string: URLAddress) else {
             return
         }
@@ -80,12 +81,13 @@ extension UIImageView {
     }
 }
 
+//MARK: Detail Occupation
 extension DetailCharacterViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return occupation?.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "occupationCell", for: indexPath)
         cell.textLabel?.text = occupation?[indexPath.row]
         return cell

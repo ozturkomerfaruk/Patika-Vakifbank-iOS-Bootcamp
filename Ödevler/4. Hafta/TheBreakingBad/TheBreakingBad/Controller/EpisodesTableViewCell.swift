@@ -7,12 +7,13 @@
 
 import UIKit
 
-class EpisodesTableViewCell: UITableViewCell {
+final class EpisodesTableViewCell: UITableViewCell {
     
+    //MARK: Values
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var seasonLabel: UILabel!
-    
+    //MARK: ConfigureCell
     func configureCell(model: EpisodeModel) {
         nameLabel.text = model.title
         dateLabel.text = model.airDate.formattedDateFromString(dateString: model.airDate, withFormat: "MMM dd, yyyy")

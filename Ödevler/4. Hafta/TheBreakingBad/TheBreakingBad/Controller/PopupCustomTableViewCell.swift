@@ -7,10 +7,9 @@
 
 import UIKit
 
-class PopupCustomTableViewCell: UITableViewCell {
-
+final class PopupCustomTableViewCell: UITableViewCell {
+    //MARK: CustomCell for Popup Characters
     @IBOutlet private weak var nameLabel: UILabel!
-    
     func configureCell(name: String) {
         nameLabel.text = name
     }

@@ -20,39 +20,43 @@ final class IMDBPageViewController: BaseViewController, WKNavigationDelegate {
     private var isBreakingBad = true
     
     
-    
+    ///indicator does not appear in view. I do not know why.
     override func viewDidLoad() {
         super.viewDidLoad()
         indicator.startAnimating()
         webViewLoading()
-        
+        //My blog page :)
         authorSignature()
     }
     
+    //For WebView
     override func loadView() {
         webView = WKWebView()
         webView.navigationDelegate = self
         view = webView
     }
     
+    
     private func webViewLoading() {
         indicator.startAnimating()
         let url = dictWebSiteUrl["BreakingBad"]
         webView.load(URLRequest(url: url as! URL))
         webView.allowsBackForwardNavigationGestures = true
-        
+        //Navigation Item
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Better Call Saul", style: .plain, target: self, action: #selector(changeWebViewUrl))
         navigationItem.rightBarButtonItem?.tintColor = .white
         navigationItem.rightBarButtonItem?.customView?.backgroundColor = .systemBlue
         indicator.stopAnimating()
     }
     
+    //My blog page ^^
     private func authorSignature() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "My Blog Page", style: .plain, target: self, action: #selector(myBlogPage))
         navigationItem.leftBarButtonItem?.tintColor = .white
     }
     
-    @objc func changeWebViewUrl(){
+    //Switching between Breaking Bad and Better Call Saul with bar button item in Webview
+    @objc private func changeWebViewUrl(){
         if isBreakingBad {
             indicator.startAnimating()
             webView.load(URLRequest(url: dictWebSiteUrl["BetterCallSaul"] as! URL))
@@ -72,7 +76,8 @@ final class IMDBPageViewController: BaseViewController, WKNavigationDelegate {
         }
     }
     
-    @objc func myBlogPage(){
+    //My Blog Page ^
+    @objc private func myBlogPage(){
         let url = dictWebSiteUrl["ozturkomerfaruk"]
         webView.load(URLRequest(url: url as! URL))
         webView.allowsBackForwardNavigationGestures = true

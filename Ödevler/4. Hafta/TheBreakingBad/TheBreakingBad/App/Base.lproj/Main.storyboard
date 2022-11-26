@@ -286,7 +286,6 @@
         <!--Character-->
         <scene sceneID="Bdi-ST-FFg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eSc-V6-dgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ne7-iV-AgJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Character" id="Aof-PX-dLp">
                         <imageReference key="image" image="person" catalog="system" symbolScale="medium"/>
@@ -302,13 +301,13 @@
                         <segue destination="etH-Z4-JeA" kind="relationship" relationship="rootViewController" id="Wos-K2-FZJ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSc-V6-dgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="110.68702290076335" y="-1288.0281690140846"/>
         </scene>
         <!--Episodes-->
         <scene sceneID="Lda-Et-sy2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wJg-0s-oXi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VYK-vM-Agy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Episodes" id="vIU-0L-bFa">
                         <imageReference key="image" image="tv" catalog="system" symbolScale="medium"/>
@@ -324,13 +323,13 @@
                         <segue destination="D02-0G-PXg" kind="relationship" relationship="rootViewController" id="1tL-qf-DQG"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wJg-0s-oXi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="111" y="-589"/>
         </scene>
         <!--IMDB Page-->
         <scene sceneID="PL9-Q0-ROD">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zmd-ot-DZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nwu-X7-Ib3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="IMDB Page" id="l8H-bH-rhY">
                         <imageReference key="image" image="app" catalog="system" symbolScale="medium"/>
@@ -346,6 +345,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0dv-nE-maQ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zmd-ot-DZg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-793.12977099236639" y="-256.33802816901408"/>
         </scene>

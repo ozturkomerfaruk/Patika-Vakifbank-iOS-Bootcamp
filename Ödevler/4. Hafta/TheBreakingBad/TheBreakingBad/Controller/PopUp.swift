@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: For Delegate popUp
 protocol popUpProtocol {
     func didTapped()
 }
@@ -16,7 +17,7 @@ final class PopUp: UIView {
     var delegate: popUpProtocol?
     @IBOutlet weak var closeOutlet: UIButton!
     
-    @IBOutlet weak var charTableView: UITableView!
+    @IBOutlet private weak var charTableView: UITableView!
     private var characters: [String]? {
         didSet {
             charTableView.reloadData()
@@ -34,11 +35,14 @@ final class PopUp: UIView {
         configurePopUp()
     }
     
+    //MARK: Configure Popup
     private func configurePopUp() {
         charTableView.dataSource = self
         charTableView.delegate = self
+        //self custom cell
         self.charTableView.register(UINib(nibName: "PopupCustomTableViewCell", bundle: nil), forCellReuseIdentifier: "popupCustomCell")
         
+        //MARK: NotificationCenter for Character
         NotificationCenter.default.addObserver(self, selector: #selector(handleButtonPressed), name: NSNotification.Name("castEpisode"), object: nil)
     }
     
@@ -52,12 +56,14 @@ final class PopUp: UIView {
         }
     }
     
-    func xibSetup(frame: CGRect) {
+    //MARK: XibSetup
+    private func xibSetup(frame: CGRect) {
         let view = loadXib()
         view.frame = frame
         addSubview(view)
     }
     
+    //MARK: XibNib
     private func loadXib() -> UIView {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "PopUp", bundle: bundle)
@@ -67,21 +73,26 @@ final class PopUp: UIView {
     
 }
 
+//MARK: popup Character TableView DataSource & Delegate
 extension PopUp: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         characters?.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "popupCustomCell", for: indexPath) as? PopupCustomTableViewCell,
               let _ = characters?[indexPath.row] else {
             return UITableViewCell()
         }
         cell.configureCell(name: characters?[indexPath.row] ?? "")
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     
+    //I want to go to DetailControllerView but i can't because there is no navigationcontroller. There is a just UIView!
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(characters?[indexPath.row])
+        let str = characters?[indexPath.row] ?? ""
+        let newStr = str.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+        print(newStr)
     }
 }

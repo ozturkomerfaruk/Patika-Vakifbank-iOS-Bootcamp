@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8t-Io-g8m">
-                    <rect key="frame" x="46.666666666666657" y="176" width="300" height="500"/>
+                    <rect key="frame" x="46.666666666666657" y="226" width="300" height="400"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBJ-JJ-5nF">
                             <rect key="frame" x="264.66666666666663" y="0.0" width="35.333333333333314" height="35"/>
@@ -31,8 +31,11 @@
                             </buttonConfiguration>
                         </button>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Dro-Nb-ibv">
-                            <rect key="frame" x="0.0" y="35" width="300" height="465"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <rect key="frame" x="0.0" y="35" width="300" height="365"/>
+                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                            <color key="separatorColor" systemColor="systemGray6Color"/>
+                            <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
+                            <color key="sectionIndexTrackingBackgroundColor" systemColor="systemGray6Color"/>
                         </tableView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Characters" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ta-2h-TOF">
                             <rect key="frame" x="0.0" y="0.0" width="265" height="34.666666666666664"/>
@@ -47,7 +50,7 @@
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
                     <constraints>
                         <constraint firstItem="Dro-Nb-ibv" firstAttribute="top" secondItem="eBJ-JJ-5nF" secondAttribute="bottom" id="0QQ-KP-n0S"/>
-                        <constraint firstAttribute="height" constant="500" id="GGO-11-W4M"/>
+                        <constraint firstAttribute="height" constant="400" id="GGO-11-W4M"/>
                         <constraint firstItem="1Ta-2h-TOF" firstAttribute="top" secondItem="S8t-Io-g8m" secondAttribute="top" id="Jl8-oQ-fLY"/>
                         <constraint firstItem="eBJ-JJ-5nF" firstAttribute="top" secondItem="S8t-Io-g8m" secondAttribute="top" id="Obr-6f-Atb"/>
                         <constraint firstItem="1Ta-2h-TOF" firstAttribute="leading" secondItem="S8t-Io-g8m" secondAttribute="leading" id="X2r-Ch-xKb"/>
@@ -69,9 +72,6 @@
         </view>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
