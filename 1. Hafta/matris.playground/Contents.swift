@@ -101,3 +101,13 @@ print(world[0, 0]) // Get.
 print(world[0, 5])
 print(world[9, 9])
 print(world[99, 99])
+
+
+var arr1 = ["1", "2", "3"]
+var arr2 = ["a", "b", "c"]
+
+var mat = [[String]]()
+
+mat.append(arr1)
+mat.append(arr2)
+print(mat)

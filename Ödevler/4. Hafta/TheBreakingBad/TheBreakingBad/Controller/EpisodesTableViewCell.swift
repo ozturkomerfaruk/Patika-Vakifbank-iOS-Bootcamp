@@ -17,7 +17,7 @@ final class EpisodesTableViewCell: UITableViewCell {
     func configureCell(model: EpisodeModel) {
         nameLabel.text = model.title
         dateLabel.text = model.airDate.formattedDateFromString(dateString: model.airDate, withFormat: "MMM dd, yyyy")
-        seasonLabel.text = "\(model.season) X \(model.episode)"
+        seasonLabel.text = "Episode: \(model.episode)"
     }
 }
 
