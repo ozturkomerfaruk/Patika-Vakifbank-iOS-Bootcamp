@@ -21,6 +21,8 @@
 		047280732930FFD8002CC301 /* IMDBPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047280722930FFD8002CC301 /* IMDBPageViewController.swift */; };
 		0472807A29311253002CC301 /* PopupCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472807829311253002CC301 /* PopupCustomTableViewCell.swift */; };
 		0472807B29311253002CC301 /* PopupCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0472807929311253002CC301 /* PopupCustomTableViewCell.xib */; };
+		04DDCDF72932696000D84499 /* PopupDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDCDF62932696000D84499 /* PopupDelegateProtocol.swift */; };
+		04DDCDF92932698D00D84499 /* SeasonEpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DDCDF82932698D00D84499 /* SeasonEpisodeModel.swift */; };
 		04E63617292FC3FE0086DAFD /* SwiftAlertView in Frameworks */ = {isa = PBXBuildFile; productRef = 04E63616292FC3FE0086DAFD /* SwiftAlertView */; };
 		04E6361A292FC4090086DAFD /* MaterialActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 04E63619292FC4090086DAFD /* MaterialActivityIndicator */; };
 		04E6361C292FC4210086DAFD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E6361B292FC4210086DAFD /* BaseViewController.swift */; };
@@ -52,6 +54,8 @@
 		047280722930FFD8002CC301 /* IMDBPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDBPageViewController.swift; sourceTree = "<group>"; };
 		0472807829311253002CC301 /* PopupCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCustomTableViewCell.swift; sourceTree = "<group>"; };
 		0472807929311253002CC301 /* PopupCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupCustomTableViewCell.xib; sourceTree = "<group>"; };
+		04DDCDF62932696000D84499 /* PopupDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDelegateProtocol.swift; sourceTree = "<group>"; };
+		04DDCDF82932698D00D84499 /* SeasonEpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonEpisodeModel.swift; sourceTree = "<group>"; };
 		04E6361B292FC4210086DAFD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		04E6361E292FD9700086DAFD /* DetailCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterViewController.swift; sourceTree = "<group>"; };
 		04E63620292FF20D0086DAFD /* QuoteByAuthorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteByAuthorModel.swift; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				0428DD1F292F747000E96EFD /* CharacterModel.swift */,
 				04E63620292FF20D0086DAFD /* QuoteByAuthorModel.swift */,
 				04F8709E2930853B00318A4F /* EpisodeModel.swift */,
+				04DDCDF82932698D00D84499 /* SeasonEpisodeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 		0428DD0F292F729900E96EFD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				04DDCDF52932694500D84499 /* Protocol */,
 				0428DD25292F760D00E96EFD /* CharacterCustomCollectionCell.swift */,
 				0428DD26292F760D00E96EFD /* CharacterCustomCollectionCell.xib */,
 				04F870A02930886F00318A4F /* EpisodesTableViewCell.swift */,
@@ -169,6 +175,14 @@
 				047280722930FFD8002CC301 /* IMDBPageViewController.swift */,
 			);
 			path = tab3;
+			sourceTree = "<group>";
+		};
+		04DDCDF52932694500D84499 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				04DDCDF62932696000D84499 /* PopupDelegateProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		04E6361D292FD9330086DAFD /* tab1 */ = {
@@ -275,6 +289,7 @@
 				0428DD1A292F734600E96EFD /* BaseResponse.swift in Sources */,
 				04F870A529309B5A00318A4F /* PopUp.swift in Sources */,
 				0428DD20292F747000E96EFD /* CharacterModel.swift in Sources */,
+				04DDCDF92932698D00D84499 /* SeasonEpisodeModel.swift in Sources */,
 				0428DD22292F75DA00E96EFD /* CharacterTabViewController.swift in Sources */,
 				0428DCFA292F725A00E96EFD /* AppDelegate.swift in Sources */,
 				0472807A29311253002CC301 /* PopupCustomTableViewCell.swift in Sources */,
@@ -285,6 +300,7 @@
 				04E63623292FF49B0086DAFD /* QuoteByAuthorViewController.swift in Sources */,
 				04E63621292FF20D0086DAFD /* QuoteByAuthorModel.swift in Sources */,
 				04E6361C292FC4210086DAFD /* BaseViewController.swift in Sources */,
+				04DDCDF72932696000D84499 /* PopupDelegateProtocol.swift in Sources */,
 				0428DD27292F760D00E96EFD /* CharacterCustomCollectionCell.swift in Sources */,
 				04F8709C2930832B00318A4F /* EpisodesViewController.swift in Sources */,
 				0428DCFC292F725A00E96EFD /* SceneDelegate.swift in Sources */,

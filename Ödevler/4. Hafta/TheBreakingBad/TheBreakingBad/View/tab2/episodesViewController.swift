@@ -7,18 +7,14 @@
 
 import UIKit
 
-struct SeasonEpisodeModel {
-    var seasonName: String
-    var episodeModelList: [EpisodeModel]
-}
-
 final class EpisodesViewController: BaseViewController {
     
     //MARK: Values
     @IBOutlet private weak var episodesTableView: UITableView!
-    private var commercialPopup: PopUp!
+    private var customPopup: PopUp!
     private var seasonEpisodes = [SeasonEpisodeModel]()
     
+    //seasons
     private var bd1Model: SeasonEpisodeModel?
     private var bd2Model: SeasonEpisodeModel?
     private var bd3Model: SeasonEpisodeModel?
@@ -132,14 +128,14 @@ extension EpisodesViewController: popUpProtocol {
     
     //Closing with delegate
     internal func didTapped() {
-        self.commercialPopup = PopUp(frame: self.view.frame)
-        self.commercialPopup.closeOutlet.addTarget(self, action: #selector(closeBtnTapped), for: .touchUpInside)
-        self.view.addSubview(commercialPopup)
+        self.customPopup = PopUp(frame: self.view.frame)
+        self.customPopup.closeOutlet.addTarget(self, action: #selector(closeBtnTapped), for: .touchUpInside)
+        self.view.addSubview(customPopup)
     }
     
     //Close Action
     @objc internal func closeBtnTapped() {
-        self.commercialPopup.removeFromSuperview()
+        self.customPopup.removeFromSuperview()
         print("It is now clsoed!")
     }
 }

@@ -7,11 +7,6 @@
 
 import UIKit
 
-//MARK: For Delegate popUp
-protocol popUpProtocol {
-    func didTapped()
-}
-
 final class PopUp: UIView {
     
     var delegate: popUpProtocol?
