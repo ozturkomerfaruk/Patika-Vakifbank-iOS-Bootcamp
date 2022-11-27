@@ -34,34 +34,33 @@ final class EpisodesViewController: BaseViewController {
             self.indicator.stopAnimating()
             //self.episodes = episodes
             
-            
             //I want to seperated by season
             self.bd1Model = SeasonEpisodeModel(seasonName: "Breaking Bad Season 1", episodeModelList: (episodes?.filter({ model in
-                return model.season == "1" && model.series == "Breaking Bad"
+                return model.season.trimmingCharacters(in: .whitespacesAndNewlines) == "1" && model.series == "Breaking Bad"
             })) ?? [])
             self.bd2Model = SeasonEpisodeModel(seasonName: "Breaking Bad Season 2", episodeModelList: (episodes?.filter({ model in
-                return model.season == "2" && model.series == "Breaking Bad"
+                return model.season.trimmingCharacters(in: .whitespacesAndNewlines) == "2" && model.series == "Breaking Bad"
             })) ?? [])
             self.bd3Model = SeasonEpisodeModel(seasonName: "Breaking Bad Season 3", episodeModelList: (episodes?.filter({ model in
-                return model.season == "3" && model.series == "Breaking Bad"
+                return model.season.trimmingCharacters(in: .whitespacesAndNewlines) == "3" && model.series == "Breaking Bad"
             })) ?? [])
             self.bd4Model = SeasonEpisodeModel(seasonName: "Breaking Bad Season 4", episodeModelList: (episodes?.filter({ model in
-                return model.season == "4" && model.series == "Breaking Bad"
+                return model.season.trimmingCharacters(in: .whitespacesAndNewlines) == "4" && model.series == "Breaking Bad"
             })) ?? [])
             self.bd5Model = SeasonEpisodeModel(seasonName: "Breaking Bad Season 5", episodeModelList: (episodes?.filter({ model in
-                return model.season == "5" && model.series == "Breaking Bad"
+                return model.season.trimmingCharacters(in: .whitespacesAndNewlines) == "5" && model.series == "Breaking Bad"
             })) ?? [])
             self.bcs1Model = SeasonEpisodeModel(seasonName: "Better Call Saul Season 1", episodeModelList: (episodes?.filter({ model in
-                return model.season == "1" && model.series == "Better Call Saul"
+                return model.season.trimmingCharacters(in: .whitespacesAndNewlines) == "1" && model.series == "Better Call Saul"
             })) ?? [])
             self.bcs2Model = SeasonEpisodeModel(seasonName: "Better Call Saul Season 2", episodeModelList: (episodes?.filter({ model in
-                return model.season == "2" && model.series == "Better Call Saul"
+                return model.season.trimmingCharacters(in: .whitespacesAndNewlines) == "2" && model.series == "Better Call Saul"
             })) ?? [])
             self.bcs3Model = SeasonEpisodeModel(seasonName: "Better Call Saul Season 3", episodeModelList: (episodes?.filter({ model in
-                return model.season == "3" && model.series == "Better Call Saul"
+                return model.season.trimmingCharacters(in: .whitespacesAndNewlines) == "3" && model.series == "Better Call Saul"
             })) ?? [])
             self.bcs4Model = SeasonEpisodeModel(seasonName: "Better Call Saul Season 4", episodeModelList: (episodes?.filter({ model in
-                return model.season == "4" && model.series == "Better Call Saul"
+                return model.season.trimmingCharacters(in: .whitespacesAndNewlines) == "4" && model.series == "Better Call Saul"
             })) ?? [])
             
             
