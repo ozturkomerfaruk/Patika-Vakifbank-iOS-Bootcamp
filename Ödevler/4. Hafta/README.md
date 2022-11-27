@@ -54,6 +54,17 @@ https://user-images.githubusercontent.com/56068905/204097652-e10826f3-e277-465b-
 
 * WebView 
 
+# Ödev Hakkında Birkaç Söz
+
+Geçtiğimiz Eylül ayında Swift ile ilk kez tanıştığımdan beri gerçek manada ilk API deneyimim bu ödev ile gerçekleşti. Tasarım konusunda elimden geldiğince kendimi geliştirmeye ve Bootcamp süresince öğrenmiş olduğum içerikleri ödevlerde kullanmaya çalışıyorum sürekli. Kendimi geliştirmem için bırakacağınız her bir issue benim için altın değerinde olacaktır. Issue'ları kendi repoma bırakabilirsiniz. Kendi repomda da ödevi paylaştım.
+
+[Kendi repomun linki](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/%C3%96devler/4.%20Hafta)
+
+Aynı zamanda ödev içerisinde WebView ile kendi blog sayfamın da gösterimini yapmıştım. Bakmak için blog sayfama gidebilirsiniz ^^
+
+Blog sayfamın linki: [ozturkomerfaruk.com](https://ozturkomerfaruk.com/)
+  
+
 
 
 
