@@ -387,3 +387,53 @@ Stackoverflow da ki [What is the best comment in source code you have ever encou
 
 ## Chapter 5 - Formatting
 
+Her projenin kodlarının yazıldığı bir format biçimi vardır. Bu biraz da kurum kültürüyle alakalı bir olaydır. Her insanın kendi kafasına göre projeyi şekil vermesi son derece yanlıştır. Bir format biçimi belirlenir ve projeye dahil olanlar ona uymak zorundadır. Mesela bu repo içerisinde ben Linkedin, Airbnb gibi şirketlerin Style guidline larını paylaştım onlara bakabilirsiniz. Orada da açıkça gözüküyor ki, bir sistem var ve herkes o sisteme tabi olarak kod yazıyor.
+
+1. Dikey Formatlama
+
+Fonksiyonerliği anlatırken aslında bahsetmiştim biraz. Bir sayfada kod satırı ne kadar fazlaysa o kadar sıkıntılı durumlar yaşanabilmektedir. Bu durum aslında kurum kültürü olarak da belirtilebilir mesela denilebilir. Swift de iOS programlanırken, en fazla 400 satır kod olacak gibi...
+
+2. Gazete Metaforu
+
+Gazete gerçi artık kalmadı ama aslında yazarın burada demek istediği şey şu. Bir haber sitesine girdin ve o haber sitesine girdiğinde ilk aradığın özellik ne oluyor. Sayfanın başında, o haberin kısa bir özetini görmek isteriz. O özet bize her şeyi sunar her şey hakkında bilgi verir. Detaylar aşağıdadır. Aşağıya indikçe, haberin detaylarını daha da öğreniriz. İşte kod dünyası da böyle olmalı. Başta kısa bir özet, class ve metot isimleri çok net, aşağı indikçe detaylar belirgin.
+
+3. Kavramlar Arası Dikey Açıklık
+
+Mesela class imzası ile altında değişkenler tanımlanırken aralarında boşluk bırakılması gerektiğidir. Bu tip dikey açıklıklardır aslında. Buna mesela şu örnekte verilebilir. Bir değişken tipini alt alta yaz o bittikten sonra başka bir tipe geç. Aralarında boşluk bırak. Bu o kadar düzenli oluyor ki. Kafanızda canlanmadıysa şöyle düşünün. Bulaşık yıkacaksınız, kocaman bir leğenin içine tabak çanak kaşık çatal vs. her şeyi doldurup tek tek yıkamak mı daha hızlı yoksa ilk önce tabakları bir kenera koyup, bardakları bir yere koyup, çatal kaşıkları bir yere koyup yıkamak mı tek tek daha hızlı. 
+
+4. Dikey Yoğunluk
+
+Yukarıda bir örnek vardı adam String değişken tanımlayacak ismi username mesela, üstünde kocaman yorum satırı. Username yazıyor. Yahu buna böyle detaylar verilmesine ne gerek var? Yoğunluk fazla olmayacak, sade ve öz olacak. Yorum satırı her yere yazılmayacak ama öz yazılacak.
+
+5. Dikey Uzaklık
+
+İşte güzel yerlerden birisi daha. Bazı arkadaşlar kod yazarken bunu hiç umursamaz. Döngünün süslü parantezleri çok uzak yerlere itilmiş, parantezler birbirinden kopmuş gitmiş. Flutter da bu çok yaşanıyor. Orada her şeyin düzenli olması gerekmekte, bir sistemin olması gerekmekte. Eğer her şey böyle olursa, karmaşıklık, düzensizlik hatsafhada olur. Çözüm ne biliyor musunuz, çözüm gerçek manada bir formatlama sistemine herkesin ayak uydurmasıdır.
+
+
+
+Diğer bir husus da Değişkenlerin tanımlanma kuralıdır. Değişkenler kafalarına göre tanım gerçekleşmemesi gerekir. Kullanıldıkları yere en yakın şekilde tanımlanmalıdır. Öbür türlü laf karmaşıklığı
+
+Döngü içinde kullanılan değişkenlerde, döngüyle beraber tanımlanmalı
+
+**Dependent Fonksiyonlar**
+
+Birbiriyle girintili fonksiyonlar varsa bunlar mümkün olduğunca alt alta yazılmalıdır çünkü anında ona ulaşabilmek, ve kod okunurluğunu artırmak isteriz.
+
+Eskiden monitörler küçük olduklarında, bir kod satırını yana kaydırılamayacak şekilde uzun olmasın derlermiş. Vay be! Şimdi 32 inç bir monitörde küçük font boyutunda bir yazıda yan yana Allah bilir kaç satır kelime sığar. Ben deyim 500 sen de 1000 satır yani. Bu doğru bir şey değil hocam. En fazla 120 karakter olmalı bir genişlik. Taş çatlasın çevresi.
+
+**Yatay Açıklık ve Yoğunluk**
+
+Dikey boşluk gibi buda önemli meselelerden birisidir. Burada, dikkat edilmesi gereken kurallardan biri yine yoğunluğu seyrelttirmektir. Amaç güzergahlarımızdan birisi mesela atama işlemi yaparken 4 += 5 diyeceksek bu aradaki boşluğu koy abi. Çekinme ya. Haftalar sonra koda baktığında bir eciş bücüş bişey oluyor. Anlayana kadar kılı kırk yarıyorsun.
+
+**Girintileme**
+
+Bir sınıf hiyerarşilerden oluşur. Sınıf içerisinde metotlar, metotlar içerisinde bloklar… Bu hiyerarşinin her bir seviyesi isimlerini tanımlayabildiğimiz kapsamlardır ve kapsamların bu hiyerarşilerini görünür yapabilmek için konumlarına göre satırları girintilendirmemiz gerekir.
+
+Bir sınıf içerisindeki metotlar sınıfın bir seviye sağına, metotların gerçekleştirimleri bu metot tanımlarının bir seviye sağına, metot içerisindeki bloklar ise her bir bloğun sağına girintilidir. Girintileme olmadan programlar insanlar tarafından neredeyse okunmaz olurdu.
+
+**EN ÖNEMLİ BAŞLIK**
+
+Bir ekibin parçasıysan, başlatmayacan kendi formatlama kurallarından. O ekibe uyacaksın. Ekibi sen inşa ediyorsan, sen kendi kurallarını dayatıcan. Bunun raconu budur hocam. Ha derlerse projeye başlamadan önce hadi bir formatlama biçimi konuşalım. İşte gerçek racon budur. Böyle daha sağlıklı kod geliştirilir. Bunu zaman kaybı olarak görmek ne kaybettirir biliyor musunuz? Daha doğrusu formatlamayı umursamadan projeye başlamak size ne kaybettirir? Eğer proje büyük bir projeyse daha projenin ortasında her kafadan bir ses çıkmasından hapı yutarsınız. Ben Swift diliyle daha büyük bir projede henüz çalışmadım. Ama garipsediğim olaylardan birini anlatım. Mesela TableView ın metotlarını ayrı bir extension içerisinde yazan da var, yazmayan da. Eğer her sayfada bu kural değişirse, nerde bu tableview metotları diye dövünüp durursunuz. Hiç gerek yok hocam. Hiç gerek yok.
+
+Chapter 6 - Objects and Data Structures
+
