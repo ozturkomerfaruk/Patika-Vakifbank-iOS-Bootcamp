@@ -220,9 +220,170 @@ Fonksiyonlar bir şeyi yapmalıdır, hata işleme ise başlı başına bir şeyd
 
 Bir fonksiyonun sadece bir return ifadesi olmalı, bir döngüde break, continue ya da goto ifadeleri asla ve asla olmamalıdır. Fonksiyonlar küçük olduğunda, bu kurallar küçük faydalar sağlar. Sadece büyük metotlarda bu ifadeler büyük faydalar getirir. Yani fonksiyonlarınızı küçük tutarsanız, birden fazla return, continue ya da break ifadesi kodunuza zarar veremez; hatta tek giriş - tek çıkış kuralından (single-entry, single-exit) bile daha açıklayıcı olabilir. Diğer bir taraftan goto ifadesi sadece çok büyük fonksiyonlarda bir anlam ifade eder bu nedenle goto kullanımından kaçınılmalıdır.
 
+Dont Repeat Yourself ilkesi vardır. DRY derler buna hatta kısaca. Fonksiyonların amacı budur en nihayetinde. Fonksiyonların tek bir amacı olmalıdır ve tek amaç ile kod okunabilirliği son derece artmaktadır. Karmaşık ecük bücük kodlar son derece yanlıştır üstadım.
+
 Chapter'ın en sonunda can alıcı soru soruluyor. İyi de hocam peki nasıl yazacağız bunları adam akıllı der gibi bir soru :)
 
 Bir makale hakkında bir şeyler yazdığınızda; önce düşüncelerinizi toplarsınız, daha sonra kulağa iyi gelene kadar düzenleme yaparsınız. İlk taslak acemi ve dağınık olabilir. Ben kod yazıyorken fonksiyonlarımın ilk halleri uzun ve karışık olur. Bir sürü girintilemeler ve iç içe döngüleri olur. Uzun argüman listeleri olur. Verdiğim isimler keyfidir ve tekrarlanmış (duplicate) kodlar vardır. Ancak bu acemi satırların her birini kapsayan testlerim de vardır. Daha sonra kodu fonksiyonlara bölerek, isimleri değiştirerek, tekrarlanmış kodları çıkartarak (extract) rafine ederim. Metotları küçültürüm ve tekrar sıraya koyarım. Sonunda fonksiyonlarım, anlattığım tüm bu kurallara uygun olurlar.
 
+## Chapter 4 - Comments
 
-Chapter'ın sonları tekrar okunmalı
+En öncelikle vurgulanması gereken hususlardan birisi kötü bir kodu açıklamaya çalışarak zaman kaybetmeyin. Ona boşuna yorum yazmayın. O kodu yeniden yazın. Yeniden yazdığınız koda yorum satırı ekleyin.
+
+Çok güzel bir söz var: **Bir yorum ne kadar eski olursa, yazıldığı koddan bir o kadar uzak ve bir o kadar yanlış oluyor. Sebebi basit, yazılımcılar yorumları güncellemezler.**
+
+Bazen de bir projeye dahil olduğumuzda, proje hakkında hiçbir şey bilmesek bile yorum satırlarına bakarak projeyi daha çalıştırmadan anlamaya çalışabiliriz. Ancak hödüğün biri yorum yazmış sonra güncellememiş ve o aylarca kalmış orada. Üstünden çok kod gelmiş gitmiş. O yorum satırları nasıl da yanlış yönlendiriyor insanları değil mi 😒 
+
+Yorum yazmak güzeldir ancak fonksiyonerliği fazla, değişken isimleri son derece de iyi gibi temiz kod nüansında yazılan yorumsuz bir kod, emin olun saçma salak yaılan koddan ve o koda ait onlarca boş açıklama satırından bin kat mevladır.
+
+Normalde ben bu kitabı okumadan önce yorum satırları son derece önemli felan filan derdim ama anlıyorum ki şimdi: **Gerçekten iyi bir yorum, onu yazmamanın bir yolunu bulduğunuz yorumdur.**
+
+Ancak yorum yazmadan olur mu, tabiki hayır. Bazı algoritmalar için gereklidir ancak nesne taban mantığında kod yazmak, çok çok çok iyi algoritma kurmadan daha önce gelmektedir.
+
+Bazı yorum satırlarında da, telif hakkı sebebiyle ve yazarlık durumları için bazı ifadeler kullanılması gerekiliyormuş. Örneğin:
+
+```
+// Copyright (C) 2003,2004,2005 by Object Mentor, Inc. All rights reserved.
+// Released under the terms of the GNU General Public License version 2 or later.
+```
+
+Tabi tüm durumlar için gerekli olan yasal yorumları her yoruma koymaktansa standart bir lisans ya da dış bir döküman referans tercih edilmeli.
+
+Mesela iyi yorum yazmak mı, temiz kod mu sorusuna şöyle bakalım
+
+```
+// format matched kk:mm:ss EEE, MMM dd, yyyy
+Pattern timeMatcher = Pattern.compile("\\d*:\\d*:\\d* \\w*, \\w* \\d*, \\d*");
+```
+Yorum yazmak yerine eğer kod, tarihlerin ve zamanların formatını dönüştüren bir sınıfa taşındaydı çok daha açık ve temiz olabilirdi.
+
+Bir diğer önemli yorum satırı da TODO yorumlarıdır. Hemen hemen her dilde olan mükemmel bir özelliktir. Bir işaretleme noktasıdır ve burada fonksiyonun neden bozuk bir gerçekleştirimi olduğunu ve fonksiyonun gelecekte nasıl olması gerektiğini söylemektedir. Dahas sonra eklenmesi gerekenleri ya da deprecated edilmişleri kaldırmak istedikleri yerleri işaretleme yeridir. TODO olduğunda bunlar ayrı bir yerden gözükmektedir.
+
+Birde API açıklamaları var. Burada Javadoc'lardan bahsediyor kitap. Ancak ben kendi yorumumu açıklamak istiyorum. Bir mobil geliştiricinin en çok zorlanacağı ifadelerden biri belki de kötü bir API'dır. Endpoint'den bir veri geliyor ama ne geliyor. Bir projede bir keresinde bir endpoint görmüştüm. Hiç güncellenmemiş ve 10 yıllık bir API idi. Her şey enumlarla tutulmuştu. Böyle nasıl deyim ama her şey. Mesela saatler bile enumlarla tutulmuştu. Eski, kara düzen java desktop uygulaması için hazırlanmış bir API'yı biz mobile çekmeye çalışıyorduk. Her şey saçmalıklardan ibaret çünkü saat tutuyoruz mesela saati string olarak vermek yerine bana sadece enumdan karşılığı dönüyor. Mesela saat 18:30 kaydedilmiş bana bi rakam dönüyor 25 mesela. Ula ben bunu nasıl anlayım, nasıl bilim, kime sorum. Hayattan bezmiştim. Zaten kod yazmayı adam akıllı beceremiyorum tam, bir de böyle bir saçmalık var. Benden ne isteniyor, napıyorum diyorum. İşte bakın burada Clean Code'un tamamen ihmal edilmesi söz konusudur. Burada amaç gerçekten de, API açıklamaları olmalarıdır.
+
+Ama yorumlar öyle gereksiz olmayacak abi, kötü yazılmayacak. O fonksiyonlar gerçekten de tek bir amaca hizmet edecek ve her fonksiyonun da yorum satırları olması gerektiği gibi olacak. Parametresi nedir, ne değildir keskin kurallarla belirtilecek. Ne anlama geldiğini anlamak için diğer modüllere baktırmayı gerektirecek bir hiçbir yorum, yorum yazmak için harcanacak zamana değmez.
+
+Koda baktığında böyle çaaat diye anlayacan direk. Yorum yazmaya gerek duymayacan. Sonra dicen ki, ha bi de yorum yazım. Sonra paat al sana clean code hocam.
+
+Bazı yorum satırları zorunludur. Parametre açıklamaları gibi.
+
+```
+/**
+ * @param title             The title of the CD
+ * @param author            The author of the CD
+ * @param tracks            The number of tracks on the CD
+ * @param durationInMinutes The duration of the CD in minutes
+ */
+public void addCD(String title, String author,
+                  int tracks, int durationInMinutes) {
+    CD cd = new CD();
+    cd.title = title;
+    cd.author = author;
+    cd.tracks = tracks;
+    cd.duration = duration;
+    cdList.add(cd);
+}
+```
+
+Günlük gibi yazılan yorumlar
+
+![image](https://user-images.githubusercontent.com/56068905/204452548-a138cfbc-6b2f-435c-a6ed-bcca75dd5b4d.png)
+
+Ancak günümüzde artık Git gibi versiyon kod sistemleri var. Bunlar laf kalabalığı. Ama burda özellikle vurgulamak istediğim bir şey var. Şu yorumların düzenine bakın. İşte zamanında 2000 yılından önce bilgisayarda kod böyle yazılıyordu.
+
+```
+private void startSending() {
+    try {
+        doSending();
+    } catch (SocketException e) {
+        // normal. someone stopped the request.
+    } catch (Exception e) {
+        try {
+            response.add(ErrorResponder.makeExceptionString(e));
+            response.closeAll();
+        } catch (Exception e1) {
+            //Give me a break!
+        }
+    }
+}
+```
+
+Adam yılmış yılmış. Salın beni demiş. Ahahaha. Bende bazen yeteeeer diyordum ve unutuyordum kod kalıyordu öyle 😂 
+
+Ama ne demiştik biz try catch ifadeleri ayrı bir metotta olmalı ve fonksiyonun amacı tek olmalı. eğer öyle olursa yorum yazmak daha anlamlı olur.
+
+```
+private void startSending() {
+    try {
+        doSending();
+    } catch (SocketException e) {
+        // normal. someone stopped the request.
+    } catch (Exception e) {
+        addExceptionAndCloseResponse(e);
+    }
+}
+
+private void addExceptionAndCloseResponse(Exception e) {
+    try {
+        response.add(ErrorResponder.makeExceptionString(e));
+        response.closeAll();
+    } catch (Exception e1) {
+    }
+}
+```
+
+Yani yorum yazacaz diye de abartmaya gerek yok
+
+```
+/**
+ * The name.
+ */
+private String name;
+/**
+ * The version.
+ */
+private String version;
+/**
+ * The licenceName.
+ */
+private String licenceName;
+/**
+ * The version.
+ */
+private String info;
+```
+
+Kapama parantezler var bir de:
+
+```
+public class WC {
+    public static void main(String[] args) {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        String line;
+        int lineCount = 0;
+        int charCount = 0;
+        int wordCount = 0;
+        try {
+            while ((line = in.readLine()) != null) {
+                lineCount++;
+                charCount += line.length();
+                String words[] = line.split("\\W");
+                wordCount += words.length;
+            } //while
+            System.out.println("wordCount = " + wordCount);
+            System.out.println("lineCount = " + lineCount);
+            System.out.println("charCount = " + charCount);
+        } // try
+        catch (IOException e) {
+            System.err.println("Error:" + e.getMessage());
+        } //catch
+    } //main
+}
+```
+
+Flutter'ın kendisinde vardı bu özellik ve çok kullanışlıydı. Ama tabi, Flutter'da 1000 satırlık kod bile yazanlar olduğunu düşünürsek bu özellik mantıklıydı ama Flutter'ın en büyük sıkıntısı buydu. Algoritma yazmayı iyi bilmeyen biri için Flutter çok laf kalabalığı yapılan yerlerden biriydi. Neyse konuya dönecek olursak bu kapama parantez yorumları çok od satırı için iyi az satır için laf kalabalığı
+
+Stackoverflow da ki [What is the best comment in source code you have ever encountered? [closed]](https://stackoverflow.com/questions/184618/what-is-the-best-comment-in-source-code-you-have-ever-encountered) başlığında yazılan yorum satırlarına bakın. ahahahaa 😂😂😂😂😂 Gerçekten de asıl iş hayatında çıkan yorumlar bunlar oluyor işte. Biz yine de elimizden gelen en iyi yorumları yazmaya çalışalım. Bu yorumları gördüğümüzde de kızmak yerine sadece tebbessüm edelim.
+
+## Chapter 5 - Formatting
+
