@@ -437,3 +437,117 @@ Bir ekibin parçasıysan, başlatmayacan kendi formatlama kurallarından. O ekib
 
 Chapter 6 - Objects and Data Structures
 
+Bir yazılımın en temellerinin anlatıldığı bir bölüme geldik. Bu bölüm kapsamında öğreneceğimiz belki yüzlerce şey var. Bunlardan bir tanesi Get ve Set metotları
+
+Her değişkeni olabildiğince private yaparız ve get set ile bunları public haline getiririz. İyi de neden? Yani daha doğrusu Nesneler ve Veri yapıları kavramları bunlar tam olarak nedir ve ne için kullanılırlar?
+
+1. Veri Soyutlama
+
+Get ve Set yaygın bir kullanım şeklidir yazılım camiasında. Biz de bu kavramı detaylamasına bir bakalım şimdi. Öncelikle amacımız nesnenin içindeki nesneleri soyutlamaktır. Yani dışarıdan manipüle edilmesini engellemek. Olabildiğince, nesne içerisinde kullanılan metodolojileri, nesneleri vs. açığa çıkarmamaya gayret ederiz. Bu yüzden ne yapılacaksa Set ve Get içinde yaparız. Peki sizce bu kadarı yeterli mi? Şimdi 2 örnek inceleyelim.
+
+```
+public interface Vehicle {
+    double getFuelTankCapacityInGallons();
+    double getGallonsOfGasoline();
+}
+```
+
+```
+public interface Vehicle {
+    double getPercentFuelRemaining();
+}
+```
+
+Masum gibi görünen bu arayüz ekranında da, şunu görmekteyiz. Bir sınıf, değişkenlerini getter ve setter metotlar aracılığı ile dışarı açmaz; aksine gerçekleştirimi bilmelerine gerek olmadan veriyi değiştirmelerine izin veren arayüzleri açar.
+
+İkinci örnek makbüldür. Verimizin detaylarının açığa çıkmasını istemeyiz. Sadece mesele Get Set değil yani burada olay.  Gerçek niyetimizi, nesnenin içerdiği veriyi en iyi şekilde temsil edebilecek şekle sokmalıyız. En kötü seçenek ise getter/setter metotları eklemektir.
+
+2. Veri / Nesne Anti-Simetrisi
+
+Prosedürel kod yani veri yapılarını kullanan kod, mevcut veri yapılarını değiştirmeden yeni fonksiyonlar eklemeyi kolaylaştıran koddur. Nesne taban mantığı ise mevcut fonksiyonları değiştirmeden yeni sınıflar eklemeyi kolaylaştırır. Bunlar birbirine zıt kavramlardır esasında. Ancak ikisini de kullanmayı doğru bilmek gerekmektedir.
+
+Bir proje geliştiriyorsunuz diyelim. Nesne taban mantığını iyi bilmek, o projeyi daha kolay yönetebilmenizi sağlar. Ancak veri yapıları mantığını bilmek ise o projeyi daha efektif kullanmanızı sağlar. Birinde çok iyi kodlar yazabilirken, diğerinde çok iyi o kodları birbiri içerisinde paslaşabilmeyi sağlarsınız.
+
+Prosedürel kod mantığı nesne yönelimli kod eklemeyi zorlaştırabilir çünkü tüm fonksiyonlar değişmelidir Nesne yönelimli kod ise yeni veri yapıları eklemeyi zorlaştırabilir. Yani, nesne yönelimli için zor olan şeyler prosedürel için kolay, prosedürel için zor olanlarda nesne yönelimli için kolaydır.
+
+3. Demeter Kuralı (Law of Demeter)
+
+Evet, yeni bir söz dizimi var. Nedir bu hocam? Hocam bu kural: Bir modül, değiştirdiği bir nesnenin içini bilmemeli, der. Get set metodunda olduğu gibi, nesne içini açmaz işlemlerini herkese açık hale getirir.
+
+***Talk to friens, not to strangers*** cümlesini küçükken heralde her anne söylerdi bizlere değil mi 😅 İşte aynı burada ki gibi, Eğer sınıfımıza izin verilen dışarıdan fonksiyonlar geliyorsa, bunlar da dışarıdan çağrılmaması gerekmektedir.
+
+```final String outputDir = ctxt.getOptions().getScratchDir().getAbsolutePath();```
+
+Bakın burada bu kuralın ihlali vardır. getOptions'da bu mesele bitmeliydi. Orada başka yere sıçrıyor oradan da başka yere sıçrıyor. NOOOOO!!!
+
+4. Tren Enkazları
+
+İşte hemen yukarı da ki örnek buna örnektir. Bir tren kazası olmuştur burada. Birbirini tekrar eden, birileri sürekli çağıran olaylar vardır burada. Yukarı da ki örneği bi düzeltelim hele.
+
+```
+Options opts = ctxt.getOptions();
+File scratchDir = opts.getScratchDir();
+final String outputDir = scratchDir.getAbsolutePath();
+```
+
+Ancak ikinci ve üçüncü kurallar yine Demeter kuralını ihlal etmektedir. ctxt, opts ve scratchDir'in nesne ya da veri yapısı olup olmamasına bağlıdır bu durum. Eğer nesne iseler neydi olay, iç yapısı saklanmalıydı. İç yapılarını biliyoruz ve bu bir ihlal. Eğer veri yapılarıysa bunlar neydi o, doğal olarak iç yapılarını açık ediyorlardı direk. Demeter Kuralı ihlali var burada.
+
+Şu şekilde olsaydı muhtemelen sıkıntı olmayacaktı.
+
+```
+final String outputDir = ctxt.options.scratchDir.absolutePath;
+```
+
+Yani burada bir metot ile erişildiğinde direk iç yapısını öğrenebiliyorsak buna gerek yok ancak burada direk classlarına gidiyoruz.
+
+Peki bu ctxt, opts, scratchDir nesne yönelimli olsaydı? O zaman iç yapılarını gizlemek zorunda kalacaklardı ve bu şekilde olmalıydı.
+
+```
+ctxt.getAbsolutePathOfScratchDirectoryOption();
+```
+
+ya da şöyle:
+
+```
+ctx.getScratchDirectoryOption().getAbsolutePath()
+```
+
+İkinci seçenek getScratchDirectoryOption() metodunun bir nesne değil bir veri yapısı olduğunu varsayıyor ve burada iki seçenek de iyi durmuyor.
+
+Eğer ctxt bir nesne ise, ona bir şeyler yapmasını söylemeliyiz, ona içindekileri sormamalıyız. (Tell Don’t Ask prensibi) O zaman neden scratchDirectory’den absolutePath’i istiyoruz? Onunla ne yapacağız?
+
+Olaylar nerelerden nerelere geldi değil mi? Amaaaan ne olacaaak sanki beaa der gibi misiniz, yoksa detayları daha da sorgulama eşiğinde mi? Bakalım Clean Code yazarı bu olayı nereye kadar götürecek?
+
+Ctcx de şu satırlar eklenebilir. Slash olarak kullanılanlar, anlayacağınız üzere File Path için.
+
+```
+String outFile = outputDir + "/" + className.replace('.', '/') + ".class";
+FileOutputStream fout = new FileOutputStream(outFile);
+BufferedOutputStream bos = new BufferedOutputStream(fout);
+```
+
+yukarıda ki örnek satırlarında ki AbsolutePath şu şekilde istenmeli artık
+
+```
+BufferedOutputStream bos = ctxt.createScratchFileStream(classFileName);
+```
+
+Ne oldu, ne değişti burada der gibi misiniz? Burada gerçekleşen örnekte ortaya çıkan sonuç şu şekildedir. Ctxt'nin iç yapısı gizlenmiş oldu ve Demeter kuralı da ihlal edilmiyor artık oldu. Detaylamasına ne inceledik be! Yalnız şunu söyleyim. Bu ihlallerin ne demek olduğunu, eğer bir iş hayatına girdiyseniz, görmeniz daha belki de canlı canlı neden yanlış olduğunu anlamanız daha mantıklı bile olabilir. O zaman burada yazılanların daha doğru olduğunu anlıyoruz. Zaten Clean Codee kitabında da Pragmatic Programmer kitabında da görmüş olduğumuz şeyler hep bi iş hayatı tecrübesi yaşayan insanların aslında neden 
+
+5. Veri Aktarım Nesneleri (Data Transfer Objects)
+
+Veri yapısı, public değişkenleri olan, fonksiyonları olmayan sınıflardır. Java da DTO mantığı gibi ya da Bean formu gibi. Nesne yönelimli programlamaya çok dikkat eden kişiye bu olay kendini iyi hissettirmek için vardır. Başka amacı yok. Ahahah.
+
+6. Melez Yapılar
+
+Hem private'ı hem public'ı esas olan yapılardır. Bunlar karmaşıklığa sebep olur. Bunlardan olabildiğince kaçınmaya çalışmak gerekmektedir.
+
+7. Aktif Kayıtlar
+
+DTO'ların özel formatlarıdır ancak **save** ve **find** gibi yönlendirici metotları vardır. Bir aktif kayda veri yapısıymış gibi davranmak ve iş kurallarını içeren ayrı nesneler yaratarak iç yapıyı saklamak, onlara nesnelermiş gibi davranmasına sebebiyet verir.
+
+
+7 Madde de, veri yapıları ve nesne taban mantığını inceledik. İyi yazılımcılar, Clean Code prensiplerine uyan yazılımcılar, hangi koşulda hangilerinin kullanılması gerektiğini iyi analiz eden yazılımcılardır.
+
+## Chapter 7 - Error Handling
+
