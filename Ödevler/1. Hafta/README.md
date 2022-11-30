@@ -39,6 +39,24 @@ var Question1Input = "Mer,k?ez: E;m.el'e geleme/z Ekre\\M"
 Question1(&Question1Input) ? print("Palindrom") : print("Palindrom değil")
 ```
 
+## 1. Soru Hocanın Çözümü
+
+```
+var value = ""
+func palindromeChecker(to value: String) {
+    let characterSet = CharacterSet(charactersIn: "!'+%")
+    let joinedString = value.components(separatedBy: characterSet).joined()
+    let result = joinedString.lowercased()
+    
+    if result == String(result.reversed()) {
+        print("\(value) is palindrome")
+    } else {
+        print("\(value) is not palindrome")
+    }
+}
+palindromeChecker(to: value)
+```
+
 ## 2. Soru
 
 ### Verilen bir array içerisindeki her bir elemanın sayısını veren bir fonksiyon yazınız.
@@ -67,6 +85,20 @@ var question2v3 = [1.1, 2.3, 1.1231, 1.1231, 1.1, 1.1, 4.6, 7.8788]
 var deneme = ["a", "b", "a", true, true, "c", 1,2,2,2,2, 3.14] as [Any]
 // inout kullanımı ile yine & konuluyor
 print(Question2(&deneme))
+```
+
+## 2. Soru Hocanın Çözümü
+
+```
+//2. Element Count
+func elementCount(array: [AnyHashable]) {
+    let stringMappedArray = array.map({ String(describing: $0) })
+    let initialTupleArray = stringMappedArray.map({ ($0, 1) })
+    let countedDictionary = Dictionary(initialTupleArray ,uniquingKeysWith: +)
+    print(countedDictionary)
+}
+
+elementCount(array: ["a", 1, 3, 3, 3, 2, true, "a", "c", "true"])
 ```
 
 ## 3. Soru
