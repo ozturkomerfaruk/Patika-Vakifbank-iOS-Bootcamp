@@ -549,5 +549,6 @@ DTO'ların özel formatlarıdır ancak **save** ve **find** gibi yönlendirici m
 
 7 Madde de, veri yapıları ve nesne taban mantığını inceledik. İyi yazılımcılar, Clean Code prensiplerine uyan yazılımcılar, hangi koşulda hangilerinin kullanılması gerektiğini iyi analiz eden yazılımcılardır.
 
+
 ## Chapter 7 - Error Handling
 
