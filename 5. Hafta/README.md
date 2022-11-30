@@ -209,16 +209,17 @@ Aynı şekilde bir plan yapmakta güzeldir ama plan demek her şey demek değild
 
 # Scrum
 
-Agile metodolojisi yukarıda anlattıklarımdır. Scrum'da bunun bir framework halidir. Farklı bir framework teknikleri de var. Ancak en kullanılanı Scrumdır. Bunun da bazı rolleri vardır.
+Agile metodolojisi yukarıda anlattıklarımdır. Scrum'da bunun bir framework halidir. Farklı bir framework teknikleri de var. Ancak en kullanılanı Scrumdır.
+
+## Roller
 
 * Product Owner         - Yöneticidir.
 * Development Team      - Yazılım ekipleri
 * Scrum Master          - Her ekibin Scrum lideri
 
-Toplantılar
+## Toplantılar
 
 * Sprint Planning       - Backlog toplantılarıdır.
 * Daily Scum            - Dün ne yaptım, bugün ne yaptım, beni engelleyen bir durum var mı
 * Sprint Review         - En son Product Owner ile olan toplantı
 * Sprint Retrospective  - Neler iyi gitti, neler kötü gitti, neleri değiştirebiliriz
-
