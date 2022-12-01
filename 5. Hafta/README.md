@@ -31,7 +31,7 @@ protocol NewNoteViewDelegate: AnyObject {
 
 AnyObject kullanılmasının sebebinde delegate'i tanımlarken weak olarak tanımlayabilmemiz için. Weak referans typler için kullanılıyor. AnyObject bunu sağlıyor.
 
-### Ardından View'ın içerisinde:
+### Ardından View'ın içerisinde:
 
 ```
 weak var delegate: NewNoteViewDelegate?
@@ -45,7 +45,7 @@ weak var delegate: NewNoteViewDelegate?
 
 Weak olarak tanımladıktan sonra, delegate fonksiyonunu kaydet butonu içerisinde gerçekleştirebiliyoruz.
 
-### ViewController içerisinde: 
+### ViewController içerisinde: 
 
 VC içerisinde ki Button Action kısmında delegate'i aktif ediyoruz.
 
@@ -88,7 +88,7 @@ Bu TableView'ın Cell'lerinin her bir satırını otomatik size haline getiriyor
     }
 ```
 
-## Core Data Yapısı
+## Core Data Yapısı
 
 ### Eğer hazırda kullanılan projeye sonradan entegre etmek istiyorsak, AppDelegate içerisine:
 
@@ -209,16 +209,17 @@ Aynı şekilde bir plan yapmakta güzeldir ama plan demek her şey demek değild
 
 # Scrum
 
-Agile metodolojisi yukarıda anlattıklarımdır. Scrum'da bunun bir framework halidir. Farklı bir framework teknikleri de var. Ancak en kullanılanı Scrumdır. Bunun da bazı rolleri vardır.
+Agile metodolojisi yukarıda anlattıklarımdır. Scrum'da bunun bir framework halidir. Farklı bir framework teknikleri de var. Ancak en kullanılanı Scrumdır.
+
+## Roller
 
 * Product Owner         - Yöneticidir.
 * Development Team      - Yazılım ekipleri
 * Scrum Master          - Her ekibin Scrum lideri
 
-Toplantılar
+## Toplantılar
 
 * Sprint Planning       - Backlog toplantılarıdır.
 * Daily Scum            - Dün ne yaptım, bugün ne yaptım, beni engelleyen bir durum var mı
 * Sprint Review         - En son Product Owner ile olan toplantı
 * Sprint Retrospective  - Neler iyi gitti, neler kötü gitti, neleri değiştirebiliriz
-
