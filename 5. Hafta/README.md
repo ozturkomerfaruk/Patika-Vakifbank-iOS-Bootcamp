@@ -45,7 +45,7 @@ weak var delegate: NewNoteViewDelegate?
 
 Weak olarak tanımladıktan sonra, delegate fonksiyonunu kaydet butonu içerisinde gerçekleştirebiliyoruz.
 
-### ViewController içerisinde: 
+### ViewController içerisinde: 
 
 VC içerisinde ki Button Action kısmında delegate'i aktif ediyoruz.
 
@@ -88,7 +88,7 @@ Bu TableView'ın Cell'lerinin her bir satırını otomatik size haline getiriyor
     }
 ```
 
-## Core Data Yapısı
+## Core Data Yapısı
 
 ### Eğer hazırda kullanılan projeye sonradan entegre etmek istiyorsak, AppDelegate içerisine:
 
