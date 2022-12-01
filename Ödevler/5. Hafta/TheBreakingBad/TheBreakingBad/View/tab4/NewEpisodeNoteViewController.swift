@@ -19,6 +19,10 @@ final class NewEpisodeNoteViewController: UIViewController {
     
     @IBOutlet private weak var imageView: UIImageView!
     
+    @IBOutlet private weak var getPhotoOutlet: UIButton!
+    
+    @IBOutlet private weak var typeNoteTextView: UITextView!
+    
     //seasons
     private var bd1Model: SeasonEpisodeModel?
     private var bd2Model: SeasonEpisodeModel?
@@ -40,6 +44,7 @@ final class NewEpisodeNoteViewController: UIViewController {
     
     private func configure() {
         chooseTvSeriesOutlet.layer.cornerRadius = chooseTvSeriesOutlet.frame.height / 2
+        getPhotoOutlet.layer.cornerRadius = getPhotoOutlet.frame.height / 2
         tvSeriesCollection.forEach {
             btn in
             btn.layer.cornerRadius = btn.frame.height / 2
@@ -53,6 +58,8 @@ final class NewEpisodeNoteViewController: UIViewController {
         episodeTableView.dataSource = self
         episodeTableView.delegate = self
         episodeTableView.register(UINib(nibName: "NoteEpisodeCustomCell", bundle: nil), forCellReuseIdentifier: "noteEpisodeCustomCell")
+        
+        imageView.isHidden = true
     }
     
     @IBAction func tvSeriesCollectionAction(_ sender: UIButton) {
@@ -136,7 +143,7 @@ final class NewEpisodeNoteViewController: UIViewController {
     }
     
     @IBAction func takeAPhoto(_ sender: Any) {
-       print("asdasd")
+        print("asdasd")
         showPhotoAlert()
     }
     
@@ -150,6 +157,13 @@ final class NewEpisodeNoteViewController: UIViewController {
             self.getPhoto(type: .photoLibrary)
         }))
         
+        //TODO: Update de silme işlemi
+        
+        alert.addAction(UIAlertAction(title: "Delete Photo", style: .default, handler: { action in
+            self.imageView.image = nil
+            self.imageView.isHidden = true
+        }))
+        
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
@@ -160,6 +174,11 @@ final class NewEpisodeNoteViewController: UIViewController {
         picker.allowsEditing = false
         picker.delegate = self
         present(picker, animated: true, completion: nil)
+        self.imageView.isHidden = false
+    }
+    
+    @IBAction func saveAction(_ sender: Any) {
+        print("alsdjka")
     }
     
 }
