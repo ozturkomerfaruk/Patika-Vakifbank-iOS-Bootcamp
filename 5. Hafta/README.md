@@ -31,7 +31,7 @@ protocol NewNoteViewDelegate: AnyObject {
 
 AnyObject kullanılmasının sebebinde delegate'i tanımlarken weak olarak tanımlayabilmemiz için. Weak referans typler için kullanılıyor. AnyObject bunu sağlıyor.
 
-### Ardından View'ın içerisinde:
+### Ardından View'ın içerisinde:
 
 ```
 weak var delegate: NewNoteViewDelegate?
