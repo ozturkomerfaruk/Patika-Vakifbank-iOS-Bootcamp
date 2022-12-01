@@ -222,4 +222,4 @@ Agile metodolojisi yukarıda anlattıklarımdır. Scrum'da bunun bir framework h
 * Sprint Planning       - Backlog toplantılarıdır.
 * Daily Scum            - Dün ne yaptım, bugün ne yaptım, beni engelleyen bir durum var mı
 * Sprint Review         - En son Product Owner ile olan toplantı
-* Sprint Retrospective  - Neler iyi gitti, neler kötü gitti, neleri değiştirebiliriz
+* Sprint Retrospective  - Neler iyi gitti, neler kötü gitti, neleri değiştirebiliriz    
