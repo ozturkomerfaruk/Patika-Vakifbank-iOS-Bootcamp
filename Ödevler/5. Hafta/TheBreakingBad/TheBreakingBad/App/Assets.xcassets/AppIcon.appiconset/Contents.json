@@ -1,0 +1,14 @@
+{
+  "images" : [
+    {
+      "filename" : "amazing-breaking-bad-artwork-1024x1024-wallpaper-16604.jpg",
+      "idiom" : "universal",
+      "platform" : "ios",
+      "size" : "1024x1024"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

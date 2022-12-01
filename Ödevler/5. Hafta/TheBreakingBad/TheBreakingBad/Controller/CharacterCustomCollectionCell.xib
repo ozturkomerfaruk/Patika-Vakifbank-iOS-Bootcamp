@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="characterCustomCell" id="gTV-IL-0wX" customClass="CharacterCustomCollectionCell" customModule="TheBreakingBad" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="82" height="113"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="82" height="113"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ef-hc-MuE">
+                        <rect key="frame" x="0.0" y="0.0" width="82" height="113"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWF-bX-WkU">
+                                <rect key="frame" x="20.333333333333332" y="46.333333333333336" width="41.333333333333343" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naG-F4-N3t">
+                                <rect key="frame" x="20.333333333333332" y="76.666666666666671" width="41.333333333333343" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GqQ-Lc-kZ6">
+                                <rect key="frame" x="20.333333333333332" y="15.999999999999998" width="41.333333333333343" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GqQ-Lc-kZ6" firstAttribute="centerX" secondItem="7ef-hc-MuE" secondAttribute="centerX" id="0JD-HW-v4r"/>
+                            <constraint firstItem="UWF-bX-WkU" firstAttribute="centerX" secondItem="7ef-hc-MuE" secondAttribute="centerX" id="Cjz-2s-dfx"/>
+                            <constraint firstItem="naG-F4-N3t" firstAttribute="centerX" secondItem="7ef-hc-MuE" secondAttribute="centerX" id="E6I-l8-h1b"/>
+                            <constraint firstItem="naG-F4-N3t" firstAttribute="top" secondItem="UWF-bX-WkU" secondAttribute="bottom" constant="10" id="QwK-y8-ewW"/>
+                            <constraint firstItem="UWF-bX-WkU" firstAttribute="top" secondItem="GqQ-Lc-kZ6" secondAttribute="bottom" constant="10" id="bdJ-OO-Fl2"/>
+                            <constraint firstItem="UWF-bX-WkU" firstAttribute="centerY" secondItem="7ef-hc-MuE" secondAttribute="centerY" id="nZD-eg-2eh"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="7ef-hc-MuE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="6LB-kC-EfO"/>
+                <constraint firstAttribute="bottom" secondItem="7ef-hc-MuE" secondAttribute="bottom" id="Pww-0n-blB"/>
+                <constraint firstItem="7ef-hc-MuE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="RRa-uS-Nou"/>
+                <constraint firstAttribute="trailing" secondItem="7ef-hc-MuE" secondAttribute="trailing" id="wex-ey-z4g"/>
+            </constraints>
+            <size key="customSize" width="82" height="113"/>
+            <connections>
+                <outlet property="myView" destination="7ef-hc-MuE" id="RNa-r5-UAs"/>
+                <outlet property="nameLabel" destination="UWF-bX-WkU" id="AnP-FK-PRo"/>
+                <outlet property="ninckNameLabel" destination="naG-F4-N3t" id="yD8-ge-nzH"/>
+                <outlet property="portrayedLabel" destination="GqQ-Lc-kZ6" id="Rjt-0O-ACo"/>
+            </connections>
+            <point key="canvasLocation" x="48.854961832061065" y="-46.83098591549296"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
