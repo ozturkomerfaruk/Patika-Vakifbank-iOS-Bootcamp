@@ -9,6 +9,7 @@ import UIKit
 
 final class NewEpisodeNoteViewController: BaseViewController {
     
+    @IBOutlet private weak var newOrUpdateTextLabel: UILabel!
     @IBOutlet private weak var chooseTvSeriesOutlet: UIButton!
     @IBOutlet private var tvSeriesCollection: [UIButton]!
     @IBOutlet private weak var selectEpisodeOutlet: UIButton!
@@ -29,6 +30,7 @@ final class NewEpisodeNoteViewController: BaseViewController {
         if modelConstructor != nil {
             configureTools()
             saveNoteOutlet.titleLabel?.text = "Update Note"
+            newOrUpdateTextLabel.text = "Update Episode Note"
         }
     }
     
@@ -57,8 +59,6 @@ final class NewEpisodeNoteViewController: BaseViewController {
             btn.alpha = 0
         }
         selectEpisodeOutlet.layer.cornerRadius = selectEpisodeOutlet.frame.height / 2
-        
-        
         imageView.isHidden = true
     }
     
