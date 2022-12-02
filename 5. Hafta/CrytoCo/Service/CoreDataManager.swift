@@ -51,4 +51,20 @@ final class CoreDataManager {
             print("Could not save. \(error), \(error.userInfo)")
         }
     }
+    
+    func updateNote(str: String, model: Note) {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Note")
+        
+        do {
+            let notes = try managedContext.fetch(fetchRequest)
+            for i in notes {
+                if i == model {
+                    i.setValue(str, forKey: "noteText")
+                }
+            }
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
 }

@@ -9,10 +9,22 @@ import UIKit
 
 final class EpisodeNoteViewController: UIViewController {
     
+    
+    @IBOutlet private weak var noteTableView: UITableView!
+    var episodeNotes: [EpisodeNote] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        episodeNotes = CoreDataManager.shared.getNotes()
+        configureTableView()
         configureFloatingButton()
+    }
+    
+    private func configureTableView() {
+        noteTableView.delegate = self
+        noteTableView.dataSource = self
+        noteTableView.register(UINib(nibName: "CustomNoteTableCell", bundle: nil), forCellReuseIdentifier: "customNoteTableCell")
+        noteTableView.estimatedRowHeight = UITableView.automaticDimension
     }
     
     private func configureFloatingButton() {
@@ -36,9 +48,44 @@ final class EpisodeNoteViewController: UIViewController {
     }
     
     @objc func floatingPressed() {
-        print("Pressed")
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "newNoteVC") as? NewEpisodeNoteViewController else { return }
-        
+        // Delegate Pattern
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension EpisodeNoteViewController: NewNoteViewDelegate {
+    func saveCoreData(tvSeries: String, noteText: String, image: UIImage, episode: String) {
+        episodeNotes.append(CoreDataManager.shared.saveNote(tvSeries: tvSeries, noteText: noteText, image: image, episode: episode)!)
+        self.noteTableView.reloadData()
+    }
+}
+
+extension EpisodeNoteViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return episodeNotes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "customNoteTableCell", for: indexPath) as? CustomNoteTableCell else { return UITableViewCell()}
+        cell.configureCell(model: episodeNotes[indexPath.row])
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print(episodeNotes[indexPath.row])
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "newNoteVC") as? NewEpisodeNoteViewController else { return }
+        vc.modelConstructor = episodeNotes[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let model = episodeNotes[indexPath.row]
+        episodeNotes.remove(at: indexPath.row)
+        noteTableView.deleteRows(at: [indexPath], with: .fade)
+        CoreDataManager.shared.deleteNote(model: model)
     }
 }

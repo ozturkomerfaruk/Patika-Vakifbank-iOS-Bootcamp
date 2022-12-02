@@ -7,21 +7,20 @@
 
 import UIKit
 
-final class NewEpisodeNoteViewController: UIViewController {
+final class NewEpisodeNoteViewController: BaseViewController {
     
     @IBOutlet private weak var chooseTvSeriesOutlet: UIButton!
     @IBOutlet private var tvSeriesCollection: [UIButton]!
-    @IBOutlet private weak var episodeTableView: UITableView!
+    @IBOutlet private weak var selectEpisodeOutlet: UIButton!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var getPhotoOutlet: UIButton!
+    @IBOutlet private weak var typeNoteTextView: UITextView!
     
+    @IBOutlet private weak var episodeTableView: UITableView!
     private var seasonEpisodes = [SeasonEpisodeModel]()
     
-    @IBOutlet private weak var selectEpisodeOutlet: UIButton!
-    
-    @IBOutlet private weak var imageView: UIImageView!
-    
-    @IBOutlet private weak var getPhotoOutlet: UIButton!
-    
-    @IBOutlet private weak var typeNoteTextView: UITextView!
+    weak var delegate: NewNoteViewDelegate?
+    var modelConstructor: EpisodeNote?
     
     //seasons
     private var bd1Model: SeasonEpisodeModel?
@@ -38,8 +37,23 @@ final class NewEpisodeNoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         configure()
+        
+        if modelConstructor != nil {
+            configureTools()
+        }
+        
+    }
+    
+    func configureTools() {
+        
+        
+        
+        chooseTvSeriesOutlet.titleLabel!.text = modelConstructor?.tvSeries
+        selectEpisodeOutlet.titleLabel!.text = modelConstructor?.episode
+        typeNoteTextView.text = modelConstructor?.noteText
+        
+        
     }
     
     private func configure() {
@@ -178,7 +192,26 @@ final class NewEpisodeNoteViewController: UIViewController {
     }
     
     @IBAction func saveAction(_ sender: Any) {
-        print("alsdjka")
+        
+        let tvSeriesCD = chooseTvSeriesOutlet.titleLabel!.text ?? ""
+        let episodeCD = selectEpisodeOutlet.titleLabel!.text ?? ""
+        let noteCD = typeNoteTextView.text ?? ""
+        let imageCD = imageView.image ?? UIImage()
+        print(tvSeriesCD)
+        print(episodeCD)
+        print(noteCD)
+        
+        if tvSeriesCD.isEmpty || episodeCD.isEmpty || noteCD.isEmpty {
+            showErrorAlert(message: "Enter all information.") {
+                return
+            }
+            if modelConstructor == nil {
+                delegate?.saveCoreData(tvSeries: tvSeriesCD, noteText: noteCD, image: imageCD, episode: episodeCD)
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                CoreDataManager.shared.updateNote(tvSeries: tvSeriesCD, noteText: noteCD, image: imageCD, episode: episodeCD, model: modelConstructor!)
+            }
+        }
     }
     
 }
@@ -229,7 +262,8 @@ extension NewEpisodeNoteViewController: UITableViewDataSource, UITableViewDelega
             self.episodeTableView.alpha = 0
             self.episodeTableView.isHidden = true
             let model = self.seasonEpisodes[indexPath.section].episodeModelList[indexPath.row]
-            self.selectEpisodeOutlet.setTitle("\(model.series) - \(model.season) X \(model.episode)", for: .normal)
+            self.chooseTvSeriesOutlet.setTitle(model.series, for: .normal)
+            self.selectEpisodeOutlet.setTitle("Season: \(model.season) X \(model.episode)", for: .normal)
             
         }
     }

@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="EpisodeNote" representedClassName="EpisodeNote" syncable="YES" codeGenerationType="class">
         <attribute name="episode" optional="YES" attributeType="String"/>
-        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="noteText" optional="YES" attributeType="String"/>
         <attribute name="tvSeries" optional="YES" attributeType="String"/>
     </entity>

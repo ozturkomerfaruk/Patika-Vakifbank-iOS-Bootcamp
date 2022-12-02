@@ -307,6 +307,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KvF-kg-ilA"/>
+                    <connections>
+                        <outlet property="noteTableView" destination="vlz-3X-MXh" id="HjS-Zg-vzE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZYT-dS-Ks9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -525,7 +528,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rji-Or-Y2w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878.62595419847321" y="-2236.6197183098593"/>
+            <point key="canvasLocation" x="891" y="-2131"/>
         </scene>
         <!--Character-->
         <scene sceneID="Bdi-ST-FFg">

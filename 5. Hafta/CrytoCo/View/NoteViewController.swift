@@ -18,6 +18,7 @@ final class NoteViewController: UIViewController {
         super.viewDidLoad()
         notes = CoreDataManager.shared.getNotes()
         configureTableView()
+        CoreDataManager.shared.updateNote(str: "123", model: notes[2])
     }
     
     private func configureTableView() {

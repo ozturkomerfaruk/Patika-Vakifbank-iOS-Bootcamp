@@ -23,6 +23,9 @@
 		042BABB229389B62005793B3 /* NewEpisodeNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BABB129389B62005793B3 /* NewEpisodeNoteViewController.swift */; };
 		042BABB529389FE1005793B3 /* NoteEpisodeCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042BABB329389FE1005793B3 /* NoteEpisodeCustomCell.swift */; };
 		042BABB629389FE1005793B3 /* NoteEpisodeCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 042BABB429389FE1005793B3 /* NoteEpisodeCustomCell.xib */; };
+		04627C7B29392FAF00733F34 /* SaveDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627C7A29392FAF00733F34 /* SaveDataDelegate.swift */; };
+		04627C7E2939317100733F34 /* CustomNoteTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04627C7C2939317100733F34 /* CustomNoteTableCell.swift */; };
+		04627C7F2939317100733F34 /* CustomNoteTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04627C7D2939317100733F34 /* CustomNoteTableCell.xib */; };
 		047280732930FFD8002CC301 /* IMDBPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047280722930FFD8002CC301 /* IMDBPageViewController.swift */; };
 		0472807A29311253002CC301 /* PopupCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0472807829311253002CC301 /* PopupCustomTableViewCell.swift */; };
 		0472807B29311253002CC301 /* PopupCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0472807929311253002CC301 /* PopupCustomTableViewCell.xib */; };
@@ -62,6 +65,9 @@
 		042BABB129389B62005793B3 /* NewEpisodeNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEpisodeNoteViewController.swift; sourceTree = "<group>"; };
 		042BABB329389FE1005793B3 /* NoteEpisodeCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEpisodeCustomCell.swift; sourceTree = "<group>"; };
 		042BABB429389FE1005793B3 /* NoteEpisodeCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteEpisodeCustomCell.xib; sourceTree = "<group>"; };
+		04627C7A29392FAF00733F34 /* SaveDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataDelegate.swift; sourceTree = "<group>"; };
+		04627C7C2939317100733F34 /* CustomNoteTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNoteTableCell.swift; sourceTree = "<group>"; };
+		04627C7D2939317100733F34 /* CustomNoteTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNoteTableCell.xib; sourceTree = "<group>"; };
 		047280722930FFD8002CC301 /* IMDBPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDBPageViewController.swift; sourceTree = "<group>"; };
 		0472807829311253002CC301 /* PopupCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCustomTableViewCell.swift; sourceTree = "<group>"; };
 		0472807929311253002CC301 /* PopupCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupCustomTableViewCell.xib; sourceTree = "<group>"; };
@@ -158,6 +164,8 @@
 				0472807929311253002CC301 /* PopupCustomTableViewCell.xib */,
 				042BABB329389FE1005793B3 /* NoteEpisodeCustomCell.swift */,
 				042BABB429389FE1005793B3 /* NoteEpisodeCustomCell.xib */,
+				04627C7C2939317100733F34 /* CustomNoteTableCell.swift */,
+				04627C7D2939317100733F34 /* CustomNoteTableCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +196,7 @@
 		042BABA229388247005793B3 /* tab4 */ = {
 			isa = PBXGroup;
 			children = (
+				04627C7929392F9900733F34 /* Protocol */,
 				042BABA32938825C005793B3 /* EpisodeNoteViewController.swift */,
 				042BABB129389B62005793B3 /* NewEpisodeNoteViewController.swift */,
 			);
@@ -201,6 +210,14 @@
 				04F870A82930A3CF00318A4F /* PopUp.xib */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		04627C7929392F9900733F34 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				04627C7A29392FAF00733F34 /* SaveDataDelegate.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		0472807429310AC7002CC301 /* tab3 */ = {
@@ -312,6 +329,7 @@
 				0428DD28292F760D00E96EFD /* CharacterCustomCollectionCell.xib in Resources */,
 				04F870A32930886F00318A4F /* EpisodesTableViewCell.xib in Resources */,
 				0428DD01292F725A00E96EFD /* Main.storyboard in Resources */,
+				04627C7F2939317100733F34 /* CustomNoteTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +343,7 @@
 				0428DD1A292F734600E96EFD /* BaseResponse.swift in Sources */,
 				04DB81C929387FA00079E30B /* TheBreakingBadCoreData.xcdatamodeld in Sources */,
 				042BABA42938825C005793B3 /* EpisodeNoteViewController.swift in Sources */,
+				04627C7B29392FAF00733F34 /* SaveDataDelegate.swift in Sources */,
 				04F870A529309B5A00318A4F /* PopUp.swift in Sources */,
 				0428DD20292F747000E96EFD /* CharacterModel.swift in Sources */,
 				04DDCDF92932698D00D84499 /* SeasonEpisodeModel.swift in Sources */,
@@ -338,6 +357,7 @@
 				04F8709F2930853B00318A4F /* EpisodeModel.swift in Sources */,
 				04E6361F292FD9700086DAFD /* DetailCharacterViewController.swift in Sources */,
 				04F870A22930886F00318A4F /* EpisodesTableViewCell.swift in Sources */,
+				04627C7E2939317100733F34 /* CustomNoteTableCell.swift in Sources */,
 				04E63623292FF49B0086DAFD /* QuoteByAuthorViewController.swift in Sources */,
 				04E63621292FF20D0086DAFD /* QuoteByAuthorModel.swift in Sources */,
 				04E6361C292FC4210086DAFD /* BaseViewController.swift in Sources */,
