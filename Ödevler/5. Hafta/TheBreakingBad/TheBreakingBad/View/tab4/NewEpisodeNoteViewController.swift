@@ -15,6 +15,7 @@ final class NewEpisodeNoteViewController: BaseViewController {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var getPhotoOutlet: UIButton!
     @IBOutlet private weak var typeNoteTextView: UITextView!
+    @IBOutlet private weak var saveNoteOutlet: UIButton!
     
     @IBOutlet private weak var episodeTableView: UITableView!
     private var seasonEpisodes = [SeasonEpisodeModel]()
@@ -41,22 +42,26 @@ final class NewEpisodeNoteViewController: BaseViewController {
         
         if modelConstructor != nil {
             configureTools()
+            saveNoteOutlet.setTitle("Update Note", for: .focused)
+        } else {
+            
         }
         
     }
     
     func configureTools() {
-        
-        
-        
         chooseTvSeriesOutlet.titleLabel!.text = modelConstructor?.tvSeries
         selectEpisodeOutlet.titleLabel!.text = modelConstructor?.episode
         typeNoteTextView.text = modelConstructor?.noteText
         
-        
+        if modelConstructor?.image != nil {
+            imageView.image = UIImage(data: (modelConstructor?.image!)!)
+            imageView.isHidden = false
+        }
     }
     
     private func configure() {
+        
         chooseTvSeriesOutlet.layer.cornerRadius = chooseTvSeriesOutlet.frame.height / 2
         getPhotoOutlet.layer.cornerRadius = getPhotoOutlet.frame.height / 2
         tvSeriesCollection.forEach {
@@ -157,7 +162,6 @@ final class NewEpisodeNoteViewController: BaseViewController {
     }
     
     @IBAction func takeAPhoto(_ sender: Any) {
-        print("asdasd")
         showPhotoAlert()
     }
     
@@ -171,12 +175,12 @@ final class NewEpisodeNoteViewController: BaseViewController {
             self.getPhoto(type: .photoLibrary)
         }))
         
-        //TODO: Update de silme işlemi
-        
-        alert.addAction(UIAlertAction(title: "Delete Photo", style: .default, handler: { action in
-            self.imageView.image = nil
-            self.imageView.isHidden = true
-        }))
+        if imageView.image != nil {
+            alert.addAction(UIAlertAction(title: "Delete Photo", style: .default, handler: { action in
+                self.imageView.image = nil
+                self.imageView.isHidden = true
+            }))
+        }
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
@@ -197,21 +201,22 @@ final class NewEpisodeNoteViewController: BaseViewController {
         let episodeCD = selectEpisodeOutlet.titleLabel!.text ?? ""
         let noteCD = typeNoteTextView.text ?? ""
         let imageCD = imageView.image ?? UIImage()
-        print(tvSeriesCD)
-        print(episodeCD)
-        print(noteCD)
         
-        if tvSeriesCD.isEmpty || episodeCD.isEmpty || noteCD.isEmpty {
-            showErrorAlert(message: "Enter all information.") {
-                return
-            }
+        if tvSeriesCD != "Choose Tv-Series" || episodeCD != "Select Episode" || !noteCD.isEmpty {
             if modelConstructor == nil {
                 delegate?.saveCoreData(tvSeries: tvSeriesCD, noteText: noteCD, image: imageCD, episode: episodeCD)
                 self.navigationController?.popViewController(animated: true)
             } else {
                 CoreDataManager.shared.updateNote(tvSeries: tvSeriesCD, noteText: noteCD, image: imageCD, episode: episodeCD, model: modelConstructor!)
+                delegate?.updateCoreData()
+                self.navigationController?.popViewController(animated: true)
+            }
+        } else {
+            showErrorAlert(message: "Fill Everything") {
+                return
             }
         }
+
     }
     
 }

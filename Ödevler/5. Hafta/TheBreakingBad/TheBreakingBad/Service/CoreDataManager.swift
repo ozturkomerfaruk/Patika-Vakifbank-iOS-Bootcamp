@@ -56,12 +56,17 @@ final class CoreDataManager {
         
         do {
             try managedContext.save()
+            print("Deleted to Core Data")
+            
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
     }
     
     func updateNote(tvSeries: String, noteText: String, image: UIImage, episode: String, model: EpisodeNote) {
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "EpisodeNote")
+        
         model.tvSeries = tvSeries
         model.noteText = noteText
         model.episode = episode
@@ -70,7 +75,16 @@ final class CoreDataManager {
         model.image = data
         
         do {
+            let notes = try managedContext.fetch(fetchRequest)
+            for i in notes {
+                if i == model {
+                    i.setValue(tvSeries, forKey: "tvSeries")
+                    i.setValue(noteText, forKey: "noteText")
+                    i.setValue(episode, forKey: "episode")
+                }
+            }
             try managedContext.save()
+            print("Updated to Core Data")
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }

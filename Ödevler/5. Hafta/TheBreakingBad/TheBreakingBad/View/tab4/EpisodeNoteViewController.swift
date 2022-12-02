@@ -60,6 +60,12 @@ extension EpisodeNoteViewController: NewNoteViewDelegate {
         episodeNotes.append(CoreDataManager.shared.saveNote(tvSeries: tvSeries, noteText: noteText, image: image, episode: episode)!)
         self.noteTableView.reloadData()
     }
+    
+    func updateCoreData() {
+        self.noteTableView.reloadData()
+    }
+    
+   
 }
 
 extension EpisodeNoteViewController: UITableViewDelegate, UITableViewDataSource {
@@ -75,11 +81,9 @@ extension EpisodeNoteViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print(episodeNotes[indexPath.row])
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "newNoteVC") as? NewEpisodeNoteViewController else { return }
         vc.modelConstructor = episodeNotes[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
-        
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

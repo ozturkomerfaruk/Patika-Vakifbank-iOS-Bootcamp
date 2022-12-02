@@ -520,6 +520,7 @@
                         <outlet property="episodeTableView" destination="keZ-Ce-v25" id="IA7-Q6-biR"/>
                         <outlet property="getPhotoOutlet" destination="uLr-Sf-E5M" id="1tL-qR-zum"/>
                         <outlet property="imageView" destination="Ljn-as-d6o" id="oJ2-Mr-8Ug"/>
+                        <outlet property="saveNoteOutlet" destination="WSv-jp-q6v" id="0GV-jJ-j2K"/>
                         <outlet property="selectEpisodeOutlet" destination="f7k-1p-oLg" id="at7-2n-IPp"/>
                         <outlet property="typeNoteTextView" destination="7BQ-YK-6aw" id="zQM-7m-dgQ"/>
                         <outletCollection property="tvSeriesCollection" destination="0dv-T5-DaA" collectionClass="NSMutableArray" id="pmj-Js-eOo"/>

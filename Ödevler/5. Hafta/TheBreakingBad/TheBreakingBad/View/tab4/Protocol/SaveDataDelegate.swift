@@ -9,4 +9,5 @@ import UIKit
 
 protocol NewNoteViewDelegate: AnyObject {
     func saveCoreData(tvSeries: String, noteText: String, image: UIImage, episode: String)
+    func updateCoreData()
 }
