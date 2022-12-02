@@ -378,7 +378,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="4U6-vc-iah">
-                                <rect key="frame" x="10" y="225.66666666666666" width="373" height="362.33333333333337"/>
+                                <rect key="frame" x="10" y="225.66666666666666" width="373" height="34.333333333333343"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7k-1p-oLg">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="34.333333333333336"/>
@@ -390,50 +390,29 @@
                                             <action selector="selectEpisodeAction:" destination="ycb-mA-cz7" eventType="touchUpInside" id="WtK-hb-be9"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="keZ-Ce-v25">
-                                        <rect key="frame" x="0.0" y="62.333333333333343" width="373" height="300"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="TRt-sH-vT2"/>
-                                        </constraints>
-                                        <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="episodeCell" id="W9q-0e-ken">
-                                                <rect key="frame" x="0.0" y="50" width="373" height="43.666667938232422"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W9q-0e-ken" id="exg-j4-di5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="373" height="43.666667938232422"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                        </prototypes>
-                                    </tableView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="keZ-Ce-v25" secondAttribute="bottom" id="5Nt-Wb-l4Q"/>
-                                    <constraint firstItem="keZ-Ce-v25" firstAttribute="leading" secondItem="4U6-vc-iah" secondAttribute="leading" id="QI1-3W-Tb6"/>
                                     <constraint firstItem="f7k-1p-oLg" firstAttribute="top" secondItem="4U6-vc-iah" secondAttribute="top" id="ZfW-kz-npP"/>
                                     <constraint firstItem="f7k-1p-oLg" firstAttribute="leading" secondItem="4U6-vc-iah" secondAttribute="leading" id="mee-Pb-VGi"/>
-                                    <constraint firstAttribute="trailing" secondItem="keZ-Ce-v25" secondAttribute="trailing" id="psi-ZJ-3Kb"/>
                                     <constraint firstAttribute="trailing" secondItem="f7k-1p-oLg" secondAttribute="trailing" id="rkY-Nn-e2o"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSv-jp-q6v">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSv-jp-q6v">
                                 <rect key="frame" x="10" y="1096" width="373" height="50"/>
                                 <color key="backgroundColor" red="0.10464914979999999" green="0.86078917980000003" blue="0.38835375370000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Fg3-Qo-MUo"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save Note">
-                                    <fontDescription key="titleFontDescription" name="Arial-BoldMT" family="Arial" pointSize="26"/>
+                                    <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="saveAction:" destination="ycb-mA-cz7" eventType="touchUpInside" id="vRw-TM-Hfe"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ErH-OU-pdq">
-                                <rect key="frame" x="10" y="598" width="373" height="144"/>
+                                <rect key="frame" x="10" y="270" width="373" height="144"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xZ0-md-TXC">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="24"/>
@@ -460,7 +439,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5TU-Mr-N8s">
-                                <rect key="frame" x="10" y="752" width="373" height="300.33333333333326"/>
+                                <rect key="frame" x="10" y="424" width="373" height="300.33333333333326"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ljn-as-d6o">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="246"/>
@@ -517,7 +496,6 @@
                     <size key="freeformSize" width="393" height="1200"/>
                     <connections>
                         <outlet property="chooseTvSeriesOutlet" destination="Bhb-yy-rVV" id="MX4-qA-wcq"/>
-                        <outlet property="episodeTableView" destination="keZ-Ce-v25" id="IA7-Q6-biR"/>
                         <outlet property="getPhotoOutlet" destination="uLr-Sf-E5M" id="1tL-qR-zum"/>
                         <outlet property="imageView" destination="Ljn-as-d6o" id="oJ2-Mr-8Ug"/>
                         <outlet property="saveNoteOutlet" destination="WSv-jp-q6v" id="0GV-jJ-j2K"/>

@@ -11,7 +11,8 @@ final class EpisodeNoteViewController: UIViewController {
     
     
     @IBOutlet private weak var noteTableView: UITableView!
-    var episodeNotes: [EpisodeNote] = []
+    private var episodeNotes: [EpisodeNote] = []
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,13 @@ final class EpisodeNoteViewController: UIViewController {
         noteTableView.dataSource = self
         noteTableView.register(UINib(nibName: "CustomNoteTableCell", bundle: nil), forCellReuseIdentifier: "customNoteTableCell")
         noteTableView.estimatedRowHeight = UITableView.automaticDimension
+        noteTableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refreshWeatherData(_:)), for: .valueChanged)
+    }
+    
+    @objc private func refreshWeatherData(_ sender: Any) {
+        self.refreshControl.endRefreshing()
+        self.noteTableView.reloadData()
     }
     
     private func configureFloatingButton() {
@@ -64,8 +72,6 @@ extension EpisodeNoteViewController: NewNoteViewDelegate {
     func updateCoreData() {
         self.noteTableView.reloadData()
     }
-    
-   
 }
 
 extension EpisodeNoteViewController: UITableViewDelegate, UITableViewDataSource {
@@ -83,6 +89,7 @@ extension EpisodeNoteViewController: UITableViewDelegate, UITableViewDataSource 
         
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "newNoteVC") as? NewEpisodeNoteViewController else { return }
         vc.modelConstructor = episodeNotes[indexPath.row]
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
     
