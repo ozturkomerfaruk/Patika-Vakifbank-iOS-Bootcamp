@@ -743,3 +743,21 @@ Sınırlarda değişimler olur. Sabit değildir. İyi yazılımlar, büyük yat�
 
 ## Chapter 9 - Unit Tests
 
+Bu bölüme başlamadan önce gerçekten Unit Test kavramını o kadar çok duymaya başladım ki, hem backend programlamada hem Flutter da hem iOS da.. Bu test kavramlarının arasında gerçekten en popüleri. Bakalım neymiş bu? Neymiş detaylı olarak??
+
+    
+Her satır blogunun çalışıp çalışmadını test etmek için birim testleri kullanılır. Agile ve TDD prensipleri insanları birim test yazmaya epey bi teşvik etti. Günümüzde artık birim test yazmamak abes kaçacak hale geldi. 90lı 2000li yıllarda tabi birim test anlayışı farklıydı. Bu şekilde değildi. O zaman kimse TDD'yi bilmiyordu bile. Test Driven Development yani. Program çalışsın yeter deniliyordu.
+    
+TDD'nin 3 kuralı:
+    
+1. Geçmeyen bir birim testi yazmadan, üretim (uygulama) kodu yazmamalısın.
+2. Aynı anda birden fazla geçmeyen birim testi yazmamalısın. Derleme hatası da geçmeyen test demektir.
+3. O andaki geçmeyen testi geçirecek üretim kodundan başka üretim kodu yazmamalısın.
+    
+Bu 3 kuralı uymaya çalıştığınızda binlerce onbinlerce test yazıyor olacaksınız. Bunlar gerçek manada bir uygulama piyasaya çıkarken ona her türlü durumdan çıkma, başetme yeteneği kazandırmaktadır.
+    
+Ancak testler yapılacak diye körü körüne test yapılmaması gerekmektedir. Bir makina mühendisini düşünün ve TOGG arabasını test edecek diyelim. Yapacağı test çarpışma anında AIR BAG'lerin açılma durumu olsun. Test yapması için ne yapması gerekiyor elbetteki sınırları zorlamak ve teste uygun hareket etmek. Ne demek istiyorum, arabayı bir yere çarptıracan ki, patlaması gerektiğini bilsin AIR BAG. Ancak arabayı 4 şeritli, kimsenin gelmediği bir zaman diliminde patlamasını isterseniz. Biraz zor beklersiniz bu durumu? Aynı şekilde yazılımda da test yazılması gerekmektedir. Kirli test, hiç test olmamasından iyidir ancak sadece çözüm bu değil tabi ki, çünkü bazen kirli test hiç olmasa iyidir. Çünkü daha fazla zaman kaybı olacakken engellemiştir durumu.
+    
+https://medium.com/@busrauzun/bolum-9-birim-testleri-d542471e7a4f
+    
+    
