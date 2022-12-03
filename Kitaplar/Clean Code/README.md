@@ -552,3 +552,138 @@ DTO'ların özel formatlarıdır ancak **save** ve **find** gibi yönlendirici m
 
 ## Chapter 7 - Error Handling
 
+Yazılımcının en güzel yanlarından biri de hata çözmektir be! 😂 Tamam tamam gülmeyin gerçekten bu durum bazen çok canımızı sıkabiliyor. Burada da devreye tecrübe giriyor artık o hatalar çıktıkça insan tecrübe kazanıyor ve zamanında bir şeyler yaptım da çözdüm diyebiliyor. Bu yüzden biz yazılımcılar bu hatalara karşı her zaman dirençli olmaya çalışmalıyız.
+
+1. Use Extension Rahter Than Return Codes
+
+Önceden extension ile kod yazmak sınırlıydı kodlama dillerinde, ancak günümüzde bunu istediğimiz gibi kullanabiliyoruz. Önceden de daha çok Flag döndürme gibi olaylar vardı. Birinci sınıfta mühendislikte, C dersi alırken de hoca bize hatta Flagler üzerinden ders anlatıyordu. Asal mı değil mi vs. hatırlıyorum da ancak bu artık kullanılması gereken bir yol değil, özellikle mobil programlama dillerinde
+
+Çünkü bu tür yaklaşımlar, başka bir yazılımcının kafasını karıştırabilir bunları çağırırken. Eğer flag yöntemi ile vs. yapılacaksa olay, çağırdıktan sonra bunların tek tek kontrol edilmesi gerekmektedir fakat böyle bir şey yapılmıyor genellikle de unutuluyor. Bu yüzden bir hatayı throw etmek makbüldür.
+
+2. Write Your Try-Catch-Finally Statement First
+
+Try-Catch yapıları programlamaların belki de yapı taşlarından birisidir. Try ile yazmak istediğinizi yazabilir ve catch blogu ile hatayı fırlatabilirsiniz. Finally de ise ne olursa olsun şu dönsün diyebilirsiniz.
+
+```
+public List<RecordedGrip> retrieveSection(String sectionName) {
+    try {
+        FileInputStream stream = new FileInputStream(sectionName)
+    } catch (Exception e) {
+        throw new StorageException("retrieval error", e);
+    }
+    return new ArrayList<RecordedGrip>();
+}
+```
+
+Try blogunda eğer patlarsa  catch blogunda hata throw edilebilmektedir bu şekilde. Buna benzer yapı hemen hemen her dilde kullanılmaktadır.
+
+Try blogu ile extension yapılarını zorlayacak kodlar yazmalıyız bu kodlar sayesinde ileride bakım yapılacaksa ya da test yazılacaksa çok daha kolay yazılabilmektedir.
+
+3. Use Unchecked Exceptions
+
+**Açık / Kapalı Kuralı** Metodunuzdan kontrollü bir istisna fırlatırsanız ve catch üç seviyeden fazlaysa, o istisnayı sizinle catch arasındaki her metodun imzasında belirtmeniz gerekir. Bu demektir ki, düşük seviyede bir değişiklik, imza değişikliklerini daha üst seviyelerde zorlayabilir. Onları ilgilendiren hiçbir şey olmadığı halde, değiştirilen modüller yeniden derlenmeli ve dağıtılmalıdır.
+
+Büyük sistemlerdeki çağırma hiyerarşilerini düşünün. En alt seviye metotlardan birisinin bir istisna fırlatacak şekilde düzenlenmesi durumunda, çağıran tüm metotlar da imzasına bir throws eklemek zorundadır. Bu durumda kapsülleme de (encapsulation) bozulmuştur çünkü değişen metotlar da artık bu istisnanın detaylarını biliyor olacaktır.
+
+4. Provide Context with Exceptions
+
+Her hata throw edildiğinde, hatanın yerine alacak yeterli bilgi sağlanmalıdır. Bir hata aldığında bir yazılımcı ona yeterli bilgiyi sağlayın. Başarısız olan işlemden, hatanın tipinden bahsedebilirsiniz.
+
+5. Define Exception Classes in Terms of a Caller’s Needs.
+
+Hataları sınıflandırabilmenin bir sürü yolu vardır; kaynaklarına göre, türlerine göre sınıflandırabiliriz. Şu sınıflandırma örneğine bakalım. Üçüncü taraf bir kütüphane çağrımı için try-catch-finally yazılmış. Çağrılardan fırlatılabilecek tüm istisnaları kapsıyor:
+
+```
+ACMEPort port = new ACMEPort(12);
+try {
+    port.open();
+} catch (DeviceResponseException e) {
+    reportPortError(e);
+    logger.log("Device response exception", e);
+} catch (ATM1212UnlockedException e) {
+    reportPortError(e);
+    logger.log("Unlock exception", e);
+} catch (GMXError e) {
+    reportPortError(e);
+    logger.log("Device response exception");
+} finally {
+    ...
+}
+```
+
+Bu ifadede çokça tekrarlanmış kod var. Burada yaptığımız işin kabaca aynı olduğunu bildiğimizden çağırdığımız API’yi sararak (wrapping) ve ortak bir istisna tipi döndüğünden emin olarak kodumuzu önemli ölçüde basitleştirebiliriz:
+
+```
+LocalPort port = new LocalPort(12);
+try {
+    port.open();
+} catch (PortDeviceFailure e) {
+    reportError(e);
+    logger.log(e.getMessage(), e);
+} finally {
+    ...
+}
+```
+
+LocalPort sınıfımız, ACMEPort sınıfından atılmış istisnaları yakalayan ve çeviren basit bir sarmalayıcıdır (wrapper):
+
+```
+public class LocalPort {
+    private ACMEPort innerPort;
+    public LocalPort(int portNumber) {
+        innerPort = new ACMEPort(portNumber);
+    }
+    public void open() {
+        try {
+            innerPort.open();
+        } catch (DeviceResponseException e) {
+            throw new PortDeviceFailure(e);
+        } catch (ATM1212UnlockedException e) {
+            throw new PortDeviceFailure(e);
+        } catch (GMXError e) {
+```
+
+Sarmalayıcı sınıflar üçüncü taraf API’lerin detaylarını gizlemek için en iyi pratiktir. Belli bir tedarikçinin API’sine bağlı olmazsınız ve rahat hissedebileceğiniz bir API tanımlayabilirsiniz. Ve ileride farklı bir kütüphaneye geçmek istediğinizde, sarmalayarak minimize ettiğiniz bağımlılıklar ile geçiş yapmak çok daha kolaydır.
+
+4. Define the Normal Flow
+
+Special Case Pattern kullanılabilir. Özel durumlarla senin için başa çıacak bir sınıf yaratır ya da bir nesne ayarlarsın. Bunu yaptığında, ön yüz kodu istisnai durumlarla uğraşmak zorunda kalmayacaktır. Bu davranış özel durum nesnesi yani Special Case Pattern ile kapsüllenmiş olmaktadır. Açıkçası bu duruma internetten detaylamasına, ya da Youtube'dan video izlemenizi tavsiye ederim.
+
+5. Don’t Return Null
+
+null döndüğümüzde aslında gene kendimize iş çıkarıyor ve topu fonksiyonumuzu çağıranlara atıyoruz. Uygulamanın kontrolden çıkması için tek bir eksik null kontrolü yeterli gibi görünüyor. Eğer bir metottan null dönecekseniz, onun yerine istisna fırlatmayı ya da bir Special Case nesnesi dönmeyi düşünün. Eğer kullandığınız bir API’den null dönebilecek bir metot çağırıyorsanız da, bu metodu özel durum nesnesi dönen ya da istisna fırlatan bir metot ile sarmalamayı düşünebilirsiniz.
+
+6. Don’t Pass Null 
+
+Metotlardan null dönmek kötü bir pratiktir ancak metotlara null geçmek daha da kötü bir pratiktir. Sizden null bekleyen bir API ile çalışmadıkça, kodunuzda mümkün mertebe null geçmekten kaçınmalısınız.
+
+Nedenini anlamak için şu örneğe bakalım; iki nokta için bir metrik hesaplıyor:
+
+```
+public class MetricsCalculator {
+    public double xProjection(Point p1, Point p2) {
+        return (p2.x– p1.x) * 1.5;
+    }
+}
+```
+Hocam burada ya null dönerse ne olacak? ```calculator.xProjection(null, new Point(12, 13));```
+
+NullPointerException ile karşılaştık tabiki.
+
+```
+public class MetricsCalculator {
+    public double xProjection(Point p1, Point p2) {
+        if (p1 == null || p2 == null) {
+            throw InvalidArgumentException(
+                "Invalid argument for MetricsCalculator.xProjection");
+        }
+        return (p2.x– p1.x) * 1.5;
+    }
+}
+```
+Çoğu dilde istemeden gönderilmiş null değerler ile uğraşabilmenin bir yolu yoktur. Durum böyle olduğundan, burada en gerçekçi yaklaşım null değerlerin gelmesini önlemektir.
+
+Bakın Clean Code demek sadece kodu güzel bir şekilde okumak demek değildir kodun aynı zamanda güçlü olması demektir. Güçlü kod, aslında okunabilen koddur. Evet onu elimizden geldiğince sadece yazmamız gerekir, ki daha çok insana hitap etsin ama temiz kod yazdık deyip, sürekli hata ile karşılaştıran bir kod yazarsanız orada bazı sıkıntılar var demektir. Eğer hata işlemeyi bağımsız bir iş olarak görürsek, temiz ve güçlü kodlar yazabilir ve kodumuzun sürdürülebilirliği konusunda büyük adımlar atabiliriz.
+
+## Chapter 8 - Boundaries
+
