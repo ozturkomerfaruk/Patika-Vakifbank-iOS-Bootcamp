@@ -38,4 +38,4 @@ Bir Pop Up olarak açılmaktadır. Amacı bölümü seçip, not ekleme / güncel
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/56068905/205377149-afe152d2-1153-4796-affe-44291c8c4ab2.png">
 
 Image olarak CoreData'ya CRUD işlemleri de eklenmiştir. Yani: Create, Read, Update, Delete
- 
+
