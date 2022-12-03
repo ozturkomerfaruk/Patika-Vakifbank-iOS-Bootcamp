@@ -687,3 +687,59 @@ Bakın Clean Code demek sadece kodu güzel bir şekilde okumak demek değildir k
 
 ## Chapter 8 - Boundaries
 
+Bazen projelerimize açık kütüphane kodları eklemek ya da 3. parti kütüphaneler kullanmak isteriz. Bazen de ekip içerisinde başkaları bunu yapar bizler de bu yabancı kodları tam manasıyla, doğru bir şekilde entegre etmek isteriz.
+
+Üçüncü paket sağlayıcıları, birçok ortamda çalışabilir olmaları için çaba gösterirler. Diğer taraftan da kullanıcılar sadece belirli arayüzleri kullanmak isterler.
+
+Bunu aslında çeşit çeşit dillerde görmek mümkündür. Bu durumu JAVA dilnide şöyle söyleyebilirim sizlere. Belki bir örnek teşkil eder ve size kendi hakim olduğunuz dilde anımsatır olayı.
+
+Map'leri düşünün. Birçok şeyi yapabilme gücü vermektedir bizlere. Ancak ne diyordu Spiderman abimizin Ben amcası. Büyük güç büyük sorumluluk getirir. Aynen o şekil, burada da sorumluluklarımız bulunmaktadır. Örneğin uygulamamızda bir Map kullanıyor ve onu bir yerlere argüman olarak geçiyor olalım. Map’imizi kullananların içerisinden hiçbir şey silmemesi gerekebilir. Ancak Map arayüzü clear() metoduna sahiptir ve Map’i kullanan herkes bu güce sahiptir. Ya da tasarımımıza göre Map üzerinde sadece belirli tipte nesneleri tutuyor olabiliriz. Fakat Map, içindeki nesnelerin tiplerini güvenilir şekilde sınırlandırmaz. Herhangi bir kullanıcı, herhangi tipte bir nesneyi Map’e ekleyebilir.
+
+``` Map sensors = new HashMap();```
+
+olarak oluşturduk ve sensorlere erişmek istiyoruz.
+
+```Sensor s = (Sensor)sensors.get(sensorId);```
+
+```
+Map<Sensor> sensors = new HashMap<Sensor>();
+.....
+Sensor s = sensors.get(sensorId);
+```
+
+Map<Sensor> örneğini (instance) serbestçe bir yerlere argüman olarak geçirmek demek; Map arayüzü her değişiklik yaptığında, düzeltilecek çok yerin olacağı anlamına gelir. Böyle bir değişikliğin pek olası olmadığını düşünebiliriz ancak Java 5'te Generic’lere destek geldiği zamanı hatırlayın. Map’lerin özgür kullanımını telafi etmek için gereken büyük değişiklik nedeniyle Generic kullanımını engelleyen sistemler gördük.
+
+Ancak en güzel şu şekilde kullanılır:
+
+```
+public class Sensors {
+    private Map sensors = new HashMap();
+    public Sensor getById(String id) {
+        return (Sensor) sensors.get(id);
+    }
+    ...
+}
+```
+
+Map’in her kullanımında bu şekilde kapsüllenmesini önerilmiyor. Bunun yerine, Map’leri (veya sınırdaki başka herhangi bir arayüzü) sisteminizde bir yerlere geçirmemeniz tavsiyeediliyor.. Map gibi bir sınır arayüzü kullanılıyorsa, onu sınıfın içinde tutmalıyız. Map’leri return etmekten ve public API’lere argüman olarak geçmekten kaçınmalıyız.
+
+Boundaries yani Sınırları Keşfetmek ve Öğrenmek
+
+3. parti kullanmak kısa sürede çok fazla işlevsellik insana kazandırmaktadır. Bu doğrudur. Ancak bunu en güzel şekilde yapmanın yolu test yazmaktan geçer. Bunu aslında iOS da ya da başka bir mobil uygulama geliştirme de görebiliyoruz. 3. parti bir kütüphane yayımlıyor başkaları sonra onu entegre etmeye çalışıyoruz. Bazen oluyor, bazen olmuyor saçma sapan durumlar oluyor. Onlar doğru kod yazdılar mı bilmiyoruz yoksa biz mi geçirirken hata yapıyoruz diyoruz. 3. parti kodları yönetmek, öğrenmek, entegre etmek zordur.
+
+Jim Newkirk diye bir abimiz de bize test yapmamız gerektiğini söylüyor. Onlara learning tests diyor yani öğrenme testleri. Bu testler ile projeye entegre edilip edilmemesi gerektiğini öğrenebiliyormuşuz.
+
+Mesela loglar için Log4j kullanılacak diyelim. Test yazdık ve ekrana hello yazsın dedik. Bir hata verdi dedi Appender'a ihtiyacın var. Bu ne dedin. ConsoleAppender çıktı. Neyse yükledin ama Appender'ın çıktı üretmediğini farkettin. Google da arattın. Çözümü buldun ve hatayı engelledin. Hello yazdırdın. Aferin. Ne oldu?
+
+İlginçtir ki, ConsoleAppender.SYSTEM_OUT bağımsız değişkenini kaldırdığımızda, “hello” ifadesinin yine de yazdırıldığını görüyoruz. Fakat PatternLayout’u çıkardığımızda, gene hata alıyoruz. Bu çok garip bir davranış. Dokümantasyona biraz daha dikkatli baktığımızda, varsayılan ConsoleAppender kurucusunun “yapılandırılmamış” olduğunu görüyoruz. Bu Log4j’de hata veya en azından bir tutarsızlık gibi görünüyor. İşte biz bu durumları yaşayabilirz. Bu yüzden kendi testlerimizi yaza yaza gitmek zorundayız.
+
+Öğrenme testlerinde neden test yazılır, biliyor musunuz? Şu sebeple,  üçüncü taraf yazılımların yeni sürümleri çıktığında, davranış farklılıklarının olup olmadığını görmek için öğrenme testleri kullanılır. Bu öğrenme testlerinin maliyeti yok. Zamanın mı gidiyor sonuna kadar değer hocam. Öğrenme testlerinin sağladığı bilgiye ihtiyacınız olsun veya olmasın, üretim kodunun yaptığını yapan testleriniz tarafından uygulamanızda temiz bir sınır çizilmelidir.
+
+Clean Boundaries - Temiz Sınırlar
+
+Sınırlarda değişimler olur. Sabit değildir. İyi yazılımlar, büyük yatırımlar ve yeniden çalışmalar olmadan değişikliklere uyum sağlamaya baklılır. Sınırlardaki kod, beklentileri tanımlayan kesin ayırımlara ve testlere ihtiyaç duyar. Kodumuzun üçüncü taraf yazılımların ayrıntılarıyla ilgili çok fazla şey bilmesini önlemeliyiz. Kontrol etmediğimiz bir şeyden çok, kontrol ettiğimiz bir şeye güvenmek daha iyidir, çünkü sonunda o bizi kontrolü altına alacaktır.
+
+Üçüncü parti kodları entegre etmek risklidir, onlara sorgusurz sualsiz güveniriz ama ne işe yaradığını bilmeden kullandığımız her 3. parti kod bizi yormaktadır. Nasıl, ona ayıracağın zaman gibi. Ayrıca büyük bir projede çalışırken, 3. parti kullandığın kodlar ya sana istediğini vermemeye başlarsa, ya bi güncelleme ile artık kullanılamaz olursa ya silinir giderse ne olacak? Bu kadar körü körüne bağılılık düşündürmektedir insanı. Dikkat etmeliyizdir.
+
+## Chapter 9 - Unit Tests
+
