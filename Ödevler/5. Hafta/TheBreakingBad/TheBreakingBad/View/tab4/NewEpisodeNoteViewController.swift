@@ -139,6 +139,8 @@ final class NewEpisodeNoteViewController: BaseViewController {
         present(alert, animated: true, completion: nil)
         chooseTvSeriesOutlet.titleLabel?.text = beganSeries
         selectEpisodeOutlet.titleLabel?.text = beganEpisode
+        chooseTvSeriesOutlet.setTitle(beganSeries, for: .normal)
+        selectEpisodeOutlet.setTitle(beganEpisode, for: .normal)
         print(beganSeries! + " " + beganEpisode!)
     }
     
