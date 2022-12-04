@@ -1033,8 +1033,7 @@ Bu noktada, yeni özellik eklemeyi bırakın ve yeniden düzenlemeye başlayın 
 
 Kodunuzu her zaman sanki arkanızdan gelen geliştirici, nerede yaşadığınızı bilen şiddet yanlısı bir psikopatmış gibi yazın. TDD, kodumuzu daha sürdürülebilir, daha kolay anlaşılır hale getirir. Yani TDD ile temiz kod arasında bir birliktelik olduğunu söyleyebiliriz.
 
-
-## Chapter 15 - JUnit Internals
+## Chapter 15 - JUnit Internals
 
 Bu bölüm biraz daha JUnit temelleri hakkında olacak direk JUnit ile ilgili değil ya da TDD ile ilgili değil.
 
