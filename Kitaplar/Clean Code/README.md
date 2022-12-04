@@ -758,6 +758,47 @@ Bu 3 kuralı uymaya çalıştığınızda binlerce onbinlerce test yazıyor olac
     
 Ancak testler yapılacak diye körü körüne test yapılmaması gerekmektedir. Bir makina mühendisini düşünün ve TOGG arabasını test edecek diyelim. Yapacağı test çarpışma anında AIR BAG'lerin açılma durumu olsun. Test yapması için ne yapması gerekiyor elbetteki sınırları zorlamak ve teste uygun hareket etmek. Ne demek istiyorum, arabayı bir yere çarptıracan ki, patlaması gerektiğini bilsin AIR BAG. Ancak arabayı 4 şeritli, kimsenin gelmediği bir zaman diliminde patlamasını isterseniz. Biraz zor beklersiniz bu durumu? Aynı şekilde yazılımda da test yazılması gerekmektedir. Kirli test, hiç test olmamasından iyidir ancak sadece çözüm bu değil tabi ki, çünkü bazen kirli test hiç olmasa iyidir. Çünkü daha fazla zaman kaybı olacakken engellemiştir durumu.
     
-https://medium.com/@busrauzun/bolum-9-birim-testleri-d542471e7a4f
-    
-    
+Eğer testler ne kadar çok kirli bir hal alırsa, o kadar çok yük olarak gözükür. Test meselesi gerçekten bir mühendislik işidir. Hafife alınmayacak bir iştir. Eğer sayfa tasarımları, mimari uygulama, dizayn paternler vs. uygulanmazsa bir projede test yazmak ne kadar zorlaşacağı gibi; test yazarkende ona özenmeden yazmak çok fazla güçlük sergiletir. Örneğin aylar sonra testleri temiz yazmaya karar verdiniz ve testleri uyguladınız ancak sizin aylar önce yazdığınız kötü, kirli testler bu sefer olumsuz sonuçlar verecek ve onlar için tekrar başlayacaksınız. Bu artık tamamen bir yük haline gelecek ve belkide test yazmaktan vazgeçeceksiniz.
+
+Bu seferde hata / debug olayı fazla olmaya başladı. Sonunda elimize hiç testi olmayan, karışık ve hatalarla dolu üretim kodu, sinirli müşteriler ve test çabalarının başarısız olduğuna dair hisler kaldı.
+
+Test kodu, üretim kodu kadar önemlidir ve üretim kodu kadar da temiz tutulmalıdır. Testler ikinci sınıf vatandaş mualemesi görmemelidir. Test yazmak düşünce, tasarım ve dikkat gerektirir.
+
+Bu yüzden şirketlerde test yazılımcıları vardır. Bu alana özel insanlar vardır. Bu alanın uzmanları vardır. Normal her geliştirici test yazmaya zorunludur ancak bir de bunun alanı olan testerların önünde yapmak vardır.
+
+Mimari yapınızın bile değişmesini istediğinizde korkmuyorsanız eğer, yapacağınız tek şey test yazmaktır. Eşeğinizi sağlam kazığa bağlayan insan, eşeğin gitmesinden korkmaz. Bu şekilde işte, rahat rahat kodunuzu değiştirebilir, bükebilirsiniz. Test önemlidir.
+
+Test önemlidir ancak, öyle bodoslama kod yazılmaz üstadım. Clean olacak, okunabilir olacak. Baktığında bu test kodunu anlayacaksın.
+
+TEST API'daki kodlar, üretim kodları gibi değildir. Doğaları farklıdır. Canlı ortamında yapamadığınız şeyleri yapma hakkına sahipsiniz. MockDatalar oluşturabilirsiniz mesela ya da test ortamında veriyi değiştirebilirsiniz. Yani burada amaç test etmektir burada çalışıyor mu çalışmıyor mu olayından ziyade projenin genel olarak, onun ince detaylarıyla uğraştığınız için yani adı üstünde Unit test - Birim test - olduğu için mesele o yüzden rahat bir şekilde kodlarınızı yazabilirsiniz.
+
+**Template Method**
+
+Önemli bir kısımlardan birisi daha. Given-When-Then ifadeleri yer almaktadır burada. Given & When ile temel bir sınıfa, Then ile farklı türev sınıflarak koyarak kod tekrarlamasının önüne geçilmektedir. @Before ile ve Then kısımları ile her birini ayrı birer @Test fonksiyonu içine konulabilmektedir. Günün sonunda birden fazla assert olan versiyonu da tercih edilebilmektedir.
+
+**Tek Konsept**
+
+Aynı fonksiyonlarda olduğu gibi burada da teklik söz konusudur. Örneğin:
+
+Elimizde 31 günü olan aylardan birinin son günü olsun (örneğin 31 Mayıs);
+
+1. 30 günü olan bir ay eklediğimizde (Haziran gibi), tarih ayın 31'i değil 30'u olmalıdır.
+2. İki ay eklediğimizde, ikinci ayın 31 günü varsa , tarih ayın 31'i olmalıdır.
+3. 31 günü olan bir ay eklediğimizde tarih ayın 31'i değil 30'u olmalıdır.
+
+Yani soruna neden olan şey birden fazla assert ifadesi değil. Aksine, test edilen birden fazla konseptin olmasıdır. Bu nedenle en iyi kural, konsept başına assert sayısını en aza indirgemek ve test fonksiyonu başına sadece bir konsept test etmektir.
+
+**F.I.R.S.T** 
+
+* Fast: Testler hızlı olmalıdır. Testler yavaş çalıştıklarında, sık sık çalıştırmak istemezsiniz. Testleri sık sık çalıştırmazsanız, problemleri kolayca giderecek kadar erkenden fark edemezsiniz.
+
+* Independent:  Testler birbirine bağlı olmamalıdır. Bir test, bir sonraki testin koşullarını belirlememelidir. Her bir testi bağımsız olarak ve istediğiniz herhangi bir sırada çalıştırabilmelisiniz. Testler birbirine bağımlı olduğunda, hata alan ilki, hiyerarşide aşağılara doğru hatalara sebep olarak ilk hata alınan yerin tespitini zorlaştıracaktır.
+
+* Repeatable: Testler herhangi bir ortamda çalışabilir olmalıdır. Birim testlerini üretim ortamında, QA ortamında ve dizüstü bilgisayarınızda veya trende evinize gidiyorken çalıştırabilmelisiniz. Testleriniz herhangi bir ortamda tekrarlanabilir değilse, başarısız olmalarına hep bir mazeretiniz olacaktır.
+
+* Self-Validating: Testler ya geçerler ya da başarısız olurlar. Testlerin geçip geçmediğini anlamak için bir log dosyasına bakmamıza gerek olmamalı veya elle iki farklı metin dosyasını karşılaştırmanız gerekmemelidir.
+
+* Timely: Testlerin zamanında yazılması gerekir. Birim testleri, yazıldığı üretim kodundan hemen önce yazılmalıdır. Testlerinizi kodunuzu yazdıktan sonra yazarsanız, üretim kodununun test edilmesi zor olabilir. Kodunuzu test edilebilecek şekilde tasarlayamayabilirsiniz.
+
+Okul hayatımda bir işte çalışırken ben testlerin hiç yazılmadığı bir projeye dahil olmuştum. Orada anladım ki test yazmanın gerçekten çok büyük bir önemi varmış. Orada yazılan kodların hiçbir şekilde geçerliliği yokmuş. Sürekli yazılan her kodu düzenli olarak değiştiriyorduk. Destekten bir şikayet geliyor burada patlak var hadi düzelt. Öyle öyle ömür geçmişti gerçekten. Bence siz siz olun testleri gerçekten önemseyin arkadaşlar.
+
