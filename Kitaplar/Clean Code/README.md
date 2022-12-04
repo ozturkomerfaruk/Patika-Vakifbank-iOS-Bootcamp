@@ -828,3 +828,85 @@ Burada amaç kodun çalışıp çalışmama meselesi değildir. Kodu daha efekti
 Bu iki olayın desteklenmesi önemli olandır.
 
 ## Chapter 11 - System
+
+Sizce bir belediye başkanı, tüm belediyenin tek başına yönettiği bir insan mıdır?  Yoksa belediye başkanı, bazı kurulların başında ki insan mıdır? Mesela bir kurul parkların yapımında görevli, bir kurul ulaşımdan görevli, bir kurul deprem için araştırma yapan kurul vs. Belediye başkanı tek başına tüm işlerden sorumlu insan olması imkansızdır ancak onu belediye başkanı yapan asıl olay, yürüttüğü kurulların başında olma yeteneğidir.
+
+Bireylerin ve yönettikleri bileşenlerin büyük resmi anlamaksızın etkili bir şekilde çalışmasını mümkün kılan, soyutlama ve modülerlik düzeyleridir. Temiz kod olayı nerede devrereye giriyor derseniz de, soyutlamanın daha düşük seviyelerderinde bunu başarmanıza yardımcı olduğunu söyleyebilirim.
+
+İşte bu bölümde yazar bizlere bir sistem inşasından, soyutlamanın ve modülerlik düzeylerinden bahsetmektedir.
+
+Aslında buna örnek olarak verilebilecek bir husus bulunmaktadır. MVVM mimarisinde, ViewModel ile View arasında ki fark neydi, hatırlarsanız eğer; Sayfaların business logic tarafları ViewModel olarak ayrı bir yerde tutuluyordu. Doğal olarak, burada da anlatılan hususta: Uygulama nesneleri oluşturulurken ve birbiri ile ilişkilendirilirken, nesnelerin oluşturulma süreci çalışma zamanı mantığından (runtime logic) ayrılmalıdır.
+
+İhtiyaç halinde oluşturma (lazy initialization) deyiminin bir kez kullanımı sorun teşkil etmez ancak uygulamalarda bir çok örneği vardır. Güçlü sistemler oluşturmaya gayret gösteriyorsak, küçük, kullanışlı deyimlerin modülerliği bozmasına asla izin vermemeliyiz. Nesnenin oluşturulması ve birbiri ile ilişkilendirilmesi süreci de bir istisna değildir. Bu işlemleri iş mantığından ayrı olarak modülerize etmeli ve bağımlılıklarımızı çözmek için tutarlı bir stratejimiz olduğundan emin olmalıyız.
+
+**Factory Pattern**
+
+Bir sipariş alma sisteminde, Order nesnesine ekleme yapabilmek için LineItem instance oluşturulmalı. LineItem örneklerinin oluşturulmasının kontrolünü de Abstract olan Factory kullanılır. Kontrolde ancak detaylar uygulama kodundan tamamen ayrıdır.
+
+![image](https://user-images.githubusercontent.com/56068905/205496441-82ab3573-2123-42b0-a25e-4cfa89a40cf0.png)
+
+Tüm bağımlılıklar main’den OrderProcessing uygulamasına doğrudur. Bu, uygulamanın bir LineItem nesnesinin nasıl oluşturulacağı ile ilgili detaylardan kopuk olduğu anlamına gelir. Bu detaylar, main’in tarafında olan LineItemFactoryImplementation sınıfında tutulur. Uygulama, LineItem örneklerinin ne zaman oluşturulacağı üzerinde tam kontrole sahiptir, ve hatta uygulamaya özel yapıcı argümanları da sağlayabilir.
+
+**Bağımlılık Enjeksiyonu**
+
+Bir nesne kendi bağımlılıklarının örneklerini oluşturma sorumluluğunu almamalıdır. Bunun yerine, bu sorumluluğu başka bir yetkili mekanizmaya, IoC / DI mekanizmasına bırakmalıdır.
+
+İyi bir bağımlılık enjeksiyonu mekanizmasında; sınıf, bağımlılıklarını gidermek için doğrudan hiçbir adım atmaz, tamamen pasiftir. Bunun yerine, bağımlılıkları enjekte etmek için kullanılan setter metotlar veya yapıcı argümanlar (veya her ikisini) sağlar. Nesnelerin oluşturulma süreçlerinde, DI konteyneri gerekli nesneleri örnekler ve bağımlılıkları ilişkilendirmek için sağlanan yapıcı değişkenlerini veya setter metotları kullanır. Bağımlılıklar genellikle bir konfigürasyon dosyası aracılığıyla belirtilir. Spring Framework, Java için en iyi bilinen DI konteynerini sağlar.
+
+**Big Design Up Front**
+
+Big Design Up Front yaklaşımına göre, yazılımın gerçekleştirimi başlamadan önce tasarım tamamlanmalı ya da mükemmelleştirilmelidir. Genellikle yazılım geliştirmedeki şelale (waterfall) modeli ile ilişkilendirilir. BDUF kulağa hoş gelse de aslında zararlı bir yaklaşımdır. Önceki eforu çöpe atma konusunda oluşacak olan psikolojik direnç nedeniyle değişime uyum sağlamayı engeller. Bu direnç bazen kişisel, ama çoğu zaman ekonomik sebeplerden kaynaklanır. 
+
+Eğer uygulama mimarisinde Seperation of Concerns sağlanmışsa, radikal değişiklikler dahi ekonomik olarak yapılabilir (feasible) olacaktır. Uygulamaya ait mimari kararların tümünün en başta alınması yerine, olabildiğince basit ancak ayrılmış bir mimari (decoupled architecture) ile başlayarak, çalışan uygulama özelliklerini kısa aralıklarla teslim etmeye odaklanılmalı, mimari iyileştirmeler buna paralel ilerlemelidir.
+
+Sistemler de temiz olmalıdır. Kötü bir mimari iş mantığını (business logic) belirsizleştirir ve çevikliği (agility) olumsuz etkiler. İş mantığı gizlendiğinde, hataların bulunması ve yeni özelliklerin eklenmesi zorlaşır. Çeviklik azalırsa, üretkenlik azalır ve TDD’nin faydaları kaybolur.
+
+Soyutlamanın her seviyesinde niyet açık olmalıdır. Sistemler veya bağımsız modüller tasarlarken, çalışabilecek en basit çözümü uygulamayı unutmayın.
+
+Bu size daha öncesinde sürekli bahsetmiş olduğum aslında, eski iş tecrübem de yine bu sıkıntıyı yaşamıştım ben. Bu bölüm aslında daha temiz bir programlama dili nasıl oluyor çok güzel bir şekilde gösteriyor. Ancak günün sonunda biz buna ne kadar erişebiliyoruz ne kadar çevik oluyoruz daha doğrusu o gerçekten tartışılır. Bazen sistemler o kadar karmaşık kuruluyor ki, orada çalışan yazılımcıların, uzman yazılımcıların gerçekten bir sorgulanması gerekmektedir. Bunlar ne yapıyor, ne iş ediyor, neden böyle bir kod yazmışlar :(
+
+## Chapter 12 - Emergence
+
+Evet bu bölümde 4 basit tasarım kuralını inceleyeceğiz.
+
+1. Tüm testleri çalıştırmak
+2. Tekrarlanmış kodlardan kaçınmak
+3. Açık olmak
+4. sınıf ve metot sayısında en aza indirgemek
+
+Nedir bu tüm testler
+
+Kağıt üzerinde bir sistemi inşa etmek kolaydır peki onu proje geçirmekte de bu koalylık sağlanabiliyor mu? Bunu öğrenmenin en kolay yolu, sistem üzerinde testler yazmaktadır. Bu testleri de sistemin tamamına uygulanan bir proje, test edilebilir bir projedir. Test edilebilir demek, projenin aynı zamanda doğrulanabilir olması da demektir. Doğrulanamayan bir sistem ya da proje asla dağıtılmamalıdır yani deploy edilmemelidir.
+
+SRP'ye yani Single Responsibility Principle olayına uyan kodlar yazmak daha kolay test etmeyi sağlamaktadır. Tabi bu durumda doğrulanabilir bir sistem inşa etme de daha kolay olmaktadır. Kodlar arasında bağımlılıklar kurmak kod yazmayı zorlaştırır. Dependency Injection yani bağımlılık enjeksiyonu gibi arayüz ve soyutlamalar konularında bazı toollar kullanılırız. Amacımız bu bağımlılıkları azaltmaktır. Böylece daha iyi tasarımlar ortaya koyabilmekteyiz.
+
+Düzenlemelerimizi yaparken, temiz tasarım hakkında tüm bildiklerimizi uygularız: birbirine bağlılığı (cohesion) artırırız, bağımlılığı (coupling) azaltırız, meselelerin ayrımını (seperation of concerns) sağlarız, sistemlerimizi modülarize ederiz, fonksiyon ve sınıflarımızı küçültür ve daha iyi isimler seçeriz. Burası ayrıca basit tasarımın son üç kuralını uyguladığımız yerdir: tekrarları kaldır, kodunun açıklayıcı olduğundan emin ol, sınıf ve metot sayılarını en aza indir.
+
+İkinci kuralımız da bahsedilen tekrarlanmış kodlar nedir?
+
+Tekrarlanmış kodlar, iyi tasarlanmış sistemlerin birinci düşmanıdır. Tekrarlanmış kodlar, ek iş, ek risk ve gereksiz karmaşa demektir. Örneğin bir liste sınıfındaki şu iki metota bakalım:
+
+Zaten bu zamana kadar yazılan hemen hemen her konu başlığında bu bölüme değinildiği için geçiyorum.
+
+Üçüncü kuralımız Açıklayıcı olmak nedir
+
+Bir yazılım projesinin maliyetinin çoğu uzun dönem bakımıdır. Kodumuzu değiştirirken hata potansiyelini en aza indirgemek için, sistemin ne yaptığını anlamamız önemlidir. Sistemler daha karmaşık hale geldikçe, yazılımcılar olarak anlamamız zorlaşır ve hata yapma riskimiz artar. Bu nedenle, kodumuz yazanın niyetini açıkça belli etmelidir. Yazar kodu daha da açık hale getirdikçe, diğerlerinin anlaması için geçen süre ve bakım süresi daha da azalır.
+
+İyi isimler seçerek kendinizi daha iyi ifade edebilirsiniz. Ayrıca küçük fonksiyon ve sınıfların isimlendirmesi, anlaşılması ve yazılması daha kolaydır.
+
+Standart bir terminoloji kullanarak da kendinizi ifade edebilirsiniz. Örneğin tasarım desenleri (design patterns) büyük ölçüde iletişim ve ifade etme ile alakalıdır. Bu desenleri gerçekleştiren sınıfların isimlerinde bu tür standart desen isimleri kullanarak, Command veya Visitor gibi, tasarımınızı diğer geliştiricilere kısaca açıklayabilirsiniz.
+
+İyi yazılmış birim testleri de açıklayıcıdır. Testlerin öncelikli amacı, örnek dokümantasyon sağlamaktır. Testlerimizi okuyan biri sınıfın neyle ilgili olduğunu hızlı bir şekilde anlayabilmelidir.
+
+Bir şirkette şunu çok iyi biliyorsunuz ki, önceki yazılımcı olmak diye bir kavram vardır. Eğer siz de bir iş yerinden ayrılırsanız, sizin yerinize gelecek kişi sizden önceki yazılımcı olarak bahseder. Eğer siz kendinize güvenerek bazı kodlar yazdıysanız, o zaman arkanızdan iyi bir şekilde anarlar eğer durum tam tersiyse işte o zaman işler değişir. İşte o zaman durumlar kötüye gider. Kulağınız çınlar be!
+
+Siz siz olun işinizi ciddiye alarak yapın. Daha iyi isimler seçin, büyük fonksiyonları daha küçük hale getirin. Özen gösterin işinize. Hadi kolay gelsin :)
+
+Son olarak dördüncü kuralımız, Sınıf ve metot sayısını azaltmak
+
+Evet bunu aslında yukarıda kodlarınızın açıklayıcı olması kuralında sizlere bahsetmiştim. Aslında bu 4 başlık birbirini gerçekten tamamlar türünde. Eğer sizin kodunuzda sınıf sayısı gereksiz yere fazlaysa, eğer metot sayınız gereksiz yere fazlaysa işte o zaman ne açıklayıcı olur kodunuz ne temiz olur kodunuz. Anca bir birini tekrarlamış onlarca kod, karman çurman kodlar olmuş demektir.
+
+Yüksek sayıda sınıf ve metot bazen anlamsız dogmatikliğin bir sonucudur. Örneğin, her sınıf için bir arayüz oluşturmayı ısrarla vurgulayan bir kodlama standardını veya alanların (fields) ve davranışların her zaman veri sınıflarına ve davranış sınıflarına ayrılması gerektiğinde ısrarcı olan geliştiricileri düşünelim. Bu tür dogmalara karşı direnilmeli ve daha pragmatik bir yaklaşım benimsenmelidir.
+
+Şimdi şöyle bir şey var tabi. Bu kural belki de diğer üç kuraldan sonra gelen gerçekten dördüncü kuraldır. O kadar da önemli değil esasında. Neden mi? Çünkü diğer üç madde yazmaya çalışırken sınıf sayınız fazla mı oldu hiç gerek yok kalsın. Testler yazmak, tekrarları ortadan kaldırmak bunlar daha önemli şeyler. Bu yüzden sınıf ve fonksiyon sayısını düşük tutmak önemli olsa da, testler yazmak, tekrarları ortadan kaldırmak ve kendimizi açıkça ifade etmek daha önemlidir.
+
