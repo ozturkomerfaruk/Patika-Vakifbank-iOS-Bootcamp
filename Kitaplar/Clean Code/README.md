@@ -914,6 +914,8 @@ Yüksek sayıda sınıf ve metot bazen anlamsız dogmatikliğin bir sonucudur. �
 
 Eşzamanlılık ilkesi. Bazen bu durum karmaşık hale gelebiliyor. Evet thread li bir iş yapmak belki çoğu zaman daha kolay olmaktadır ancak bazen de Eş zamanlılık olaylarına girmemiz gerekmekte olabiliyor. İşte bizler de bu konu başlığında bu durumu ele alacağız.
 
+Ancak bu bölümden sonrası biraz kod dünyasından çıkmaktadır. Burası biraz daha İşletim Sistemleri tarafına kaymaktadır. Kitabın bundan sonrasını ben biraz daha işletim sistemleri dersiyle özdeşleştirdim doğrusu.
+
 Eşzamanlılık bir ayrıştırma stratejisidir. Neyin yapıldığını ne zaman yapıldığını ayırmamıza yardımcı olur. Neyi ne zaman ayırmak, bir uygulamanın hem verimini hem de yapısını önemli ölçüde iyileştirebilir. Yapısal bir bakış açısından, uygulama tek bir büyük ana döngüden çok, işbirliği yapan birçok küçük bilgisayar gibi görünür. Bu, sistemin anlaşılmasını kolaylaştırabilir ve endişeleri ayırmak için bazı güçlü yollar sunar.
 
 Aynı anda bir kullanıcıyı yöneten ve kullanıcı başına yalnızca bir saniyelik süre gerektiren bir sistemi düşünün. Bu sistem, birkaç kullanıcı için oldukça duyarlıdır, ancak kullanıcı sayısı arttıkça sistemin yanıt verme süresi de artar. Hiçbir kullanıcı 150 kişinin arkasında sıraya girmek istemez! Birçok kullanıcıyı aynı anda ele alarak bu sistemin yanıt süresini iyileştirebiliriz. Ya da büyük veri kümelerini yorumlayan ancak hepsini işledikten sonra tam bir çözüm sağlayabilen bir sistem düşünün. Belki de her veri seti farklı bir bilgisayarda işlenebilir, böylece birçok veri seti paralel olarak işlenir.
@@ -927,3 +929,62 @@ Eşzamanlılık ilkeleri:
 5. Doğru eşzamanlılık, basit problemler için bile karmaşıktır.
 6. Eşzamanlılık hataları genellikle tekrarlanabilir değildir, bu nedenle gerçek kusurlar yerine genellikle tek seferlik hatalar olarak görmezden gelinirler.
 7. Eşzamanlılık genellikle tasarım stratejisinde temel bir değişiklik gerektirir
+
+Eşzamanlılık Savunma İlkeleri
+
+Single Responsibility Principle - SRP, belirli bir yöntemin/sınıfın/bileşenin değişmek için tek bir nedeni olması gerektiğini belirtir. Eşzamanlılık tasarımı, başlı başına bir değişiklik nedeni olacak kadar karmaşıktır ve bu nedenle kodun geri kalanından ayrılmayı hak eder.
+
+Corollary: Limit the Scope of Data - Paylaşılan bir nesnenin aynı alanını değiştiren iki iş parçacığı birbirini engelleyerek beklenmedik davranışlara neden olabilir. Bir çözüm, paylaşılan nesneyi kullanan koddaki kritik bir bölümü korumak için synchronized anahtar sözcüğünü kullanmaktır.
+
+Corollary: Use Copies of Data - Paylaşılan verilerden kaçınmanın iyi bir yolu, en başta verileri paylaşmaktan kaçınmaktır. Bazı durumlarda nesneleri kopyalamak ve onları salt okunur olarak değerlendirmek mümkündür. Diğer durumlarda, nesneleri kopyalamak, bu kopyalarda birden çok diziden sonuç toplamak ve ardından sonuçları tek bir dizide birleştirmek mümkün olabilir.
+
+Gelişmiş eşzamanlılık tasarımını desteklemek için eklenen birkaç başka sınıf türü vardır. İşte birkaç örnek:
+
+|--|--|
+|---|---|
+|ReentrantLock|A lock that can be acquired in one method and released in another.|
+|Semaphore|An implementation of the classic semaphore, a lock with a count.|
+|CountDownLatch|A lock that waits for a number of events before releasing all threads waiting on it. This allows all threads to have a fair chance of starting at about the same time.|
+
+Know Your Execution Models
+
+Bound Resources: Eşzamanlı bir ortamda kullanılan sabit boyuttaki veya sayıdaki kaynaklar. Örnekler, veritabanı bağlantılarını ve sabit boyutlu okuma/yazma arabelleklerini içerir.
+
+Mutual Exclusion: Paylaşılan verilere veya paylaşılan bir kaynağa aynı anda yalnızca bir iş parçacığı erişebilir.
+
+Starvation: Bir iş parçacığının veya bir grup iş parçacığının aşırı uzun bir süre veya sonsuza kadar ilerlemesi yasaktır. Örneğin, her zaman hızlı akan iş parçacıklarının önce geçmesine izin vermek, hızlı akan iş parçacıklarının sonu yoksa daha uzun süren iş parçacıklarını aç bırakabilir.
+
+Deadlock: Birbirini bitirmeyi bekleyen iki veya daha fazla iş parçacığı. Her iş parçacığının, diğer iş parçacığının gerektirdiği bir kaynağı vardır ve hiçbiri diğer kaynağı alana kadar bitiremez.
+
+Livelock: Her biri iş yapmaya çalışan, ancak "yolda" başka bir tane bulan, birbirini takip eden iplikler. Rezonans nedeniyle, ileti dizileri ilerleme kaydetmeye devam eder, ancak çok uzun bir süre veya sonsuza kadar ilerleme kaydedemez.
+
+Producer-Consumer
+
+Bir veya daha fazla üretici iş parçacığı bazı işler yaratır ve onu bir ara belleğe veya kuyruğa yerleştirir. Bir veya daha fazla tüketici iş parçacığı, bu işi kuyruktan alır ve tamamlar. Üreticiler ve tüketiciler arasındaki kuyruk bağlı bir kaynaktır. Bu, üreticilerin yazmadan önce kuyrukta boş alan beklemesi ve tüketicilerin kuyrukta tüketecek bir şey olana kadar beklemesi gerektiği anlamına gelir. Sıra yoluyla üreticiler ve tüketiciler arasındaki koordinasyon, üreticilerin ve tüketicilerin birbirlerine sinyal vermesini içerir. Üreticiler kuyruğa yazar ve kuyruğun artık boş olmadığının sinyalini verir. Tüketiciler kuyruktan okur ve kuyruğun artık dolu olmadığının sinyalini verir. Her ikisi de potansiyel olarak devam edebilecekleri zaman bilgilendirilmeyi bekler.
+
+Readers-Writers
+
+Öncelikle okuyucular için bir bilgi kaynağı olarak hizmet eden, ancak yazarlar tarafından zaman zaman güncellenen paylaşılan bir kaynağınız olduğunda, verim bir sorundur. İş hacmini vurgulamak, aç kalmaya ve eski bilgilerin birikmesine neden olabilir. Güncellemelere izin verilmesi verimi etkileyebilir. Okuyucuları, bir yazarın güncellediği bir şeyi okumamaları için koordine etmek ve bunun tersi, zorlu bir dengeleme eylemidir. Yazarlar, birçok okuyucuyu uzun süre bloke etme eğilimindedir, bu da verim sorunlarına neden olur.
+Buradaki zorluk, hem okuyucuların hem de yazarların ihtiyaçlarını, doğru çalışmayı tatmin etmek, makul verim sağlamak ve açlıktan kaçınmak için dengelemektir. Basit bir strateji, yazarların güncelleme yapmasına izin vermeden önce hiç okuyucu kalmayana kadar beklemelerini sağlar. Ancak sürekli okuyucular varsa, yazarlar aç kalacaktır. Öte yandan, sık yazanlar varsa ve onlara öncelik verilirse, verim düşecektir. Bu dengeyi bulmak ve eşzamanlı güncelleme sorunlarından kaçınmak, sorunun ele aldığı şeydir.
+
+Dining Philosophers
+
+Dairesel bir masanın etrafında oturan birkaç filozof düşünün. Her filozofun soluna bir çatal konur. Masanın ortasında büyük bir kase spagetti var. Filozoflar, acıkmadıkça, düşünerek vakit geçirirler. Acıktıklarında iki yanlarındaki çatalları alıp yemek yerler. Bir filozof iki çatal tutmadıkça yemek yiyemez. Sağındaki veya solundaki filozof ihtiyacı olan çatallardan birini zaten kullanıyorsa, o filozof yemeğini bitirip çatalları geri bırakana kadar beklemelidir. Filozof bir kez yemek yer, iki çatalını da masaya koyar ve tekrar acıkmasını bekler.
+
+Senkronize Yöntemler Arasındaki Bağımlılıklara Dikkat Edin
+
+Paylaşılan bir nesne üzerinde birden fazla method kullanmaktan kaçının. 3 sebebi var:
+
+Client-Based Locking - İstemcinin ilk yöntemi çağırmadan önce sunucuyu kilitlemesini sağlayın ve kilidin kapsamının son yöntemi çağıran kodu içerdiğinden emin olun.
+
+Server-Based Locking - Sunucu içinde, sunucuyu kilitleyen, tüm yöntemleri çağıran ve ardından kilidi açan bir yöntem oluşturun. İstemcinin yeni yöntemi çağırmasını sağlayın.
+
+Adapted Server - Kilitlemeyi gerçekleştiren bir aracı oluşturun. Bu, orijinal sunucunun değiştirilemediği sunucu tabanlı kilitlemeye bir örnektir.
+
+Synchronized Sections Should be Small
+
+Bu bölümler kritiktir ve bir şeyler ters giderse bakımı zordur, bunları küçük ve basit tutmalısınız. Birçoğuna sahip olmak daha iyidir, ancak çok büyük yerine küçük.
+
+Thread kodları test etme
+
+1. Sahte başarısızlıkları aday iş parçacığı sorunları olarak ele alın. — Hataları bir defaya mahsus olarak görmeyin, her birini her zaman göz önünde bulundurmalısınız.
