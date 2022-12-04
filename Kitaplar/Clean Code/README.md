@@ -455,7 +455,7 @@ Bir sınıf içerisindeki metotlar sınıfın bir seviye sağına, metotların g
 
 Bir ekibin parçasıysan, başlatmayacan kendi formatlama kurallarından. O ekibe uyacaksın. Ekibi sen inşa ediyorsan, sen kendi kurallarını dayatıcan. Bunun raconu budur hocam. Ha derlerse projeye başlamadan önce hadi bir formatlama biçimi konuşalım. İşte gerçek racon budur. Böyle daha sağlıklı kod geliştirilir. Bunu zaman kaybı olarak görmek ne kaybettirir biliyor musunuz? Daha doğrusu formatlamayı umursamadan projeye başlamak size ne kaybettirir? Eğer proje büyük bir projeyse daha projenin ortasında her kafadan bir ses çıkmasından hapı yutarsınız. Ben Swift diliyle daha büyük bir projede henüz çalışmadım. Ama garipsediğim olaylardan birini anlatım. Mesela TableView ın metotlarını ayrı bir extension içerisinde yazan da var, yazmayan da. Eğer her sayfada bu kural değişirse, nerde bu tableview metotları diye dövünüp durursunuz. Hiç gerek yok hocam. Hiç gerek yok.
 
-Chapter 6 - Objects and Data Structures
+## Chapter 6 - Objects and Data Structures
 
 Bir yazılımın en temellerinin anlatıldığı bir bölüme geldik. Bu bölüm kapsamında öğreneceğimiz belki yüzlerce şey var. Bunlardan bir tanesi Get ve Set metotları
 
