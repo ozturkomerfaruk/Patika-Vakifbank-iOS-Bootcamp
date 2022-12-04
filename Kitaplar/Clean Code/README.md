@@ -910,3 +910,20 @@ Yüksek sayıda sınıf ve metot bazen anlamsız dogmatikliğin bir sonucudur. �
 
 Şimdi şöyle bir şey var tabi. Bu kural belki de diğer üç kuraldan sonra gelen gerçekten dördüncü kuraldır. O kadar da önemli değil esasında. Neden mi? Çünkü diğer üç madde yazmaya çalışırken sınıf sayınız fazla mı oldu hiç gerek yok kalsın. Testler yazmak, tekrarları ortadan kaldırmak bunlar daha önemli şeyler. Bu yüzden sınıf ve fonksiyon sayısını düşük tutmak önemli olsa da, testler yazmak, tekrarları ortadan kaldırmak ve kendimizi açıkça ifade etmek daha önemlidir.
 
+## Chapter 13 - Concurrency
+
+Eşzamanlılık ilkesi. Bazen bu durum karmaşık hale gelebiliyor. Evet thread li bir iş yapmak belki çoğu zaman daha kolay olmaktadır ancak bazen de Eş zamanlılık olaylarına girmemiz gerekmekte olabiliyor. İşte bizler de bu konu başlığında bu durumu ele alacağız.
+
+Eşzamanlılık bir ayrıştırma stratejisidir. Neyin yapıldığını ne zaman yapıldığını ayırmamıza yardımcı olur. Neyi ne zaman ayırmak, bir uygulamanın hem verimini hem de yapısını önemli ölçüde iyileştirebilir. Yapısal bir bakış açısından, uygulama tek bir büyük ana döngüden çok, işbirliği yapan birçok küçük bilgisayar gibi görünür. Bu, sistemin anlaşılmasını kolaylaştırabilir ve endişeleri ayırmak için bazı güçlü yollar sunar.
+
+Aynı anda bir kullanıcıyı yöneten ve kullanıcı başına yalnızca bir saniyelik süre gerektiren bir sistemi düşünün. Bu sistem, birkaç kullanıcı için oldukça duyarlıdır, ancak kullanıcı sayısı arttıkça sistemin yanıt verme süresi de artar. Hiçbir kullanıcı 150 kişinin arkasında sıraya girmek istemez! Birçok kullanıcıyı aynı anda ele alarak bu sistemin yanıt süresini iyileştirebiliriz. Ya da büyük veri kümelerini yorumlayan ancak hepsini işledikten sonra tam bir çözüm sağlayabilen bir sistem düşünün. Belki de her veri seti farklı bir bilgisayarda işlenebilir, böylece birçok veri seti paralel olarak işlenir.
+
+Eşzamanlılık ilkeleri:
+
+1. Eşzamanlılık her zaman performansı artırır.
+2. Eşzamanlı programlar yazarken tasarım değişmez.
+3. Eşzamanlılık sorunlarını anlamak, Web veya EJB kapsayıcısı gibi bir kapsayıcıyla çalışırken önemli değildir.
+4. Eşzamanlılık, hem performansta hem de ek kod yazmada bazı ek yüklere neden olur.
+5. Doğru eşzamanlılık, basit problemler için bile karmaşıktır.
+6. Eşzamanlılık hataları genellikle tekrarlanabilir değildir, bu nedenle gerçek kusurlar yerine genellikle tek seferlik hatalar olarak görmezden gelinirler.
+7. Eşzamanlılık genellikle tasarım stratejisinde temel bir değişiklik gerektirir
