@@ -1033,5 +1033,47 @@ Bu noktada, yeni özellik eklemeyi bırakın ve yeniden düzenlemeye başlayın 
 
 Kodunuzu her zaman sanki arkanızdan gelen geliştirici, nerede yaşadığınızı bilen şiddet yanlısı bir psikopatmış gibi yazın. TDD, kodumuzu daha sürdürülebilir, daha kolay anlaşılır hale getirir. Yani TDD ile temiz kod arasında bir birliktelik olduğunu söyleyebiliriz.
 
+
 ## Chapter 15 - JUnit Internals
 
+Bu bölüm biraz daha JUnit temelleri hakkında olacak direk JUnit ile ilgili değil ya da TDD ile ilgili değil.
+
+Tahmin edebileceğiniz gibi, refactoring işlemine başlamadan önce ComparisonCompactor sınıfının refactoring işlemi için hayati önem taşıyan %100 test kapsamına sahip olduğunu söylüyor. Yazar diyor ki, refactoring yaptığım kodların %0 seviyesi test yazanlarmış. Yani test yazan insan refactoringe ihtiyaç duymazmış. Meselenin özü bu. Yeniden düzenleme, yazılım geliştirmede sıklıkla kullanılan ve saygı duyulan bir kelimedir. Saygın geliştiricileri genellikle ulaşılması imkansız olarak gördükleri için. Kendilerine güvenmiyorlar. Nothing is perfect. Hiçbir şey mükemmel değildir.
+
+Refactoring i eğer bir takım halinde yaparsanız, ekip içerisinde birbirine yardım eder olmak birbirinin kodlarını temize daha iyi oluşturmak demektir. Eğer bu yardımcılık olursa sadece bireyler değil tüm takım kazanır.
+
+## Chapter 16 - Refactoring SerialDate
+
+SerialDate sınıfı profesyonelliği ve disiplini içinde barındırır. Bu bir iyi kod olarak gözükebilir. Her kodun bir sorunu vardır.. Başka bir kişinin kodunu inceleyip hata bulmanın bir hiyerarşi göstergesi olmadığını belirtiyor.
+
+Kod inceleme sürecinin nazik ve profesyonelce yapılması gerektiğini belirtiyor. Ayrıca her geliştirici kod incelemelerine açık olmalıdır.
+
+Önce birim test kapsamı kontrol edilir. Ardından kodu iyi anlamak ve kapsamı artırmak için birim testler yazılır. Bazıları yorumlanır bazıları yeniden düzenlenir. Test uygulaması bittikten sonra ilk kapsam yüzde 50 iken sonrasında yüzde 92 olmakta ise, orada başarı söz konusudur.
+
+Refactoring Approaches
+
+* Yalnızca testten kullanılan kod varsa testi ve kodu birlikte silin.
+* Algoritmalar biraz karmaşıksa, GEÇİCİ DEĞİŞKENLERİ AÇIKLAMA yaklaşımını kullanmayı deneyin. Bu yaklaşım, uygulama hakkında daha fazla ayrıntı açıklamak için geçici değişkenler kullanır.
+* Enum`lar oldukça büyükse, onu başka bir sınıfa taşıyın. Ve enums içinde gerekli yöntemleri uygulayın.
+* Birden çok if ifadesini || kullanarak tek bir if ifadesine bağlayın. ve && operatörleri.
+* Sabit statik tamsayıları numaralandırmaya dönüştür. (Bu, Android için kötü olabilir)
+* IDE'nin gücünü kullanın. Değişkenlerin ve yöntemlerin kullanımlarını kontrol edin ve adlarını IDE yardımıyla değiştirin.
+* Değişken adları yeterliyse yorumları silin. Değilse, değişkenleri ve yöntemleri yeniden adlandırın.
+* Ad yöntemleri ve değişkenler anlamlı.
+* Temel sınıfların türevlerini bilmesi genellikle kötü bir fikirdir. Bunu düzeltmek için, ABSTRACT FACTORY kalıbını kullanın ve fabrikadan örnek oluşturun.
+* Değişiklik geçmişini sınıfın en üstünden silin çünkü sürüm kontrol araçlarını kullandığımız için önemli değil.
+* Kaynak kodunda birden fazla dil olması sıkıntı yaratıyor. Javadocs'tan html kodlarını kaldırın.
+* Neden sorularıyla anlamaya çalışın.
+* Sabitleri olan sınıflardan miras almak, Java programcılarının MonthConstants.January gibi ifadeleri kullanmaktan kaçınmak için kullandıkları eski bir hiledir, ancak bu kötü bir fikirdir.
+* Gereksiz yorumlar, yalnızca yalan ve yanlış bilgi toplamak için kullanılan yerlerdir. Onlardan kurtulmak.
+* Bazı geleneksel bilgelik karşısında son sinekleri ortadan kaldırmak. Örneğin, Robert Simmons bize “. . . finali kodunuzun her yerine yayın." Açıkçası katılmıyorum. Ara sıra son sabiti gibi final için birkaç iyi kullanım olduğunu düşünüyorum, ancak bunun dışında anahtar kelime çok az değer katar ve çok fazla karmaşa yaratır.
+* Bir yöntemi diğerinden yalnızca bayrakla çağırmak genellikle kötü bir uygulamadır. Gerekirse bayrak geçirmek yerine farklı yöntemler yapın.
+
+Daha sonra class boyutu küçülüyor böyle test edilebilirlik oran yüzde 85e kadar çıokıyor. bu gayet güzel.
+
+***Bu koda bakacak bir sonraki kişi, umarız onunla bizim yaptığımızdan daha kolay başa çıkacaktır. Bu koda bakacak bir sonraki kişi, umarız onunla bizim yaptığımızdan daha kolay başa çıkacaktır.***
+
+
+# Son Olarak
+
+Uzun olan bir kitabın sonuna gelmiş olmaktayım. Son Appendix A-B-C taraflarıyla ilgili yazacak bir şey bulamadım doğrusu. Önemli olan 16 bölümün özeti işte bu şekildedir. Ben buraya tabi bir şeyler karaladım ama en güzeli gerçekten kitabı normal satın alıp başucu kitap haline getirmek gerekmektedir. Böyle PDF ortamında pek olmuyor bunlar. Bir de, bu kitap sayesinde gerçekten insanın yazılıma bakış açısı değişiyor. Bu açıdan yazara ne kadar teşekkür etsek azdır. Ancak bence burada yaşanılanları okul zamanında öğrencinin öğrenmesi gerekenler olarak değil de, baya baya iş hayatı tecrübesinde yaşamak gerektiğiymiş. Hal böyle olunca bazı şeyler çok sözel kalıyor. Ancak inanıyorum ki, kısa sürede olsa iş hayatı görmüş bir insanın, bu kitabı nasıl da başucu kitabı yapacağını çok iyi anlıyorum. Bu kitabı bize şuan Kaan Yıldırım hocamız verdi. Kendisine bir kez daha teşekkür etmek istiyorum burada çünkü bu Bootcamp süresince bu ktiaplar bizlere çok şey kazandırdı. Benim eski iş tecrübem de olunca bu kitaplar daha bi anlam kazandı. Kaan hocamızın başucu kitapları bir hayli fazla. Ben şuan Junior bir yazılımcıyım. Gün gelecek bende bir iOs developer olacağım ve o zaman da gerçek te isteklerim, arzularım, hayallerim tamamen bu kitap gibi başucu kitaplar alıp kendimi geliştirmek olacak. Arkadaşlar, senior seviyede bir projeyi baştan inşa ederek kurmak kolay bir şey değil. Bir mimari oluşturup tüm ekibe bunu kullanacağız demek kolay bir şey değil. Dolayısıyla, burada yazılanları zamanla iş hayatında tecrübe etmek bizim için elmas değerinde. Bir de iş hayatında görüyoruz ki, burada yazılanlarda pek uyulmuyor. Ancak yine de biz burada yazılanları okumak durumundayız eğer biz iyi bir yazılımcı olmak istiyorsak bizim okumamız gerekmektedir.
