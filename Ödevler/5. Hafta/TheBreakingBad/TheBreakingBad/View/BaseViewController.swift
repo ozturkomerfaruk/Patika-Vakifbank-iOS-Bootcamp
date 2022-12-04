@@ -27,9 +27,17 @@ class BaseViewController: UIViewController {
         indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
-    //MARK: Alert Dialog
+    //MARK: Error Alert Dialog
     func showErrorAlert(message: String, completion: @escaping () -> Void) {
         SwiftAlertView.show(title: "Error", message: message, buttonTitles: ["Ok"]).onButtonClicked {
+            _, _ in
+            completion()
+        }
+    }
+    
+    //MARK: Success Alert Dialog
+    func showSuccessAlert(message: String, completion: @escaping () -> Void) {
+        SwiftAlertView.show(title: "Successful", message: message, buttonTitles: ["Ok"]).onButtonClicked {
             _, _ in
             completion()
         }

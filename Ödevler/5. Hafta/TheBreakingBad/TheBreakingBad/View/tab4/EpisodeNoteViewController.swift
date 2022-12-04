@@ -59,7 +59,8 @@ final class EpisodeNoteViewController: UIViewController {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "newNoteVC") as? NewEpisodeNoteViewController else { return }
         // Delegate Pattern
         vc.delegate = self
-        navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     }
 }
 
@@ -90,7 +91,8 @@ extension EpisodeNoteViewController: UITableViewDelegate, UITableViewDataSource 
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "newNoteVC") as? NewEpisodeNoteViewController else { return }
         vc.modelConstructor = episodeNotes[indexPath.row]
         vc.delegate = self
-        navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .overFullScreen
+        present(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

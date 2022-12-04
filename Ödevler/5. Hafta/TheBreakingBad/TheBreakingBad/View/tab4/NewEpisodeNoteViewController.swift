@@ -62,6 +62,10 @@ final class NewEpisodeNoteViewController: BaseViewController {
         imageView.isHidden = true
     }
     
+    @IBAction func DismissPresent(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
     @IBAction func tvSeriesCollectionAction(_ sender: UIButton) {
         if let btn = sender.titleLabel?.text {
             chooseTvSeriesOutlet.setTitle(btn, for: .normal)
@@ -168,6 +172,17 @@ final class NewEpisodeNoteViewController: BaseViewController {
                 CoreDataManager.shared.updateNote(tvSeries: tvSeriesCD, noteText: noteCD, image: imageCD, episode: episodeCD, model: modelConstructor!)
                 delegate?.updateCoreData()
                 self.navigationController?.popViewController(animated: true)
+            }
+            dismiss(animated: true)
+            let info = """
+            TvSeries: \(tvSeriesCD)
+            
+            Season & Episode: \(episodeCD)
+            
+            Note: \(noteCD)
+            """
+            showSuccessAlert(message: info) {
+                return
             }
         } else {
             showErrorAlert(message: "Fill Everything") {

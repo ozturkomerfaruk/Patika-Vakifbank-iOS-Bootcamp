@@ -468,6 +468,16 @@
                                     <constraint firstItem="Ljn-as-d6o" firstAttribute="leading" secondItem="5TU-Mr-N8s" secondAttribute="leading" id="efN-Ly-7ui"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOX-QB-0Sg">
+                                <rect key="frame" x="0.0" y="59" width="67" height="34.333333333333343"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                <connections>
+                                    <action selector="DismissPresent:" destination="ycb-mA-cz7" eventType="touchUpInside" id="NW5-FJ-AJZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Xo-UO-giM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -475,6 +485,7 @@
                             <constraint firstItem="dRq-dq-oPD" firstAttribute="leading" secondItem="1Xo-UO-giM" secondAttribute="leading" constant="10" id="4Kh-so-GFb"/>
                             <constraint firstItem="xMF-W9-Kun" firstAttribute="leading" secondItem="1Xo-UO-giM" secondAttribute="leading" constant="10" id="6FY-Dm-1iz"/>
                             <constraint firstItem="ErH-OU-pdq" firstAttribute="top" secondItem="4U6-vc-iah" secondAttribute="bottom" constant="10" id="AeU-3y-FLU"/>
+                            <constraint firstItem="pOX-QB-0Sg" firstAttribute="leading" secondItem="1Xo-UO-giM" secondAttribute="leading" id="IqS-pE-zwL"/>
                             <constraint firstItem="1Xo-UO-giM" firstAttribute="trailing" secondItem="xMF-W9-Kun" secondAttribute="trailing" constant="10" id="NEk-Kd-Tne"/>
                             <constraint firstItem="dRq-dq-oPD" firstAttribute="top" secondItem="1Xo-UO-giM" secondAttribute="top" constant="5" id="TPW-Mu-4m0"/>
                             <constraint firstItem="1Xo-UO-giM" firstAttribute="bottom" secondItem="WSv-jp-q6v" secondAttribute="bottom" constant="20" id="XlX-Gd-YYS"/>
@@ -490,6 +501,7 @@
                             <constraint firstItem="5TU-Mr-N8s" firstAttribute="top" secondItem="ErH-OU-pdq" secondAttribute="bottom" constant="10" id="sC5-Ey-9ho"/>
                             <constraint firstItem="5TU-Mr-N8s" firstAttribute="leading" secondItem="1Xo-UO-giM" secondAttribute="leading" constant="10" id="sjN-ju-Zau"/>
                             <constraint firstItem="4U6-vc-iah" firstAttribute="leading" secondItem="fBV-XS-Ec6" secondAttribute="leading" constant="10" id="t2d-FU-E8h"/>
+                            <constraint firstItem="pOX-QB-0Sg" firstAttribute="top" secondItem="1Xo-UO-giM" secondAttribute="top" id="trb-v3-73w"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -618,6 +630,12 @@
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
