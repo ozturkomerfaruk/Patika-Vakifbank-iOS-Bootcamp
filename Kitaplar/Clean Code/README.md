@@ -1,5 +1,25 @@
 # Clean Code - A handbook of Agile Software Craftsmanship
 
+## İçindekiler
+
+* [Chapter 1](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-1---clean-code)
+* [Chapter 2](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-2---meaningful-names)
+* [Chapter 3](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-3---functions)
+* [Chapter 4](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-4---comments)
+* [Chapter 5](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-4---comments)
+* [Chapter 6]()
+* [Chapter 7](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-7---error-handling)
+* [Chapter 8](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-8---boundaries)
+* [Chapter 9](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-9---unit-tests)
+* [Chapter 10](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-10---classes)
+* [Chapter 11](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-11---system)
+* [Chapter 12](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-12---emergence)
+* [Chapter 13](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-13---concurrency)
+* [Chapter 14](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-14---successive-refinement)
+* [Chapter 15](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-15---junit-internals)
+* [Chapter 16](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-16---refactoring-serialdate
+* [Son Olarak](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#son-olarak)
+
 ## Chapter 1 - Clean Code
 
 Profosyonel bir yazılımcı çok sağlam algoritmalar yazan birisi değildir. Profosyonel bir yazılımcı temiz kod yazabilendir. Bu kitap boyunca odağımız daha çok bu temelde olacak.
