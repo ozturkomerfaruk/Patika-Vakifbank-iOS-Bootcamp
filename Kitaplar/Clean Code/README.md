@@ -802,3 +802,29 @@ Yani soruna neden olan şey birden fazla assert ifadesi değil. Aksine, test edi
 
 Okul hayatımda bir işte çalışırken ben testlerin hiç yazılmadığı bir projeye dahil olmuştum. Orada anladım ki test yazmanın gerçekten çok büyük bir önemi varmış. Orada yazılan kodların hiçbir şekilde geçerliliği yokmuş. Sürekli yazılan her kodu düzenli olarak değiştiriyorduk. Destekten bir şikayet geliyor burada patlak var hadi düzelt. Öyle öyle ömür geçmişti gerçekten. Bence siz siz olun testleri gerçekten önemseyin arkadaşlar.
 
+## Chapter 10 - Classes
+
+Agalar her dilin Style Guidline biçimi vardır. Bunun internette dökümantasyonları mevcut. Kitap Java temelinde gidiyor. Javada bir class, değişkenlerle başlamalı. Önce public static olanlar sonra normal public. Daha sonra private static olanlar, sonra normal private değişkenler. Ardından public metotlar sonra private metotlar gelmelidir.
+
+Encapsulation olayı
+
+Değişkenlerin ve util fonksiyonların gizli tutulma işlemidir. Bu get set olaylarıdır.
+
+Sınıfların boyutu
+
+Bir sınıfa ait olan metot sayısının fazla olmaması gerektiğidir. Metot sayısı az, sorumluluğu büyük olmalıdır.
+
+**Single Responsibility Prensibi** Bir sınıf veya modülün değiştirilmesi için gereken tek bir sebebi olması gerektiğini söyler. Bu ilke bize hem bir sorumluluk tanımı verir hem de sınıf büyüklüğü için bir rehber olur. Sınıfların sadece bir sorumluluğu olmalıdır.
+
+Her büyük sistem aynı büyüklükte mantık ve karmaşıklık içerecektir. Yeniden ifade etmek gerekirse; sistemlerimizin birkaç büyük sınıftan değil, birçok küçük sınıftan oluşmasını istiyoruz. Her küçük sınıfın, tek bir sorumluluğu ve değiştirilmesi için tek bir nedeni olmalıdır. Ve istenileni verebilmesi için başka sınıflarla birlikte çalışır.
+
+Burada amaç kodun çalışıp çalışmama meselesi değildir. Kodu daha efektif yazma meselesidir. Yazdığınız kod ister istemeden birden fazla instance üretebilir bu onun hakkıdır belki de. Sizin göreviniz bunu ona o hakkı vermemenizdir. Eğer verirseniz memory şişer bişey olur ne gerek var.
+
+**Sınıf Güncellemesi** Her gelen yenilikte sınıf güncellemesi yapmaya gerek duyulmaz. Ha sınıfı değiştirmeden extends edilerek yeni sınıflar oluşturup onun temelinde üretilmiş sınıflar oluşturabiliriz ya da güncelleriz direk. Ancak burada iki önemli husus vardır.
+
+1. SRP - Single Responsibility
+2. OCP - Open/Closed Principle
+
+Bu iki olayın desteklenmesi önemli olandır.
+
+## Chapter 11 - System
