@@ -17,7 +17,7 @@
 * [Chapter 13](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-13---concurrency)
 * [Chapter 14](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-14---successive-refinement)
 * [Chapter 15](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-15---junit-internals)
-* [Chapter 16](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-16---refactoring-serialdate
+* [Chapter 16](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-16---refactoring-serialdate)
 * [Son Olarak](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#son-olarak)
 
 ## Chapter 1 - Clean Code
