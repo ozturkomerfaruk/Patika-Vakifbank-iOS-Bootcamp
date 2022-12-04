@@ -7,7 +7,7 @@
 * [Chapter 3](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-3---functions)
 * [Chapter 4](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-4---comments)
 * [Chapter 5](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-4---comments)
-* [Chapter 6]()
+* [Chapter 6](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-6---objects-and-data-structures)
 * [Chapter 7](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-7---error-handling)
 * [Chapter 8](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-8---boundaries)
 * [Chapter 9](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-9---unit-tests)
