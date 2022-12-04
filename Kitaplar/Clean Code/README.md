@@ -987,4 +987,51 @@ Bu bölümler kritiktir ve bir şeyler ters giderse bakımı zordur, bunları k�
 
 Thread kodları test etme
 
-1. Sahte başarısızlıkları aday iş parçacığı sorunları olarak ele alın. — Hataları bir defaya mahsus olarak görmeyin, her birini her zaman göz önünde bulundurmalısınız.
+1. Sahte başarısızlıkları aday thread sorunları olarak ele alın.
+
+2. Önce thread olmayan kodu çalıştır.
+
+3. Thread kodu takılabilir hale getirin.
+
+4.Thread'i kodu ayarlanabilir yapın.
+
+5. İşlemciden daha fazla thread çalıştırın.
+
+6. Farklı platformlarda çalıştırın.
+
+7. Hataları denemek ve zorlamak için kodunuzu kullanın. 
+
+Hand-Coded
+
+Kodda bir sorun olduğunu ya da olabileceğini bildiğiniz bir bölümü test ederken, koda uyku ekleme vs. oalyıdır. Eğer başarısız olursa bir şey, bu sizin eklediğiniz uykudan vs. değil zaten sorundan kaynaklanmaktadır.
+
+Automated
+
+Belirli bir yöntemde veya alınan parametrelerde koda rastgelelik ekleyen yöntemler oluşturabilirsiniz.
+
+Bölüm Sonu
+
+Doğal olarak şu soruyu sizde kendinize soruyorsunuz eminim. Chapter chapter okurken ne güzel Clean Code'dan konuşuyorduk ne ara konu Thread'lere geldi ne ara konu işletim sistemlerine geldi. Valla ben de aynı fikirdeyim. Eğer siz böyle düşümüyorsanız muhtemelen şuan bana kızıyorsunuz demektir. Abi yapacak bir şey yok, beni pas geç şuan :(
+
+## Chapter 14 - Successive Refinement
+
+İlk önce kelime anlamları ile olaya başlayalım. 
+
+Refirement: Bir maddeden safsızlıkları veya istenmeyen elementleri çıkarma işlemi.
+
+impurities: Saf olma durumu
+
+örnek, basit parser class gibi görünüyor, argüman olarak bir dizi alın ve iş gereksinimleri dize, boolean ve integer ile ilgili veri türleri üretmek için onu ayrıştırın. Yazar ayrıca istisnaları işlemek için özel ArgsException uygular. Args sınıfından ayrıştırılmış verileri almak için getBoolean, getString, getInteger yöntemleri var, Intent, Bundle, Cursor ex'den verileri nasıl alıyoruz gibi görünüyor.
+
+***Kirli kodla başlamak ve ardından temizlemek mümkündür. Buradaki temizlik adımı bir zorunluluktur!***
+
+Meşhur bir söz var İngilizce: **Programming is not a science. Programming is a craft.** Zaten sırf bu yüzden ben üniversiteye barınamadım. Bize bilim bu bilim diye hep dayattılar yapay zeka cart curt ama iOS & Android programlama bildiğin craft yani zanaat işi hocam. Ha iOS mühendisleri, Android mühendisleri onlara baş üstüne. Onlar mühendisler. Ancak biz onların ürettiklerini kullanıyoruz sadece. Neyse konuyu dağıtmayım çok fazla ama kıssadan hisse hocam, bu zanaat işinde amaç kodu temiz tutmak ve kirli kodu temize çekmek.
+
+Bu noktada, yeni özellik eklemeyi bırakın ve yeniden düzenlemeye başlayın diyor. Bu nokta çok önemlidir, kötü çalışan bir kod vardır ve programcı kodun dağınık olduğunu hisseder. Hatalı kodun yeniden düzenlenmesi gerekiyor. Ancak bir sorun var, yeniden düzenlemeden sonra tüm programlar aynı şekilde çalışmıyor. Yeniden düzenleme, özelliklerin çökmesine veya bozulmasına neden olabilir. Bundan kaçınmak için TDD'ye ihtiyacımız olduğunu söylüyor. Örneği TDD'ye göre refactor ediyor, zaten yazılı testler var ve basit artışlarla gidiyor. Her zaman testlerin geçtiğinden emin olmaya çalışır ve sistemi her zaman çalışır durumda tutar.
+
+![image](https://user-images.githubusercontent.com/56068905/205517331-fa97b732-9a13-47fc-9551-3c409d9d2635.png)
+
+Kodunuzu her zaman sanki arkanızdan gelen geliştirici, nerede yaşadığınızı bilen şiddet yanlısı bir psikopatmış gibi yazın. TDD, kodumuzu daha sürdürülebilir, daha kolay anlaşılır hale getirir. Yani TDD ile temiz kod arasında bir birliktelik olduğunu söyleyebiliriz.
+
+## Chapter 15 - JUnit Internals
+
