@@ -1,4 +1,4 @@
-# Clean Code - A handbook of Agile Software Craftsmanship
+Bu kitapta ki konu başlıklarını özetler nitelikte, kendimden cümlelerle yazmaya çalıştım. Kitabı okumanızı muhakkak tavsiye ediyorum.
 
 ## İçindekiler
 
@@ -19,6 +19,8 @@
 * [Chapter 15](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-15---junit-internals)
 * [Chapter 16](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#chapter-16---refactoring-serialdate)
 * [Son Olarak](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/blob/master/Kitaplar/Clean%20Code/README.md#son-olarak)
+
+# Clean Code - A handbook of Agile Software Craftsmanship
 
 ## Chapter 1 - Clean Code
 
