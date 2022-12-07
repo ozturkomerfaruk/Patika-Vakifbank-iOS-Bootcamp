@@ -36,7 +36,7 @@ yazılır ve yeni oluşan ***xcworkspace*** dosyası açılarak proje yönetimi 
 
 Proje içerisinde CocaPods ile Alamofire ve AlamofireImage 3. part kütüphaneleri entegre edilmiştir.
 
-## MVC Kullanımı
+## MVC Kullanımı
 
 **Önemli Not** Bu API_KEY kullanımı saklı bir yerlerden gelmesi gerekmekte. Başka bir file'dan olabilir ya da daha derin bir yerlerden Keychain den felan gelmesi lazım. Gizli bilgi, erişelememesi gerekmekte.
 
