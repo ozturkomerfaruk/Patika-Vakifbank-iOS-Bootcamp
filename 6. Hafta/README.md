@@ -95,3 +95,8 @@ Doğal olarak ikisinin de artıları eksileri var. Amaç test etmek olduğu içi
 
 **Command + U** Testi başlatır.
 
+* Eğer bir liste dönüyorsa ilk gelen eleman eşit mi diye bakılabilir.
+* Eğer bir string geliyorsa, o string geliyor mu diye bakılabilir.
+* Eğer bir işlem gerektiren bir şey yapılıyorsa, o işlem çalışıyor mu diye testler yapılabilir.
+
+Kodlar incelenirse daha çok şey öğretir.
