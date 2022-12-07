@@ -72,4 +72,6 @@ Dosyalaması şu şekildedir.
 
 ## Protocol Oriented MVVM
 
-...
+**Not** Mesela şirketlerde 3 ekip bulunmaktadır. Feature geliştiren bir ekip, alt yapıyı geliştiren bir ekip bir de Fauture geliştiren ekipten kalan bugları çözüyor ya da 3 ayrı ekip 3'ünü de yapıyor. Ancak burada önemli olan kısım bir MVVM mimarisini geliştiren ekibin birbiri içerisinde organizasyonu lazımdır.
+
+
