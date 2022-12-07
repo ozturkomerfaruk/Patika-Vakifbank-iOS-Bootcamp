@@ -11,7 +11,7 @@ import Alamofire
 class Client {
     //Not: Bu API_KEY saklı bir yerlerden gelmesi gerekmekte. Başka bir file'dan olabilir ya da daha derin bir yerlerden Keychain den felan gelmesi lazım. Gizli bilgi, erişelememesi gerekmekte.
     //Bunu derinlemesine bi araştır.
-    static private let API_KEY = "d2e28e8093d38e50ce94d05f8d710b44"
+    static private let API_KEY = "gizli bilgi"
     static let BASE_URL = "https://api.themoviedb.org/3"
     static let IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original"
     
