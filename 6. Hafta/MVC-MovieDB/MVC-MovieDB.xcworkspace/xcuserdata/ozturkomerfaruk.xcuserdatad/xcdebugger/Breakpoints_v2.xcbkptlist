@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F1481689-48E2-4DC7-978F-4007ECB9D6AD"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC7BCBE6-3DE3-4B40-9D8D-AD2AA222EEBB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVC-MovieDB/Model/Client.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "getPopularMovies(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "687D9D9F-F509-4DDB-A895-A56635D09BD5"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVC-MovieDB/Controller/MovieDetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "687D9D9F-F509-4DDB-A895-A56635D09BD5 - 6b9054c88c949aa5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;MVC_MovieDB.MovieDetailModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MVC_MovieDB.MovieDetailVC.viewDidLoad() -&gt; ()"
+                  moduleName = "MVC-MovieDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ozturkomerfaruk/Documents/Patika-Vakifbank-iOS-Bootcamp/6.%20Hafta/MVC-MovieDB/MVC-MovieDB/Controller/MovieDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "344">
+               </Location>
+               <Location
+                  uuid = "687D9D9F-F509-4DDB-A895-A56635D09BD5 - 6b9054c88c949aa5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;MVC_MovieDB.MovieDetailModel&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MVC_MovieDB.MovieDetailVC.viewDidLoad() -&gt; ()"
+                  moduleName = "MVC-MovieDB"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ozturkomerfaruk/Documents/Patika-Vakifbank-iOS-Bootcamp/6.%20Hafta/MVC-MovieDB/MVC-MovieDB/Controller/MovieDetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "1676">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
