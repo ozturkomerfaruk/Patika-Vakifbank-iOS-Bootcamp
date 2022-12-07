@@ -1,5 +1,5 @@
 # 6. Hafta
-
+ 
 ## Yazılımcı Egosu Nedir?
 
 Kod taraflarına geçmeden önce üzerinde durduğumuz bir konu oldu bu hafta. Burdan çıkarılacak aslında çok fazla nokta. Ancak ben Ömer Faruk Öztürk olarak karşılaştığım bir iki noktaya değinmek istiyorum.
