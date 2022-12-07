@@ -1,5 +1,24 @@
 # 6. Hafta
 
+## Yazılımcı Egosu Nedir?
+
+Kod taraflarına geçmeden önce üzerinde durduğumuz bir konu oldu bu hafta. Burdan çıkarılacak aslında çok fazla nokta. Ancak ben Ömer Faruk Öztürk olarak karşılaştığım bir iki noktaya değinmek istiyorum.
+
+Daha okul hayatında karşılaştığım bu ego, benim hayatıma daha sonra iş dünyasında da çok fazla karşılaşmama sebep oldu. İnsanda belirli bir seviyede elbette ki ego olmalıdır. Egosuz adamda tabiri caizse ezik bir tip olup çıkıyor. 🙂 Ancak fazla ego; kullandığı teknoloji, yazdığı programlama dilini öyle bir yücelttiriyor ki insana, hiç ama hiç gereği yok. Ben mobil teknolojilerle ilgileniyorum dediğim de, mobil ne yaa diyen insanlar tanıdım. Ya da yazdığım kodu küçümseyen insanlar gördüm. E be eşek! Sen benim seviyemdeyken sanki Aya giden roketin kodunu yazdın! Bura da asıl önemli nokta dışarıda bu egolu insanları görmezden gelicez ve kendimizde de bu maddeler sakınıcaz. Nokta!
+
+* **Hata yapabileceğini öğrenmeli ve bu durumu kabul etmelisin.** 
+* **Yazdığın kodda problem olabilir, olayı kişiselleştirme ve hatanı ortaya çıkarmaktan korkma.**
+* **Ne kadar çok bildiğin önemli değil, her zaman senden daha çok bilen birileri mutlaka olacaktır.**
+* **Birilerine danışmadan varolan kodları değiştirme.**
+* **Senden daha az bilen kişilere karşı saygılı ve sabırlı ol.**
+* **Değişmeyen tek şey dünyanın her zaman değişmesidir. Sen de değişime her zaman açık ol.**
+* **Saygı kazanmanın ve yetkin olmanın asıl kaynağı bilgidir.**
+* **Doğru bildiğin şeyler için mücadele et, ama haksız olduğun yerde de doğruları kabullen.**
+* **Yalnız takılan yazılımcı olma, herkese açık ol ve yardımlaşmaya önem ver.**
+* **İnsanları değil, yazılan kodları eleştir ve yazılımcılara karşı kibar ol.**
+
+Bu maddelerin altını her geçen gün dolduracak çok fazla örneğe şahit oluyorum. Siz siz olun bu egoist insanlar gibi olmayın.!
+ 
 ## Swift Access Control
 
 Not: Command + Shift + J -> Ekranda hangi file açıksa gider onu gösterir.
