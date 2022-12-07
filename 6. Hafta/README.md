@@ -74,4 +74,11 @@ Dosyalaması şu şekildedir.
 
 **Not** Mesela şirketlerde 3 ekip bulunmaktadır. Feature geliştiren bir ekip, alt yapıyı geliştiren bir ekip bir de Fauture geliştiren ekipten kalan bugları çözüyor ya da 3 ayrı ekip 3'ünü de yapıyor. Ancak burada önemli olan kısım bir MVVM mimarisini geliştiren ekibin birbiri içerisinde organizasyonu lazımdır.
 
+MVVM'in amacı ViewController içeriside ki her bir elemana ulaşma işlemi yada Business Logic, İş Mantığı kısımları ViewModel içerisinde yapılması gerektiğidir. Esas olan budur.
+
+Klasörleme yapısı bu şekildedir:
+
+<img width="272" alt="image" src="https://user-images.githubusercontent.com/56068905/206147704-c75628f6-dfde-4248-8521-991d652978df.png">
+
+## MVVM Test Yapısı
 
