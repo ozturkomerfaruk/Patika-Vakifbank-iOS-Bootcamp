@@ -38,6 +38,10 @@ Proje içerisinde CocaPods ile Alamofire ve AlamofireImage 3. part kütüphanele
 
 ## MVC Kullanımı
 
+**Önemli Not** Bu API_KEY kullanımı saklı bir yerlerden gelmesi gerekmekte. Başka bir file'dan olabilir ya da daha derin bir yerlerden Keychain den felan gelmesi lazım. Gizli bilgi, erişelememesi gerekmekte.
+
+Bunu derinlemesine bi araştırmam gerekiyor. Burada maksat MVC olduğu için çok fazla kasmadan direk yazdım ama normalde olması gereken API_KEY'in erişilememesi gerekmektedir. Bu kapsamda da Git'de silmekteyim.
+
 Dosyalaması şu şekildedir.
 
 <img width="270" alt="image" src="https://user-images.githubusercontent.com/56068905/206101392-89ba4b12-31e7-4009-93e7-2a03fcb06e0a.png">
