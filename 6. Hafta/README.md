@@ -82,3 +82,16 @@ Klasörleme yapısı bu şekildedir:
 
 ## MVVM Test Yapısı
 
+ViewModel olarak ayırdığımız Business Logic mantığını test etmek çok daha kolaydır. Bu yüzden MVVM mimarisi kullanılmaktadır.
+
+Clean Code ve The Pragmatic Programmer kitabında testin önemini detaylı bir şekilde anlattım. O yüzden direk koda giriyorum.
+
+Test türlerinin artı ve eksi yanları bulunmaktadır.
+
+* Eğer servisden gelen ilk ürünü test etmek istersen, bunun avantajı servisten gelen veri de her şey yerli yerinde mi geliyor onu anlamış olursun. Ancak dezavantajı eğer ilk gelen model değişirse testin patlar.
+* Eğer bir mock veri oluşturup test etmek istersen, bunun avantajı servis derdiyle uğraşmayıp bir test verin var ve hızlıca testini yapabilirsin. Ancak ilerleyen zamanda bir değişkenin adı vs. değişirse bu seferde test yine patlar.
+
+Doğal olarak ikisinin de artıları eksileri var. Amaç test etmek olduğu için ikisinden biri de, ikisi de kullanılabilir.
+
+**Command + U** Testi başlatır.
+
