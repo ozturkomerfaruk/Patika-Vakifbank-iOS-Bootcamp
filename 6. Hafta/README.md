@@ -20,7 +20,7 @@ Bu kapmsa Swift'in kullandığı 5 terim var. Bunlar: Open, Public, internal, fi
 
 Kurma işlemi gerçekleştikten sonra terminal ekranında pod dosyası oluşturmak şu ifadeyi yazmaktayız:
 
-```ìnit pod```
+```pod init```
 
 Ardından pod'ları yüklemek için örneğin:
 
