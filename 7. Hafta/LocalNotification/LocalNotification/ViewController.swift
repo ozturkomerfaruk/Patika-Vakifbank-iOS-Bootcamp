@@ -49,15 +49,7 @@ class ViewController: UIViewController {
         //Step 5 - Register with Notification Center
         center.add(request) {
             error in
-            print(error)
         }
     }
     
 }
-
-
-/*
- 
- 
- 
- */

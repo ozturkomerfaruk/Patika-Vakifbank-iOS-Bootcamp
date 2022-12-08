@@ -44,7 +44,7 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "04F243102940A668004DA29E"
+               BlueprintIdentifier = "04E1889C2940BD9600438017"
                BuildableName = "MVVM-MovieDBTests.xctest"
                BlueprintName = "MVVM-MovieDBTests"
                ReferencedContainer = "container:MVVM-MovieDB.xcodeproj">
