@@ -1,0 +1,93 @@
+
+/* Class = "UITextView"; text = "---"; ObjectID = "1tQ-3F-TJU"; */
+"1tQ-3F-TJU.text" = "---";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4WH-qA-oNX"; */
+"4WH-qA-oNX.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Type..."; ObjectID = "4kw-S1-32k"; */
+"4kw-S1-32k.placeholder" = "Type...";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "5h1-rL-qHc"; */
+"5h1-rL-qHc.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Notes"; ObjectID = "7co-Ae-bEL"; */
+"7co-Ae-bEL.text" = "Notes";
+
+/* Class = "UIButton"; configuration.title = "Save"; ObjectID = "8ot-Gj-uye"; */
+"8ot-Gj-uye.configuration.title" = "Save";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8ot-Gj-uye"; */
+"8ot-Gj-uye.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Ratings"; ObjectID = "AuY-uc-9NZ"; */
+"AuY-uc-9NZ.text" = "Ratings";
+
+/* Class = "UIButton"; configuration.title = "Remove From Favourites"; ObjectID = "BaI-0e-cfG"; */
+"BaI-0e-cfG.configuration.title" = "Remove From Favourites";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "BaI-0e-cfG"; */
+"BaI-0e-cfG.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Search a game"; ObjectID = "Fe1-Ty-Opy"; */
+"Fe1-Ty-Opy.text" = "Search a game";
+
+/* Class = "UILabel"; text = "Favourites"; ObjectID = "HEW-LI-FAB"; */
+"HEW-LI-FAB.text" = "Favourites";
+
+/* Class = "UITabBarItem"; title = "Favourites"; ObjectID = "QH1-E9-80O"; */
+"QH1-E9-80O.title" = "Favourites";
+
+/* Class = "UILabel"; text = "My game and online repetitive match for  CSGO"; ObjectID = "QN7-Lj-bGg"; */
+"QN7-Lj-bGg.text" = "My game and online repetitive match for  CSGO";
+
+/* Class = "UILabel"; text = "Tags"; ObjectID = "U0Z-Pl-Lji"; */
+"U0Z-Pl-Lji.text" = "Tags";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "VZl-HJ-t6F"; */
+"VZl-HJ-t6F.text" = "Description";
+
+/* Class = "UILabel"; text = "NeworlD App"; ObjectID = "VnU-8s-udH"; */
+"VnU-8s-udH.text" = "NeworlD App";
+
+/* Class = "UIButton"; configuration.title = "Next"; ObjectID = "af7-AN-i5k"; */
+"af7-AN-i5k.configuration.title" = "Next";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "af7-AN-i5k"; */
+"af7-AN-i5k.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Effecient | 355 User Reviews"; ObjectID = "eVf-Wh-sgF"; */
+"eVf-Wh-sgF.text" = "Effecient | 355 User Reviews";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gkq-x5-21g"; */
+"gkq-x5-21g.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "jex-hv-cix"; */
+"jex-hv-cix.text" = "-";
+
+/* Class = "UILabel"; text = "Please Select a Game"; ObjectID = "mId-Du-cko"; */
+"mId-Du-cko.text" = "Please Select a Game";
+
+/* Class = "UITabBarItem"; title = "Notes"; ObjectID = "myl-OI-n2i"; */
+"myl-OI-n2i.title" = "Notes";
+
+/* Class = "UILabel"; text = "About Game"; ObjectID = "nrE-ee-dPQ"; */
+"nrE-ee-dPQ.text" = "About Game";
+
+/* Class = "UILabel"; text = "27 Sep, 1998"; ObjectID = "oSq-U6-KGJ"; */
+"oSq-U6-KGJ.text" = "27 Sep, 1998";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "oa6-Gp-Iik"; */
+"oa6-Gp-Iik.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "NeworlD"; ObjectID = "qPk-4b-jVM"; */
+"qPk-4b-jVM.text" = "NeworlD";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rZl-ux-Nhk"; */
+"rZl-ux-Nhk.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Title"; ObjectID = "s8r-My-cNF"; */
+"s8r-My-cNF.placeholder" = "Title";
+
+/* Class = "UITabBarItem"; title = "Games"; ObjectID = "ycS-ar-e9b"; */
+"ycS-ar-e9b.title" = "Games";

@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-NeworlD-NeworlDUITests/Pods-NeworlD-NeworlDUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/MaterialActivityIndicator/MaterialActivityIndicator.framework
+${BUILT_PRODUCTS_DIR}/SwiftAlertView/SwiftAlertView.framework
+${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework
+${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework

@@ -1,0 +1,6 @@
+framework module SwiftAlertView {
+  umbrella header "SwiftAlertView-umbrella.h"
+
+  export *
+  module * { export * }
+}

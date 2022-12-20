@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (5.6.4)
+  - iCarousel (1.8.3)
+  - lottie-ios (4.0.1)
+  - MaterialActivityIndicator (0.0.6)
+  - SwiftAlertView (2.2.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - iCarousel
+  - lottie-ios
+  - MaterialActivityIndicator
+  - SwiftAlertView (~> 2.2.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - iCarousel
+    - lottie-ios
+    - MaterialActivityIndicator
+    - SwiftAlertView
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
+  lottie-ios: 54d22edf55b839f0929cabbfe609c9aa548b1145
+  MaterialActivityIndicator: 5061a52fadf7d22533734f2d34806311331bc424
+  SwiftAlertView: e61a63206f19e8e3295f13a58d6464fea4a6946a
+
+PODFILE CHECKSUM: 1ffdae89b474d307ff1c59f93969c00e42cefd40
+
+COCOAPODS: 1.11.3
