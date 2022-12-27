@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "materialactivityindicator",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nspavlo/MaterialActivityIndicator",
+      "state" : {
+        "branch" : "master",
+        "revision" : "097d31631b16cf9cc80b74b43026ccfda5db52d3"
+      }
+    },
+    {
+      "identity" : "swiftalertview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dinhquan/SwiftAlertView",
+      "state" : {
+        "revision" : "601c049861691ea3578e3812d1e9cd548cf46f48",
+        "version" : "2.2.1"
+      }
+    }
+  ],
+  "version" : 2
+}
