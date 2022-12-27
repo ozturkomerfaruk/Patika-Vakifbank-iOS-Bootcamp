@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EpisodeCharacterView" customModule="BreakingBadApp" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="Y6Y-JT-ehu" id="9d6-5x-DX6"/>
+                <outlet property="containerView" destination="K3T-Qe-c4a" id="S8u-ue-adR"/>
+                <outlet property="stackView" destination="Mtv-nf-duA" id="qSe-Sw-FBW"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArU-BK-y8G">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="V9N-gh-1iQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="systemUltraThinMaterial"/>
+                </visualEffectView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K3T-Qe-c4a">
+                    <rect key="frame" x="16" y="358" width="382" height="180"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Mtv-nf-duA">
+                            <rect key="frame" x="16" y="16" width="350" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" placeholder="YES" id="4Kx-gM-rdm"/>
+                            </constraints>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6Y-JT-ehu">
+                            <rect key="frame" x="146.5" y="76" width="89.5" height="88"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="xmark.circle" catalog="system" title="Close" imagePadding="8"/>
+                            <connections>
+                                <action selector="didCloseButtonTapped:" destination="-1" eventType="touchUpInside" id="ZFB-hw-mfi"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="180" placeholder="YES" id="7jL-C6-Jgg"/>
+                        <constraint firstItem="Y6Y-JT-ehu" firstAttribute="top" secondItem="Mtv-nf-duA" secondAttribute="bottom" constant="16" id="C3y-Yy-3K3"/>
+                        <constraint firstItem="Y6Y-JT-ehu" firstAttribute="centerX" secondItem="K3T-Qe-c4a" secondAttribute="centerX" id="F5R-Fd-Ios"/>
+                        <constraint firstItem="Mtv-nf-duA" firstAttribute="top" secondItem="K3T-Qe-c4a" secondAttribute="top" constant="16" id="GdB-Yp-swH"/>
+                        <constraint firstItem="Mtv-nf-duA" firstAttribute="leading" secondItem="K3T-Qe-c4a" secondAttribute="leading" constant="16" id="Md9-Y7-ejA"/>
+                        <constraint firstAttribute="trailing" secondItem="Mtv-nf-duA" secondAttribute="trailing" constant="16" id="PuE-Ui-nIo"/>
+                        <constraint firstAttribute="bottom" secondItem="Y6Y-JT-ehu" secondAttribute="bottom" constant="16" id="Yhp-Wq-WvT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="ArU-BK-y8G" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="0LY-IR-Ciw"/>
+                <constraint firstItem="K3T-Qe-c4a" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="4Jk-gB-oxA"/>
+                <constraint firstItem="ArU-BK-y8G" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NsP-cu-jVE"/>
+                <constraint firstItem="K3T-Qe-c4a" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="T4y-CE-q8U"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="K3T-Qe-c4a" secondAttribute="trailing" constant="16" id="b3H-vh-Wj1"/>
+                <constraint firstAttribute="bottom" secondItem="ArU-BK-y8G" secondAttribute="bottom" id="eFA-4D-th1"/>
+                <constraint firstItem="K3T-Qe-c4a" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="ga5-HE-8qu"/>
+                <constraint firstItem="ArU-BK-y8G" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="z8Q-bm-azr"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="87.723214285714278"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="xmark.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
