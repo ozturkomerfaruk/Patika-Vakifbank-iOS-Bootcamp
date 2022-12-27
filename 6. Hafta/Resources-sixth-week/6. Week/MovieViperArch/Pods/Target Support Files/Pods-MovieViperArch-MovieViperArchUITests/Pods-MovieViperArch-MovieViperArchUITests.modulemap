@@ -1,0 +1,6 @@
+framework module Pods_MovieViperArch_MovieViperArchUITests {
+  umbrella header "Pods-MovieViperArch-MovieViperArchUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
