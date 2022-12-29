@@ -42,7 +42,7 @@ Gitmek için [tıklayabilirsiniz](https://github.com/ozturkomerfaruk/Patika-Vaki
 
 # Hafta 2
 
-Swift dilinde OOP mantığına giriş yapmaya başladık. Class ve Struct kullanımı. Properties ve Inheritence gibi konulara girilmiştir.
+Swift dilinde OOP mantığına giriş yapmaya başladık. Class ve Struct kullanımı. Properties ve Inheritence gibi konulara girilmiştir. İncelemek için [tıklayabilirsiniz](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/2.%20Hafta).
 
 ## Hafta 2 - Ödev
 
