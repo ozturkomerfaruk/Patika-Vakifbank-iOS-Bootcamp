@@ -50,7 +50,7 @@ Bu haftaya özel 2 ödev verildi ve bu ödevler nesne tabana yönelik ödevler o
 
 # Hafta 3
 
-iOS dünyasına giriş yaptık ve temel noktalarda öğrenmeye başladık. Basic Components, Table, Custom cell, Collection View, Nav Controller ve burada Search Bar, StackView, Sayfa geçişleri olarak Navigation Controller ve Segue kullanımı. User Default ile Keychain arasındaki farklar ve API dan veri çekme.
+iOS dünyasına giriş yaptık ve temel noktalarda öğrenmeye başladık. Basic Components, Table, Custom cell, Collection View, Nav Controller ve burada Search Bar, StackView, Sayfa geçişleri olarak Navigation Controller ve Segue kullanımı. User Default ile Keychain arasındaki farklar ve API dan veri çekme. İncelemek için [tıklayabilirsiniz](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/3.%20Hafta).
 
 ## Hafta 3 - Ödev
 
@@ -58,7 +58,7 @@ iOS dünyasına giriş yaptık ve temel noktalarda öğrenmeye başladık. Basic
 
 # Hafta 4
 
-Bu hafta biraz daha derine iniyoruz. Generic Where & HighOrder Fonksiyonlar. ARC'e (Automatic Reference Counting) giriş yapılmıştır. XibFile oluşturma. Notification Center ile Delegate Pattern arasındaki farklar. WebView kullanımı. Tabbar ve PageView kullanımı. Birde örnek bir proje geliştirilerek Clint Service iyice pekiştirildi. Bu mimaride MVC kullanıldı ve SPM gösterildi.
+Bu hafta biraz daha derine iniyoruz. Generic Where & HighOrder Fonksiyonlar. ARC'e (Automatic Reference Counting) giriş yapılmıştır. XibFile oluşturma. Notification Center ile Delegate Pattern arasındaki farklar. WebView kullanımı. Tabbar ve PageView kullanımı. Birde örnek bir proje geliştirilerek Clint Service iyice pekiştirildi. Bu mimaride MVC kullanıldı ve SPM gösterildi. İncelemek için [tıklayabilirsiniz](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/4.%20Hafta).
 
 ## Hafta 4 - Ödev
 
@@ -76,7 +76,7 @@ Dördüncü hafta derste işlenen örnek uygulamaya ekleme yapılarak Core Data 
 
 İlk konu yazılımcı egosu nedir? Bunun üzerine bir muhabbet geçti ve üzerine biraz da ben bir şeyler katarak bazı notlar aldım. Bir şirkette gerçekten yazılımcı egosuna maruz kalmak diye bir olay var ve bu çok kötü bir şey.
 
-Detaylamasına SAC (Swift Access Control) incelenmesi. Cocoapods kullanılması. Alamofire paketinin incelenmesi. Sırasıyla MVC, MVVM ve VIPER mimarilerinin incelenmesi. MVVM ve VIPER da Unit Testlere değinilmesi.
+Detaylamasına SAC (Swift Access Control) incelenmesi. Cocoapods kullanılması. Alamofire paketinin incelenmesi. Sırasıyla MVC, MVVM ve VIPER mimarilerinin incelenmesi. MVVM ve VIPER da Unit Testlere değinilmesi. İncelemek için [tıklayabilirsiniz](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/6.%20Hafta).
 
 # Hafta 7
 
