@@ -9,3 +9,5 @@ Mocker : https://github.com/WeTransfer/Mocker/tree/master#installation
 MVVM-C : https://github.com/kudoleh/iOS-Example-MVVM-C
 
 SnapKit : https://github.com/SnapKit/SnapKit
+
+En kısa zamanda kendi notlarımı ekleyeceğim.
