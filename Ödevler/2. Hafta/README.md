@@ -33,8 +33,9 @@ Kendi çaptımda oluşturduğum UML diagramları.
 
 ## 1. Ödev
 
-https://user-images.githubusercontent.com/56068905/201477030-210633ce-e374-4281-9693-27f49d8eed05.png![image](https://user-images.githubusercontent.com/56068905/209986535-c2e4222f-c4fc-4006-84f4-84a8a5780c56.png)
+![image](https://user-images.githubusercontent.com/56068905/201477030-210633ce-e374-4281-9693-27f49d8eed05.png)
 
 ## 2. Ödev
 
-https://user-images.githubusercontent.com/56068905/201470282-f85e2de9-c33d-4b50-8787-5124f322a600.png![image](https://user-images.githubusercontent.com/56068905/209986567-54a6e161-9305-476b-b4c4-cbd23751fe86.png)
+![image](https://user-images.githubusercontent.com/56068905/201470282-f85e2de9-c33d-4b50-8787-5124f322a600.png)
+
