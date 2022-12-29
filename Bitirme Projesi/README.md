@@ -1,13 +1,5 @@
 # NeworlD Oyun Uygulaması
 
-## Kitap Özetleri
-
-Bootcamp boyunca özelde, kendi repomu açarak ödevlerimi, ders tekrarlarımı notlar alarak paylaşıyordum. Benim için orası bootcamp rehberi gibi oldu. Bootcamp boyunca öğrendiğim yüzlerce yeni şey bulunmakta ve başlangıçta çok az şey biliyordum. Notlar alarak ilerledim ve bundan çok da mutluyum. Son 2 ayda göstermiş olduğum aktiflik Github profilimde yeşilliklere yansımaktadır hatta. Github profilime gitmek için [tıklayabilirsiniz](https://github.com/ozturkomerfaruk).
-
-Kendi repomda bizden istenen iki kitabın özetlerini paylaştım.
-
-[The Pragmatic Programmer](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/Kitaplar/Pragramatic%20Programmer) kitabının özeti için linke tıklayabilirsiniz. Aynı şekilde [Clean Code](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/Kitaplar/Clean%20Code) kitabına ulaşmak için linke tıklayabilirsiniz. Ben çok keyif alarak okudum bu kitapları ve çok şey öğrendim. Bu kitapları bize tavsiye ettiği için Kaan hocama tekrardan teşekkür ediyorum.
-
 ## Önemli Not!!
 
 Proje içerisinde API_KEY kullanımına izin vermedim. Bunun için App klasörünün altında bulunan Utils klasorüne gidip Constants dosyasında kendi API_KEY'inizi oluşturup ekleyiniz lütfen. Aksi takdirde uygulamaya giriş yapmak istediğinizde uygulama açılmayacaktır.
