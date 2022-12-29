@@ -5,6 +5,7 @@ Merhabalar. 7 haftalık geçirmiş olduğum bootcamp eğitimimi tamamladım ve s
 Bir de belirtmek istediğim bir şey var. Ödevler bize verilirken keskin kurallarla, şunlar şunlar yapılacak diye verilmedi hiç. Ödevin ana hatları belirtildi ve devamında yorum yapmak bizlere bırakıldı. Ödevlerimi inceleyecek olursanız, tasarımdan ziyade kodları yazış bakımında eksikliklerimi **issue** bırakarak söylerseniz, çok sevinirim.
 
 <img src="https://user-images.githubusercontent.com/56068905/209977434-73aeaaa6-7758-41ab-a879-a05bb89d38a6.png">
+<p align="center"> Doğrulamak için <a href="(https://verified.sertifier.com/en/verify/14407487207313?ref=email)"> tıklayabilirsiniz.</a> </p> 
 
 # Kitaplar
 
