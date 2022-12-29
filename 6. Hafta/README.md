@@ -100,3 +100,7 @@ Doğal olarak ikisinin de artıları eksileri var. Amaç test etmek olduğu içi
 * Eğer bir işlem gerektiren bir şey yapılıyorsa, o işlem çalışıyor mu diye testler yapılabilir.
 
 Kodlar incelenirse daha çok şey öğretir.
+
+## VIPER Mimarisi
+
+Detayları en kısa zamanda yazacağım.
