@@ -1,6 +1,6 @@
 # Patika Vakıfbank Swift iOS Bootcamp
 
-Merhabalar. 7 haftalık geçirmiş olduğum bootcamp eğitimimi tamamladım ve sertifikamı almaya hak kazandım. Bu süreçte yaşamış olduğum tüm tecrübeyi sizlerle paylaşmak istiyorum. Ben elimden geldiğince notlar almaya çalıştım çünkü ilk defa Swift dünyasıyla tanıştığım için notlar alarak ilerlemenin doğru olduğunu düşündüm.
+Merhabalar. 7 haftalık geçirmiş olduğum bootcamp eğitimimi tamamladım ve sertifikamı almaya hak kazandım. Bu süreçte yaşamış olduğum tüm tecrübeyi sizlerle paylaşmak istiyorum. Ben elimden geldiğince notlar almaya çalıştım çünkü ilk defa Swift dünyasıyla tanıştığım için notlar alarak ilerlemenin doğru olduğunu düşündüm. 
 
 Bir de belirtmek istediğim bir şey var. Ödevler bize verilirken keskin kurallarla, şunlar şunlar yapılacak diye verilmedi hiç. Ödevin ana hatları belirtildi ve devamında yorum yapmak bizlere bırakıldı. Ödevlerimi inceleyecek olursanız, tasarımdan ziyade kodları yazış bakımında eksikliklerimi **issue** bırakarak söylerseniz, çok sevinirim.
 
