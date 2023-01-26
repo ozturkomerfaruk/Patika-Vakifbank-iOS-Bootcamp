@@ -20,7 +20,7 @@ Okurken kitabı kendi çaptımda notlar alarak özet çıkarmıştım. Bakmak i�
 
 Clean Code kitabı da bir yazılım geliştirme rehberi olan bir kitaptır. Bu kitap da aynı şekilde bootcamp sürecinde bizlere söylenmişti ve yine sizlerin okumanızı  şiddetle tavsiye ediyorum. Robert C. Martin tarafından yazılmış olan bu kitap yazılım geliştiricilerin daha iyi yazılımlar yazmalarını sağlamayı amaçlıyor. Kitap, "Clean Code" prensiplerine odaklanıyor ve bu prensiplerin nasıl uygulanabileceğine dair örnekler sunuyor. Örneğin, kitap, kodun okunabilirliğini arttırmak için nasıl düzenlenebileceğini, kodun yapısını nasıl tasarlamaya yönelik pratikleri, kodun nasıl test edilebileceğini ve nasıl yeniden kullanılabilir hale getirilebileceğini ele alıyor.
 
-Kitap özetine gitmek için [tıklayabilirsiniz](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS Bootcamp/tree/master/Kitaplar/Clean%20Code).
+Kitap özetine gitmek için [tıklayabilirsiniz](https://github.com/ozturkomerfaruk/Patika-Vakifbank-iOS-Bootcamp/tree/master/Kitaplar/Clean%20Code)
 
 ## Cracking the Coding Interview
 
