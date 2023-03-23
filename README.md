@@ -1,4 +1,4 @@
-# Patika Vakıfbank Swift iOS Bootcamp
+# Patika Vakıfbank Swift iOS Bootcamp  
 
 Merhabalar. 7 haftalık geçirmiş olduğum bootcamp eğitimimi tamamladım ve sertifikamı almaya hak kazandım. Bu süreçte yaşamış olduğum tüm tecrübeyi sizlerle paylaşmak istiyorum. Ben elimden geldiğince notlar almaya çalıştım çünkü ilk defa Swift dünyasıyla tanıştığım için notlar alarak ilerlemenin doğru olduğunu düşündüm. 
 
